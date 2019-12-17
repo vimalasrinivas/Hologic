@@ -1,0 +1,16 @@
+{
+  "resources": {
+    "placeOrderText": "Place Order",
+    "approvalRequiredText": "Approval Required",
+    "yesText": "Yes",
+    "orderProcessedText": "Order is being processed.",
+    "cancelText": "Cancel",
+    "completeOrderText": "Complete Order",
+    "noText": "No",
+    "shipToSingleAddressText": "Ship To Single Address",
+    "completeOrderConfirmationPopUp": "Order must go through the approval process. Existing order will be cancelled and this new order will be merged to, if any, existing incomplete order. Do you wish to continue?",
+    "okText": "OK",
+    "scheduleOrderText": "Schedule Order",
+    "cancelButtonText": "Cancel"
+  }
+}

@@ -1,0 +1,10 @@
+<div class="row Announcement-strip-wrap hidden-xs">     
+       <span  data-bind = "widgetLocaleText:'AnnouncementTitle'" class="announcementTitle"></span>
+       <span  data-bind = "widgetLocaleText:'AnnouncementDetail'"></span>
+       <span><a data-bind = "widgetLocaleText:'AnnouncementExplanation'"><span data-bind = "widgetLocaleText:'AnnouncementExplanation'"></span></a></span>  
+</div> 
+<div class="row Announcement-strip-wrap-xs visible-xs">     
+       <div  data-bind = "widgetLocaleText:'AnnouncementTitle'"  class="announcementTitle"></div>
+       <span data-bind = "widgetLocaleText:'AnnouncementDetail'"></span>
+       <span><a data-bind = "widgetLocaleText:'AnnouncementExplanation'"><span data-bind = "widgetLocaleText:'AnnouncementExplanation'"></span></a></span>  
+</div>

@@ -1,0 +1,10 @@
+{
+  "widgetType": "checkoutCustomHeaderWidget",
+  "version": 1,
+  "displayName": "MedAes Checkout Header Widget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "checkoutCustomHeaderWidget",
+  "source": 101,
+  "javascript": "checkoutCustomHeaderWidget"
+}

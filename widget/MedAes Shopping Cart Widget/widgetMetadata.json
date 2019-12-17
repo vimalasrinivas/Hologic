@@ -1,0 +1,19 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "MedAes Shopping Cart Widget",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "pageTypes": [
+    "cart"
+  ],
+  "config": {
+    "isStorePickupEnabled": false,
+    "noOfStoresToDisplay": "10"
+  }
+}

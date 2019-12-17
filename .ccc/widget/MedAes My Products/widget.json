@@ -1,0 +1,10 @@
+{
+  "widgetType": "medaesmyproducts",
+  "version": 1,
+  "displayName": "MedAes My Products",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "medaesmyproducts",
+  "source": 101,
+  "javascript": "medaesmyproducts"
+}

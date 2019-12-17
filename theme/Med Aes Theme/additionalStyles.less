@@ -1,0 +1,236 @@
+@import "/file/icons/iconic-font.css";
+
+/**** font face for Flama font */
+@font-face {
+    font-family: 'FlamaBook';
+    src: url('/file/fonts/flama-book-webfont.eot');
+    src: url('/file/fonts/flama-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/file/fonts/flama-book-webfont.woff2') format('woff2'),
+         url('/file/fonts/flama-book-webfont.woff') format('woff'),
+         url('/file/fonts/flama-book-webfont.ttf') format('truetype'),
+         url('/file/fonts/flama-book-webfont.svg#FlamaBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FlamaUltraLight';
+    src: url('/file/fonts/flama-ultralight-webfont.eot');
+    src: url('/file/fonts/flama-ultralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/file/fonts/flama-ultralight-webfont.woff2') format('woff2'),
+         url('/file/fonts/flama-ultralight-webfont.woff') format('woff'),
+         url('/file/fonts/flama-ultralight-webfont.ttf') format('truetype'),
+         url('/file/fonts/flama-ultralight-webfont.svg#FlamaUltraLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FlamaLight';
+    src: url('/file/fonts/flama-light-webfont.eot');
+    src: url('/file/fonts/flama-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/file/fonts/flama-light-webfont.woff2') format('woff2'),
+         url('/file/fonts/flama-light-webfont.woff') format('woff'),
+         url('/file/fonts/flama-light-webfont.ttf') format('truetype'),
+         url('/file/fonts/flama-light-webfont.svg#FlamaLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FlamaLightItalic';
+    src: url('/file/fonts/flama-lightitalic-webfont.eot');
+    src: url('/file/fonts/flama-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/file/fonts/flama-lightitalic-webfont.woff2') format('woff2'),
+         url('/file/fonts/flama-lightitalic-webfont.woff') format('woff'),
+         url('/file/fonts/flama-lightitalic-webfont.ttf') format('truetype'),
+         url('/file/fonts/flama-lightitalic-webfont.svg#FlamaLightItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FlamaBlackItalic';
+    src: url('/file/fonts/flama-blackitalic-webfont.eot');
+    src: url('/file/fonts/flama-blackitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/file/fonts/flama-blackitalic-webfont.woff2') format('woff2'),
+         url('/file/fonts/flama-blackitalic-webfont.woff') format('woff'),
+         url('/file/fonts/flama-blackitalic-webfont.ttf') format('truetype'),
+         url('/file/fonts/flama-blackitalic-webfont.svg#FlamaBlackItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FlamaBlack';
+    src: url('/file/fonts/flama-black-webfont.eot');
+    src: url('/file/fonts/flama-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/file/fonts/flama-black-webfont.woff2') format('woff2'),
+         url('/file/fonts/flama-black-webfont.woff') format('woff'),
+         url('/file/fonts/flama-black-webfont.ttf') format('truetype'),
+         url('/file/fonts/flama-black-webfont.svg#FlamaBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FlamaItalic';
+    src: url('/file/fonts/flama-basicitalic-webfont.eot');
+    src: url('/file/fonts/flama-basicitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/file/fonts/flama-basicitalic-webfont.woff2') format('woff2'),
+         url('/file/fonts/flama-basicitalic-webfont.woff') format('woff'),
+         url('/file/fonts/flama-basicitalic-webfont.ttf') format('truetype'),
+         url('/file/fonts/flama-basicitalic-webfont.svg#FlamaItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Flama';
+    src: url('/file/fonts/flama-basic-webfont.eot');
+    src: url('/file/fonts/flama-basic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/file/fonts/flama-basic-webfont.woff2') format('woff2'),
+         url('/file/fonts/flama-basic-webfont.woff') format('woff'),
+         url('/file/fonts/flama-basic-webfont.ttf') format('truetype'),
+         url('/file/fonts/flama-basic-webfont.svg#Flama') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*@media (min-width: 1306px){
+        #main>:nth-child(2).row {
+        margin: 0 auto !important;
+        width: 1306px;  
+    }
+}*/
+
+
+/**** General styles */
+
+@medAesTextColor: #696969;
+@medAesPrimaryColor: #D87900;
+@medAesBackGroundColor:#f6f6f6;
+@medAesSecondaryTextColor :#333333;
+@medAesTableTextColor: #292929;
+@medAesWhite : #FFFFFF;
+
+.medAesBtnPrimary{
+        height: 44px;
+        width: 100%;
+        border-radius: 2px;
+        background-color: @medAesPrimaryColor;
+        box-shadow: 0 -1px;
+        border: 0px;   
+        color: #FFFFFF;
+        font-family: "Flama";
+        font-size: 14px;
+        letter-spacing: 0.44px;
+        line-height: 17px;
+        text-align: center;
+        text-transform: uppercase;   
+}
+
+.siteBackground{
+    background-color : @medAesBackGroundColor;
+}
+
+body {
+    color: @medAesTextColor;
+    font-family: Flama,Helvetica Neue,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    
+}
+
+
+
+.medAesInputBox{
+        border: 1px solid #d6d0d0;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 0 0px 0 0 rgba(222,222,222,0.5);
+        height: 36px !important;
+}
+
+// To make page width 100% 
+.nopad{  
+    padding:0px;
+}
+
+#page{
+    width:100% !important;
+    background-color: #f6f6f6;
+}
+
+#main{
+    margin:0 auto;
+}
+
+/*@media (min-width: 768px) {
+    #main {
+        width:750px;
+    }
+}
+
+@media (min-width: 992px) {
+    #main {
+        width:970px;
+    }
+}*/
+
+@media (min-width: 1200px) {
+    #main {
+        width:1170px;
+    }
+}
+
+.progressTracker-button-row{
+    display:none !important;
+}
+.tab-pane{
+    padding:0px;
+}
+
+
+ @media screen and (max-width:991px){    
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 3px;
+        height: 3px;
+        
+    }
+    ::-webkit-scrollbar-thumb {    
+        border-radius: 5px;
+        background-color: #d6d0d0;  
+        height: 3px;    
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 3px;
+        height: 3px;
+        
+    }
+    ::-webkit-scrollbar-thumb {    
+        border-radius: 5px;
+        background-color: #d6d0d0;  
+        height: 3px;    
+    }
+}
+input[type='search']::-ms-clear, input[type='text']::-ms-clear {
+    display: none;
+}
+@media screen and (max-width: 767px) {
+    input, textarea, select, select:focus, textarea:focus, input:focus {
+        font-size: 16px !important;
+    }
+}

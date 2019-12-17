@@ -1,0 +1,14 @@
+{
+  "resources": {
+    "subtotalText": "Sub Total:",
+    "pickUpCollectText": "To be collected by:",
+    "reviewOrderHeader": "Review Your Order",
+    "shippingMethodText": "Shipping Method:",
+    "reviewOrderShippingAddressSummary": "Review Order Shipping Address",
+    "pickUpDetailsText": "Pick-up in Store collection details",
+    "pickupInStoreLabel": "Pick-up in Store at",
+    "reviewOrderShippingMethodSummary": "Review Order Shipping Method",
+    "shippingAddressAndMethodText": "Shipping Address and Method",
+    "shipToText": "Ship To"
+  }
+}

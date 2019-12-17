@@ -1,0 +1,9 @@
+{
+  "resources": {
+    "orderConfirmationText": "Thank You! Your order is placed Successfully.",
+    "orderConfirmationMailText": "Your order is submitted successfully. Ypu will receive an email with order confirmation. Your order",
+    "paymentTitleText": "PAYMENT",
+    "shippingTitleText": "SHIPPING",
+    "cartSummaryTitleText": "CART SUMMARY"
+  }
+}

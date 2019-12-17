@@ -1,0 +1,18 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "Contact Registration Requests",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "pageTypes": [
+    "profile"
+  ],
+  "config": {
+    "registrationRequestItemsPerPage": "10"
+  }
+}

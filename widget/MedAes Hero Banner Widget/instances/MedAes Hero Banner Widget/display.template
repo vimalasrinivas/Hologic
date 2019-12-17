@@ -1,0 +1,35 @@
+<div class="row hero-padding-adjuster" id="Banner_Widget" data-bind="visible:user().loggedIn()">
+  <div class="col-xs-12 cc_crs-heroWidget hero-padding-override">
+    <div id="myCarousel" class="carousel slide"  data-ride="carousel"  data-bind="attr:{id: 'this-carousel-id-'+$data.id()}">
+      
+	  <div class="carousel-inner" role="listbox">
+        <div class="article-carousel article-carousel--cases">
+          <div class="article-carousel__slides" role="toolbar">
+           
+            <div class=" slick-slide">
+              <div  data-bind="html: $data.user().currentOrganization().home_page_banner" class="dummy-class">                        
+              </div>
+             
+            </div>  
+          
+          </div>
+          <div class="article-carousel__controls">
+            <div class="arrows hidden-xs">    
+              <button type="button" class="btn--clear prev icon-point slick-prev slick-arrow" style="display: inline-block;"></button>
+              <button type="button" class="btn--clear next icon-point slick-next slick-arrow" style="display: inline-block;"></button>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>
+
+      <!--        <div class="slide-text">-->
+      <!--            <div data-bind = "widgetLocaleText:'BannerTitle'" class="heroBannerContent"></div>-->
+      <!--            <div data-bind = "widgetLocaleText:'BannerDetail'" class="bannerdetail-content"></div>-->
+      <!--            <p class="banner-subdetails">World’s first FDA-cleared laser treatment for non-invasive body and submental contouring.</p>-->
+      <!--            <div class="seeMore">-->
+				  <!--<button class="learnMoreBtn" data-bind = "widgetLocaleText:'BannerExplanation'"> </button>   -->
+				  <!--  </div>-->
+      <!--        </div> -->

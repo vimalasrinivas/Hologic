@@ -1,0 +1,100 @@
+#productAddToSpaceWidget_v2-wi200022 {
+/* productAddToSpace styles */
+#SWM-productAddToSpaceWidget {
+	
+  .swm-add-to-space-input {
+	  margin-bottom: 12px
+	}
+	
+	#SWM-space-selector  {
+	  optgroup {
+	    padding-bottom: 4px;
+	    padding-top: 4px;
+	    padding-left: 4px;  
+	  }
+	}
+	
+	#SWM-product-add-to-space-header {
+	  display: inline;
+	}
+	
+	.swm-modal-footer-remove-top-padding {
+	  border-top: 0;
+	  padding: 0 20px 20px;  
+	}
+	
+	.swm-privacy-settings {
+    margin-top: 20px;
+    input[type="radio"] {
+      vertical-align: top;
+    }
+    label {
+      font-weight: normal;
+      margin-left: 0px;
+    }
+  }
+	
+	// ----------------------------------------------------------------------------
+	// ** FONT-AWESOME MIXIN **
+	// 
+	// Mixin to insert FA icons via css rather than in the dom.
+	// Use case: Icons with a text label, using fa icons will insert icons with an empty i tag and span tag with text as the label, which is not ideal for Accessibility. 
+	//    Use this mixin to resolve this case. In the dom you can just insert a span tag with text and the class utilizing this mixin
+	// USAGE: In your custom class, reference .swm-fa-icon-mixin() followed by content : "font-awesome-code", see font-awesome variables.less for reference.
+	// ----------------------------------------------------------------------------
+	.swm-fa-icon-mixin() {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    color: #a0a0a0;
+    vertical-align: bottom;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;  
+  }
+  
+  // --- Private icons
+  .swm-space-private:before {
+    .swm-fa-icon-mixin();
+    content: "\f023";
+  }
+  .swm-space-private-form-label:after {
+    .swm-fa-icon-mixin();
+    vertical-align: middle;
+    content: "\f023";
+  }
+  
+  // --- Shared icons
+  .swm-space-shared:before {
+    .swm-fa-icon-mixin();
+    content: "\f09c";
+  }
+  .swm-space-shared-form-label:after {
+    .swm-fa-icon-mixin();
+    vertical-align: middle;
+    content: "\f09c";
+  }
+  
+  // --- Group icons
+  .swm-space-group:before {
+    .swm-fa-icon-mixin();
+    content: "\f0c0";
+  }
+  .swm-space-group-form-label:after {
+    .swm-fa-icon-mixin();
+    vertical-align: middle;
+    content: "\f0c0";
+  }
+	.swm-space-fa-label-align { 
+	  vertical-align: middle;
+	  line-height: normal;
+	  margin-bottom: 15px;  
+	}
+
+  /* custom class to modify default bootstrap modal-body */
+  .swm-modal-body-scroll {
+   overflow-y: auto;
+  }
+}
+}

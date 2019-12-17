@@ -1,0 +1,30 @@
+<div class='product-wrapper'>
+    <div class='all-product-categories container'>
+        <h5 class='title'>All Product Categories</h5>
+        <div class='row'>
+            <!-- ko foreach : productData -->
+            <div class="col-sm-3 col-xs-12 marg">
+                <div class='item-wrapper'>
+                    <div class='item-image'>
+                        <a href="/" data-bind="ccLink:{route : $data.navigationState}">    
+                            <img data-bind="ccResizeImage: {
+    						     source: 'file/products/Picosure.png',
+    							 medium: '300,500',
+    							 large: '300,500',
+    							 alt: 'bucketsImage',
+    							 title:'bucketsImage',
+    							 errorSrc:'images/noImage.png',
+    							errorAlt:'No Image Found'}" id="bucketsImage" alt="bucketsImage" title="bucketsImage" class="img-responsive">
+
+                        </a>
+                    </div>
+
+                    <div class='item-displayName'>
+                        <a href="/" class='displayName' data-bind="ccLink:{route : $data.navigationState}"><span data-bind='text:$data.name'></span></a>     
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+        </div>
+    </div>
+</div>

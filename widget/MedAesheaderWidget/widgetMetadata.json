@@ -1,0 +1,32 @@
+{
+  "imports": [
+    "category"
+  ],
+  "translations": [
+    {
+      "name": "MedAesheaderWidget",
+      "language": "en"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "config": {
+    "displayMiniCart": true,
+    "giftItemImageURL": "/img/GWP_GiftWithPurchase.jpg",
+    "logoAltText": "Logo Alternative Text",
+    "logoImage": "/img/logo.png",
+    "logoPageLink": "home",
+    "miniCartDuration": "5",
+    "miniCartNumberOfItems": "3",
+    "requiredLinks": [
+      "home",
+      "aboutUs",
+      "returns",
+      "shipping",
+      "contactUs",
+      "privacy"
+    ]
+  }
+}

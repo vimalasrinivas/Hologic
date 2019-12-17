@@ -1,0 +1,134 @@
+#WIDGET_ID-WIDGET_INSTANCE_ID {
+/* -------------------------------------------------- */
+/*  Order Summary
+/* -------------------------------------------------- */
+
+.freightCalc{
+    color: #333333;
+    font-family: FlamaBook;   
+    font-size: 13px;      
+    letter-spacing: 0.5px;
+    line-height: 17px;   
+}
+#orderSummary {
+    padding-left: 30px;     
+  @media screen and (max-width:767px){               
+    margin-top: -3px;
+    padding-left:0px;            
+  }
+  .ordersummary {
+    min-height: 20px;           
+    padding: 12px 15px 22px;           
+    margin-bottom: 12px;
+    border: 1px solid #d6d0d0;
+    background-color: #d6d0d0;
+    margin-top: 79px; 
+    @media screen and (max-width:767px){
+        margin-bottom: 10px;
+        margin-top: 10px;
+    } 
+    h3 {
+         color: #292929;
+        font-family: "Flama";
+        font-size: 16px;
+        letter-spacing: 1px;
+        line-height: 18px;  
+        text-transform: uppercase;  
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom:17px;  
+    }
+    .ordersumprice{
+        color: #333333;
+        font-family: FlamaBook;
+        font-size: 14px;
+        letter-spacing: 0.54px;
+        line-height: 16px;
+    }
+    .ordertotal{
+        color: #333333;
+        font-family: FlamaBook;
+        font-size: 14px;
+        letter-spacing: 0.54px;
+        line-height: 16px;
+      .ordertotalextax, .includingtaxtext {
+        font-size: @baseFontSize;
+        padding-bottom: 10px;
+      }
+      .no-right-padding {
+        padding-right: 0px;
+      }
+    }
+    .changeShipping{
+      margin-top: -6px;
+    }
+    .shippingOptions{
+      background-color: @grayLighter;
+      padding: 8px;
+      font-size: @fontSizeMini;
+      word-break: break-all;
+      legend {
+        font-size: @fontSizeLarge;
+        line-height: 1.6em;
+        margin-bottom:4px;
+        color: #6f6f6f;
+        white-space: normal;
+      }
+      label {
+        clear: both;
+      }
+    }
+  }
+  .salesTax, .shippingCost, .shippingDiscount, .shippingSurcharge {
+    margin-top:12px;
+  }
+  .paymentoptions, .checkout, .paypalCheckout{
+    margin: 0 0 24px 0;
+  }
+  .paymentoptions h3 {
+    font-size: @fontSizeLarge;
+  }
+  .paymentoptions a, .paymentimages, .paypalCheckout {
+     text-align:center;
+  }
+  .collapse {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: height 0.35s ease;
+       -moz-transition: height 0.35s ease;
+         -o-transition: height 0.35s ease;
+            transition: height 0.35s ease;
+  }
+  .collapse.in {
+    height: auto;
+  }
+  #CC-orderSummary-checkout {
+      @media screen and (max-width:767px){  
+          padding: 0px 15px;    
+      }
+    a {
+        background-color: #d87900;    
+        border: 0;      
+        padding: 10px 16px;
+        font-size: 18px;
+        line-height: 1.33;  
+        border-radius: 2px !important;    
+     //   border-radius: 3px;
+        margin-bottom: 12px; 
+      .btn-lg;  
+     // border-radius: @ButtonPrimaryBorderRadius;
+      span {
+            color: @ButtonPrimaryTextColor;   
+            font-family: "Flama";
+            letter-spacing: 0.46px;
+            line-height: 16px;  
+            text-transform: uppercase;
+            font-size: 13px;
+            text-align: center;
+      }
+    }
+  }
+}
+
+}

@@ -1,0 +1,13 @@
+{
+  "resources": {
+    "addToCartFailedError": "Add To Cart Failed !",
+    "priceNotAvailableForAddToCart": "The product/sku __productName__ could not be added to the cart as its pricing information is not available.",
+    "addFromCatalogText": "Add from Catalog",
+    "invalidProductForAddToCart": "Sku is not available in product.",
+    "itemOutOfStockMessage": "Selected item is out of stock",
+    "outOfStockMessage": "Item __skuID__ is Out Of Stock",
+    "orderItemsText": "Order Items",
+    "errorHeader": "Error",
+    "productDetailsErrorText": "Product details cannot be retrieved."
+  }
+}

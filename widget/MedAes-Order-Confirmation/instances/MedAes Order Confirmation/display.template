@@ -1,0 +1,96 @@
+<div id="MedAes-Order-Confirmation" class="row">
+    <div class="row order-Successful">    
+        <h3 data-bind = "widgetLocaleText:'orderConfirmationText'"></h3>
+    </div>
+     <!-- ko with:confirmation --> 
+    <div class="row confirmation-Email">
+        <span data-bind = "widgetLocaleText:'orderConfirmationMailText'"> </span>
+        <span data-bind= "text: $parent.displayEBSOrderNumber, visible:  $parent.showOrderNumber()"></span>
+        <span><i class="zmdi zmdi-rotate-right zmdi-hc-spin" data-bind="visible: !$parent.showOrderNumber()"></i></span>
+    </div>
+    <div class="row marg0">   
+        <div class="col-md-6 col-sm-6 shipping-Address">
+         <div class="border">   
+           <h3 data-bind = "widgetLocaleText:'shippingTitleText'"></h3> 
+           <p data-bind= "text:shippingAddress.address1"></p>
+           <p data-bind= "text:shippingAddress.address2"></p>
+           <span data-bind= "text:shippingAddress.city"></span>,<span data-bind= "text:shippingAddress.state"></span>
+           <p  data-bind= "text:shippingAddress.postalCode"></p>
+           <p data-bind= "text:shippingAddress.country"></p>  
+           <p class="phone-No" data-bind= "text:shippingAddress['ebs_phoneNumber']"></p>    
+           <p data-bind="text:shippingGroup.shippingMethodDescription"><i class="zmdi zmdi-help-outline tooltip">
+                        <span class="tooltiptext">The estimated delivery dates provided are tentative and subject to the terms of the shipping provider.</span>
+                     </i></p>
+          </div>  
+        </div>
+        <div class="col-md-5 col-sm-5  payment-Details">   
+         <div class="border">
+           <h3 data-bind = "widgetLocaleText:'paymentTitleText'"></h3>    
+           <p data-bind= "text:billingAddress.address1"></p>
+           <p data-bind= "text:billingAddress.address2"></p>    
+           <span data-bind= "text:billingAddress.city"></span>,<span data-bind= "text:billingAddress.state"></span>      
+           <p  data-bind= "text:billingAddress.postalCode"></p>
+           <p data-bind= "text:billingAddress.country"></p>
+      <!-- ko if : payments -->
+         <!-- ko foreach:payments -->
+            <!-- ko if : $data.hasOwnProperty('cardNumber') -->
+                <p class="cardNumberEnding">
+                    <!-- ko if : cardNumber -->
+                   <span  data-bind= "text:cardType" ></span>      
+                   <span>ending</span>   
+                   <span  data-bind= "text:$parents[1].appendCardNumber" ></span>  
+                   <!-- /ko -->
+                </p> 
+             <!-- /ko --> 
+             <!-- ko if : $data.hasOwnProperty('PONumber') -->
+            <p class="cardNumberEnding">   
+                <!-- ko if : PONumber -->
+               <span>PO Number:</span>   
+               <span  data-bind= "text:PONumber" ></span>  
+               <!-- /ko -->
+            </p>   
+         <!-- /ko -->
+          <!-- /ko -->   
+         <!-- /ko -->  
+         
+          </div> 
+        </div>
+    </div> 
+    <!-- /ko --> 
+    <div class="row marg0">    
+        <h3 data-bind = "widgetLocaleText:'cartSummaryTitleText'" class="cartSummaryTitle"></h3>          
+<!-- ko  foreach:productDescription -->   
+        <div class="col-md-11 col-sm-11 col-xs-12 cartSummary">  
+            <div class="col-md-8 col-xs-12 productDescription"> 
+                <img data-bind="ccResizeImage:{   
+    						     source:primaryThumbImageURL,
+    							 alt: 'product-image',
+    							 title:'product-image',
+    							 errorSrc:'/file/general/No Product Image.png',
+    							errorAlt:'No Image Found'}" >
+                <div class="details">
+        		    <span>
+            			<p data-bind = "text:brand" class="hide"></p>        
+                        <p  data-bind= "text:displayName"></p>
+                        <p>      
+                            <span>Item</span>         
+                            <span data-bind= "text:x_itemNumber"></span>
+                        </p>
+                        <p>
+                            <span  data-bind="currency: {price:price, currencyObj: $parent.cart().currency}"></span>   
+                        </p>
+        			</span>
+         	   </div>
+            </div>
+            <div class="col-md-2 col-xs-8 quantity">   
+                <p>Qty :</p>
+                <p data-bind= "text:quantity" class="quantityBox"></p>     
+            </div>
+            <div class="col-md-2 col-xs-4 listPrice">
+                
+                <span data-bind="currency: {price: price , currencyObj: $parent.cart().currency}" ></span>      
+            </div>  
+        </div>
+ <!-- /ko -->     
+    </div>   
+</div>

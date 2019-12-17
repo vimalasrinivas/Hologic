@@ -1,0 +1,39 @@
+<div class="row footer_Row footer_links"> 
+<div class="container pad0">              
+        <div class="col-sm-3 col-lg-2 logo-pad0">
+            <a href="/" data-bind="ccLink : $data, attr:{href: $data.translate('logoImageLinkUrl')}">
+                <img class="img-responsive logo-Width" alt="siteLogo" data-bind="ccResizeImage:{   
+    						     source: site().extensionSiteSettings.externalSiteSettings.siteLogoUrl,
+    							 alt: 'siteLogo',
+    							 title:'siteLogo',
+    							 errorSrc:'/file/general/No Product Image.png',
+    							errorAlt:'No Image Found'}" />
+            </a>
+        </div>    
+        <div class="col-sm-9 col-lg-6 footer_links">
+            <ul>  
+                <li>
+                    <a  data-bind="ccLink : $data, attr:{href: $data.translate('FAQLinkUrl')}"><span data-bind = "widgetLocaleText:'FAQLinkText'"></span></a>
+                </li>
+                <li>  
+                    <a href="https://customer.cynosure.com" target="_blank"><span data-bind = "widgetLocaleText:'ampsLinkText'"></span></a>
+                </li>
+                <li>
+                    <a  data-bind="ccLink : $data, attr:{href: $data.translate('termsAndConditionLinkUrl')}"><span data-bind = "widgetLocaleText:'termsAndConditionLinkText'"></span></a>
+                </li>
+                <li>
+                    <a  data-bind="ccLink : $data, attr:{href: $data.translate('privacyPolicyLinkUrl')}"><span data-bind = "widgetLocaleText:'privacyPolicyLinkText'"></span></a>
+                </li>
+                <li>
+                    <a  data-bind="ccLink : $data, attr:{href: $data.translate('supplyChainActLinkUrl')}"><span data-bind = "widgetLocaleText:'supplyChainActLinkText'"></span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-12 col-lg-4 copyright-Wrap">
+            <span data-bind = "widgetLocaleText:'copyrightStatementText'"></span>    
+            <span data-bind = "widgetLocaleText:'allRightsReservedText'"></span>   
+        </div>
+    </div>  
+</div>
+
+ 

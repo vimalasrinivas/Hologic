@@ -1,0 +1,84 @@
+{
+  "widgetDescriptorName": "recommendations",
+  "properties": [
+    {
+      "defaultValue": "12",
+      "name": "numRecs",
+      "pattern": "^[0-9]\\d*$",
+      "id": "numRecs",
+      "helpTextResourceId": "numRecsHelpText",
+      "labelResourceId": "numRecsLabel",
+      "type": "stringType",
+      "required": true
+    },
+    {
+      "defaultValue": "Blended",
+      "name": "strategy",
+      "options": [
+        {
+          "id": "strategyBlended",
+          "labelResourceId": "strategyBlendedLabel",
+          "value": "Blended"
+        },
+        {
+          "id": "strategyTopSellers",
+          "labelResourceId": "strategyTopSellersLabel",
+          "value": "Top Sellers"
+        },
+        {
+          "id": "strategyPurchasedTogether",
+          "labelResourceId": "strategyPurchasedTogetherLabel",
+          "value": "Purchased Together"
+        },
+        {
+          "id": "strategyBrowsedTogether",
+          "labelResourceId": "strategyBrowsedTogetherLabel",
+          "value": "Browsed Together"
+        },
+        {
+          "id": "mostRecentlyViewed",
+          "labelResourceId": "strategyMostRecentlyViewedLabel",
+          "value": "Most Recently Viewed"
+        }
+      ],
+      "id": "strategy",
+      "helpTextResourceId": "strategyHelpText",
+      "labelResourceId": "strategyLabel",
+      "type": "optionType",
+      "required": true
+    },
+    {
+      "defaultValue": "Unrestricted",
+      "name": "restriction",
+      "options": [
+        {
+          "id": "restrictionUnrestricted",
+          "labelResourceId": "restrictionUnrestrictedLabel",
+          "value": "Unrestricted"
+        },
+        {
+          "id": "restrictionInCollection",
+          "labelResourceId": "restrictionInCollectionLabel",
+          "value": "In Collection"
+        },
+        {
+          "id": "restrictionInBrand",
+          "labelResourceId": "restrictionInBrandLabel",
+          "value": "In Brand"
+        }
+      ],
+      "id": "restriction",
+      "helpTextResourceId": "restrictionHelpText",
+      "labelResourceId": "restrictionLabel",
+      "type": "optionType",
+      "required": true
+    },
+    {
+      "name": "collections",
+      "id": "collections",
+      "helpTextResourceId": "collectionsHelpText",
+      "labelResourceId": "collectionsLabel",
+      "type": "stringType"
+    }
+  ]
+}

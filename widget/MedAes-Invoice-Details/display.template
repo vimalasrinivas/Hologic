@@ -1,0 +1,381 @@
+<div class="row" id="MedAes-Order-Details">
+<div class="container">
+    <div class="row order-Details">
+        <h3>Order Details</h3>
+    </div>
+<!-- ko with:orderDetails -->    
+    <div class="row order-Status">
+        <span>Order #:</span>
+        <span data-bind="text:id"></span>
+        <span>| Ordered on: </span>
+        <span data-bind="text:orderDate"></span>
+        <span>| Status: </span>
+        <span data-bind="text:status"></span>
+        <a data-bind="click:function(data, event) {$parent.reorderProducts($data)}">REORDER</a>  
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 shipping-Address">
+            <div class="border">   
+               <h3>SHIPPING</h3> 
+        <!-- ko foreach:shippingGroups -->       
+               <p data-bind="text:shippingAddress.address1"></p>
+               <!--<p data-bind="text:shippingAddress.address2"></p>-->
+               <p>
+                   <span data-bind="text:shippingAddress.city"></span>,
+                   <span data-bind="text:shippingAddress.state"></span>
+               </p>
+               <p data-bind="text:shippingAddress.postalCode"></p>
+               <p data-bind="text:shippingAddress.country"></p>  
+               <p class="phone-No" data-bind="text:shippingAddress.phoneNumber"></p>
+        <!-- /ko -->             
+            </div>        
+        </div>
+        <div class="col-md-4 col-sm-4  col-xs-12 payment-Details">  
+           <div class="border">  
+               <h3>PAYMENT</h3> 
+            <!-- ko foreach:paymentGroups -->  
+               <p class="visa-CardNo" data-bind="text:card.maskedCCNumber"></p>   
+               <p  data-bind="text:billToAddress.address1"></p>
+               <p>
+                   <span data-bind="text:billToAddress.city"></span>,
+                   <span data-bind="text:billToAddress.state"></span>
+               </p>
+               <p  data-bind="text:billToAddress.postalCode"></p>  
+               <p  data-bind="text:billToAddress.country"></p>
+            <!-- /ko -->   
+            </div>   
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 shipping-Method">         
+            <div class="border">  
+                <h3>SHIPPING METHOD</h3>
+            <!-- ko foreach:shippingGroups -->    
+                <p class="visa-CardNo" data-bind="text:shippingMethod"></p>
+            <!-- /ko -->    
+                <h5>Shipping Notes</h5>
+                <p data-bind="text:shippingNotes"></p>
+            </div>        
+        </div>
+    </div>
+    
+    <div class="row">
+    <!-- ko if:$parent.cancelledSummary() == false  -->   
+        <div class="row order-Line-Details">   
+            <p>ORDER LINE DETAILS <span> (Select multiple products to add to cart/cancel)</span></p>
+        </div>         
+        <table class="table">
+        <thead>
+          <tr>
+            <th>
+                <label class="squarebox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+            </th>  
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Unit Price</th>
+            <th>Subtotal</th>
+            <th class="hidden-xs">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- ko foreach:orderItems -->    
+          <tr>
+            <td>
+                <label class="squarebox">
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+            </td>
+            <td class="productDetails col-md-6">
+                <span>
+                    <img data-bind="attr:{src: primaryFullImageURL}">
+                </span>
+                <span class="details">
+                    <p data-bind="text:brand"></p>
+                    <p data-bind="text:productDisplayName"></p>     
+                    <p>
+                        <span>Item</span>
+                        <span data-bind="text:productId"></span>
+                    </p>
+                    <p>
+                        <span>$</span>
+                        <span data-bind="text:listPrice"></span>
+                    </p>
+                </span>
+            </td>
+            <td data-bind="text:quantity" class="col-md-1"></td>
+            <td class="col-md-3">
+                <span>$</span>
+                <span data-bind="text:listPrice"></span>
+            </td>
+            <td class="col-md-1">
+                <span>$</span>
+                <span data-bind="text:listPrice"></span>
+            </td>       
+            <td class="hidden-xs col-md-2">
+                <a data-bind="click : function(event,data) { $parents[1].addToCart($data) } ">Add to Cart</a> 
+                <a data-toggle="modal" data-target="#myModal" data-bind="event:{click: function(data,event){$parents[1].cancelItemDetails($data)}}">Cancel</a>
+                 <!-- Modal -->   
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content" >
+                        <div class="modal-header">  
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>       
+                          <h4 class="modal-title">CANCELLATION REASON IS OPTIONAL</h4>       
+                        </div>
+                        <div class="modal-body">
+                          <select data-bind="options:$parents[1].optionValues,
+                          value:$parents[1].cancellationComments,
+                          optionsCaption: 'Cancellation reason', 
+                          event: {change : function(data,event){  $parents[1].updateCancellationReason(data,event)  }}"></select> 
+                        <!-- ko if:$parents[1].cancellationReason()== "Other" -->   
+                          <textarea rows="4" cols="62" maxlength="250" data-bind="validatableValue:$parents[1].cancellationComments"></textarea>   
+                          <span data-bind="validationMessage:$parents[1].cancellationComments" role="alert" class="text-danger" ></span> 
+                        <!-- /ko -->  
+                        </div>  
+                        <div class="modal-footer">
+                          <button type="button"  class="btn btn-default"  data-bind="event:{click: function(data,event){$parents[1].submitButton($data)}}">Submit</button>   
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>    
+                        </div>
+                      </div>
+                      
+                    </div>    
+                  </div>
+  
+            </td>   
+          </tr>
+        <!-- /ko -->  
+        </tbody>
+       </table>
+        <div>
+            <div class="visible-xs col-xs-12 order-Summary">     
+                 <!-- ko with:orderSummary -->    
+                <p>ORDER SUMMARY</p>
+                <p>Subtotal: <span data-bind="text:subTotal"></span><span>$</span></p>   
+                <p>Freight:<span data-bind="text:shipping"></span><span>$</span></p>
+                <p>Tax:<span data-bind="text:tax"></span><span>$</span></p>
+                <p>Order Total:<span data-bind="text:total"></span><span>$</span></p>
+                <!-- /ko -->         
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-12 orderStatus-StaticContent">
+                <p><strong>•</strong> All orders are viewable in the Order Status section regardless of how placed.</p>
+                <p><strong>•</strong>	To ensure you receive your items as quickly as possible, orders for in-stock items are immediately sent to our
+                distribution center for shipping.Please check Order Status Actions column to see if cancellation is possible.</p>
+                <p><strong>•</strong>	Orders placed for in-stock items before 3pm Eastern Time will ship the same day.
+                Orders placed after 3pm Eastern Time will ship the following business day.</p>
+            </div>
+            <div class="col-md-4 col-sm-4 hidden-xs order-Summary">
+            <!-- ko with:orderSummary -->    
+                <p>ORDER SUMMARY</p>
+                <p>Subtotal: <span data-bind="text:subTotal"></span><span>$</span></p>   
+                <p>Freight:<span data-bind="text:shipping"></span><span>$</span></p>
+                <p>Tax:<span data-bind="text:tax"></span><span>$</span></p>
+                <p>Order Total:<span data-bind="text:total"></span><span>$</span></p>
+            <!-- /ko -->    
+            </div>   
+        </div>
+    <!-- /ko -->   
+    <!--cancellation Orders Summary-->
+     <!-- ko if:$parent.cancelledSummary() == true  -->  
+     <div class="row cancellationOrdersSummary">
+        <h3>Cancellation Summary</h3>
+        <table class="table">
+        <thead>
+          <tr>
+            <!--<th>-->
+            <!--    <label class="squarebox">-->
+            <!--      <input type="checkbox">-->
+            <!--      <span class="checkmark"></span> -->
+            <!--    </label>-->
+            <!--</th>  -->
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Unit Price</th>
+            <th>Subtotal</th>
+            <!--<th class="hidden-xs">Actions</th>-->    
+          </tr>
+        </thead>
+        <tbody>
+        <!-- ko foreach:$parent.closedOrderSummary() -->    
+          <tr>
+            <!--<td>-->
+            <!--    <label class="squarebox">-->
+            <!--      <input type="checkbox">-->
+            <!--      <span class="checkmark"></span>-->
+            <!--    </label>-->
+            <!--</td>-->
+            <td class="productDetails col-md-5">
+                <span>
+                    <img data-bind="attr:{src: primaryFullImageURL}">
+                </span>
+                <span class="details">
+                    <p data-bind="text:brand"></p>
+                    <p data-bind="text:productDisplayName"></p>     
+                    <p>
+                        <span>Item</span>
+                        <span data-bind="text:productId"></span>
+                    </p>
+                    <p>
+                        <span>$</span>
+                        <span data-bind="text:listPrice"></span>
+                    </p>
+                </span>
+            </td>
+            <td data-bind="text:quantity" class="col-md-1"></td>
+            <td class="col-md-3">
+                <span>$</span>
+                <span data-bind="text:listPrice"></span>
+            </td>
+            <td class="col-md-1">
+                <span>$</span>
+                <span data-bind="text:listPrice"></span>
+            </td>       
+            <!--<td class="hidden-xs col-md-2">-->
+            <!--    <a data-bind="click : function(event,data) { $parents[1].addToCart($data) } ">Add to Cart</a> -->
+            <!--    <a data-toggle="modal" data-target="#myModal">Cancel</a>-->
+                 <!-- Modal -->
+            <!--      <div class="modal fade" id="myModal" role="dialog">-->
+            <!--        <div class="modal-dialog">-->
+                    
+                      <!-- Modal content-->
+            <!--          <div class="modal-content">-->
+            <!--            <div class="modal-header">  -->
+            <!--              <button type="button" class="close" data-dismiss="modal">&times;</button>   -->
+            <!--              <h4 class="modal-title">CANCELLATION REASON IS OPTIONAL</h4>       -->
+            <!--            </div>-->
+            <!--            <div class="modal-body">-->
+            <!--              <select data-bind="options:$parents[1].optionValues,value:$parents[1].cancellationReason, optionsCaption: 'Cancellation reason', event: {change : function(data,event){  $parents[1].updateCancellationReason(data,event)  }}"></select> -->
+                        <!-- ko if:$parents[1].cancellationReason()== "Other" -->   
+            <!--              <textarea rows="4" cols="62"></textarea>   -->
+                        <!-- /ko -->  
+            <!--            </div>-->
+            <!--            <div class="modal-footer">-->
+            <!--              <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>   -->
+            <!--            </div>-->
+            <!--          </div>-->
+                      
+            <!--        </div>-->
+            <!--      </div>-->
+  
+            <!--</td>   -->
+          </tr>
+        <!-- /ko -->  
+        </tbody>
+       </table>
+        <h3>Other Products in the order</h3>
+        <table class="table">
+        <thead>
+          <tr>
+            <!--<th>-->
+            <!--    <label class="squarebox">-->
+            <!--      <input type="checkbox">-->
+            <!--      <span class="checkmark"></span> -->
+            <!--    </label>-->
+            <!--</th>  -->
+            <th>Product</th>
+            <th>Qty</th>
+            <th>Unit Price</th>
+            <th>Subtotal</th>
+            <th class="hidden-xs">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- ko foreach:$parent.openOrderSummary() -->    
+          <tr>
+            <!--<td>-->
+            <!--    <label class="squarebox">-->
+            <!--      <input type="checkbox">-->
+            <!--      <span class="checkmark"></span>-->
+            <!--    </label>-->
+            <!--</td>-->
+            <td class="productDetails col-md-5">
+                <span>
+                    <img data-bind="attr:{src: primaryFullImageURL}">
+                </span>
+                <span class="details">
+                    <p data-bind="text:brand"></p>
+                    <p data-bind="text:productDisplayName"></p>     
+                    <p>
+                        <span>Item</span>
+                        <span data-bind="text:productId"></span>
+                    </p>
+                    <p>
+                        <span>$</span>
+                        <span data-bind="text:listPrice"></span>
+                    </p>
+                </span>
+            </td>
+            <td data-bind="text:quantity" class="col-md-1"></td>
+            <td class="col-md-3">
+                <span>$</span>
+                <span data-bind="text:listPrice"></span>
+            </td>
+            <td class="col-md-1">
+                <span>$</span>
+                <span data-bind="text:listPrice"></span>
+            </td>       
+            <!--<td class="hidden-xs col-md-2">-->
+            <!--    <a data-bind="click : function(event,data) { $parents[1].addToCart($data) } ">Add to Cart</a> -->
+            <!--    <a data-toggle="modal" data-target="#myModal">Cancel</a>-->
+                 <!-- Modal -->
+            <!--      <div class="modal fade" id="myModal" role="dialog">-->
+            <!--        <div class="modal-dialog">-->
+                    
+                      <!-- Modal content-->
+            <!--          <div class="modal-content">-->
+            <!--            <div class="modal-header">  -->
+            <!--              <button type="button" class="close" data-dismiss="modal">&times;</button>   -->
+            <!--              <h4 class="modal-title">CANCELLATION REASON IS OPTIONAL</h4>       -->
+            <!--            </div>-->
+            <!--            <div class="modal-body">-->
+            <!--              <select data-bind="options:$parents[1].optionValues,value:$parents[1].cancellationReason, optionsCaption: 'Cancellation reason', event: {change : function(data,event){  $parents[1].updateCancellationReason(data,event)  }}"></select> -->
+                        <!-- ko if:$parents[1].cancellationReason()== "Other" -->   
+            <!--              <textarea rows="4" cols="62"></textarea>   -->
+                        <!-- /ko -->  
+            <!--            </div>-->
+            <!--            <div class="modal-footer">-->
+            <!--              <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>   -->
+            <!--            </div>-->
+            <!--          </div>-->
+                      
+            <!--        </div>-->
+            <!--      </div>-->
+  
+            <!--</td>   -->
+          </tr>
+        <!-- /ko -->  
+        </tbody>
+       </table>
+       <div class="row">
+        <div class="visible-xs col-xs-12 order-Summary">
+             <!-- ko with:orderSummary -->    
+            <p>ORDER SUMMARY</p>
+            <p>Subtotal: <span data-bind="text:subTotal"></span><span>$</span></p>   
+            <p>Freight:<span data-bind="text:shipping"></span><span>$</span></p>
+            <p>Tax:<span data-bind="text:tax"></span><span>$</span></p>
+            <p>Order Total:<span data-bind="text:total"></span><span>$</span></p>
+            <!-- /ko -->         
+        </div>
+        <div class="col-md-4 col-sm-4 hidden-xs order-Summary">
+        <!-- ko with:orderSummary -->    
+            <p>ORDER SUMMARY</p>
+            <p>Subtotal: <span data-bind="text:subTotal"></span><span>$</span></p>   
+            <p>Freight:<span data-bind="text:shipping"></span><span>$</span></p>
+            <p>Tax:<span data-bind="text:tax"></span><span>$</span></p>
+            <p>Order Total:<span data-bind="text:total"></span><span>$</span></p>
+        <!-- /ko -->    
+        </div>   
+    </div>
+    </div>
+     <!-- /ko -->
+    <!--cancellation Ends here-->
+    </div>
+    
+    
+ 
+    <!-- /ko -->
+</div>
+</div>

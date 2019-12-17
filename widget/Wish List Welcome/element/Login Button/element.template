@@ -1,0 +1,7 @@
+<!-- ko with: user -->
+  <span data-bind="visible: !$parent.space().showSpace() == true" class="swm-welcome-login">
+    <a href="#CC-headermodalpane" data-original-title="login" data-bind="click:$parent.clickLogin.bind($parent)" data-toggle="modal" data-backdrop="static">
+      <button class="btn cc-button-primary" data-bind="widgetLocaleText: 'buttonLogin'"></button>
+    </a>
+  </span>
+<!-- /ko -->

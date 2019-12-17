@@ -1,0 +1,8 @@
+{
+  "tag": "product-add-to-cart",
+  "source": 100,
+  "type": "fragment",
+  "title": "Add to Cart Button",
+  "widgetType": "productDetails",
+  "version": 14
+}

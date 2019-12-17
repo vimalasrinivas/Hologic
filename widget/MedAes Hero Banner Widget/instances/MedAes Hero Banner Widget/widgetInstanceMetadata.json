@@ -1,0 +1,45 @@
+{
+  "configuration": {
+    "ArticleImageDescription2": "",
+    "ArticleImageDescription1": "",
+    "ArticleImage4": {
+      "src": "",
+      "mediaName": ""
+    },
+    "ArticleImageDescription4": "",
+    "ArticleImage3": {
+      "src": "",
+      "mediaName": ""
+    },
+    "ArticleImageDescription3": "",
+    "ArticleImage2": {
+      "src": "",
+      "mediaName": ""
+    },
+    "ArticleImage1": {
+      "src": "",
+      "mediaName": ""
+    },
+    "ArticlesecondImageUrl2": "",
+    "ArticleThirdImageUrl3": "",
+    "bannerImage2": {
+      "src": "/file/v3389700094953829421/general/hologicBannerImage.png",
+      "mediaName": "/general/hologicBannerImage.png"
+    },
+    "ArticleFirstImageUrl1": "",
+    "bannerImage1": {
+      "src": "/file/v3389700094953829421/general/hologicBannerImage.png",
+      "mediaName": "/general/hologicBannerImage.png"
+    },
+    "ArticleFirstImageUrl4": "",
+    "bannerImage4": {
+      "src": "/file/v3389700094953829421/general/hologicBannerImage.png",
+      "mediaName": "/general/hologicBannerImage.png"
+    },
+    "bannerImage3": {
+      "src": "/file/v3389700094953829421/general/hologicBannerImage.png",
+      "mediaName": "/general/hologicBannerImage.png"
+    }
+  },
+  "displayName": "MedAes Hero Banner Widget"
+}

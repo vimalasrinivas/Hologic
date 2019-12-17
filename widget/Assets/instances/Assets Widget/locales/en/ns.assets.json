@@ -1,0 +1,25 @@
+{
+  "resources": {
+    "serviceAccountId": "Service Account Id",
+    "goToFirstPage": "Go to first page",
+    "goToNextPage": "Go to next page",
+    "product": "Product",
+    "quantity": "Quantity",
+    "displayName": "Display Name",
+    "dateModified": "Date Modified",
+    "detailsLink": "Service details link",
+    "goToLastPage": "Go to last page",
+    "services": "Services",
+    "dateAdded": "Date Added",
+    "assetTableSummary": "List of your services. Click the details link to see all details for a given service.",
+    "goToPreviousPage": "Go to previous page",
+    "price": "Price",
+    "goToPage": "Go to page",
+    "backToMyAccount": "<< Back to My Account",
+    "details": "Details",
+    "myAccount": "My Account",
+    "serviceId": "Service Id",
+    "noItemsToDisplay": "No items to display.",
+    "status": "Status"
+  }
+}

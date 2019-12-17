@@ -1,0 +1,197 @@
+<h3 class="label-hidden" role="alert" data-bind="widgetLocaleText: 'guidedNavigationHeader'"></h3>
+<!-- ko with : getPlpResultsData -->
+ <div class='product-result'>
+   <h4 class='categorName' data-bind='text:categoryName'></h4>
+  <span class='showResults' data-bind='text :showResult '> </span>
+  </div>
+  <!-- /ko -->
+  
+ <div class='visible-xs visible-sm row filter-btn-wrap' >
+     <div class="filter-btn-featured">
+         <select id="guided-product-listing-sortby" class="form-control" data-bind="event:{ change:handleCustomFeature}">
+             <option value="">Sort By : Featured</option>
+             <option value="">Sort By : Item Number</option>
+        </select>
+     </div>
+     <div class="filter-btn-guided">
+         <button class="filter-section" type="button" data-bind="click : function(event,data) { toggleFilterSection() }">Filters</button>
+     </div>
+</div> 
+<div id="CC-guidedNavigation-column"  aria-live="polite" aria-atomic="true"  data-bind="onRender:checkDeviceWidth()" >
+    <div class="storefront-sidenav row" >
+      <!--  ko with: guidedNavigationViewModel -->
+        <div id="CC-guidedNavigation-refinementCrumbSection" class=" well clearfix hide" aria-live="polite">
+          <div>
+          <div><label for="CC-guidedNavigation-refineByText">
+            <h4 tabindex="0" class="nav-header" id="CC-guidedNavigation-refineByText" data-bind="widgetLocaleText: 'refineByText'"></h4>
+          </label></div>
+            <!-- ko foreach: allRefinementCrumbs -->
+              <div class="row label label-default label-info">               
+                <span class="CC-guidedNavigation-refineByTextOption" data-bind="attr: {id: 'CC-guidedNavigation-refinementCrumbText-'+ $index()}">
+                  <!-- ko if: $parents[0].checkForRange($data) -->
+                    <!-- ko ifnot: $parents[0].checkIfUnboundRange($data) -->
+                      <span data-bind="currency: {price: $parents[1].guidedNavigationViewModel().getLowerBound($data), currencyObj: $parents[1].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true}"></span>
+                      <span>&nbsp;-&nbsp;</span>
+                      <span data-bind="currency: {price: $parents[1].guidedNavigationViewModel().getUpperBound($data), currencyObj: $parents[1].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true}"></span>
+                    <!-- /ko -->
+                    <!-- ko if: $parents[0].checkIfUnboundRange($data) -->
+                      <span data-bind="currency: {price: $parents[1].guidedNavigationViewModel().getLowerBound($data), currencyObj: $parents[1].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true}"></span>
+                      <span data-bind="text: $parents[1].guidedNavigationViewModel().getUpperBoundText($data)"></span>
+                    <!-- /ko -->
+                  <!-- /ko -->
+                  <!-- ko ifnot: $parents[0].checkForRange($data) -->
+                    <span data-bind="text: $parent.convertLabel($data)"></span>
+                  <!-- /ko -->
+                </span>
+                <button type="btn" data-bind="attr: {id: 'CC-guidedNavigation-refinementCrumbCloseButton-'+ $index(), 'aria-label': $data.label + ' Close'}, click: $parent.removeRefinement" class="close" >&times;</button>
+              </div>               
+            <!-- /ko -->
+            <!-- ko if: allRefinementCrumbs().length > 0 -->
+              <div>
+                <a class="clearAllRefinements pull-right" data-bind="attr: {id: 'CC-guidedNavigation-clearAllRefinementsLink'}, event: {click: clearAllRefinements}" href="#">
+                  <span data-bind="widgetLocaleText: 'clearAllRefinementsText'"></span>
+                </a>
+              </div>
+            <!-- /ko -->
+          </div>
+        </div>
+        
+        <div class="panel-group" id="CC-guidedNavigation-accordionSection" >
+            <div class="filterBox">filters</div>
+          <div class="panel panel-default">
+                     
+			<div class="panel-heading accordionHeading panelBorderTop">     
+                <h4 class='accordionTitle'><a class="panel-toggle nav-header accordionText" 
+                 data-toggle="collapse" data-bind="widgetLocaleText: 'brandText'" href="#CC-guidedNavigation-collapseList-brand" id="CC-guidedNavigation-dimensionHeader-brand"></a>   
+                   </h4>
+              </div>
+			  <div id="CC-guidedNavigation-collapseList-brand" class="panel-collapse collapse in">
+        <div class="panel-body">
+        <!-- ko if : $parent.catalogBrands().length > 0 && $parent.catalogBrands()[0].hasOwnProperty('selectedValue') -->
+                    <label class="sr-only" id="category-brand">state</label>
+					<select aria-required="true" class="form-control medAesInputBox col-md-12"
+                                      name="CC-brand" id="category-brand"
+                                      data-bind="optionsValue: 'navigationState',
+                                                 options: $parent.catalogBrands(), optionsText: 'label',value:$parent.brand,event:{change: function(data,event){ $parent.onBrandChange(event) },valueAllowUnset:true}">
+                              </select>
+        <!-- /ko -->
+				  </div>
+			  </div>
+		  </div>
+		    <div class="panel panel-default">
+			<div class="panel-heading accordionHeading">
+                <h4 class='accordionTitle'><a class="panel-toggle nav-header accordionText" 
+                 data-toggle="collapse" data-bind="widgetLocaleText: 'categoryText'" href="#CC-guidedNavigation-collapseList-bucket" id="CC-guidedNavigation-dimensionHeader-bucket"></a>   
+                   </h4>
+              </div>  
+			  <div id="CC-guidedNavigation-collapseList-bucket" class="panel-collapse collapse in">
+				<div class="panel-body">
+				<ul class="nav nav-list">
+				<!-- ko foreach: $parent.catalogBuckets() -->
+					<label class="checkbox checkbox-primary control-primary">
+            <input type="checkbox"   
+            data-bind="attr: {id: 'CC-guidedNavigation-refinementCheckboxbucketValue-'+ $parentContext.$index() + '_' + $index()}, checked: $data.checkedValue" class="account-buckets">
+						<span class="control-indicator"></span>
+					   <label data-bind="attr: {for: 'CC-guidedNavigation-refinementCheckboxbucketValue-'+ $parentContext.$index() + '_' + $index()}">
+							<span data-bind="text: $data.label"></span>
+						</label>
+					</label>
+				<!-- /ko -->
+				</ul>
+				</div>
+			  </div>
+      </div>
+       <!-- ko if: $parent.guidedNavigationViewModel().displayWidget && $parent.displayRefineResults -->
+          <!-- ko foreach: dimensions.display -->
+            <div class="panel panel-default">
+                <!-- ko if: displayName !='Price Range' && displayName !='Category' && displayName !='Brand' && displayName !== 'Types' && displayName !== 'Buckets' -->
+              <div class="panel-heading accordionHeading">
+                <h4 class='accordionTitle'><a class="panel-toggle nav-header accordionText" 
+                 data-toggle="collapse" data-bind="attr: {id: 'CC-guidedNavigation-dimensionHeader-'+ $index(), href: '#CC-guidedNavigation-collapseList-'+ $index()}, text: displayName"></a>   
+                   </h4>
+              </div>
+               <!--/ko--> 
+              <div data-bind="attr: {id: 'CC-guidedNavigation-collapseList-'+ $index()}" class="panel-collapse collapse in">        
+                <!-- ko if : displayName !='Price Range' && displayName !='Category' && displayName != 'Brand' && displayName !== 'Types' && displayName !== 'Buckets' -->
+                <div class="panel-body" >          
+                  <!--<span data-bind="template: {name: $parents[1].templateAbsoluteUrl('/templates/RefinementList.template'), templateUrl: ''}" ></span>                            -->
+                  <!-- comment refinementList -->
+                    <ul class="nav nav-list">
+                      <!-- ko foreach: refinements.display -->
+                        
+                        <!-- ko if: ($parent.hasOwnProperty("multiSelect") && $parent.multiSelect === false) || (!$parent.hasOwnProperty("multiSelect") && $data.multiSelect === false) -->
+                          <li>
+                            <a data-bind="attr: {for: 'CC-guidedNavigation-refinementValue-' + $parentContext.$index() + '_' + $index()}, click: $data.clickRefinement" href="#">
+                              <!-- ko if: $parents[1].checkForRange($data) -->
+                                <!-- ko ifnot: $parents[1].checkIfUnboundRange($data) -->
+                                  <span data-bind="currency: {price: $parents[2].guidedNavigationViewModel().getLowerBound($data), currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true}"></span>
+                                  <span>&nbsp;-&nbsp;</span>
+                                  <span data-bind="currency: {price: $parents[2].guidedNavigationViewModel().getUpperBound($data), currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true}"></span>
+                                  &nbsp;(<span data-bind="text: $data.count"></span>)
+                                <!-- /ko -->
+                                <!-- ko if: $parents[1].checkIfUnboundRange($data) -->
+                                  <span data-bind="currency: {price: $parents[2].guidedNavigationViewModel().getLowerBound($data), currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true}"></span>
+                                  <span data-bind="text: $parents[2].guidedNavigationViewModel().getUpperBoundText($data)"></span>
+                                  &nbsp;(<span data-bind="text: $data.count"></span>)
+                                <!-- /ko -->
+                              <!-- /ko -->
+                              <!-- ko ifnot: $parents[1].checkForRange($data) -->
+                                <span data-bind="text: $data.refinementValue"></span>
+                              <!-- /ko -->
+                            </a>
+                          </li>
+                        <!-- /ko -->
+                      
+                        <!-- ko if: ($parent.hasOwnProperty("multiSelect") && $parent.multiSelect === true) || (!$parent.hasOwnProperty("multiSelect") && $data.multiSelect === true) -->
+                          <li>
+                            <label class="checkbox checkbox-primary control-primary">  
+                             <input type="checkbox" data-bind="attr: {id: 'CC-guidedNavigation-refinementCheckboxValue-'+ $parentContext.$index() + '_' + $index()}, checked: $data.checkedValue">
+                               <span class="control-indicator"></span>
+                               <label data-bind="attr: {for: 'CC-guidedNavigation-refinementCheckboxValue-'+ $parentContext.$index() + '_' + $index()}">  
+                                  <!-- ko if: $parents[1].checkForRange($data) -->
+                                    <!-- ko ifnot: $parents[1].checkIfUnboundRange($data) -->
+                                      <span data-bind="currency: {price: $parents[2].guidedNavigationViewModel().getLowerBound($data), currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true}"></span>
+                                      <span>&nbsp;-&nbsp;</span>
+                                      <span data-bind="currency: {price: $parents[2].guidedNavigationViewModel().getUpperBound($data), currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true}"></span>
+                                      &nbsp;(<span data-bind="text: $data.count"></span>)
+                                    <!-- /ko -->
+                                    <!-- ko if: $parents[1].checkIfUnboundRange($data) -->
+                                      <span data-bind="currency: {price: $parents[2].guidedNavigationViewModel().getLowerBound($data), currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true}"></span>
+                                      <span data-bind="text: $parents[2].guidedNavigationViewModel().getUpperBoundText($data)"></span>
+                                      &nbsp;(<span data-bind="text: $data.count"></span>)
+                                    <!-- /ko -->
+                                  <!-- /ko -->
+                                  <!-- ko ifnot: $parents[1].checkForRange($data) -->
+                                    <span data-bind="text: $data.refinementValue"></span>
+                                  <!-- /ko -->
+                              </label>
+                            </label>
+                          </li>
+                        <!-- /ko -->
+                      
+                      <!-- /ko -->
+                    </ul>               
+                    <!-- ko if: (refinements().length > $parent.maxRefinementCount) -->                   
+                      <span class="li-see-more-less">                
+                        <span class="sign" id="CC-guidedNavigation-plusOrMinusForRefinement" data-bind="widgetLocaleText: $data.refinements.showAll() ? 'minus' : 'plus'"></span>
+                        <a class="see-more-less" id="CC-guidedNavigation-seeMoreOrLessForRefinement" data-bind="widgetLocaleText: $data.refinements.showAll() ? 'seeLessText' : 'seeMoreText', click: $data.refinements.toggleShowAll" href="#"></a>                
+                      </span>
+                    <!-- /ko -->
+                </div>
+                 <!--/ko-->    
+              </div> 
+		   
+            </div>                           
+          <!-- /ko -->
+           <!-- /ko -->
+        </div>
+        
+        <!-- ko if: (dimensions().length > maxDimensionCount) -->   
+          <span class="li-see-more-less">      
+            <span class="sign" id="CC-guidedNavigation-plusOrMinusForDimension" data-bind="widgetLocaleText: dimensions.showAll() ? 'minus' : 'plus'"></span>                        
+            <a class="see-more-less" id="CC-guidedNavigation-seeMoreOrLessForDimension" data-bind="widgetLocaleText: dimensions.showAll() ? 'seeLessText' : 'seeMoreText', click: dimensions.toggleShowAll" href="#"></a>
+          </span>
+        <!-- /ko -->
+      <!-- /ko -->  
+    </div>   
+</div>

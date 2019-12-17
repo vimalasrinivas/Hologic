@@ -1,0 +1,81 @@
+<div id="quickOrderWidget"  data-bind="onRender: addEventHandlersForAnchorClickSetPopupId('#quickOrderWidget')" >
+      <div class = "row">
+         <div class = "col-md-12 col-lg-12 col-sm-12 items-to-left nopad">
+            <h2 data-bind="widgetLocaleText: 'quickOrderText'"></h2>
+            <h4 data-bind="widgetLocaleText: 'itemsText'"></h4>
+         </div>
+         <!--   <div class = "col-lg-1 col-md-1 col-sm-5" >-->
+         <!-- 	   <h4 class="element-at-right" data-bind="widgetLocaleText: 'quantityText'"></h4> -->
+         <!--</div>-->
+      </div>
+      <div data-bind="foreach: rowsToAddToCart()">
+         <div class = "row inputbox-row">
+            <div class = "col-md-4 col-sm-8 col-xs-4 productSearch-Row nopad">   
+               <div class= "right-inner-addon">
+                   <label class="sr-only" data-bind="attr: { 'for': 'quick-order-query-search-page'+$index()}">product</label>
+                  <input type="text"  aria-label="searchProduct" class="form-control quick-order-query" autocomplete="off" value= searchQuery
+                     data-bind="attr: { 'id': 'quick-order-query-search-page'+$index()}, widgetLocaleText: {attr: 'placeholder', value: 'searchPlaceholder'}, onRender: $parent.initializer.bind($parent,$element.id),
+                     value: productDisplay, event: { focus: $parent.searchSelected.bind($parent,$index(),$element.id), blur: $parent.afterBlur.bind($parent,$index()) }"/>  			
+                  <i class="glyphicon glyphicon-search"></i>
+               </div>    
+            </div>
+            <div class = " col-md-2 col-sm-4 col-xs-2 inputQty-pad">
+               <input type="text" aria-label="productQuantity" class=" form-control product-quantity-inputbox" maxlength="3" data-bind="attr: { 'id': 'product-quantity-page'+$index()}, value: productQuantity, event: { focus: $parent.lastRowCheck.bind($parent,$index())}">
+            </div>
+            <!-- ko if: $index() >= 1 -->  
+            <div class="col-md-5 col-sm-12 col-xs-5 remove-Entry-Row">
+               <i class="zmdi zmdi-minus-circle"></i>
+               <button  data-bind="click: function(data, event) {$parent.removeRow(data,$index(),event)}" class="remove-Entry">Remove Entry</button>        
+            </div>
+            <!-- /ko -->   
+            <div class="col-md-12 col-sm-12 col-xs-12">
+               <!-- ko ifnot: errorMessage() =="" -->
+               <span class="text-danger" data-bind="text: errorMessage(), attr: { 'id': 'error-message'+$index()}" role="alert"></span>
+               <!-- /ko -->		 
+               <span class="text-danger" data-bind="validationMessage: productQuantity,  attr: { 'id': 'quantity-error-message'+$index()}" role="alert"></span> 
+            </div>
+         </div>
+      </div>
+      <!-- CC-quickOrderModalPane -->
+      <div class="modal fade" id="CC-quickOrder-modal"
+         tabindex="-1" role="alert" data-bind="modalTabbingContraint">
+         <div class="modal-dialog" id="CC-quickOrder-modal-dialog">
+            <div class="modal-content" id="CC-quickOrderModalContent">
+               <div class="modal-header cc-quick-order-modal-heading cc-profile-confirm-icon" id="CC-quickOrder-modal-header">
+                  <button type="button" class="close" data-dismiss="modal" id="CC-quickOrder-modal-headerClose" aria-hidden="true">&times;</button>
+                  <h4 data-bind="widgetLocaleText:'updateCacelModalTitle'" id="CC-quickOrder-modal-headerText"></h4>
+               </div>
+               <div class="modal-body cc-profile-body-modal" id="CC-quickOrder-modal-modalBody">
+                  <p data-bind="widgetLocaleText:'updateCancelModalMessage'" align="center" id="CC-quickOrder-modal-bodyText"></p>
+               </div>
+               <div class="modal-footer cc-profile-modal-footer" id="CC-quickOrder-modal-footer">
+                  <button class="btn cc-button-secondary" id="CC-quickOrder-modal-cancel" data-bind="click: handleModalCancelUpdateDiscard">
+                  <span id="CC-quickOrder-modal-discard" data-bind="widgetLocaleText:'updateCancelModalClose'"></span>
+                  </button>
+                  <button class="btn cc-button-primary" id="CC-quickOrder-modal-submit"  data-bind="click: hideModal">
+                  <span id="CC-quickOrder-modal-save" data-bind="widgetLocaleText:'updateCancelModalCancel'"></span>
+                  </button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 items-to-left nopad addAnotherEntry">
+            <!--<button type="button" id="clear-all-button" class="btn" data-bind="click:clearAll">-->
+            <!--   <span data-bind = "widgetLocaleText:'clearAllText'"></span>-->
+            <!-- </button>       -->
+            <button type="button" class="btn add-New-Row" id="add-new-row" data-bind="click:createNewRow">
+            <span class="glyphicon glyphicon-plus"></span>
+            <span data-bind = "widgetLocaleText:'newRowText'"></span>
+            </button>
+         </div>
+         <div class="col-lg-12 col-md-12 col-sm-12 nopad"> 
+            <button type="button" id="addToCartButton" class="btn cc-button-primary element-at-right" data-bind="click:addToCart, disable:disableAddToCartButton">   
+            <span data-bind = "widgetLocaleText:'addItemsText'"></span>
+            </button>
+         </div>
+         <div class="col-md-12 col-sm-12 addToFavorites nopad">
+            <button class="btn-wishlist"   data-bind="enable: disableFavorites,click : function(event,data) {showPurChaseList($data) }"  >ADD TO FAVORITES</button>  
+         </div>
+      </div>
+</div>

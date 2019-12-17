@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAes-Order-Summary",
+  "version": 1,
+  "displayName": "MedAes-Order-Summary",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAes-Order-Summary",
+  "source": 101,
+  "javascript": "MedAes-Order-Summary"
+}

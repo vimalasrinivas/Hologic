@@ -1,0 +1,184 @@
+{
+  "availableToAllWidgets": true,
+  "children": [],
+  "configOptions": [],
+  "inline": false,
+  "tag": "MedAes_Purchase_List_Widget",
+  "translations": [
+    {
+      "description": "เพิ่มในลิสต์จัดซื้อ",
+      "language": "th",
+      "title": "เพิ่มในลิสต์จัดซื้อ"
+    },
+    {
+      "description": "Adicionar à Lista de Compras.",
+      "language": "pt_BR",
+      "title": "Adicionar à Lista de Compras"
+    },
+    {
+      "description": "添加到采购列表。",
+      "language": "zh_CN",
+      "title": "添加到采购列表"
+    },
+    {
+      "description": "Додайте до списку покупок.",
+      "language": "uk",
+      "title": "Додати до списку покупок"
+    },
+    {
+      "description": "Добавяне към Списък с покупки.",
+      "language": "bg",
+      "title": "Добавяне към Списък с покупки"
+    },
+    {
+      "description": "Lisa ostuloendisse.",
+      "language": "et",
+      "title": "Lisa ostuloendisse"
+    },
+    {
+      "description": "Pievienot iepirkumu sarakstam.",
+      "language": "lv",
+      "title": "Pievienot iepirkumu sarakstam"
+    },
+    {
+      "description": "Legg til i kjøpsliste.",
+      "language": "no",
+      "title": "Legg til i kjøpsliste"
+    },
+    {
+      "description": "Įtraukti į pirkinių sąrašą.",
+      "language": "lt",
+      "title": "Įtraukti į pirkinių sąrašą"
+    },
+    {
+      "description": "Ajouter à la liste d'achats.",
+      "language": "fr_CA",
+      "title": "Ajouter à la liste d'achats"
+    },
+    {
+      "description": "Adăugare în listă de achiziţii.",
+      "language": "ro",
+      "title": "Adăugare în listă de achiziţii"
+    },
+    {
+      "description": "購入リストに追加",
+      "language": "ja",
+      "title": "購入リストに追加"
+    },
+    {
+      "description": "Dodajanje na seznam nakupov.",
+      "language": "sl",
+      "title": "Dodajanje na seznam nakupov"
+    },
+    {
+      "description": "Добавить в список покупок.",
+      "language": "ru",
+      "title": "Добавить в список покупок"
+    },
+    {
+      "description": "Dodaj na popis za kupovinu.",
+      "language": "hr",
+      "title": "Dodaj na popis za kupovinu"
+    },
+    {
+      "description": "Satınalma Listesine Ekle.",
+      "language": "tr",
+      "title": "Satınalma Listesine Ekle"
+    },
+    {
+      "description": "Dodawanie do listy zakupów.",
+      "language": "pl",
+      "title": "Dodawanie do listy zakupów"
+    },
+    {
+      "description": "新增至採購清單。",
+      "language": "zh_TW",
+      "title": "新增至採購清單"
+    },
+    {
+      "description": "구매 목록에 추가.",
+      "language": "ko",
+      "title": "구매 목록에 추가"
+    },
+    {
+      "description": "Přidat do nákupního seznamu.",
+      "language": "cs",
+      "title": "Přidat do nákupního seznamu"
+    },
+    {
+      "description": "Hozzáadás a vásárlási listához.",
+      "language": "hu",
+      "title": "Hozzáadás a vásárlási listához"
+    },
+    {
+      "description": "Προσθήκη στη λίστα αγορών.",
+      "language": "el",
+      "title": "Προσθήκη στη λίστα αγορών"
+    },
+    {
+      "description": "Tilføj til indkøbsliste.",
+      "language": "da",
+      "title": "Tilføj til indkøbsliste"
+    },
+    {
+      "description": "Add to Purchase List.",
+      "language": "en",
+      "title": "Add to Purchase List"
+    },
+    {
+      "description": "Додај на листу за куповину.",
+      "language": "sr",
+      "title": "Додај на листу за куповину"
+    },
+    {
+      "description": "Zu Kaufliste hinzufügen.",
+      "language": "de",
+      "title": "Zu Kaufliste hinzufügen"
+    },
+    {
+      "description": "Dodaj na listu za kupovinu.",
+      "language": "sr_Latn",
+      "title": "Dodaj na listu za kupovinu"
+    },
+    {
+      "description": "Agregar a lista de compra.",
+      "language": "es",
+      "title": "Agregar a lista de compra"
+    },
+    {
+      "description": "Ajouter à la liste d'achats.",
+      "language": "fr",
+      "title": "Ajouter à la liste d'achats"
+    },
+    {
+      "description": "Aggiungi a elenco acquisti.",
+      "language": "it",
+      "title": "Aggiungi a elenco acquisti"
+    },
+    {
+      "description": "Add to Purchase List.",
+      "language": "en_GB",
+      "title": "Add to Purchase List"
+    },
+    {
+      "description": "Toevoegen aan inkooplijst.",
+      "language": "nl",
+      "title": "Toevoegen aan inkooplijst"
+    },
+    {
+      "description": "Lägg till i inköpslista.",
+      "language": "sv",
+      "title": "Lägg till i inköpslista"
+    },
+    {
+      "description": "Acrescentar à Lista de Compras.",
+      "language": "pt",
+      "title": "Acrescentar à Lista de Compras"
+    },
+    {
+      "description": "Lisää ostoluetteloon.",
+      "language": "fi",
+      "title": "Lisää ostoluetteloon"
+    }
+  ]
+}

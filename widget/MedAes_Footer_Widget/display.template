@@ -1,0 +1,21 @@
+<div class="row footer_Row footer_links">   
+    <div class="container">
+        <div class="col-sm-3 col-lg-2">
+            <a href="#">
+                <img class="img-responsive logo-Width" data-bind="attr:{src: site().extensionSiteSettings.externalSiteSettings.siteLogoUrl}" />
+            </a>
+        </div>
+        <div class="col-sm-9 col-lg-6 footer_links">
+            <ul>
+                 <li><a href="#"><span data-bind = "widgetLocaleText:'FAQLinkText'"></span></a></li>
+                 <li><a href="#"><span data-bind = "widgetLocaleText:'ampsLinkText'"></span></a></li>
+                 <li><a href="#"><span data-bind = "widgetLocaleText:'termsAndConditionLinkText'"></span></a></li>
+                 <li><a href="#"><span data-bind = "widgetLocaleText:'privacyPolicyLinkText'"></span></a></li>
+                 <li><a href="#"><span data-bind = "widgetLocaleText:'supplyChainActLinkText'"></span></a></li>
+              </ul>
+        </div>
+        <div class="col-sm-12 col-lg-4 copyright-Wrap">
+            <span data-bind = "widgetLocaleText:'copyrightStatementText'"></span>
+        </div>
+    </div>
+</div>

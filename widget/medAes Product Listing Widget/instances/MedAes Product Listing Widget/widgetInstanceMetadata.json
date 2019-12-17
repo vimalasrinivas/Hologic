@@ -1,0 +1,18 @@
+{
+  "configuration": {
+    "showListViewOption": true,
+    "viewModelCacheLimit": "3",
+    "showResultsPerPageOption": false,
+    "displayOptionsSection": "",
+    "isScrollEnabled": false,
+    "productsPerPage": "12",
+    "listType": "product",
+    "blockSize": "60",
+    "shouldUseStyleBased": false,
+    "webApplicationConfigSection": "",
+    "isViewModelCacheEnabled": true,
+    "fields": "",
+    "gridWidth": "4"
+  },
+  "displayName": "MedAes Product Listing Widget"
+}

@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesCustomAccountDetails",
+  "version": 3,
+  "displayName": "MedAesCustomAccountDetails",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAesCustomAccountDetails",
+  "source": 101,
+  "javascript": "MedAesCustomAccountDetails"
+}

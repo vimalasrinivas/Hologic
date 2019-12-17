@@ -1,0 +1,17 @@
+{
+  "resources": {
+    "FAQLinkText": "FAQs",
+    "ampsLinkText": "Amps",
+    "FAQLinkUrl": "/FAQ",
+    "termsAndConditionLinkText": "Terms and Conditions",
+    "copyrightStatementText": "©2019 Cynosure, A Hologic Company.",
+    "supplyChainActLinkUrl": "/california-supply-chain-act",
+    "ampsLinkUrl": "/customer.cynosure/login",
+    "supplyChainActLinkText": "California Supply Chain Act",
+    "allRightsReservedText": "All rights reserved.",
+    "privacyPolicyLinkUrl": "/privacy-policy",
+    "termsAndConditionLinkUrl": "/terms-of-use-agreement",
+    "privacyPolicyLinkText": "Privacy Policy",
+    "logoImageLinkUrl": "/home"
+  }
+}

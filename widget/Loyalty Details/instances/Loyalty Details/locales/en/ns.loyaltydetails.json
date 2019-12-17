@@ -1,0 +1,9 @@
+{
+  "resources": {
+    "loyaltyDetails": "Loyalty Details",
+    "membershipId": "Membership ID -",
+    "category": "Category -",
+    "totalPointsAccrued": "Total loyalty points accrued -",
+    "programId": "Program ID -"
+  }
+}

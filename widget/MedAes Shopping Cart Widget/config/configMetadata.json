@@ -1,0 +1,22 @@
+{
+  "widgetDescriptorName": "shoppingCartSummary",
+  "properties": [
+    {
+      "defaultValue": false,
+      "name": "isStorePickupEnabled",
+      "id": "isStorePickupEnabled",
+      "type": "booleanType",
+      "helpTextResourceId": "enableStorePickupHelpText",
+      "labelResourceId": "enableStorePickup"
+    },
+    {
+      "defaultValue": "10",
+      "name": "noOfStoresToDisplay",
+      "id": "noOfStoresToDisplay",
+      "type": "stringType",
+      "helpTextResourceId": "noOfStoresToDisplayHelpText",
+      "labelResourceId": "noOfStoresToDisplay",
+      "required": true
+    }
+  ]
+}

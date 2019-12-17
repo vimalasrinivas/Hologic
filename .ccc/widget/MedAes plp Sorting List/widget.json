@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesplpSortingList",
+  "version": 1,
+  "displayName": "MedAes plp Sorting List",
+  "elementized": false,
+  "global": true,
+  "i18nresources": "MedAesplpSortingList",
+  "source": 101,
+  "javascript": "MedAesplpSortingList"
+}

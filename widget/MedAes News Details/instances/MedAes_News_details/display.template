@@ -1,0 +1,35 @@
+<!--
+ /**
+  *
+  * News Details Widget Template
+  *  
+  */
+-->
+<!-- ko if: loaded -->
+<div class="templateRegion" id="cc-news-details" data-oc-id="cc-news-details">
+    <div class="row margi0" id="printable">
+      <!-- ko if: product -->
+      <div class="row bg-Color">
+        <div class=" pad0 container">
+          <div class="productDetails-Doc">
+            <div id="CC-view-news">
+              <button id="cc-viewnews-btn" class="cc-button-primary medaesAddtoCartBtn" data-bind="click:function(data,event){viewAllNews()}"> VIEW ALL NEWS
+              </button>
+            </div>
+            <div class="print-link">
+              <a href="javascript:window.print();">Print as PDF</a>
+            </div>
+            <h3 data-bind="text: product().displayName"></h3>
+            <div id="CC-newsDetails-description" data-bind="html: product().description"></div>
+            <div id="CC-newsDetails-date" data-bind="text: createdDate"></div>
+  
+            <!-- oc section: product-long-description -->
+            <div id="CC-prodDetails-longDescription" data-bind="html: product().longDescription"></div>
+            <!-- /oc -->
+          </div>
+        </div>
+  </div>
+        <!-- /ko -->
+      </div>
+    </div>
+  <!-- /ko -->

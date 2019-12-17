@@ -1,0 +1,27 @@
+{
+  "resources": {
+    "quoteInitiatedDateLable": "Quote Initiated Date",
+    "invalidQuoteNote": "Invalid Quote Notes",
+    "quoteNotesHeader": "Quote Notes",
+    "buttonSaveText": "Save",
+    "linkOrderQuoteNotesText": "Quote Notes",
+    "requestQuoteSuccess": "Quote successfully requested",
+    "rejectQuoteSuccess": "Quote successfully rejected",
+    "quoteRejectDateLable": "Quote Rejected Date",
+    "reRequestQuoteOrderSuccessMessage": "Quote has been requested successfully",
+    "quoteExpireDateLable": "Quote Expiry",
+    "buttonClearText": "Clear",
+    "invalidateOrderSuccessMessage": "Order Refreshed Successfully",
+    "quoteError": "System error with request for quote, reject quote or accept quote",
+    "quoteStatus": "Quote Status",
+    "buttonReRequestQuote": "Request Re-Quote",
+    "buttonAddNote": "Add Quote Note",
+    "addNewNotesModalHeaderText": "Add New Quote Note",
+    "rejectQuoteOrderSuccessMessage": "Quote has been rejected successfully.",
+    "buttonCancelText": "Cancel",
+    "closeText": "Close",
+    "notesHistoryHeader": "Notes History",
+    "buttonRejectQuote": "Reject Quote",
+    "buttonAcceptQuote": "Accept Quote"
+  }
+}

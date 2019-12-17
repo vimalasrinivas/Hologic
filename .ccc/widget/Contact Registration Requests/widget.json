@@ -1,0 +1,10 @@
+{
+  "widgetType": "contactRegistrationRequests",
+  "version": 2,
+  "displayName": "Contact Registration Requests",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAesContactRegistrationRequest",
+  "source": 101,
+  "javascript": "MedAesContactRegistrationRequest"
+}

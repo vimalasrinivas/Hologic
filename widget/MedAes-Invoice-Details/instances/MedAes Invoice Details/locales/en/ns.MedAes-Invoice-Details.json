@@ -1,0 +1,30 @@
+{
+  "resources": {
+    "freightText": "Freight:",
+    "subTotalText": "Subtotal:",
+    "viewOrderDetailsText": "View Order Details",
+    "subtotalTitleText": "Subtotal",
+    "paynowButtonText": "PAY NOW",
+    "priceTitleText": "Unit Price",
+    "invoiceTotalText": "Invoice Total:",
+    "dueDateText": "Due Date:",
+    "quantityTitleText": "Invoice Qty",
+    "productTitleText": "Product",
+    "shipToCustomerSectionText": "SHIP TO CUSTOMER",
+    "billToSectionText": "BILL TO",
+    "itemIdText": "Item",
+    "salesOrderText": "Sales Order #:",
+    "taxText": "Tax:",
+    "invoiceDateText": "| Invoice Date:",
+    "printButtonText": "PRINT",
+    "invoiceDetailsTitleText": "Invoice Details",
+    "otherDetailsSectionText": "OTHER DETAILS",
+    "invoiceLineDetailsText": "INVOICE LINE DETAILS",
+    "docText": "| Doc #:",
+    "invoiceSummaryTitleText": "INVOICE SUMMARY",
+    "dollarText": "$",
+    "refID/POText": "Ref ID/PO #: ",
+    "invoiceIdText": "Invoice #:",
+    "openBalanceText": "Open Balance Due: "
+  }
+}

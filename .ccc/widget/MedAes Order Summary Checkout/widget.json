@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesCheckoutOrderSummary",
+  "version": 1,
+  "displayName": "MedAes Order Summary Checkout",
+  "elementized": true,
+  "global": false,
+  "i18nresources": "medaes-checkout-order-summary",
+  "source": 101,
+  "javascript": "medaes-checkout-order-summary"
+}

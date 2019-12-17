@@ -1,0 +1,13 @@
+{
+  "resources": {
+    "cartColumnHeaderText": "Cart",
+    "B2BProfileType": "b2b_user",
+    "newCart": "New Cart",
+    "noSiteForAccountError": "Selected account does not have a valid contract in any of the sites.",
+    "selectCart": "Select Cart",
+    "accountText": "Account",
+    "siteText": "Site",
+    "delimiterText": ":",
+    "recentCart": "Recent Cart"
+  }
+}

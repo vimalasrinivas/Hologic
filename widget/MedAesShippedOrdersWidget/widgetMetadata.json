@@ -1,0 +1,17 @@
+{
+  "imports": [
+    "cart",
+    "order"
+  ],
+  "translations": [
+    {
+      "name": "MedAesShippedOrdersWidget",
+      "language": "en"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "config": {}
+}

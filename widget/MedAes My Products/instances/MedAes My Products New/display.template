@@ -1,0 +1,124 @@
+<div class="prod-container" data-bind="onRender: addCustomClass">
+    <div class="row">
+        <!-- ko foreach : productData() -->
+        <div class="row marg0">
+            <div class="col-md-4 col-sm-4">
+                <div class="imgplaceHolder">
+                    
+                     <img class="img-responsive" align="middle" data-bind="ccResizeImage: {
+                    	isSrcSetEnabled : true,      
+                    	source: 'file/products/Picosure.png' ,      
+                    	alt: 'shop Products',       
+                    	errorSrc:'/file/general/No Product Image.png',           
+                    	errorAlt:'No Image Found'}">      
+                    
+                    
+                </div>
+                <h5 data-bind="text:$data.name" class="brand-name"></h5>
+                <a data-bind="ccLink:{route : $data.navigationState},widgetLocaleText:'shopProdText'"
+                    class="shop-products" href="/"></a>
+            </div>
+            <div class="col-md-8 col-sm-8 carousel slide" data-ride="carousel">
+                
+                <h3 class="related-products">RELATED PRODUCTS</h3>
+                <!-- ko if: $data.products.length == 0  -->
+                <div class="norecord">
+                    No records found
+                </div>
+                <!-- /ko -->
+                <div class="carousel-inner-list" role="listbox">
+                    <div class="article-carousel article-carousel--cases">
+                        <div class="event-carousel__slides" role="toolbar" data-bind="attr:{id:'slick'+$index()}">
+                            <!-- ko foreach: products -->
+                            <div class="slick-slide">   
+                                <!-- ko foreach: $data.records -->
+                                <!-- ko with: $data.attributes-->  
+                                <div class="eventCarouselSlide">
+                                    
+                                    <!-- ko if : $data['product.primarySmallImageURL'][0] !='/img/no-image.jpg' -->
+                                    <div class="cc-item-image">
+                                        <a  data-bind="ccLink : $data, attr:{href:  $data['product.route'][0] }"  >
+                                            <img class="img-responsive center-block"
+                                            data-bind="imageSource: {src: $data['product.primarySmallImageURL'][0], imageType: 'small',
+                                            errorSrc: '/file/general/No Product Image.png',
+                                            errorAlt: 'Missing Product Image'
+                                            },   
+                                            attr: {id: 'cc-product-image-'+$data['product.repositoryId'][0], alt: $data['product.displayName'][0]}">
+                                        </a>
+                                        
+                                    </div>
+                                    <!-- /ko -->
+                                    
+                                    <!-- ko if : $data['product.primarySmallImageURL'][0] =='/img/no-image.jpg' -->
+                                    <div class="cc-item-image">
+                                        <a  data-bind="ccLink : $data, attr:{href:  $data['product.route'][0] }"  >
+                                            <img class="img-responsive center-block"
+                                            data-bind="imageSource: {src: '/file/general/No Product Image.png', imageType: 'small',
+                                            errorSrc: '/file/general/No Product Image.png',
+                                            errorAlt: 'Missing Product Image'
+                                            },   
+                                            attr: {id: 'cc-product-image-'+$data['product.repositoryId'][0], alt: $data['product.displayName'][0]}">
+                                        </a>
+                                        
+                                    </div>
+                                    <!-- /ko -->
+                                    
+                                    
+                                    <div class="cc-item-title">
+                                         <a  data-bind="ccLink : $data, attr:{href:  $data['product.route'][0] }"  >
+                                        <div data-bind="text:$data['product.displayName'][0]"></div>  
+                                          </a>
+                                    </div>  
+                                      <div class="cc-item-id">  
+                                        <span>Item </span><span data-bind="text:$data['product.x_itemNumber'][0]"></span>      
+                                    </div>      
+                                    <div class="cc-item-price"> 
+                                        <span class="cc-sale-price"
+                                            data-bind="currency: {price: $data.externalPrice, currencyObj: $parents[3].site().selectedPriceListGroup().currency, nullReplace : 'price Unavailable', prependNull: false},
+                                    attr: {id: 'CC-product-grid-sale-price-'+ $data['product.repositoryId'][0]+'-'+$parentContext.$index()+$index()}"></span>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 cc-add-to-cart nopad">
+                                        <div class="col-lg-9 col-md-8 col-sm-10  col-xs-10  btn-add-to-cart nopad">
+                                            <button class="medAesBtnPrimary visible-xs visible-sm" type="button"  
+                                                data-bind="click:function(data,event){$parents[3].addToCart($data)}">ADD
+                                                TO CART</button>  
+                                              <!-- Quick View -->
+                                                  <div data-bind="setContextVariable: {name:'product', value: $data}" class="quickViewElement">        
+                                                   <!-- ko with : $parents[3] --> 
+                                                        <div data-bind="element: 'product-quickview', attr: { id: 'product-quickview-grid-' + $parent.id()},onRender: $parents[4].setAddButtonText()"></div>       
+                                                   <!-- /ko -->        
+                                                   </div>
+                                                 <!-- Quick View -->    
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2 purchaseList"        
+                                            data-bind="click:function(data,event){$parents[3].addToFav($data)}">           
+                                            <i class="zmdi zmdi-favorite-outline btn-wishlist"></i>        
+                                        </div>  
+                                    </div>    
+  
+                                </div>  
+                                <!-- /ko -->
+                                <!-- /ko -->
+                            </div>
+                            <!-- /ko -->
+                        </div>
+                        <!-- ko if:$data.products.length > 2-->
+                        <div class="article-carousel__controls">
+                            <div class="arrows hidden-xs">
+                                <button type="button" class="btn--clear1 prev icon-point slick-prev slick-arrow"
+                                    style="display: inline-block;" data-bind="attr:{id:'slick-prev'+$index()}">   
+                                    <img class="left-Arrow" src="/file/general/icon1.png"></button>  
+                                <button type="button" class="btn--clear1 next icon-point slick-next slick-arrow"  
+                                    style="display: inline-block;" data-bind="attr:{id:'slick-next'+$index()}">   
+                                    <img src="/file/general/icon2.png" class="left-Arrow">
+                                </button>    
+                            </div>
+                        </div>  
+                        <!-- /ko -->
+                    </div>    
+                </div>
+            </div>
+        </div>  
+        <!-- /ko -->
+    </div>
+</div>

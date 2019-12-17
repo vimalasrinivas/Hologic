@@ -1,0 +1,6 @@
+{
+  "widgetType": "createOrderHeader",
+  "version": 1,
+  "displayName": "Header - Agent Create Order",
+  "elementized": true
+}

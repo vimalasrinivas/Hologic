@@ -1,0 +1,36 @@
+<div id="SWM-productAddToSpaceWidget"><!-- MODAL dialog for add to space pane -->
+<div class="modal fade" id="SWM-modalContainer" data-bind="modal: 0, modalTabbingContraint" role="link" >
+  <div class="modal-dialog cc-modal-dialog">
+    <div class="modal-content" id="SWM-modalPane">
+      <div class="modal-header">
+        <h3 id="SWM-product-add-to-space-header" data-bind="widgetLocaleText:'addToSpaceText'"></h3>
+        <button id="SWM-addToSpaceClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <label class="label-hidden" tabindex="0" id="CC-hiddenLabel" role="link">Add-to-Space-Hidden</label>
+      </div>
+      <div class="modal-body swm-modal-body-scroll"> 
+        <div class="form-group">
+          <label class="control-label" for="SWM-space-selector" data-bind="widgetLocaleText:'spaceSelectionText'"></label>
+          <div id="SWM-space-dropdown">
+            <select id="SWM-space-selector" class="form-control" data-bind="foreach: spaceOptionsArray, event: {change: onSpaceSelectionChange.bind($data) }">
+              <optgroup data-bind="attr: {label: label}, foreach: children">
+                <option data-bind="text: spaceNameAbbr, value: spaceid, option: $data, attr: {title: spaceNameFormatted}"></option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+        <div id="SWM-space-name-div" class="hide">
+          <span id="SWM-space-name-error" class="text-danger" data-bind="validationMessage:spaceName"></span>
+          <div class="swm-add-to-space-input form-group">
+            <p><label class="hidden control-label" for="SWM-addToSpace-name" data-bind="widgetLocaleText:'spaceNameText'"></label></p>
+            <div id="SWM-space-name">               <input data-bind="validatableValue:spaceName, event: { focus: createSpaceInputUnmodified, blur : createSpaceInputUnmodified }, focusBubble: false, blurBubble: false,  widgetLocaleText : {value:'spaceNameText', attr:'placeholder'}" id="SWM-addToSpace-name" class="form-control" type="text" maxlength="100"/>
+            </div>            <!-- Begin private/group/shared radio buttons -->            <div class="swm-privacy-settings">              <h4 data-bind="widgetLocaleText: 'privacySettingsLabel'"></h4>              <p data-bind="widgetLocaleText: 'privacySettingsDescription'"></p>              <div class="row">                <div class="col-xs-4 col-sm-3">                  <input type="radio" name="addAccessLevelGroup" id="SWM-addAccessLevelGroupPrivate" value="0" data-bind="checked : $data.newSpaceAccessLevel"/>                   <label class="swm-space-private-form-label" data-bind="text: $data.translate('spaceAccessPrivateIconTxt') + ' '" for="SWM-addAccessLevelGroupPrivate"></label>                </div>                <div class="col-xs-8 col-xs-pull-1 col-sm-9 col-sm-pull-1">                  <span data-bind="widgetLocaleText: 'privacyPrivateLabel'"></span>                </div>              </div>              <div class="row">                <div class="col-xs-4 col-sm-3">                  <input type="radio" name="addAccessLevelGroup" id="SWM-addAccessLevelGroupGroup" value="2" data-bind="checked : $data.newSpaceAccessLevel"/>                   <label class="swm-space-group-form-label" data-bind="text: $data.translate('spaceAccessGroupIconTxt') + ' '" for="SWM-addAccessLevelGroupGroup"></label>                </div>                <div class="col-xs-8 col-xs-pull-1 col-sm-9 col-sm-pull-1">                  <span data-bind="widgetLocaleText: 'privacyGroupLabel'"></span>                </div>              </div>              <div class="row">                <div class="col-xs-4 col-sm-3">                  <input type="radio" name="addAccessLevelGroup" id="SWM-addAccessLevelGroupShared" value="1" data-bind="checked : $data.newSpaceAccessLevel"/>                   <label class="swm-space-shared-form-label" data-bind="text: $data.translate('spaceAccessSharedIconTxt') + ' '" for="SWM-addAccessLevelGroupShared"></label>                </div>                <div class="col-xs-8 col-xs-pull-1 col-sm-9 col-sm-pull-1">                  <span data-bind="widgetLocaleText: 'privacySharedLabel'"></span>                </div>              </div>            </div>            <!-- End private/group/shared radio buttons -->
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer swm-modal-footer-remove-top-padding">
+        <button class="btn cc-button-secondary" id="SWM-addToSpaceCancel" data-bind="click: handleCancelAddToSpace, widgetLocaleText: 'buttonSpaceCancel'"></button>
+        <button class="btn cc-button-primary" id="SWM-addToSpaceSubmit" data-bind="click: handleAddToSpace, widgetLocaleText: 'buttonSpaceAdd'"></button>
+      </div>
+    </div>
+  </div> 
+</div></div>

@@ -1,0 +1,23 @@
+{
+  "imports": [
+    "product",
+    "imageRootUrl",
+    "loaded",
+    "productVariantOptions",
+    "productTypes"
+  ],
+  "translations": [
+    {
+      "name": "MedAes Product details Widget",
+      "language": "en"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "defaultLayout": "MedAesProductDetailsWidget_v2_lyt1",
+  "config": {
+    "noOfStoresToDisplay": "10"
+  }
+}

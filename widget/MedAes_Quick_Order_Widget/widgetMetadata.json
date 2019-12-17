@@ -1,0 +1,18 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "MedAes_Quick_Order_Widget",
+      "language": "en"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "config": {
+    "maxNoOfItemsInCSV": "999",
+    "maxQuantityOfItems": "999",
+    "noOfRowsToDisplay": "5"
+  }
+}

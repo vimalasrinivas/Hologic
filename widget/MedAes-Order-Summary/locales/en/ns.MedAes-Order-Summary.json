@@ -1,0 +1,11 @@
+{
+  "resources": {
+    "continueShoppingText": "Continue Shopping",
+    "orderSummaryText": "Order Summary",
+    "freightText": "Freight",
+    "estimatedOrderTotalText": "Order Total:",
+    "myorderButtonText": "Order does not exist.",
+    "subTotalText": "Sub-Total:",
+    "TaxText": "Sales Tax:"
+  }
+}

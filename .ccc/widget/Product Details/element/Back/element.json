@@ -1,0 +1,8 @@
+{
+  "tag": "product-back-link",
+  "source": 100,
+  "type": "fragment",
+  "title": "Back",
+  "widgetType": "productDetails",
+  "version": 14
+}

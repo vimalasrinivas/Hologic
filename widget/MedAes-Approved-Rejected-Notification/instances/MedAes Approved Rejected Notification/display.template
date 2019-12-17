@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row approve-reject">
+    <!-- ko if:$data.decisions() == "approved"  -->   
+        <h3 data-bind="widgetLocaleText :'approveNotificationText'"></h3>
+    <!-- /ko -->
+    <!-- ko if:$data.decisions() == "rejected"  -->
+        <h3 data-bind="widgetLocaleText :'rejectedNotificationText'"></h3> 
+        <label>Reason :</label>
+        <textarea rows="5" cols="50" autocomplete="off" data-bind="validatableValue:rejectedReason" ></textarea>   
+        <p data-bind="validationMessage:rejectedReason" role="alert" class="text-danger"></p>
+    <!-- /ko -->    
+        <button  data-bind="event:{click: function(data,event){$data.addressRequest($data)}}">Submit</button>   
+    </div>    
+</div>   

@@ -1,0 +1,35 @@
+<div class="col-xs-12 hero-padding-adjuster" id="news_Widget">
+  <div class="cc_crs-heroWidget hero-padding-override">
+    <div id="newsCarousel" class="carousel slide"  data-ride="carousel"  data-bind="attr:{id: 'this-carousel-id-'+$data.id()}">
+      
+	  <div class="carousel-inner" role="listbox">
+        <div class="article-carousel article-carousel--cases">
+          <div class="event-carousel__slides" role="toolbar">
+            <!-- ko foreach: newsResults() -->
+            <div class="slick-slide">
+              <a href="" class=""> 
+              <img data-bind="attr:{src: $data.src}" class="img-responsive dummy-class">
+              </a>
+      <!--        <div class="slide-text">-->
+      <!--            <div data-bind = "widgetLocaleText:'BannerTitle'" class="heroBannerContent"></div>-->
+      <!--            <div data-bind = "widgetLocaleText:'BannerDetail'" class="bannerdetail-content"></div>-->
+      <!--            <p class="banner-subdetails">World’s first FDA-cleared laser treatment for non-invasive body and submental contouring.</p>-->
+      <!--            <div class="seeMore">-->
+				  <!--<button class="learnMoreBtn" data-bind = "widgetLocaleText:'BannerExplanation'"> </button>   -->
+				  <!--  </div>-->
+      <!--        </div> -->
+             
+            </div>  
+            <!-- /ko -->
+          </div>
+          <div class="article-carousel__controls">
+            <div class="arrows hidden-xs">    
+              <button type="button" class="btn--clear1 prev icon-point slick-prev slick-arrow" style="display: inline-block;"></button>
+              <button type="button" class="btn--clear1 next icon-point slick-next slick-arrow" style="display: inline-block;"></button>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>

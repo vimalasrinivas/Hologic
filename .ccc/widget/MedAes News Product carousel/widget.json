@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesNewsProductcarousel",
+  "version": 1,
+  "displayName": "MedAes News Product carousel",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAesNewsProductcarousel",
+  "source": 101,
+  "javascript": "MedAesNewsProductcarousel"
+}

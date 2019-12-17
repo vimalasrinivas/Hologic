@@ -1,0 +1,12 @@
+{
+  "resources": {
+    "ThirdBannerImageHelpText": "choose the third Image for the banner.",
+    "fourthBannerImageTextLabel": "Image4",
+    "fourthBannerImageHelpText": "choose the fourth Image for the banner.",
+    "firstBannerImageHelpText": "choose the first Image for the banner.",
+    "secondBannerImageHelpText": "choose the second Image for the banner.",
+    "firstBannerImageTextLabel": "Image1",
+    "secondBannerImageTextLabel": "Image2",
+    "ThirdBannerImageTextLabel": "Image3"
+  }
+}

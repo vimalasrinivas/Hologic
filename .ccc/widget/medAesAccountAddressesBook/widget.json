@@ -1,0 +1,10 @@
+{
+  "widgetType": "medAesAccountAddressesBook",
+  "version": 1,
+  "displayName": "medAesAccountAddressesBook",
+  "elementized": true,
+  "global": false,
+  "i18nresources": "medAesAccountAddressesBook",
+  "source": 101,
+  "javascript": "medAesAccountAddressesBook"
+}

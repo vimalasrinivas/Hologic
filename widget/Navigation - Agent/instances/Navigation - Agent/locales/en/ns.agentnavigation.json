@@ -1,0 +1,12 @@
+{
+  "resources": {
+    "dashboardText": "Dashboard",
+    "logoutText": "Logout",
+    "ordersText": "Orders",
+    "helpText": "Help",
+    "customersText": "Customers",
+    "returnsText": "Returns Processing",
+    "brandText": "Commerce Cloud",
+    "skipToContent": "Skip To Content"
+  }
+}

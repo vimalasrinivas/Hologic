@@ -1,0 +1,13 @@
+{
+  "resources": {
+    "dateText": "Date",
+    "addNewNotesModalHeaderText": "Add New Note",
+    "buttonSaveText": "Save",
+    "buttonCancelText": "Cancel",
+    "notesCaptionText": "Notes",
+    "closeText": "Close",
+    "buttonNewNotesText": "New Note",
+    "buttonClearText": "Clear",
+    "noNotesText": "No notes available."
+  }
+}

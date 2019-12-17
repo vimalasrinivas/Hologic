@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesCheckoutLatestAddressBookWidget",
+  "version": 1,
+  "displayName": "MedAes Checkout Latest AddressBook Widget",
+  "elementized": true,
+  "global": false,
+  "i18nresources": "medAesCheckoutLatestAddressBookWidget",
+  "source": 101,
+  "javascript": "medAesCheckoutLatestAddressBookWidget"
+}

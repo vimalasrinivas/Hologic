@@ -1,0 +1,10 @@
+{
+  "widgetType": "medAesAccountWallet",
+  "version": 1,
+  "displayName": "medAesAccountWallet",
+  "elementized": true,
+  "global": false,
+  "i18nresources": "medAesAccountWallet",
+  "source": 101,
+  "javascript": "medAesAccountWallet"
+}

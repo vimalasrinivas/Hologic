@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAes-Approved-Rejected-Notification",
+  "version": 1,
+  "displayName": "MedAes-Approved-Rejected-Notification",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAes-Approved-Rejected-Notification",
+  "source": 101,
+  "javascript": "MedAes-Approved-Rejected-Notification"
+}

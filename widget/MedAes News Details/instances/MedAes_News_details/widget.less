@@ -1,0 +1,84 @@
+#WIDGET_ID-WIDGET_INSTANCE_ID {
+    #mmgallerylink{
+     @media screen and (max-width:767px){
+        word-break: break-all; 
+     }   
+    }
+	.bg-Color{
+    background-color:#F6f6f6;      
+    margin:0px;  
+    .pad0{
+      padding: 0;
+    }  
+    #CC-newsDetails-description{
+        font-family:"flama";   
+    }
+    #CC-newsDetails-date{
+        font-family:"flama";   
+    }
+    #CC-prodDetails-longDescription{
+        font-family:"flama";            
+    }
+    .productDetails-Doc{   
+        background-color: #fff;
+        padding: 20px;     
+        margin-bottom: 51px;
+        margin-top: 51px;
+        @media screen and (max-width:767px){  
+          padding:18px;    
+        }  
+       h3{ 
+           margin-top:0px;
+           color: #292929;     
+           font-family: "Flama";
+           font-size: 16px;
+           letter-spacing: 1px;
+           line-height: 18px;
+       }    
+
+       span{
+           color: #292929;
+           font-family: "Flama";  
+           font-size: 14px;
+           letter-spacing: 0.5px;    
+           line-height: 17px; 
+            @media(max-width:425px){  
+                    
+                   line-height: 25px;   
+                    
+                }
+       }
+       .print-link{
+        padding: 12px 0px;  
+        a{
+          color: #d87900;
+          text-decoration: underline;   
+          cursor: pointer;
+          font-family:"flama";          
+        }
+       }
+       .medaesAddtoCartBtn {
+        height: 44px;
+        width: 200px;
+        border-radius: 2px;
+        font-family: "Flama";
+        background-color: #d87900;
+        color: #fff;
+        font-size: 14px;
+        border: none;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        line-height: 17px;
+        text-align: center;
+        margin-right: 10px;
+       }
+    } 
+  
+}
+
+}
+@media print {
+  header *,.print-link, footer *, #CC-view-news {
+    display: none;
+    }
+}

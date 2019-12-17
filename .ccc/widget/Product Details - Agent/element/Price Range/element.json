@@ -1,0 +1,8 @@
+{
+  "tag": "agent-product-details-product-price-varies",
+  "source": 100,
+  "type": "hidden",
+  "title": "Price Range",
+  "widgetType": "agentProductDetails",
+  "version": 1
+}

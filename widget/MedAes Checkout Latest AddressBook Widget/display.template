@@ -1,0 +1,292 @@
+<div id="CC-checkoutAddressBook-section">    
+    <div class='shipping-address-section'>
+        <form id='shippingAddress'>
+            <h4 class='heading'>Shipping Address</h4>
+            <div class="row first-row shippingAddressWrap checkout-wrap">
+                <div class="form-group col-sm-8">
+                    <label class='shipto' for="CC-checkoutCustomerDetails-sfirstname"> Ship To</label>
+
+                    <select class='ship-to-address  form-control' name='shipToAddress' id='ShipToAddress' data-bind='value:isDefaultShippingAddress,validatableValue :isDefaultShippingAddress, options:getExternalShippingAddress(), optionsText: function(item) {
+               return item.address1 +"," + item.address2 + "," + item.city +"," + item.state +"," + item.postalCode +"," + item.country 
+               }, optionsValue: function(item) {
+               return  item.address1 +"," + item.address2 + "," + item.city +"," + item.state +"," + item.postalCode +"," + item.country 
+               } , event:{ change: function(data,event) {updateShippingAddress(data,event) }}  '>
+                    </select>
+                 <span class="text-danger" id="isDefaultShippingAddress-error" data-bind="validationMessage:isDefaultShippingAddress"></span>
+                </div>
+            </div>
+            <div class="row first-row shippingMethodWrap checkout-wrap">
+                <label class='shippingMethodText' for="CC-checkoutCustomerDetails-shippingMethod">Shipping Method
+                    <i class="zmdi zmdi-help-outline tooltip" >
+                        <span class="tooltiptext">The estimated delivery dates provided are tentative and subject to the terms of the shipping provider.</span>
+                     </i>
+                    </label>
+                <!-- ko foreach: shippingmethods().shippingOptions -->
+                <div class="form-group col-xs-12 shipping_wrapper">
+                    <label class="" data-bind="attr:{ for: 'CC-checkoutOrderSummary-shippingOption-'+repositoryId, class: 'CC-checkoutOrderSummary-shippingOption-'+repositoryId}  ">
+                        <input type="radio" name="optionRadio" data-bind="attr:{id: repositoryId}, value: repositoryId ,validatableValue :repositoryId ,checked: $parent.shippingmethods().defaultShipping" class='shippingOptionsList'>
+                        <span class="checkout-order-summary-shipping-description shipping-options-name" data-bind="attr:{id: 'CC-checkoutOrderSummary-shippingOptionPrice-'+repositoryId},text: displayName"></span>
+
+                    </label>
+                </div>
+                <!-- /ko -->
+                <span class="text-danger " data-bind="validationMessage: repositoryId" role="alert"></span>
+            </div>
+            <div class="row first-row additionalNotesWrap checkout-wrap">
+                <div class="form-group col-sm-6">
+                    <label class='shippingNotes' for="CC-checkoutCustomerDetails-sfirstname">Add Shipping Notes</label>
+                    <textarea class="col-md-12 form-control" name='additionalNotes' id='addtionalShippingNotes' data-bind='text:additionalNotes,validatableValue : additionalNotes ' maxlength="250"></textarea>
+                    <span class="text-danger " data-bind="validationMessage: additionalNotes" role="alert"></span>         
+                </div>
+            </div>
+            <!--<div class="row first-row additionalNotesWrap checkout-wrap">     
+         <div class="form-group col-sm-6">
+           <button class="cc-button-primary col-xs-12 hide" id='nextConfirmationBtn' data-bind='event: { click: function() { checkoutStepOneValidation()}} '>Next, Confirmation</button>
+         </div>
+      </div>-->
+        </form>
+    </div>
+    <div class='billing-address-section hide'>
+        <form id='shippingAddress'>
+            <div class='row first-row'>
+                <div class="form-group col-sm-7">
+                    <h4 class='payment-Title'>PAYMENT</h4>
+                    <div class='payment-method'>Choose Payment Method</div>
+                    <div class="form-group col-sm-5 nopad">
+                        <input type="radio" name="payment" value="card" data-bind='event:{ change:function(data,event){checkCardType(data,event);}}' checked> <span class='cardType'>Credit Card </span> </div>
+                    <div class="form-group col-sm-5 nopad">
+                        <input type="radio" name="payment" value="ponumber" data-bind='event:{ change:function(data,event){checkCardType(data,event);}} '> <span class='cardType'>PO Number</span></div>
+                    <br>
+                </div>
+            </div>
+            <div class="row first-row">
+                <div class="form-group col-sm-7">
+                    <label class='shipto' for="CC-checkoutCustomerDetails-sfirstname"> Bill To</label>
+                    <select class='ship-to-address  form-control' name='billToAddress' id='billToAddress' data-bind='value: isDefaultBillingAddress,validatableValue :isDefaultBillingAddress , options:getExternalBillingAddress(), optionsText: function(item) {
+                   return item.address1 +"," + item.address2 + "," + item.city +"," + item.state  +"," + item.postalCode +"," + item.country 
+                   }, optionsValue: function(item) {
+                   return  item.address1 +"," + item.address2 + "," + item.city +"," + item.state +"," + item.postalCode +"," + item.country 
+                   } , event:{ change: function(data,event) { updateBillingAddress(data,event) }} '>
+                    </select>
+                    <span class="text-danger" id="isDefaultBillingAddress-error" data-bind="validationMessage:isDefaultBillingAddress"></span>
+                </div>
+            </div>
+            <div class='row first-row cardPay'>
+                <div class="form-group col-sm-7">
+                    <!--data-bind='options:getExternalCardData(), optionsText: function(item) { 
+                           return item.maskedCardNumber 
+                           }, optionsValue: function(item) {
+                           return  item.maskedCardNumber
+                           } '-->
+                    <label class='shipto' for="CC-checkoutCustomerDetails-sfirstname"> Credit Card</label>
+                    <select class='ship-to-address  form-control' name='billToAddress' id='billToAddress' data-bind='event:{ change: function(data,event){ updateCard(data,event); }},value:isDefaultStoredCardValue()'>
+                        <!-- ko if: isStoredCardsLoaded -->
+                            <!-- ko foreach :getExternalCardData() -->
+                               <option data-bind='value: maskedCardNumber,text:maskedCardNumber'> </option>
+                            <!-- /ko -->
+                            <option value='addNewCard'>Add New Card</option>
+                         <!-- /ko -->
+                    </select>
+                     <span class="text-danger " id="isDefaultStoredCardValue-error" data-bind="validationMessage: isDefaultStoredCardValue" role="alert"></span>
+                </div>
+            </div>
+            <div class='addNewCard hide' id='addNewCardSection'>
+                <iframe id="addcardFrame" class="add-card-frame" height="375" width="500"></iframe>
+                 <div class="checkbox">
+                    <input type="checkbox" name="saveCard" id="saveNewCard" data-bind="checked: saveNewCard, attr: {title: $data.translate('saveCardLabel')}" title="save New Card">
+                    <label for="orgDefaultShippingAddress" data-bind="attr: {title: $data.translate('saveCardLabel')}, widgetLocaleText:'saveCardLabel'" title="save New Card"></label>
+                        </div>
+            </div>    
+            <div class='addNewCard hide' id='addNewCardSection12'>
+                <div class='row first-row cardPay'>
+                <div class="form-group col-sm-7">
+                    <label class="card-label shipto" for="CC-cardType" data-bind="widgetLocaleText:'cardTypeText'"></label>
+                    <div class="control">
+                        <select aria-required="true" class="form-control medAesInputBox col-md-12 card-control" name="CC-cardType" id="cc-card-type" data-bind="attr: {title: $data.translate('addressLine1Text')}, optionsValue: 'cardValue',
+                     options: cardTypeList, optionsText: 'name',value:cardType,
+                     validatableTarget: cardType, validationElement: cardType, optionsCaption: $data.translate('addressLine1Text')">
+                            <option value='new card'>Add New Card</option>
+                        </select>
+                        <div class="col-md-12 nopad card-error">
+                            <span class="text-danger" id="card-type-error" data-bind="validationMessage: cardType" role="alert"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class='row first-row cardPay'>
+                    <div class="form-group col-sm-7">
+                        <label class="card-label shipto" for="CC-cardName" data-bind="widgetLocaleText:'nameOnCardText'"></label>
+                        <input id="cc-card-name" name="CC-cardName" type="text" class="form-control input-md card-control medAesInputBox  " data-bind="validatableValue: nameOnCard" maxlength="50">
+                        <div class="col-md-12 nopad card-error">
+                            <span class="text-danger" data-bind="validationMessage: nameOnCard" role="alert"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class='row first-row cardPay'>
+                    <div class="form-group col-sm-7">
+                        <label class="card-label shipto" for="CC-cardNumber" data-bind="widgetLocaleText:'cardNumberText'"></label>
+                        <input id="cc-card-number" name="CC-cardNumber" type="text" class="form-control input-md card-control medAesInputBox  " data-bind="validatableValue: cardNumber" maxlength="16">
+                        <div class="col-md-12 nopad card-error">
+                            <span class="text-danger" data-bind="validationMessage: cardNumber" role="alert"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- end month and year -->
+                <div class='row first-row form-group cardPay'>
+                    <div class="col-sm-3">
+                        <label class="card-label shipto" id="CC-endMonth" for="CC-endMonth" data-bind="widgetLocaleText: 'endMonthLabel'"></label>
+                        <span class="text-danger visible-xs" id="CC-phone-endMonth-error" data-bind="validationMessage: expiryMonth" role="alert"></span>
+                        <div class="control">
+                            <input id="cc-end-month" name="CC-endMonth" type="text" class=" medAesInputBox  form-control input-md card-control" data-bind="validatableValue: expiryMonth" maxlength="2">
+                        </div>
+                        <div class="hidden-xs col-sm-12  nopad card-error">
+                            <span class="text-danger" data-bind="validationMessage: expiryMonth" role="alert"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="card-label shipto" id="CC-endYear-label" for="CC-endYear" data-bind="widgetLocaleText: 'endYearLabel'"></label>
+                        <span class="text-danger visible-xs" id="CC-phone-endYear-error" data-bind="validationMessage: expiryYear" role="alert"></span>
+                        <div class="control">
+                            <input id="cc-end-year" name="CC-endYear" type="text" class="form-control input-md card-control medAesInputBox  " data-bind="validatableValue: expiryYear" maxlength="4">
+                        </div>
+                        <div class="hidden-xs col-sm-12 nopad card-error">
+                            <span class="text-danger" data-bind="validationMessage: expiryYear" role="alert"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class='row first-row  form-group cardPay'>
+                    <div class="form-group col-sm-2 ">
+                        <label class="card-label shipto" for="CC-newCardCvv">CVV:
+                         <i class="zmdi zmdi-help-outline tooltip"><span class="tooltiptext">Provide CVV information</span></i>
+                     </label>
+                      
+                        <input id="cc-newCardCvv" name="CC-newCardCvv" type="text" class="form-control input-md card-control medAesInputBox  " data-bind="validatableValue: newCardCvv" maxlength="4">
+                        <div class="col-md-12 nopad card-error">
+                            <span class="text-danger" data-bind="validationMessage: newCardCvv" role="alert"></span>
+                        </div>
+                    </div>
+                </div>
+
+            
+            </div>
+                <div class='row first-row cardPay ' id='eixistingCardCVV'>     
+                    <div class="form-group col-sm-2">
+                        <label class='shipto' for="CC-checkoutCustomerDetails-sfirstname">CVV<i class="zmdi zmdi-help-outline tooltip"><span class="tooltiptext cvvHelpText">Provide CVV information</span></i> </label>
+                        <input type="number" class="col-md-12 form-control medAesInputBox" name="cvv" id="CC-checkoutAddressBook-cvv"  maxlength='4' data-bind='text:cvv,validatableValue :cvv ' aria-required="true">
+                        <p class="text-danger" id="cvv-error" data-bind="validationMessage:cvv"></p>
+                    </div>
+                </div>
+            <div class="row first-row poPay hide">
+                <div class="form-group col-sm-7">
+                    <label class="shipto" for="CC-checkoutCustomerDetails-sfirstname"> PO Number:</label>
+                    <input type="text" class="col-md-12 form-control medAesInputBox" name="poNumber" data-bind='text:poNumber,validatableValue : poNumber ' id="CC-checkoutAddressBook-poNumber" maxlength="50" aria-required="true">
+                    <span class="text-danger" id="poNumber-error" data-bind="validationMessage:poNumber"></span>
+                </div>
+            </div>
+            <div class='row first-row poPay hide'>
+                <div class="form-group col-sm-7">
+                    <input data-bind="event: { change: function() {  uploadDoc($element) } }, text:poDocument" data-msg-filesize="The maximum size of the prescription file is 10M." data-rule-filesize="10485760" title="" accept=".jpg,.png,.gif,.pdf,.doc,.docx,.txt" name="copyOfRX" value="" data-msg-accept="Only PDF, JPG, PNG, GIF, WORD, TXT supported for prescription file." type="file">
+                </div>
+            </div>
+            <!-- <div class='row first-row poPay hide'>
+          <div class="form-group col-sm-7">
+              <button class="cc-button-primary col-xs-12 " >Upload DOC</button>
+          </div>
+          </div>-->
+        </form>
+    </div>
+    <div class="row checkout-reviewOrder hide">
+        <div class="col-sm-12 col-xs-12 pad0">
+            <div class="col-sm-5 col-xs-12 shippingBlock">
+                <div class="row ShipHeading">
+                    <label>SHIPPING</label>
+                    <a href="javascript:void(0)" class="pull-right cartEdit">Edit</a>
+                </div>
+                <div class="row ShipDetails">
+                    <!-- ko with:order().shippingAddress() -->
+                    <div data-bind="text:$data.address1()"></div>
+                    <div><span data-bind="text:$data.city()"></span>,<span data-bind="text:$data.state()"></span></div>
+                    <div data-bind="text:$data.postalCode()"></div>
+                    <div data-bind="text:$data.country()"></div>
+                    <div class='shippingPhoneNumber' data-bind="text:$data.phoneNumber()"></div>
+                    <!-- /ko -->
+                    <!-- ko if: order().selectedShippingOption() !== "" -->
+                    <div class="shippingOption">
+                        <span data-bind="text: displaySelectedShippingOption()">
+                         </span>
+                         <i class="zmdi zmdi-help-outline tooltip" >
+                        <span class="tooltiptext">The estimated delivery dates provided are tentative and subject to the terms of the shipping provider.</span>
+                     </i>
+                    </div>
+                    <!-- /ko -->
+                </div>
+               
+            </div>
+            <div class="col-sm-5 col-xs-12 billingBlock">   
+                <div class="row billHeading">
+                    <label>PAYMENT</label>
+                    <a href="javascript:void(0)" class="pull-right cartEdit">Edit</a>   
+                </div>
+                <div class="row billDetails">
+                    <!-- ko if: order().poNumber() === undefined -->   
+                    <div data-bind="text:order().paymentDetails().nameOnCard()"></div>
+                    <!-- /ko -->
+                    <!-- ko ifnot: order().poNumber() === undefined -->
+                    <div><span>PO Number: </span> <b data-bind="text:order().poNumber()"></b></div>
+                    <!-- /ko -->
+                               
+                     
+                    <!-- ko with:order().billingAddress() -->
+                    <div data-bind="text:$data.address1()"></div>
+                    <div><span data-bind="text:$data.city()"></span>,<span data-bind="text:$data.state()"></span></div>
+                    <div data-bind="text:$data.postalCode()"></div>
+                    <div data-bind="text:$data.country()"></div>
+                    <!-- /ko -->
+                    
+                     <!-- ko foreach: order().payments -->                   
+                        <!-- ko if : $data.hasOwnProperty('cardNumber') -->  
+                        <p class="poNo cardEnding">
+                            <!-- ko if : cardNumber -->
+                           <span  data-bind= "text:cardType" ></span>         
+                           <span>ending</span>         
+                           <span  data-bind= "text:$parent.appendCardNumber()" ></span>              
+                           <!-- /ko -->
+                        </p> 
+                        <!-- /ko -->            
+                    <!-- /ko -->  
+                    
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+        <div class="cartSum col-sm-12 col-xs-12">
+            <b class="summaryText">Cart summary
+          </b>
+            <!-- ko foreach:cart().items() -->
+            <!-- ko with: $data.productData() -->
+            <div class="cartSummary row">
+                <div class="col-sm-3 col-xs-6 pad0">
+                    <img data-bind="attr:{src:$data.primaryMediumImageURL}" class="img-responsive">
+                </div>
+                <div class="col-sm-3 col-xs-6 cartItemDetails">
+                    <div class='productype padBtm10 hide' data-bind="text:$data.brand"></div>
+                    <div class='productdisplayName padBtm10' data-bind="text:$data.displayName"></div>   
+                    <div class="CartItem padBtm10">Item <span data-bind="text:$data.id"></span></div>
+                    <div class="cartCost1 padBtm10"><span  data-bind="currency: {price: $parent.externalPrice() , currencyObj: $parents[1].cart().currency}"></span></div>           
+                </div>
+                    <div class="col-sm-3 col-xs-8 qty">
+                        <div class="CartItem text-center">Qty:</div>
+                        <div class='text-center'>
+                            <span data-bind="text:$parent.quantity()"></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-xs-4 qty">
+                        <div class="cartCost"><span class='text-center'  data-bind="currency: {price: $parent.itemTotal() , currencyObj: $parents[1].cart().currency}" ></span></div>     
+                    </div>
+               
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+    </div>
+</div>

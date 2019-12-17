@@ -1,0 +1,38 @@
+{
+  "widgetDescriptorName": "secondaryNavigation",
+  "properties": [
+    {
+      "defaultValue": "vertical",
+      "name": "displayOptions",
+      "options": [
+        {
+          "id": "horizontal",
+          "labelResourceId": "horizontalText",
+          "value": "horizontal"
+        },
+        {
+          "id": "vertical",
+          "labelResourceId": "verticalText",
+          "value": "vertical"
+        }
+      ],
+      "id": "displayOptions",
+      "type": "optionType",
+      "helpTextResourceId": "displayOptionsHelpText",
+      "labelResourceId": "displayOptionsLabel",
+      "required": true
+    },
+    {
+      "placeHolders": "placeHoldersText",
+      "noOfColumns": 3,
+      "name": "displayAndURL",
+      "maxLengths": "100,100,100",
+      "addMoreRowsResourceId": "addMoreRowsText",
+      "id": "displayAndURL",
+      "type": "multiKeyValuePairsType",
+      "helpTextResourceId": "displayAndURLHelpText",
+      "labelResourceId": "displayAndURLLabel",
+      "required": false
+    }
+  ]
+}

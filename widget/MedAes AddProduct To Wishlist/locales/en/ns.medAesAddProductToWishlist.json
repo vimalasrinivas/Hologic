@@ -1,0 +1,29 @@
+{
+  "resources": {
+    "buttonSpaceAdd": "Add",
+    "uniqueNameMsg": "The wish list name must be unique.",
+    "privacyGroupLabel": "Only you and people you invite can see, comment, and add to this list.",
+    "createNewSpaceOptText": "New wish list...",
+    "privacySettingsDescription": "Inviting friends to a Private wish list will change your privacy setting to Group. Sending a Private or Group wish list by email or sharing it on a social network will make it a shared list.",
+    "privacySharedLabel": "Anyone with a link can see this list. Only you and people you invite can see, comment, and add to this list.",
+    "spaceAccessGroupIconTxt": "Group",
+    "joinedSpacesGroupText": "Joined wish lists",
+    "emptyNameMsg": "Name must not be blank",
+    "buttonSpaceCancel": "Cancel",
+    "spaceNameText": "Name",
+    "addToSpaceProductViewWishListMsg": "  View __wishlistname__",
+    "addToSpaceProductUpdatedSuccessMsg": "This item was already in the wish list. We've updated the Date Added.",
+    "mySpacesGroupText": "My wish lists",
+    "spaceCommentText": "Enter a comment...",
+    "spaceAccessPrivateIconTxt": "Private",
+    "addToSpaceText": "Add to wish list",
+    "privacySettingsLabel": "Privacy Settings",
+    "spaceAccessSharedIconTxt": "Shared",
+    "addToSpaceSuccessMsg": "Success!  __socialproduct__ was added to __socialspacename__.",
+    "spaceAddProductError": "Error while attempting to post a product to the wish list. Try refreshing your page.",
+    "privacyPrivateLabel": "Only you can see and add to this list.",
+    "spaceCreateMaxSpacesMsg": "Problem creating wish list. You have exceeded the limit for the number of wish lists. Please delete an existing wish list before creating a new one.",
+    "productAddMaxProductsMsg": "Problem adding product to wish list. You have exceeded the limit for the number of posts in a wish list. Please delete an existing product from the destination wish list before adding a new one.",
+    "spaceSelectionText": "Select a wish list"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "resources": {
+    "tableHeadingOrder": "Order #",
+    "tableHeadingRefId": "Ref ID/PO",
+    "tableHeadingShipDate": "ShipDate",
+    "reorderRedirectionText": "Reorder",
+    "title": "Order History",
+    "tabLinks2": "open orders",
+    "tabLinks3": "open invoices",
+    "tabLinks1": "Shipped Order",
+    "tableHeadingAddressLine": "Address Line 1",
+    "tabLinks4": "cancellations",
+    "tableHeadingOrderDate": "OrderDate",
+    "tableHeadingAmount": "Amount",
+    "buttonId": "My Button",
+    "trackRedirectionText": "Track",
+    "tableHeadingAction": "Action"
+  }
+}

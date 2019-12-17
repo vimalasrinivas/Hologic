@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesSavedCartDetails",
+  "version": 1,
+  "displayName": "MedAesSavedCartDetails",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAesSavedCartDetails",
+  "source": 101,
+  "javascript": "MedAesSavedCartDetails"
+}

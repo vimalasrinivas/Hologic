@@ -1,0 +1,135 @@
+<div class="container">
+    <div class="row frequently-asked-ques">
+        <h3>Frequently Asked Questions</h3>
+    </div>
+   <div class="row MedAes-FAQ-Row">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse1">What is Cynosure Online?</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+		    <p>We are pleased to announce the launch of the new Cynosure Online portal (www.Cynosureonline.com).</p> 
+			<p>Cynosure Online is a robust tool that organizes data to provide timely, accurate and complete information that you depend on from Cynosure.</p>  
+			<p>To get to the home page from any page on this website, click on the Cynosure Online logo.</p>
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed">What features does it have?</a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+			<p>We are pleased to announce the launch of the new Cynosure Online portal (www.Cynosureonline.com).</p> 
+			<p>Cynosure Online is a robust tool that organizes data to provide timely, accurate and complete information that you depend on from Cynosure.</p>  
+			<p>To get to the home page from any page on this website, click on the Cynosure Online logo.</p>
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed">How to register?</a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>We are pleased to announce the launch of the new Cynosure Online portal (www.Cynosureonline.com).</p> 
+			<p>Cynosure Online is a robust tool that organizes data to provide timely, accurate and complete information that you depend on from Cynosure.</p>  
+			<p>To get to the home page from any page on this website, click on the Cynosure Online logo.</p>
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="collapsed">How can I make changes to my Cynosure Online account?</a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>We are pleased to announce the launch of the new Cynosure Online portal (www.Cynosureonline.com).</p> 
+			<p>Cynosure Online is a robust tool that organizes data to provide timely, accurate and complete information that you depend on from Cynosure.</p>  
+			<p>To get to the home page from any page on this website, click on the Cynosure Online logo.</p>
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="collapsed">How to check for product availability?</a>
+        </h4>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>We are pleased to announce the launch of the new Cynosure Online portal (www.Cynosureonline.com).</p> 
+			<p>Cynosure Online is a robust tool that organizes data to provide timely, accurate and complete information that you depend on from Cynosure.</p>  
+			<p>To get to the home page from any page on this website, click on the Cynosure Online logo.</p>
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse6" class="collapsed">How to look-up PO status and tracking?</a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>We are pleased to announce the launch of the new Cynosure Online portal (www.Cynosureonline.com).</p> 
+			<p>Cynosure Online is a robust tool that organizes data to provide timely, accurate and complete information that you depend on from Cynosure.</p>  
+			<p>To get to the home page from any page on this website, click on the Cynosure Online logo.</p>
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse7" class="collapsed">How to place orders?</a>
+        </h4>
+      </div>
+      <div id="collapse7" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>We are pleased to announce the launch of the new Cynosure Online portal (www.Cynosureonline.com).</p> 
+			<p>Cynosure Online is a robust tool that organizes data to provide timely, accurate and complete information that you depend on from Cynosure.</p>  
+			<p>To get to the home page from any page on this website, click on the Cynosure Online logo.</p>
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse8" class="collapsed">How to cancel an item or order?</a>
+        </h4>
+      </div>
+      <div id="collapse8" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>We are pleased to announce the launch of the new Cynosure Online portal (www.Cynosureonline.com).</p> 
+			<p>Cynosure Online is a robust tool that organizes data to provide timely, accurate and complete information that you depend on from Cynosure.</p>  
+			<p>To get to the home page from any page on this website, click on the Cynosure Online logo.</p>
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse9" class="collapsed">How to view/print/download invoices?</a>
+        </h4>
+      </div>
+      <div id="collapse9" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>We are pleased to announce the launch of the new Cynosure Online portal (www.Cynosureonline.com).</p> 
+			<p>Cynosure Online is a robust tool that organizes data to provide timely, accurate and complete information that you depend on from Cynosure.</p>  
+			<p>To get to the home page from any page on this website, click on the Cynosure Online logo.</p>
+		</div>
+      </div>
+    </div>   
+  </div> 
+</div>  
+</div>

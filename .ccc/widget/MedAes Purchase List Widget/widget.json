@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesPurchaseListModalWidget",
+  "version": 1,
+  "displayName": "MedAes Purchase List Widget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "medAesPurchaseList",
+  "source": 101,
+  "javascript": "medAesPurchaseList"
+}

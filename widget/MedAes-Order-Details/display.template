@@ -1,0 +1,493 @@
+<div class="row" id="MedAes-Order-Details">
+<div class="container">
+    <div class="row order-Details">
+        <h3 data-bind = "widgetLocaleText:'orderDetailsTitleText'"></h3>
+    </div>
+<!-- ko with:orderDetails -->    
+    <div class="row order-Status">
+        <span data-bind = "widgetLocaleText:'orderIdText'"></span>
+        <span data-bind="text:id"></span>
+        <span  data-bind = "widgetLocaleText:'orderedOnText'"></span>
+        <span data-bind="text:orderDate"></span>
+        <span data-bind = "widgetLocaleText:'statusText'"></span>
+        <span data-bind="text:status"></span>
+    <!-- ko if:$parent.cancelledSummary() == false  -->      
+        <a data-bind="click:function(data, event) {$parent.reorderProducts($data)}" class="hidden-xs">REORDER</a>
+        <div><a data-bind="click:function(data, event) {$parent.reorderProducts($data)}" class="visible-xs">REORDER</a></div>   
+    <!-- /ko -->    
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12 shipping-Address">
+            <div class="border">   
+               <h3 data-bind = "widgetLocaleText:'shippingSectionText'"></h3> 
+        <!-- ko foreach:shippingGroups -->       
+               <p data-bind="text:shippingAddress.address1"></p>
+               <!--<p data-bind="text:shippingAddress.address2"></p>-->
+               <p>
+                   <span data-bind="text:shippingAddress.city"></span>,
+                   <span data-bind="text:shippingAddress.state"></span>
+               </p>
+               <p data-bind="text:shippingAddress.postalCode"></p>
+               <p data-bind="text:shippingAddress.country"></p>  
+               <p class="phone-No" data-bind="text:shippingAddress.phoneNumber"></p>
+        <!-- /ko -->             
+            </div>        
+        </div>
+        <div class="col-md-4 col-sm-4  col-xs-12 payment-Details">  
+           <div class="border">  
+               <h3 data-bind = "widgetLocaleText:'paymentSectionText'"></h3> 
+            <!-- ko foreach:paymentGroups -->  
+               <p class="visa-CardNo" data-bind="text:card.maskedCCNumber"></p>   
+               <p  data-bind="text:billToAddress.address1"></p>
+               <p>
+                   <span data-bind="text:billToAddress.city"></span>,
+                   <span data-bind="text:billToAddress.state"></span>
+               </p>
+               <p  data-bind="text:billToAddress.postalCode"></p>  
+               <p  data-bind="text:billToAddress.country"></p>
+            <!-- /ko -->   
+            </div>   
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12 shipping-Method">         
+            <div class="border">  
+                <h3 data-bind = "widgetLocaleText:'shippingMethodText'"></h3>
+            <!-- ko foreach:shippingGroups -->    
+                <p class="visa-CardNo" data-bind="text:shippingMethod"></p>
+            <!-- /ko -->    
+                <h5>Shipping Notes</h5>
+                <p data-bind="text:shippingNotes"></p>
+            </div>        
+        </div>
+    </div>
+    
+    <div class="row">
+    <!-- ko if:$parent.cancelledSummary() == false  -->   
+        <div class="row order-Line-Details">   
+                <p data-bind = "widgetLocaleText:'orderLineDetailsText'"></p> <span data-bind = "widgetLocaleText:'orderLineDetailsInfo'"> (Select multiple products to add to cart/cancel)</span>
+            </div>             
+        <div class="row cartSummary"> 
+    <!-- ko foreach:orderItems --> 
+        <div class="row row-padd visible-xs visible-sm">   
+            <div class="col-xs-12 pad0 ">
+                <div class="details">
+        		    <img data-bind="attr:{src: primaryFullImageURL}">
+        		    <span>
+            			<p data-bind="text:brand"></p>
+            			<p data-bind="text:productDisplayName"></p>     
+            			<p>
+            				<span>Item</span>
+            				<span data-bind="text:productId"></span>
+            			</p>
+            			<p>
+            				<span data-bind = "widgetLocaleText:'dollarText'"></span>
+            				<span data-bind="text:listPrice"></span>
+            			</p>
+        			</span>
+        	 </div>
+        </div>   
+            <div class="col-xs-12 pad0 ">
+                <div class="col-xs-4 qty">
+                   <p data-bind = "widgetLocaleText:'quantityTitleText'"></p>     
+                   <span data-bind="text:quantity"></span>	   
+            	</div> 
+            	<div class="col-xs-4  listPrice">
+            	   <p data-bind = "widgetLocaleText:'priceTitleText'"></p>  
+                   <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                   <span data-bind="text:listPrice"></span>
+            	</div>
+            	<div class="col-xs-4   listPrice">
+            	   <p data-bind = "widgetLocaleText:'actionsTitleText'"></p>
+            	   <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                   <span data-bind="text:listPrice"></span>
+            	</div>
+        	</div>
+        	<div class="col-xs-12 pad0 actions">
+            <div>
+    	       <a data-bind="click : function(event,data) { $parents[1].addToCart($data) } " class="col-xs-6">Add to Cart</a> 
+               <a data-toggle="modal" data-target="#myModal" data-bind="event:{click: function(data,event){$parents[1].cancelItemDetails($data)}}" class="col-xs-6">Cancel</a>
+                     <!-- Modal -->   
+                      <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content" >
+                            <div class="modal-header">  
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>       
+                              <h4 class="modal-title" data-bind = "widgetLocaleText:'cancellationReasonTitle'"></h4>       
+                            </div>
+                            <div class="modal-body">
+                              <select data-bind="options:$parents[1].optionValues,
+                              value:$parents[1].cancellationOptions,
+                              optionsCaption: 'Cancellation reason', 
+                              event: {change : function(data,event){  $parents[1].updateCancellationReason(data,event)  }}"></select> 
+                            <!-- ko if:$parents[1].cancellationReason()== "Other" -->  
+                              <textarea rows="4" cols="62" maxlength="250" data-bind="validatableValue:$parents[1].cancellationNotes" id="resetField"></textarea>               
+                              <p data-bind="validationMessage:$parents[1].cancellationNotes" role="alert" class="text-danger" ></p> 
+                            <!-- /ko -->  
+                            </div>  
+                            <div class="modal-footer">
+                              <button type="button"  class="btn btn-default"  data-bind="event:{click: function(data,event){$parents[1].submitButton($data)}}">Submit</button>   
+                              <button type="button" class="btn btn-default" data-dismiss="modal" data-bind = "widgetLocaleText:'cancelLinkText'"></button>         
+                            </div>
+                          </div>
+                          
+                        </div>    
+                      </div>
+    	   </div>	   
+    	    </div> 
+    	</div>    
+     <!-- /ko --> 	    
+        <div class="col-md-12 col-sm-12 hidden-xs hidden-sm row-padd ">
+            <div class="col-md-1 col-sm-1  checkBox">
+        		<label class="squarebox">
+        		  <input type="checkbox">
+        		  <span class="checkmark"></span>
+        		</label>
+        	</div>
+        	<div class="col-md-6 col-sm-5  pad0">
+        	    <p data-bind = "widgetLocaleText:'productTitleText'" class="productDetails"></p> 
+        	</div>
+        	<div class="col-md-1 col-sm-1  qty">
+        	   <p data-bind = "widgetLocaleText:'quantityTitleText'"></p>
+        	</div>    
+        	<div class="col-md-2 col-sm-1  listPrice">
+        	   <p data-bind = "widgetLocaleText:'priceTitleText'"></p>
+        	</div>
+        	<div class="col-md-1 col-sm-2  listPrice">
+        	   <p data-bind = "widgetLocaleText:'subtotalTitleText'"></p>
+        	</div>
+        	<div class="col-md-1 col-sm-2 actions">
+        	   <p data-bind = "widgetLocaleText:'actionsTitleText'"></p>
+        	</div>   
+        </div>
+     <!-- ko foreach:orderItems -->     
+        <div class="col-md-12 col-sm-12 hidden-xs  hidden-sm row-padd ">
+            <div class="col-md-1 col-sm-1  pad0">
+        		<label class="squarebox">
+        		  <input type="checkbox">
+        		  <span class="checkmark"></span>
+        		</label>
+    	    </div>
+    	    <div class="col-md-6  col-sm-5  pad0">
+                <div class="details">
+        		    <img data-bind="attr:{src: primaryFullImageURL}">
+        		    <span>
+            			<p data-bind="text:brand"></p>
+            			<p data-bind="text:productDisplayName"></p>     
+            			<p>
+            				<span>Item</span>
+            				<span data-bind="text:productId"></span>
+            			</p>
+            			<p>
+            				<span data-bind = "widgetLocaleText:'dollarText'"></span>
+            				<span data-bind="text:listPrice"></span>
+            			</p>
+        			</span>
+        		</div>		
+        	 </div>
+        	<div class="col-md-1  col-sm-1 qty">
+               <span data-bind="text:quantity"></span>	   
+        	</div> 
+        	<div class="col-md-2 col-sm-1  listPrice">
+               <span data-bind = "widgetLocaleText:'dollarText'"></span>
+               <span data-bind="text:listPrice"></span>
+        	</div>
+        	<div class="col-md-1 col-sm-2   listPrice">
+        	   <span data-bind = "widgetLocaleText:'dollarText'"></span>
+               <span data-bind="text:listPrice"></span>
+        	</div>
+        	<div class="col-md-1 col-sm-2  actions">
+                 <div>   
+    	       <a data-bind="click : function(event,data) { $parents[1].addToCart($data) } ">Add to Cart</a> 
+               <a data-toggle="modal" data-target="#newModal" data-bind="event:{click: function(data,event){$parents[1].cancelItemDetails($data)}}">Cancel</a>
+                     <!-- Modal -->   
+                      <div class="modal fade" id="newModal" role="dialog">
+                        <div class="modal-dialog">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content" >
+                            <div class="modal-header">  
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>       
+                              <h4 class="modal-title" data-bind = "widgetLocaleText:'cancellationReasonTitle'"></h4>           
+                            </div>
+                            <div class="modal-body">
+                              <select data-bind="options:$parents[1].optionValues,
+                              value:$parents[1].cancellationOptions,
+                              optionsCaption: 'Cancellation reason', 
+                              event: {change : function(data,event){  $parents[1].updateCancellationReason(data,event)  }}"></select> 
+                            <!-- ko if:$parents[1].cancellationReason()== "Other" -->  
+                              <textarea rows="4" cols="62" maxlength="250" data-bind="validatableValue:$parents[1].cancellationNotes" id="resetField"></textarea>               
+                              <p data-bind="validationMessage:$parents[1].cancellationNotes" role="alert" class="text-danger" ></p> 
+                            <!-- /ko -->  
+                            </div>  
+                            <div class="modal-footer">
+                              <button type="button"  class="btn btn-default"  data-bind="event:{click: function(data,event){$parents[1].submitButton($data)}}">Submit</button>   
+                              <button type="button" class="btn btn-default" data-dismiss="modal" data-bind = "widgetLocaleText:'cancelLinkText'"></button>         
+                            </div>
+                          </div>
+                          
+                        </div>    
+                      </div>
+    	   </div>	   
+    	    </div>   
+        </div>
+        <!-- /ko -->        
+    </div>    
+        <div>
+                <div class="visible-xs col-xs-12 order-Summary">        
+                     <!-- ko with:orderSummary -->    
+                    <p data-bind = "widgetLocaleText:'orderSummaryTitleText'"></p>
+                    <p>Subtotal:<span data-bind="text:subTotal"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>   
+                    <p>Freight:<span data-bind="text:shipping"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                    <p>Tax:<span data-bind="text:tax"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                    <p>Order Total:<span data-bind="text:total"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                    <!-- /ko -->         
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12 orderStatus-StaticContent">
+                <p  data-bind = "widgetLocaleText:'staticContentLine1'"></p>
+                <p data-bind = "widgetLocaleText:'staticContentLine2'"></p>
+                <p data-bind = "widgetLocaleText:'staticContentLine3'"></p>
+                </div>
+                <div class="col-md-4 col-sm-4 hidden-xs order-Summary">
+                <!-- ko with:orderSummary -->    
+                    <p data-bind = "widgetLocaleText:'orderSummaryTitleText'"></p>
+                    <p>Subtotal:<span data-bind="text:subTotal"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>   
+                    <p>Freight:<span data-bind="text:shipping"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                    <p>Tax:<span data-bind="text:tax"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                    <p>Order Total:<span data-bind="text:total"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                <!-- /ko -->    
+                </div>   
+            </div>
+    <!-- /ko --> 
+    
+    <!--cancellation Orders Summary-->   
+    
+     <!-- ko if:$parent.cancelledSummary() == true  -->  
+    <div class="row cancellationOrdersSummary cartSummary"> 
+     <h3 data-bind = "widgetLocaleText:'cancellationSummaryText'"></h3>
+ 
+        <div class="col-md-12 col-sm-12 hidden-xs hidden-sm row-padd ">
+            <div class="col-md-1 col-sm-1  checkBox">
+                <label class="squarebox">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="col-md-6 col-sm-5  pad0">
+                <p data-bind = "widgetLocaleText:'productTitleText'" class="productDetails"></p> 
+            </div>
+            <div class="col-md-1 col-sm-1  qty">
+            <p data-bind = "widgetLocaleText:'quantityTitleText'"></p>    
+            </div>    
+            <div class="col-md-2 col-sm-1  listPrice">
+            <p data-bind = "widgetLocaleText:'priceTitleText'"></p>
+            </div>
+            <div class="col-md-1 col-sm-2  listPrice">
+            <p data-bind = "widgetLocaleText:'subtotalTitleText'"></p>
+            </div>
+         </div>
+           <!-- ko foreach:$parent.closedOrderSummary() -->  
+        <div class="row visible-xs visible-sm  row-padd  openStatus">
+           <div class="col-xs-12 pad0 ">
+                    <div class="details">
+                        <img data-bind="attr:{src: primaryFullImageURL}">
+                        <span>
+                            <p data-bind="text:brand"></p>
+                            <p data-bind="text:productDisplayName"></p>     
+                            <p>
+                                <span>Item</span>
+                                <span data-bind="text:productId"></span>
+                            </p>
+                            <p>
+                                <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                                <span data-bind="text:listPrice"></span>
+                            </p>
+                        </span>
+                 </div>
+            </div> 
+           <div class="col-xs-12 pad0 ">
+                <div class="col-xs-4 qty">
+                   <p data-bind = "widgetLocaleText:'quantityTitleText'"></p>     
+                   <span data-bind="text:quantity"></span>	   
+                </div> 
+                <div class="col-xs-4  listPrice">
+                   <p data-bind = "widgetLocaleText:'priceTitleText'"></p>  
+                   <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                   <span data-bind="text:listPrice"></span>
+                </div>
+                <div class="col-xs-4   listPrice">
+                   <p data-bind = "widgetLocaleText:'actionsTitleText'"></p>
+                   <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                   <span data-bind="text:listPrice"></span>
+                </div>
+            </div>
+        </div>
+        <!-- /ko --> 
+   <!-- ko foreach:$parent.closedOrderSummary() -->  
+        <div class="col-md-12 col-sm-12 hidden-xs hidden-sm row-padd  openStatus">
+            <div class="col-md-1 col-sm-1  pad0">
+                <label class="squarebox">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="col-md-6  col-sm-5  pad0">
+                <div class="details">
+                    <img data-bind="attr:{src: primaryFullImageURL}">
+                    <span>
+                        <p data-bind="text:brand"></p>
+                        <p data-bind="text:productDisplayName"></p>     
+                        <p>
+                            <span>Item</span>
+                            <span data-bind="text:productId"></span>
+                        </p>
+                        <p>
+                            <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                            <span data-bind="text:listPrice"></span>
+                        </p>
+                    </span>
+                </div>		
+            </div>
+            <div class="col-md-1  col-sm-1 qty">
+            <span data-bind="text:quantity"></span>	   
+            </div> 
+            <div class="col-md-2 col-sm-1  listPrice">
+            <span data-bind = "widgetLocaleText:'dollarText'"></span>
+            <span data-bind="text:listPrice"></span>
+            </div>
+            <div class="col-md-1 col-sm-2   listPrice">
+            <span data-bind = "widgetLocaleText:'dollarText'"></span>
+            <span data-bind="text:listPrice"></span>
+            </div>
+        </div>
+        <!-- /ko --> 
+   
+ 
+        <h3 data-bind = "widgetLocaleText:'uncancelledProductTitle'"></h3>
+       
+       
+        <div class="col-md-12 hidden-sm hidden-xs  row-padd ">
+            <div class="col-md-1 col-sm-1  checkBox">
+                <label class="squarebox">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="col-md-6 col-sm-5  pad0">
+                <p data-bind = "widgetLocaleText:'productTitleText'" class="productDetails"></p>    
+            </div>
+            <div class="col-md-1 col-sm-1  qty">
+            <p data-bind = "widgetLocaleText:'quantityTitleText'"></p>
+            </div>    
+            <div class="col-md-2 col-sm-1  listPrice">
+            <p data-bind = "widgetLocaleText:'priceTitleText'"></p>
+            </div>
+            <div class="col-md-1 col-sm-2  listPrice">
+            <p data-bind = "widgetLocaleText:'subtotalTitleText'"></p>   
+            </div>
+        </div>
+       <!-- ko foreach:$parent.openOrderSummary() -->  
+        <div class="row visible-xs visible-sm  row-padd  ">
+           <div class="col-xs-12 pad0 ">
+                    <div class="details">
+                        <img data-bind="attr:{src: primaryFullImageURL}">
+                        <span>
+                            <p data-bind="text:brand"></p>
+                            <p data-bind="text:productDisplayName"></p>     
+                            <p>
+                                <span>Item</span>
+                                <span data-bind="text:productId"></span>
+                            </p>
+                            <p>
+                                <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                                <span data-bind="text:listPrice"></span>
+                            </p>
+                        </span>
+                 </div>
+            </div> 
+           <div class="col-xs-12 pad0 ">
+                <div class="col-xs-4 qty">
+                   <p data-bind = "widgetLocaleText:'quantityTitleText'"></p>     
+                   <span data-bind="text:quantity"></span>	   
+                </div> 
+                <div class="col-xs-4  listPrice">
+                   <p data-bind = "widgetLocaleText:'priceTitleText'"></p>  
+                   <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                   <span data-bind="text:listPrice"></span>
+                </div>
+                <div class="col-xs-4   listPrice">
+                   <p data-bind = "widgetLocaleText:'actionsTitleText'"></p>
+                   <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                   <span data-bind="text:listPrice"></span>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->     
+     <!-- ko foreach:$parent.openOrderSummary() -->   
+        <div class="col-md-12 col-sm-12 hidden-xs hidden-sm  row-padd ">
+            <div class="col-md-1 col-sm-1  pad0">
+                <label class="squarebox">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="col-md-6  col-sm-5  pad0">
+                <div class="details">
+                    <img data-bind="attr:{src: primaryFullImageURL}">
+                    <span>
+                        <p data-bind="text:brand"></p>
+                        <p data-bind="text:productDisplayName"></p>     
+                        <p>
+                            <span>Item</span>
+                            <span data-bind="text:productId"></span>
+                        </p>
+                        <p>
+                            <span data-bind = "widgetLocaleText:'dollarText'"></span>
+                            <span data-bind="text:listPrice"></span>
+                        </p>
+                    </span>
+                </div>		
+            </div>
+            <div class="col-md-1  col-sm-1 qty">
+            <span data-bind="text:quantity"></span>	   
+            </div> 
+            <div class="col-md-2 col-sm-1  listPrice">
+            <span data-bind = "widgetLocaleText:'dollarText'"></span>
+            <span data-bind="text:listPrice"></span>
+            </div>
+            <div class="col-md-1 col-sm-2   listPrice">
+            <span data-bind = "widgetLocaleText:'dollarText'"></span>
+            <span data-bind="text:listPrice"></span>
+            </div>
+            
+        </div>
+        <!-- /ko --> 
+    
+
+     <div>
+        <div class="visible-xs col-xs-12 order-Summary">
+            <!-- ko with:orderSummary -->    
+                <p data-bind = "widgetLocaleText:'orderSummaryTitleText'"></p>
+                <p>Subtotal:<span data-bind="text:subTotal"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>   
+                <p>Freight:<span data-bind="text:shipping"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                <p>Tax:<span data-bind="text:tax"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                <p>Order Total:<span data-bind="text:total"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+            <!-- /ko -->         
+        </div>
+        <div class="col-md-4 col-sm-4 hidden-xs order-Summary">   
+        <!-- ko with:orderSummary -->    
+                <p data-bind = "widgetLocaleText:'orderSummaryTitleText'"></p>    
+                <p>Subtotal:<span data-bind="text:subTotal"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>   
+                <p>Freight:<span data-bind="text:shipping"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                <p>Tax:<span data-bind="text:tax"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+                <p>Order Total:<span data-bind="text:total"></span><span data-bind = "widgetLocaleText:'dollarText'"></span></p>
+        <!-- /ko -->    
+        </div>       
+     </div>             
+</div> 
+     <!-- /ko -->
+    <!--cancellation Ends here-->
+</div>
+    <!-- /ko -->
+</div>
+</div>

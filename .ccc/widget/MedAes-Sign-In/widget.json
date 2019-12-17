@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAes-Sign-In",
+  "version": 1,
+  "displayName": "MedAes-Sign-In",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAes-Sign-In",
+  "source": 101,
+  "javascript": "MedAes-Sign-In"
+}

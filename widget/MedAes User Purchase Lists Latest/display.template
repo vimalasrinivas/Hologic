@@ -1,0 +1,43 @@
+<div id="CC-purchaseLists" class='container' >   
+<div class='col-sm-12  col-xs-12 title-wrapper nopad'>
+   <div class='col-sm-8 col-xs-12 nopad'>
+      <!-- ko if : (purchaseListGrid().length > 0 ) -->
+    <!-- ko foreach : purchaseListGrid() -->
+     <!-- ko foreach : $data -->
+        <div class='favorites-title'><span class='heading' data-bind="text : (name.length > 30 ? name.substring(0, 29) + '..' : name), attr : {title : name.length > 30 ? name : null, id: 'purchase-list-info-name'+$data.id}"></span>
+        <span class='heading'>(</span><span class='heading' data-bind="text :items.length"></span><span class='heading'>)</span></div>
+        <!--/ko-->
+          <!--/ko-->
+     <!--/ko-->
+   </div>
+   <div class='col-sm-4 col-xs-12 button_wrapper nopad'>
+      <button class="  medAesBtnPrimary remove-all" data-bind='event:{click: function() { handleDeleteSelectedPurchaseList() }},widgetLocaleText:"deleteList"'></button>
+      <button class="  medAesBtnPrimary add-all" data-bind='event:{click: function() { addToCart() }},widgetLocaleText:"addAllItemsToCart"' ></button>
+   </div>
+</div>
+   <div class=' purchaseList-items'> 
+      <!-- ko if : (purchaseListViewModel().items().length > 0 ) -->  
+    <!-- ko foreach : purchaseListViewModel().items() -->
+        <div class="purchaseLists col-sm-12  col-xs-12">
+             <div class="col-sm-3">  
+                <img data-bind="attr:{src:$data.thumbnailUrl}" class="img-responsive" >
+             </div>
+             <div class="col-sm-5 cartItemDetails">
+                 <!--data-bind="text:$data.brand" -->
+                <div class="productype " data-bind="text:$data.brandName" ></div>
+                <div class="productdisplayName " data-bind="text:$data.displayName"></div>
+                <div class="listprice "><span  data-bind="currency: {price: $data.listPrice , currencyObj: $parent.cart().currency}" ></span></div>
+             </div>
+             <div class="col-sm-4 remove-item-wrapper">
+                  <a class='btnLink removeItem' data-bind='event:{click: function(data,event){ $parent.removeItem(data ,event) }},widgetLocaleText:"removeItemFromList"'></a>
+                  <a  class='btnLink moveToCart' data-bind='event:{click: function(data,event){ $parent.addItemToCart(data,event)}},widgetLocaleText:"addItemToCart"'></a>
+             </div>
+            
+          </div>
+           <!--/ko-->
+    <!--/ko-->
+    </div>
+  
+</div>
+
+

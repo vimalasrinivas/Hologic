@@ -1,0 +1,8 @@
+{
+  "tag": "welcome-buttons",
+  "source": 100,
+  "type": "container",
+  "title": "Buttons Group",
+  "widgetType": "spaceWelcomeWidget",
+  "version": 1
+}

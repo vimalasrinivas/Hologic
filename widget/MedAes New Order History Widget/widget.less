@@ -1,0 +1,519 @@
+
+    //#MedAesOrderHistoryLatestWidget_v1-wi400042 {
+    
+    //#MedAesOrderHistoryWidget_v1-wi300340 {
+        #cancellation{
+            select,option{                
+                color: #292929;
+                font-family: "Flama";
+                font-size: 14px;
+                letter-spacing: 0.88px;
+                line-height: 16px;
+                padding-left: 5px;
+            }
+        }
+        ::placeholder {
+          color: #666;
+          opacity: 1; /* Firefox */          
+        }
+    
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */   
+         color: #666;
+        }
+    
+        ::-ms-input-placeholder { /* Microsoft Edge */
+         color: #666;
+        }
+         .bg-color{ 
+            background-color:#f2f2f2;       
+            clear:both;  
+        }
+        .BilltoCustom{
+            width:1px !important;        
+        }
+        #openInvoicesOrders_wrapper{
+         //  overflow-x: scroll;
+         top:-42px !important;              
+        }
+        .dataTables_wrapper{
+            position:relative!important;        
+        }  
+        .dataTables_filter{
+            top: 0px !important;    
+            left: 0px !important;
+            background-color: #fff !important;        
+        }
+         #openInvoicesOrders_filter{   
+            width: 50%;    
+                 .dataTables_filter{  
+                    position: relative;   
+                    top: -43px;       
+            }
+            
+        }    
+        #openInvoicesOrders_filter::after{    
+                top:7px !important;          
+            }
+        .downloadcsvBtn{
+            height: 44px;
+            width: 162px;     
+            border: 1px solid rgba(50,50,50,0.25);   
+            border-radius: 2px;
+            color: #666666;
+            font-family: Flama;
+            font-size: 13px;
+            letter-spacing: 0.46px;    
+            line-height: 16px;
+            text-align: center;
+            background-color: #FFFFFF;
+        }
+       
+        .paySelectBtn{
+            height: 44px;
+            width: 221px;
+            border-radius: 2px;
+            color: #FFFFFF;
+            font-family: Flama;
+            font-size: 13px;   
+            letter-spacing: 0.46px;
+            line-height: 16px;    
+            text-align: center;
+            background-color: #D87900;
+        }
+        .nav-link{  
+            color: @medAesSecondaryTextColor;
+            font-family: "FlamaBook";
+            font-size: 14px;
+            letter-spacing: 0.17px;
+            line-height: 16px;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 0px;
+            padding: 15px 44px;
+            margin-right: 0px !important;    
+            border: 0px !important;
+        @media screen and (min-width:1024px) and (max-width:1330px){
+            padding: 15px 41px; 
+        }   
+        @media screen and (min-width:768px) and (max-width:1023px){        
+            padding: 15px 18px; 
+        } 
+        }
+        .paginate_button {
+                 margin-right: 8px;
+                 padding: 2px 8px;
+                color: #686868;
+                font-family: "FlamaBook";
+                font-size: 13px;
+                letter-spacing: 0.41px;
+                line-height: 15px;
+                text-decoration: none; 
+                cursor: pointer
+        }
+        .paginate_button:hover{
+            text-decoration: none; 
+        }
+        .nav-tabs{
+            border-bottom:0px !important;
+        }
+        .nav-tabs > li.active > a{
+            border:0px !important;
+        }
+        .nav-link:hover{
+            border:0px !important;
+        }
+        .nav-item.active{
+            background-color: #fff;
+        }
+        .nav-item{
+               margin-right: 5px;
+               background-color: #D6D0D0;
+        }
+        .shippedOrders{     
+                margin-bottom: 50px;
+                background-color: #fff;  
+                padding: 30px 20px;   
+            
+            h5{   
+                  color: #333;
+                    font-family: "FlamaBook";
+                    font-size: 14px;
+                    letter-spacing: .17px;
+                    line-height: 16px;
+                    text-align: left;
+                    text-transform: uppercase;
+                    border-radius: 0;
+                    padding:0px;
+                  
+            }  
+            .ReferencePO{
+                    color: #292929 !important;      
+                    cursor:pointer;   
+                    text-decoration: none;
+            }
+            th{
+                    color: #292929;      
+                    font-family: "Flama";
+                    font-size: 14px;
+                    letter-spacing: 0.88px;  
+                    line-height: 17px; 
+                    outline:none;    
+                    border-bottom: 1px solid #DCDCDC;
+                    
+                    @media (max-width: 425px){
+                        width:100% !important;
+                    }
+            }
+            h4 {     
+                
+                font-family: "FlamaBook";
+                font-size: 14px;
+                letter-spacing: 0.88px;
+                line-height: 16px;  
+                margin-bottom:30px;
+                font-weight:300;  
+                
+                a{
+                    color: @medAesPrimaryColor;
+                     text-decoration: underline;
+                     cursor:pointer;
+                }
+            }
+            tbody{
+                border-top: none !important;
+            }
+          /*  tr:last-child{
+                margin-bottom:15px;
+            }*/
+            td{   
+                color: #292929;
+                font-family: "FlamaBook";     
+                font-size: 14px;
+                letter-spacing: 0.88px;
+                line-height: 16px;  
+                padding: 22px 8px;  
+                border-bottom: 1px solid #DCDCDC;   
+                @media screen and (max-width: 1020px){
+                    padding: 22px 4px; 
+                }
+                a{
+                    color: @medAesPrimaryColor !important;
+                    text-decoration:underline;
+                    cursor:pointer;  
+                }
+            }
+        }
+        .order-history-title{
+            color: @medAesSecondaryTextColor;
+            font-family: "Flama";
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            line-height: 28px;
+        }
+     
+        #shippedOrders.active{
+               display: table;
+        }
+        #openOrders.active{
+                display: table;
+        }
+        #invoiceOrders.active{
+                 display: table;
+        }
+        #cancelledOrders.active{
+                 display: table;
+        }
+        .searchBox{
+            margin-bottom: 20px;
+        }
+        #searchBox{
+            width: 25% !important;
+            height: 40px !important;
+        }
+        #searchBox::before{
+            font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+            content: "\f1c3";
+            vertical-align: middle;
+            float: right;
+        }
+        .dataTables_length{
+            display: none;
+        }
+        .dataTables_empty{
+            display:none;
+        }
+        
+         .dataTables_filter{
+            input[type='search']{
+                -webkit-appearance: textfield !important; 
+            }
+        } 
+        .current{
+            border: 1px solid rgba(50,50,50,0.25);
+            border-radius: 2px;
+            color: @medAesPrimaryColor;	
+            font-family: FlamaBook;	
+            font-size: 13px;	
+            letter-spacing: 0.41px;	
+            line-height: 15px;
+        }
+        .paging_numbers{
+            text-align:center;
+            margin-bottom : 20px;
+        }
+       
+        .panel-toggle{
+            text-decoration:none;
+           
+            
+        }
+        .card{
+            .card-header{
+                position: relative;
+                border-bottom: 1px solid #dcdcdc;
+    
+             
+                .panel-toggle{
+                    .collapsed{
+                        .zmdi ::after{
+                            font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+                            content: "\f2fc";
+                            vertical-align: middle;
+                            float: right;
+                            position: absolute;
+                            top: 0px;
+                            right: 0px;
+                            font-size: 21px;
+                            line-height: 18px;
+                        }
+                    }
+                    .zmdi::after{
+                        font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+                        content: "\f2f9";
+                        vertical-align: middle;
+                        float: right;
+                        position: absolute;
+                        top: 0px;
+                        right: 0px;
+                        font-size: 21px;
+                        line-height: 18px;
+                    }
+                }
+            }
+           
+            
+        }
+        .collapsed{
+            .zmdi::before{
+                font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+                content: "\f2f9" !important;
+                vertical-align: middle;
+                float: right;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                font-size: 21px;
+                line-height: 18px;
+            }
+        }
+        .nav-link-mobile{
+            .zmdi::before{
+                font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+                content: "\f2fc";
+                vertical-align: middle;
+                float: right;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                font-size: 21px;
+                line-height: 18px;
+            }
+        }
+        .nav-link-mobile{
+                position: relative;
+                display: block;
+                padding: 0px;
+                text-decoration: none !important;
+                color: #333 !important;
+                font-family: "FlamaBook";
+                font-size: 14px;
+                letter-spacing: .17px;
+                line-height: 16px;
+                text-align: left;
+                text-transform: uppercase;
+                border-radius: 0;
+                margin-right: 0 !important;
+        }
+        .orderTable{
+            overflow-x: scroll;
+        }
+        .dataTables_filter input[type='search'] {
+                -webkit-appearance: textfield !important;
+                border: 1px solid #eee;
+                border-radius: 2px;
+                height: 40px;
+                //margin-left: -59px;      
+                color: #666666;
+                box-shadow:none;        
+                font-weight: 300;   
+                font-family: FlamaBook;
+                font-size: 13px;
+                text-align: left;
+                letter-spacing: 0.5px;  
+                line-height: 15px;
+                margin-bottom:15px;    
+                padding: 8px 45px 8px 15px;       
+                width: 231px;
+             
+            }
+         .dataTables_filter::after {
+            content: '\f1c3';
+            font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+            font-size: 26px;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;   
+             color: rgba(50,50,50,0.25);     
+            left: 191px;    
+            position: absolute;
+            top:8px;            
+        }
+        .dataTables_filter{
+                position: relative;
+        }
+        #invoicePaymentModal{
+            .invoice-payment-dailog{
+                width: 485px !important;
+            }
+            #submit-invoice-payment:hover,#submit-invoice-payment:activ,#submit-invoice-payment:focus {
+                background-color: @medAesPrimaryColor !important;
+                font-size: 14px !important;
+            }
+            #cancel-payment:hover {
+                background-color: @medAesPrimaryColor !important;
+                color: #fff !important;
+                font-size: 14px !important;
+                border: 0px !important;
+            }
+            .invoice-amount-wrapper{
+                  margin: 0px 20px;
+            }.invoice-title{
+                padding-bottom: 15px;
+            }
+            .payment-content{    
+                border-radius:0px !important;
+            }
+            .invoice-title{
+                    color: #333333;
+                    font-family: "Flama";
+                    font-size: 24px;
+                    font-weight: bold;
+                    letter-spacing: 0.3px;
+                    line-height: 28px;
+                    text-align: center;
+            }
+            .invoice-close{
+                    margin-top: -42px !important;
+                    font-size: 32px !important;
+            }
+            .invoice-total-amount{
+                color: #333333;
+                font-family: "Flama";
+                letter-spacing: 0.17px;
+                line-height: 17px;
+                text-align: center;
+                font-weight: bold;
+                border-radius: 2px;
+                background-color: #F6F6F6;
+                padding: 15px;
+            }
+            .submit-invoice-btn{
+                    width: auto;
+                   
+            }
+            #cancel-payment{
+                    margin: 0 15px;
+                   border: 1px solid rgba(50,50,50,0.25);
+                    border-radius: 2px;
+                    background-color: #FFFFFF;
+                    color: #666666;
+                    font-family: Flama;
+                    font-size: 13px;
+                    letter-spacing: 0.46px;
+                    line-height: 16px;
+                    text-align: center;
+                    box-shadow: none
+            }
+            .card-label{
+                color: #333333;
+                font-family: "Flama";
+                letter-spacing: 0.27px;
+                line-height: 16px;
+                font-size: 13px;
+            }
+            .card-control {
+                height: 40px !important;
+              //  margin-bottom:10px !important;
+            }
+            .card-header{
+                border-bottom:0px !important;
+            }  
+            #card-form{
+                .mb10{
+                   // margin-bottom: 10px !important;
+                }
+            }
+            .end-year{
+                text-indent: -1000px;
+            }
+            .card-body{
+                padding-top: 0px;
+            }
+            .paybtn-wrapper{
+                padding: 25px 15px;
+            }
+            .nopad{
+                padding-left:0px !important;
+            }
+        }
+        .sorting-records{
+              position: relative;
+               z-index: 1;
+               float:right;
+               
+               select {   
+                    box-sizing: border-box;    
+                    height: 40px;     
+                    width: 198px;
+                    border: 1px solid #D6D0D0;
+                    border-radius: 2px;
+                    background-color: #FFFFFF;
+                    color: #292929;
+                    font-family: "Flama";
+                    font-size: 14px;
+                    letter-spacing: 0.88px;
+                    line-height: 16px;
+                    padding-left: 5px;
+               }
+               select:active{   
+                   outline: none;  
+               }
+               option{                
+                color: #292929;
+                font-family: "Flama";
+                font-size: 14px;
+                letter-spacing: 0.88px;
+                line-height: 16px;
+                padding-left: 5px;
+            }
+        }
+    //}
+    //}   
+    
+    #addcardFrame{
+        width: 97%;
+        border: none;
+        height: 375px;
+        padding-left: 15px;
+    }        
+    

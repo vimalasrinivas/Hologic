@@ -1,0 +1,32 @@
+<div class="col-xs-12 hero-padding-adjuster" id="Banner_Widget">
+  <div class="cc_crs-heroWidget hero-padding-override">
+    <div id="myCarousel" class="carousel slide"  data-ride="carousel"  data-bind="attr:{id: 'this-carousel-id-'+$data.id()}">
+      
+	  <div class="carousel-inner" role="listbox">
+        <div class="article-carousel article-carousel--cases">
+          <div class="article-carousel__slides" role="toolbar">
+            <!-- ko foreach: new Array($data.translate('count') * 1) -->
+            <div class="slick-slide">
+              <a data-bind="ccLink : $data, attr:{href: $parent.translate('slideImage'+($index() + 1)+'Link')}" href="" class=""> 
+              <img data-bind="attr:{src: $parent.translate('slideImage'+($index() + 1)+'URL')}" class="img-responsive dummy-class"> </a>
+              <div class="slide-text">
+                  <div data-bind="text: $parent.translate('slideImage'+($index() + 1)+'Content')" class="heroBannerContent"></div>
+                  <div class="seeMore">
+				  <button class="learnMoreBtn" data-bind="text: $parent.translate('slideImage'+($index() + 1)+'LearnMore')"> </button>  
+				     <i class="fa fa-arrow-right"></i>
+				    </div>
+              </div>  
+            </div>  
+            <!-- /ko -->
+          </div>
+          <div class="article-carousel__controls">
+            <div class="arrows hidden-xs">  
+              <button type="button" class="btn--clear prev icon-point slick-prev slick-arrow" style="display: inline-block;"></button>
+              <button type="button" class="btn--clear next icon-point slick-next slick-arrow" style="display: inline-block;"></button>
+            </div>
+          </div>
+        </div>
+      </div>      
+    </div>
+  </div>
+</div>

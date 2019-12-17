@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesUserPurchaseListLatestWidget",
+  "version": 1,
+  "displayName": "MedAes User Purchase Lists Latest",
+  "elementized": true,
+  "global": false,
+  "i18nresources": "medAesUserPurchaseListLatestWidget",
+  "source": 101,
+  "javascript": "medAesUserPurchaseListLatestWidget"
+}

@@ -1,0 +1,32 @@
+<div class='checkout_step row'>
+<div class='container'>
+    <div class='continue-shopping-wrapper hidden-xs'><a class='continue-shopping-link' data-bind="ccLink: 'shopNow'" >Continue Shopping</a></div>    
+    <h4 class='checkoutTitleText hidden-xs'>Checkout</h4>
+    <h4 class='checkoutTitleText visible-xs'>Secure Checkout</h4>
+    <div class='continue-shopping-wrapper visible-xs'><a class='continue-shopping-link' data-bind="ccLink: 'shopNow'" >Continue Shopping</a></div> 
+    <div class='checkout-stepper'>
+        <ul class='progressTracker-navigation hidden-xs'>
+            <li role="presentation " class='progressTracker-list active'  >
+                <a class="progressTrackerClick" tabindex="-1"  id='stepOne'   data-bind='event:{ click: function(event,data){ loadShippingSection() }}'>1</a>
+                <span class="displayText stepsText" >Shipping <span class='stepStricker'>----</span></span>   
+            </li>
+             <li role="presentation" class='progressTracker-list'  >
+                <a class="progressTrackerClick" tabindex="-2"  id='stepTwo' data-bind='event:{click: function(event,data){ loadPaymentSection() }}'>2</a>   
+                 <span class="displayText stepsText" >Payment  <span  class='stepStricker' >----</span></span>
+            </li>
+             <li role="presentation" class='progressTracker-list' >
+                <a class="progressTrackerClick" tabindex="-3" >3</a>
+                <span class="displayText stepsText" >Confirmation</span>
+            </li>
+        </ul>
+        <!-- <ul class='progressTracker-navigation visible-xs'>-->
+        <!--    <li role="presentation " class='active showText'  tabindex="-1" >step 1/3 Shipping-->
+        <!--    </li>-->
+        <!--     <li role="presentation"  tabindex="-2" class="showText" >step 2/3 Payment -->
+        <!--    </li>-->
+        <!--     <li role="presentation"  tabindex="-3" class="showText">step 3/3 Confirmation  -->
+        <!--    </li>-->
+        <!--</ul>-->
+    </div>
+</div>
+</div>

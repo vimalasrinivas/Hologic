@@ -1,0 +1,36 @@
+{
+  "imports": [
+    "category",
+    "categoryId",
+    "dimensionId",
+    "productTypes"
+  ],
+  "translations": [
+    {
+      "name": "medAes Product Listing Widget",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "pageTypes": [
+    "category",
+    "searchResults"
+  ],
+  "config": {
+    "blockSize": "60",
+    "displayOptionsSection": "",
+    "fields": "",
+    "gridWidth": "4",
+    "isScrollEnabled": false,
+    "isViewModelCacheEnabled": false,
+    "listType": "product",
+    "productsPerPage": "12",
+    "shouldUseStyleBased": false,
+    "showListViewOption": false,
+    "showResultsPerPageOption": true,
+    "viewModelCacheLimit": "3",
+    "webApplicationConfigSection": ""
+  }
+}

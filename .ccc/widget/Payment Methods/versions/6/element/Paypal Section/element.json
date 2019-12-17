@@ -1,0 +1,8 @@
+{
+  "tag": "splitpayment-paypal",
+  "source": 100,
+  "type": "fragment",
+  "title": "Paypal Section",
+  "widgetType": "splitPayments",
+  "version": 6
+}

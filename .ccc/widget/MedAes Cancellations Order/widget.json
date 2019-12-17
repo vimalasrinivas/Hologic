@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesCancellationsOrder",
+  "version": 1,
+  "displayName": "MedAes Cancellations Order",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAesCancellationsOrder",
+  "source": 101,
+  "javascript": "MedAesCancellationsOrder"
+}

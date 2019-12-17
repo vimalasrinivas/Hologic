@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAes-Home-Products",
+  "version": 1,
+  "displayName": "MedAes-Home-Products",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAes-Home-Products",
+  "source": 101,
+  "javascript": "MedAes-Home-Products"
+}

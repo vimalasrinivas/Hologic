@@ -1,0 +1,15 @@
+{
+  "resources": {
+    "merchantSiteText": "Merchant Site",
+    "originOfOrderText": "Origin Of Order",
+    "priceGroupText": "Price Group",
+    "orderDetailsText": "Order Details",
+    "customerEmailText": "Customer Email",
+    "accountText": "Account",
+    "purchaseOrderText": "Purchase Order",
+    "customerNameText": "Customer Name",
+    "delimiterText": ":",
+    "orderInitiatedDateText": "Order Initiated Date",
+    "punchoutText": "Punchout"
+  }
+}

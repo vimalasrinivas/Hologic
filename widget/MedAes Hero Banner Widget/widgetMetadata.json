@@ -1,0 +1,39 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "MedAes Hero Banner Widget",
+      "language": "en"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "config": {
+    "ArticleFirstImageUrl1": "",
+    "ArticleFirstImageUrl4": "",
+    "ArticleImage1": {
+      "mediaName": "",
+      "src": ""
+    },
+    "ArticleImage2": {
+      "mediaName": "",
+      "src": ""
+    },
+    "ArticleImage3": {
+      "mediaName": "",
+      "src": ""
+    },
+    "ArticleImage4": {
+      "mediaName": "",
+      "src": ""
+    },
+    "ArticleImageDescription1": "",
+    "ArticleImageDescription2": "",
+    "ArticleImageDescription3": "",
+    "ArticleImageDescription4": "",
+    "ArticleThirdImageUrl3": "",
+    "ArticlesecondImageUrl2": ""
+  }
+}

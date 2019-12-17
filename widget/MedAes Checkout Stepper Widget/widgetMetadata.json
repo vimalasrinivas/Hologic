@@ -1,0 +1,16 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "MedAes Checkout Stepper Widget",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "pageTypes": [
+    "checkout"
+  ],
+  "config": {}
+}

@@ -1,0 +1,20 @@
+{
+  "imports": [
+    "shippingCountries"
+  ],
+  "translations": [
+    {
+      "name": "medAesAccountAddressesBook",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "defaultLayout": "medAesAccountAddressesBook_v1_lyt1",
+  "pageTypes": [
+    "profile",
+    "agentAddressBook"
+  ],
+  "config": {}
+}

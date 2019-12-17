@@ -1,0 +1,10 @@
+{
+  "resources": {
+    "buttonApprove": "Approve",
+    "approverComments": "Comments...",
+    "messageLengthExceeded": "Message Length has exceeded 254 characters",
+    "validationModalErrorMessage": "Please ensure you have completed all mandatory fields and corrected any invalid entries.",
+    "unLinkedAddonValidationError": "__productId__ and __skuId__ cannot be approved for this order.",
+    "buttonReject": "Reject"
+  }
+}

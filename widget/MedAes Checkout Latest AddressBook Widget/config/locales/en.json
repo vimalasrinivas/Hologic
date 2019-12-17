@@ -1,0 +1,6 @@
+{
+  "resources": {
+    "includeBillingTextLabel": "Display 'Use shipping address as my billing address'",
+    "includeBillingHelpText": "Select to Include Billing Details and display 'Use default shipping address as my billing address' in this widget."
+  }
+}

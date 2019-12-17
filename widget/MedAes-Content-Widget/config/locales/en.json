@@ -1,0 +1,10 @@
+{
+  "resources": {
+    "contentImageDescription1HelpText": "enter the text for content Description1.",
+    "contentImageTextLabel": "Image",
+    "contentImageDescription1TextLabel": "Description Text1",
+    "contentImageDescription2TextLabel": "Description Text2",
+    "contentImageHelpText": "choose the Image for the content.",
+    "contentImageDescription2HelpText": "enter the text for content Description2."
+  }
+}

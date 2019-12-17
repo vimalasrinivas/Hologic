@@ -1,0 +1,8 @@
+{
+  "tag": "registration-button",
+  "source": 100,
+  "type": "subFragment",
+  "title": "Registration Button",
+  "widgetType": "spaceWelcomeWidget",
+  "version": 1
+}

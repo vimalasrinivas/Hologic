@@ -1,0 +1,13 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "MedAes plp Sorting List",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "config": {}
+}

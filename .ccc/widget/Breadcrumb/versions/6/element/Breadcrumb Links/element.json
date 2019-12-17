@@ -1,0 +1,8 @@
+{
+  "tag": "breadcrumb-links",
+  "source": 100,
+  "type": "fragment",
+  "title": "Breadcrumb Links",
+  "widgetType": "breadcrumb",
+  "version": 6
+}

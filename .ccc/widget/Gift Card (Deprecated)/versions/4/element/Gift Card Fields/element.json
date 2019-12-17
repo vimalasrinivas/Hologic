@@ -1,0 +1,8 @@
+{
+  "tag": "gift-card-fields",
+  "source": 100,
+  "type": "fragment",
+  "title": "Gift Card Fields",
+  "widgetType": "giftCard",
+  "version": 4
+}

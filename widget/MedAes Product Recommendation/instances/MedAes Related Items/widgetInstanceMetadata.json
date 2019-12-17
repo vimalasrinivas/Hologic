@@ -1,0 +1,9 @@
+{
+  "configuration": {
+    "numRecs": "12",
+    "collections": "",
+    "restriction": "In Collection",
+    "strategy": "Blended"
+  },
+  "displayName": "MedAes Related Items"
+}

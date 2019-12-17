@@ -1,0 +1,3 @@
+<!-- ko if: $data.category().description -->
+  <div data-bind="text: $data.category().description"></div>
+<!-- /ko -->

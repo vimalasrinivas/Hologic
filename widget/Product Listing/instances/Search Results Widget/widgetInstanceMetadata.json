@@ -1,0 +1,13 @@
+{
+  "configuration": {
+    "shouldUseStyleBased": false,
+    "showListViewOption": false,
+    "showResultsPerPageOption": true,
+    "gridWidth": "4",
+    "fields": "",
+    "productsPerPage": "12",
+    "listType": "search",
+    "blockSize": "60"
+  },
+  "displayName": "Search Results Widget"
+}

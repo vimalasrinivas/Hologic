@@ -1,0 +1,25 @@
+{
+  "resources": {
+    "cartDropDownText_plural": "__count__ items - __currency____totalPrice__",
+    "totalTableSubTotal": "Sub-Total:",
+    "cartHeading": "Your Shopping Cart",
+    "totalTableSummary": "Shopping cart totals.",
+    "buttonEditCart": "Edit Cart",
+    "buttonCheckout": "Complete Order",
+    "cartOperationsText": "Cart Operations",
+    "miniShoppingCartTitle": "Mini Shopping Cart",
+    "customerNameText": "Customer Name",
+    "cartTableSumary": "This table contains a list of items, currently in your shopping cart.",
+    "miniShoppingCartScrollUp": "Click to view previous set of products",
+    "minicartText": "Mini Cart",
+    "cartColHeaderItemTotal": "Item Total",
+    "totalTableTotal": "Total:",
+    "cartColHeaderImage": "Image",
+    "shoppingCartHeader": "Shopping Cart Summary",
+    "cartDropDownText": "__count__ item - __currency____totalPrice__",
+    "buttonRemoveItem": "Remove",
+    "cartColHeaderName": "Name",
+    "cartColHeaderQuantity": "Quantity",
+    "miniShoppingCartScrollDown": "Click to view next set of products"
+  }
+}

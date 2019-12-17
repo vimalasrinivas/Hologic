@@ -1,0 +1,121 @@
+<div class="row row-bg1">
+    <div class="container register-Form">
+        <div class="cyno-Logo">
+            <img src="file/general/logo-cynosure.svg" class="img-responsive" alt="logo-cynosure">
+           <!-- <img data-bind="ccResizeImage:{   -->
+    						 <!--    source:'file/general/logo-cynosure.svg',-->
+    							<!-- alt: 'logo-cynosure',-->
+    							<!-- title:'logo-cynosure',-->
+    							<!-- errorSrc:'images/noImage.png',-->
+    							<!--errorAlt:'No Image Found'}" class="img-responsive">-->
+        </div>
+        <form class="row" id="myForm">
+            <p>All fields are mandatory.</p>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <label for="FirstName">First Name</label>
+                <input type="text" name="firstname" id="FirstName" class="medium-Size" data-bind="validatableValue:firstName"
+                    maxlength="50">
+                <p data-bind="validationMessage:firstName" role="alert" class="text-danger"></p>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6 pad">
+                <label for="LastName">Last Name</label>
+                <input type="text" name="lastname" id="LastName" class="medium-Size" maxlength="50"
+                    data-bind="validatableValue:lastName" autocomplete="off">
+                <p data-bind="validationMessage:lastName" role="alert" class="text-danger"></p>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 text-box">
+                <label for="Emailid">Email Address</label>
+                <input type="email" name="emailaddress" id="Emailid" class="large-Size" maxlength="100"
+                    data-bind="validatableValue:emailAddress" autocomplete="off">
+                <p data-bind="validationMessage:emailAddress" role="alert" class="text-danger"></p>
+            </div>
+
+            <!--<div class="col-md-12 col-sm-12 col-xs-12">   -->
+            <!--   <label>Phone No:</label>-->
+            <!--   <input type="number" name="phoneno" class="small-Size" data-bind="value:phoneNo1" autocomplete="off">            -->
+            <!--   <input type="number" name="phoneno" class="small-Size" data-bind="value:phoneNo2" autocomplete="off"> -->
+            <!--   <input type="number" name="phoneno" class="xmedium-Size" data-bind="value:phoneNo3" autocomplete="off"> -->
+            <!--   <p data-bind="validationMessage:phoneNumber" role="alert" class="text-danger"></p>  -->
+            <!--</div>-->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <label for="CompanyName">Company Name</label>
+                <input type="text" name="companyname" id="CompanyName" class="large-Size" maxlength="100"
+                    data-bind="validatableValue:companyName" autocomplete="off">
+                <p data-bind="validationMessage:companyName" role="alert" class="text-danger"></p>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <label for="country">Country</label>
+                <select class="large-Size"
+                    data-bind="value:countryOptions,event: {change : function(data,event){$data.updateCountryOptions(data,event)}}"
+                    id="country">
+                    <option value=''>Select</option>
+                    <!-- ko foreach : countryValues()  -->
+                    <option data-bind="value:displayName ,text:displayName"></option>
+                    <!-- /ko -->
+                </select>
+                <p data-bind="validationMessage:countryOptions" role="alert" class="text-danger"></p>
+            </div>
+            <!--<div class="col-md-6 col-sm-6 col-xs-6 pad">-->
+            <!--   <label>State:</label>-->
+            <!--   <select class="medium-Size" data-bind="value:stateOptions,event: {change : function(data,event){$data.updatestateOptions(data,event)}}" id="state">  -->
+            <!--      <option value=''>Select</option> -->
+            <!-- ko foreach : States  -->
+            <!--        <option data-bind="value:abbreviation ,text:displayName"></option>            -->
+            <!-- /ko -->
+            <!--    </select>-->
+            <!--    <p data-bind="validationMessage:stateOptions" role="alert" class="text-danger"></p>         -->
+            <!--</div> -->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <label for="AccountNumber" class="account-number">Account Number <i class="zmdi zmdi-help-outline tooltip"><span   
+                            class="tooltiptext" data-bind="widgetLocaleText:'accountTooltipText'"></span></i></label>
+                <input type="number" name="accountnumber" id="AccountNumber" class="large-Size" data-bind="validatableValue:accountNumber"
+                    autocomplete="off">
+                <p data-bind="validationMessage:accountNumber" role="alert" class="text-danger"></p>
+            </div>
+
+            <div class="row col-md-12 col-sm-12 col-xs-12" id='html_element'>
+            </div>
+            <!-- ko if: showCaptchaError -->
+            <div class="col-md-12 col-sm-12 col-xs-12 captcha-error">
+                <p data-bind="widgetLocaleText:'captchMsg'" role="alert" class="text-danger"></p>
+            </div>
+            <!-- /ko -->
+            <div class="row align col-md-12 col-sm-12 col-xs-12">
+                <!--<button data-bind="event:{click: function(data,event){submitButton($data)}}" </button>-->
+                <button type="button" class="submit"
+                    data-bind="click: function(data, event) {submitButton($data) }">SUBMIT</button>
+
+
+                <div class="row cancel">
+                    <a data-bind="ccLink:{route: '/signIn'}">CANCEL</a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row sign-In">
+        <span>ALREADY REGISTERED?</span>
+        <a data-bind="ccLink:{route: '/signIn'}">SIGN IN</a>
+    </div>
+
+    <div class="modal fade" id="myModal" role="dialog" style='display:none'>
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">THANK YOU</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Thank you for submitting a registration request.
+                        We will review your request and will notify you of the results via email. We will contact you if
+                        we need additional information.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

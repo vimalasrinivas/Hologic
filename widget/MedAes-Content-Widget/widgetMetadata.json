@@ -1,0 +1,21 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "MedAes-Content-Widget",
+      "language": "en"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "config": {
+    "contentImage1": {
+      "mediaName": "",
+      "src": ""
+    },
+    "contentImageDescription1": "",
+    "contentImageDescription2": ""
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "resources": {
+    "invalidPurchaseLimit": "Invalid Purchase limit",
+    "purchaseLimitSetByMerchant": "The merchant has required purchase limits to be enabled.",
+    "purchaseLimitCondition": "If this field is set to 0, all orders will require approval. If this field is empty, no orders will require approval.",
+    "updateCancelModalMessage": "You have unsaved changes. Do you want to save them ?",
+    "updateCancelModalClose": "Discard",
+    "noApproversPresent": "You must have atleast one active Contact set as Approver before enabling Approvals.",
+    "updateCancelModalSave": "Save",
+    "updateSuccessMsg": "Update successfully saved.",
+    "purchaselimitText": "Purchase Limit",
+    "approvalWebhookIsEnabled": "You cannot set the purchase limit because the merchant is using an external system to determine if orders require approval.",
+    "requireApprovalsText": "Require Approvals",
+    "buttonSave": "Save",
+    "buttonCancel": "Cancel",
+    "yesText": "Yes",
+    "orderApprovalSettingsText": "Order Approval Settings",
+    "noText": "No",
+    "updateCacelModalTitle": "Unsaved Changes"
+  }
+}

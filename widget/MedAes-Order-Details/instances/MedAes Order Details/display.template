@@ -1,0 +1,738 @@
+<div class="row" id="MedAes-Order-Details">
+    <div class="container">
+        <div class="row order-Details">
+            <h3 data-bind="widgetLocaleText:'orderDetailsTitleText'"></h3>
+        </div>
+        <!-- ko with:orderDetails -->
+        <div class="row order-Status">
+            <span data-bind="widgetLocaleText:'orderIdText'"></span>
+            <span data-bind="text:oracleOrderNumber"></span>
+            <span data-bind="widgetLocaleText:'orderedOnText'"></span>
+            <span data-bind="text:orderDate"></span>
+            <p>
+            <span data-bind="widgetLocaleText:'statusText'"></span>
+            <span data-bind="text:status"></span>
+            </p>
+            <!-- ko ifnot :$parent.cancelledSummary()   -->
+            <a href="/" class="hidden-xs" data-bind="click:function(data, event) {$parent.reorderProducts($data)}">REORDER</a>
+            <!-- ko if:$parent.showCancelOrderBtn()-->
+            <a data-target="#cancelModal" class="cancel-order hidden-xs" data-bind="click:function(data, event) {$parent.cancelOrderBtn()}">CANCEL</a>
+            <!-- /ko -->
+            <!-- /ko -->
+            <!-- ko ifnot :$parent.cancelledSummary()   -->
+            <!-- ko if:$parent.showCancelOrderBtn()-->
+            <a data-target="#cancelModal" class="cancel-order visible-xs" data-bind="click:function(data, event) {$parent.cancelOrderBtn()}">CANCEL</a>
+            <!-- /ko -->
+            <a href="/" class="visible-xs" data-bind="click:function(data, event) {$parent.reorderProducts($data)}">REORDER</a>
+            <!-- /ko -->
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12 shipping-Address">
+                <div class="border">
+                    <h3 data-bind="widgetLocaleText:'shippingSectionText'"></h3>
+                    <!-- ko foreach:shippingGroups -->
+                    <p data-bind="text:shippingAddress.address1"></p>
+                    <p data-bind="text:shippingAddress.address2"></p>
+                    <p>
+                        <span data-bind="text:shippingAddress.city"></span>,
+                        <span data-bind="text:shippingAddress.state"></span>
+                    </p>
+                    <p data-bind="text:shippingAddress.postalCode"></p>
+                    <p data-bind="text:shippingAddress.country"></p>
+                    <p class="phone-No" data-bind="text:shippingAddress.phoneNumber"></p>
+                    <!-- /ko -->
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4  col-xs-12 payment-Details">
+                <div class="border">
+                    <h3 data-bind="widgetLocaleText:'paymentSectionText'"></h3>      
+                    <!-- ko foreach:paymentGroups -->
+                    <p data-bind="text:billToAddress.address1"></p>
+                    <p>
+                        <span data-bind="text:billToAddress.city"></span>,    
+                        <span data-bind="text:billToAddress.state"></span>
+                    </p>
+                    <p data-bind="text:billToAddress.postalCode"></p>
+                    <p data-bind="text:billToAddress.country"></p>
+                <!-- ko if:card.maskedCCNumber -->    
+                    <p class="visa-CardNo">Visa ending<span data-bind="text:$parents[1].appendCardNo()"></span></p>   
+                <!-- /ko -->    
+                    <!-- /ko -->
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 shipping-Method">
+                <div class="border">
+                    <h3 data-bind="widgetLocaleText:'shippingMethodText'"></h3>
+                    <!-- ko foreach:shippingGroups -->
+                    <p class="method" data-bind="text:shippingMethod"></p>
+                    <!-- /ko -->
+                    <h5>Shipping Notes</h5>
+                    <p data-bind="text:shippingNotes"></p>
+                </div>
+            </div>
+        </div>
+        <!-- ko if : status !== "SHIPPED" -->
+        <div class="row">
+            <!-- ko ifnot :$parent.cancelledSummary()  -->
+            <!-- ko if : $parent.openOrderSummary().length > 0 &&  $parent.shippedOrderSummary().length == 0 -->
+            <div class="row order-Line-Details openorder">
+                <p data-bind="widgetLocaleText:'orderLineDetailsText'"></p> <span
+                    data-bind="widgetLocaleText:'orderLineDetailsInfo'"> (Select multiple products to add to
+                    cart/cancel)</span>
+            </div>
+            <!-- /ko -->
+            <!-- ko if : $parent.openOrderSummary().length > 0 &&  $parent.shippedOrderSummary().length > 0 -->
+            <div class="row order-Line-Details">
+                <p data-bind="widgetLocaleText:'orderLineDetailsText'"></p>
+            </div>
+            <!-- ko foreach : $parent.shippedOrderSummary() -->
+            <div class="row cartSummary ">
+                <div class="col-md-12 col-sm-12 col-xs-12 shipment ">
+                    <span>SHIPMENT</span>
+                    <span data-bind="text:$index()+1"></span>
+                    <span>Shipped on</span>
+                    <span data-bind="text:shipment.shippedDate"></span>
+                    <a class="hidden-xs" data-bind="attr: { href:shipment.shipper}">Track</a>
+                    <a  class="hidden-xs" data-bind="attr: { href:shipment.packingSlip}">Packing Slip</a>
+                    <a class="visible-xs" data-bind="attr: { href:shipment.packingSlip}">Packing Slip</a>
+                    <a class="visible-xs" data-bind="attr: { href:shipment.shipper}">Track</a>
+                    
+                </div>
+                <div class="col-md-12 col-sm-12 hidden-xs hidden-sm row-padd ">
+                    <div class="col-md-1 col-sm-1 hide checkBox">
+                        <label class="squarebox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-sm-5  pad0">
+                        <p data-bind="widgetLocaleText:'productTitleText'" class="productDetails"></p>
+                    </div>
+                    <div class="col-md-1 col-sm-1  qty">
+                        <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                    </div>
+                    <div class="col-md-2 col-sm-1  listPrice">
+                        <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                    </div>
+                    <div class="col-md-1 col-sm-2  listPrice">
+                        <p data-bind="widgetLocaleText:'subtotalTitleText'"></p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 hidden-xs  hidden-sm row-padd ">
+                    <div class="col-md-1 col-sm-1 hide">
+                        <label class="squarebox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6  col-sm-5  pad0">
+                        <div class="details">                            
+                            <img data-bind="ccResizeImage: {
+                                  isSrcSetEnabled : true,
+                                  source:primaryFullImageURL, 
+                                  errorSrc:'/file/general/No Product Image.png', 
+                                  errorAlt:'No Image Found'}"/>                                      
+                            <span class="brand">
+                                <p data-bind="text:brand" class="hide"></p>
+                                <p data-bind="text:productDisplayName"></p>
+                                <p>
+                                    <span>Item</span>
+                                    <span data-bind="text:x_itemNumber"></span>
+                                </p>
+                                <p>
+                                    <span  data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-1  col-sm-1 qty">
+                        <span data-bind="text:quantity"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-1  listPrice">
+                        <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                    </div>
+                    <div class="col-md-1 col-sm-2   listPrice">
+                        <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+            <div class="row cartSummary marg0">
+                <!-- ko if : $parent.openOrderSummary().length > 0 &&  $parent.shippedOrderSummary().length > 0 -->
+                <div class="col-md-12 col-sm-12 col-xs-12 shipment">
+                    <span>SHIPMENT PENDING</span>
+                </div>
+                <!-- /ko -->
+                <!-- ko foreach:$parent.openOrderSummary -->
+                <div class="row row-padd visible-xs visible-sm">
+                    <div class="col-xs-12 pad0 ">
+                        <div class="details">
+                              <img data-bind="ccResizeImage: {
+                                  isSrcSetEnabled : true,
+                                  source:primaryFullImageURL, 
+                                  errorSrc:'/file/general/No Product Image.png', 
+                                  errorAlt:'No Image Found'}"/>   
+                            <span class="brand">
+                                <p data-bind="text:brand" class="hide"></p>
+                                <p data-bind="text:productDisplayName"></p>
+                                <p>
+                                    <span>Item</span>
+                                    <span data-bind="text:x_itemNumber"></span>
+                                </p>
+                                <p>
+                                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 pad0 ">
+                        <div class="col-xs-4 qty">
+                            <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                            <span data-bind="text:quantity"></span>
+                        </div>
+                        <div class="col-xs-4  listPrice">
+                            <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                            <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                        </div>
+                        <div class="col-xs-4   listPrice">
+                            <p data-bind="widgetLocaleText:'subtotalTitleText'"></p>
+                            <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 pad0 actions">
+                        <div>
+                            <a data-bind="click : function(event,data) { $parents[1].addToCart($data) } "
+                                class="col-xs-6">Add to Cart</a>
+                            <a data-toggle="modal" data-target="#cancelModal"
+                                data-bind="event:{click: function(data,event){$parents[1].cancelItemDetails($data)}}"
+                                class="col-xs-6">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <div class="col-md-12 col-sm-12 hidden-xs hidden-sm row-padd ">
+                    <div class="col-md-1 col-sm-1 hide checkBox">
+                        <label class="squarebox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-sm-5  pad0">
+                        <p data-bind="widgetLocaleText:'productTitleText'" class="productDetails"></p>
+                    </div>
+                    <div class="col-md-1 col-sm-1  qty">
+                        <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                    </div>
+                    <div class="col-md-2 col-sm-1  listPrice">
+                        <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                    </div>
+                    <div class="col-md-1 col-sm-2  listPrice">
+                        <p data-bind="widgetLocaleText:'subtotalTitleText'"></p>
+                    </div>
+                    <div class="col-md-2 col-sm-2 actions">
+                        <p data-bind="widgetLocaleText:'actionsTitleText'"></p>
+                    </div>
+                </div>
+                <!-- ko foreach:$parent.openOrderSummary-->
+                <div class="col-md-12 col-sm-12 hidden-xs  hidden-sm row-padd ">
+                    <div class="col-md-1 col-sm-1 hide">
+                        <label class="squarebox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6  col-sm-5  pad0">
+                        <div class="details">
+                              <img data-bind="ccResizeImage: {
+                                  isSrcSetEnabled : true,
+                                  source:primaryFullImageURL, 
+                                  errorSrc:'/file/general/No Product Image.png', 
+                                  errorAlt:'No Image Found'}"/>   
+                            <span class="brand">
+                                <p data-bind="text:brand" class="hide"></p>
+                                <p data-bind="text:productDisplayName"></p>
+                                <p>
+                                    <span>Item</span>
+                                    <span data-bind="text:x_itemNumber"></span>
+                                </p>
+                                <p>
+                                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-1  col-sm-1 qty">
+                        <span data-bind="text:quantity"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-1  listPrice">
+                        <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                    </div>
+                    <div class="col-md-1 col-sm-2   listPrice">
+                        <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-2  actions">
+                        <div>
+                            <a data-bind="click : function(event,data) { $parents[1].addToCart($data) } ">Add to
+                                Cart</a>
+                            <a data-toggle="modal" data-target="#newModal"
+                                data-bind="event:{click: function(data,event){$parents[1].cancelItemDetails($data)}}">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <div class="row marg0">
+                    <div class="visible-xs col-xs-12 order-Summary">
+                        <!-- ko with:orderSummary -->
+                            <p data-bind="widgetLocaleText:'orderSummaryTitleText'"></p>
+                            <p>Subtotal:<span  data-bind="currency: {price:subTotal, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Freight:<span data-bind="currency: {price:shipping, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Tax:<span  data-bind="currency: {price:tax, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Order Total:<span  data-bind="currency: {price:total, currencyObj: $parents[1].cart().currency}"></span></p>
+                        <!-- /ko -->
+                    </div>
+                    <div class="col-md-8 col-sm-8 col-xs-12 orderStatus-StaticContent">
+                        <p><i>•</i>All orders are viewable in the Order Status section regardless of how placed.</p>
+                        <p><i>•</i>To ensure you receive your items as quickly as possible, orders for in-stock items
+                            are immediately sent to our distribution center for shipping.
+                            Please check Order Status Actions column to see if cancellation is possible.</p>
+                        <p><i>•</i>Orders placed for in-stock items before 3pm Eastern Time
+                            will ship the same day. Orders placed after 3pm Eastern Time will ship the following
+                            business day.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-4 hidden-xs order-Summary">
+                        <!-- ko with:orderSummary -->
+                            <p data-bind="widgetLocaleText:'orderSummaryTitleText'"></p>
+                            <p>Subtotal:<span  data-bind="currency: {price:subTotal, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Freight:<span data-bind="currency: {price:shipping, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Tax:<span  data-bind="currency: {price:tax, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Order Total:<span  data-bind="currency: {price:total, currencyObj: $parents[1].cart().currency}"></span></p>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+
+            <!--cancellation Orders Summary-->
+
+            <!-- ko if:$parent.cancelledSummary()  -->
+            <div class="row cancellationOrdersSummary cartSummary">
+                <h3 data-bind="widgetLocaleText:'cancellationSummaryText'"></h3>
+
+                <div class="col-md-12 col-sm-12 hidden-xs hidden-sm row-padd ">
+                    <div class="col-md-1 col-sm-1 hide checkBox">
+                        <label class="squarebox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-sm-5  pad0">
+                        <p data-bind="widgetLocaleText:'productTitleText'" class="productDetails"></p>
+                    </div>
+                    <div class="col-md-1 col-sm-1  qty">
+                        <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                    </div>
+                    <div class="col-md-2 col-sm-1  listPrice">
+                        <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                    </div>
+                    <div class="col-md-1 col-sm-2  listPrice">
+                        <p data-bind="widgetLocaleText:'subtotalTitleText'"></p>
+                    </div>
+                </div>
+                <!-- ko foreach:$parent.closedOrderSummary() -->
+                <div class="row visible-xs visible-sm  row-padd  openStatus marg0">
+                    <div class="col-xs-12 pad0 ">
+                        <div class="details details-Pad">  
+                              <img alt="no product image" data-bind="ccResizeImage: {
+                                  isSrcSetEnabled : true,
+                                  source:primaryFullImageURL, 
+                                  errorSrc:'/file/general/No Product Image.png', 
+                                  errorAlt:'No Image Found'}"/>   
+                            <span class="brand">
+                                <p data-bind="text:brand" class="hide"></p>
+                                <p data-bind="text:productDisplayName"></p>
+                                <p>
+                                    <span>Item</span>
+                                    <span data-bind="text:x_itemNumber"></span>
+                                </p>
+                                <p>
+                                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 pad0 ">
+                        <div class="col-xs-4 qty">
+                            <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                            <span data-bind="text:quantity"></span>
+                        </div>
+                        <div class="col-xs-4  listPrice">
+                            <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                            <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                        </div>
+                        <div class="col-xs-4   listPrice">
+                            <p data-bind="widgetLocaleText:'actionsTitleText'"></p>
+                            <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <!-- ko foreach:$parent.closedOrderSummary() -->
+                <div class="col-md-12 col-sm-12 hidden-xs hidden-sm row-padd  openStatus marg0">
+                    <div class="col-md-1 col-sm-1 hide">
+                        <label class="squarebox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6  col-sm-5  pad0">
+                        <div class="details">
+                             <img alt="no product image" data-bind="ccResizeImage: {
+                                  isSrcSetEnabled : true,
+                                  source:primaryFullImageURL, 
+                                  errorSrc:'/file/general/No Product Image.png', 
+                                  errorAlt:'No Image Found'}"/>   
+                            <span class="brand">
+                                <p data-bind="text:brand" class="hide"></p>
+                                <p data-bind="text:productDisplayName"></p>
+                                <p>
+                                    <span>Item</span>
+                                    <span data-bind="text:x_itemNumber"></span>
+                                </p>
+                                <p>
+                                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-1  col-sm-1 qty">
+                        <span data-bind="text:quantity"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-1  listPrice">
+                        <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                    </div>
+                    <div class="col-md-1 col-sm-2   listPrice">
+                        <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                    </div>
+                </div>
+                <!-- /ko -->
+
+
+
+                <!-- ko if:$parent.openOrderSummary().length > 0 -->
+                <h3 data-bind="widgetLocaleText:'uncancelledProductTitle'"></h3>
+                <div class="col-md-12 hidden-sm hidden-xs  row-padd">
+                    <div class="col-md-1 col-sm-1 hide checkBox">
+                        <label class="squarebox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-sm-5  pad0">
+                        <p data-bind="widgetLocaleText:'productTitleText'" class="productDetails"></p>
+                    </div>
+                    <div class="col-md-1 col-sm-1  qty">
+                        <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                    </div>
+                    <div class="col-md-2 col-sm-1  listPrice">
+                        <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                    </div>
+                    <div class="col-md-1 col-sm-2  listPrice">
+                        <p data-bind="widgetLocaleText:'subtotalTitleText'"></p>
+                    </div>
+                </div>
+                <!-- ko foreach:$parent.openOrderSummary() -->
+                <div class="row visible-xs visible-sm  row-padd">
+                    <div class="col-xs-12 pad0 ">
+                        <div class="details">
+                              <img data-bind="ccResizeImage: {
+                                  isSrcSetEnabled : true,
+                                  source:primaryFullImageURL, 
+                                  errorSrc:'/file/general/No Product Image.png', 
+                                  errorAlt:'No Image Found'}"/>   
+                            <span class="brand">
+                                <p data-bind="text:brand" class="hide"></p>
+                                <p data-bind="text:productDisplayName"></p>
+                                <p>
+                                    <span>Item</span>
+                                    <span data-bind="text:x_itemNumber"></span>
+                                </p>
+                                <p>
+                                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 pad0 ">
+                        <div class="col-xs-4 qty">
+                            <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                            <span data-bind="text:quantity"></span>
+                        </div>
+                        <div class="col-xs-4  listPrice">
+                            <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                            <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                        </div>
+                        <div class="col-xs-4   listPrice">
+                            <p data-bind="widgetLocaleText:'actionsTitleText'"></p>
+                            <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+                <!-- ko foreach:$parent.openOrderSummary() -->
+                <div class="col-md-12 col-sm-12 hidden-xs hidden-sm  row-padd ">
+                    <div class="col-md-1 col-sm-1 hide  pad0">
+                        <label class="squarebox">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="col-md-6  col-sm-5  pad0">
+                        <div class="details">
+                            <img data-bind="ccResizeImage: {
+                                  isSrcSetEnabled : true,
+                                  source:primaryFullImageURL, 
+                                  errorSrc:'/file/general/No Product Image.png', 
+                                  errorAlt:'No Image Found'}"/>   
+                            <span class="brand">
+                                <p data-bind="text:brand" class="hide"></p>
+                                <p data-bind="text:productDisplayName"></p>
+                                <p>
+                                    <span>Item</span>
+                                    <span data-bind="text:x_itemNumber"></span>
+                                </p>
+                                <p>
+                                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-1  col-sm-1 qty">
+                        <span data-bind="text:quantity"></span>
+                    </div>
+                    <div class="col-md-2 col-sm-1  listPrice">
+                        <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                    </div>
+                    <div class="col-md-1 col-sm-2   listPrice">
+                        <span data-bind="currency: {price:listPrice, currencyObj: $parents[1].cart().currency}"></span>
+                    </div>
+
+                </div>
+                <!-- /ko -->
+                <!-- /ko -->
+
+
+                <div class="row marg0">
+                    <div class="visible-xs col-xs-12 order-Summary">
+                        <!-- ko with:orderSummary -->
+                            <p data-bind="widgetLocaleText:'orderSummaryTitleText'"></p>
+                            <p>Subtotal:<span  data-bind="currency: {price:subTotal, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Freight:<span data-bind="currency: {price:shipping, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Tax:<span  data-bind="currency: {price:tax, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Order Total:<span  data-bind="currency: {price:total, currencyObj: $parents[1].cart().currency}"></span></p>
+                        <!-- /ko -->
+                    </div>
+                    <div class="col-md-3 col-sm-4 hidden-xs order-Summary">
+                        <!-- ko with:orderSummary -->
+                            <p data-bind="widgetLocaleText:'orderSummaryTitleText'"></p>
+                            <p>Subtotal:<span  data-bind="currency: {price:subTotal, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Freight:<span data-bind="currency: {price:shipping, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Tax:<span  data-bind="currency: {price:tax, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Order Total:<span  data-bind="currency: {price:total, currencyObj: $parents[1].cart().currency}"></span></p>
+                        <!-- /ko -->
+                    </div>
+                </div>
+            </div>
+            <!-- /ko -->
+
+            <!--cancellation Ends here-->
+        </div>
+        <!-- /ko -->
+        <!-- ko if :  status == "SHIPPED" -->
+        <div class="row order-Line-Details">
+            <p data-bind="widgetLocaleText:'orderLineDetailsText'"></p>
+        </div>
+        <div class="row cartSummary">
+
+            <!-- ko foreach : $parent.shippedSummary() -->
+            <div class="col-md-12 col-sm-12 col-xs-12 shipment">
+                <span>SHIPMENT</span>
+                <span data-bind="text:$index()+1"></span>
+                <span>Shipped on</span>
+                <span data-bind="text:$data[0].shipment.shippedDate"></span>
+                <span class="links">
+                    <a data-bind="attr: { href:$data[0].shipment.packingSlip},click:function(data,event){$parents[1].downloadPackagingSlip($data[0].shipment)}" 
+                    target="_blank">Packing Slip</a>
+                    <!-- ko if :  $data[0].shipment.trackingUrl !== "" -->
+                        <a data-bind="attr: { href:$data[0].shipment.trackingUrl}" target="_blank">Track</a>
+                    <!-- /ko -->
+                    
+                      
+                </span>
+            </div>
+            <div class="col-md-12 col-sm-12 hidden-xs hidden-sm row-padd ">
+                <div class="col-md-1 col-sm-1 hide checkBox">
+                    <label class="squarebox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="col-md-6 col-sm-5  pad0">
+                    <p data-bind="widgetLocaleText:'productTitleText'" class="productDetails"></p>
+                </div>
+                <div class="col-md-1 col-sm-1  qty">
+                    <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                </div>
+                <div class="col-md-2 col-sm-1  listPrice">
+                    <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                </div>
+                <div class="col-md-1 col-sm-2  listPrice">
+                    <p data-bind="widgetLocaleText:'subtotalTitleText'"></p>
+                </div>
+            </div>
+            <!-- ko foreach : $data -->
+            <div class="col-md-12 col-sm-12 hidden-xs  hidden-sm row-padd ">
+                <div class="col-md-1 col-sm-1 hide">
+                    <label class="squarebox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="col-md-6  col-sm-5  pad0">
+                    <div class="details">
+                         <img data-bind="ccResizeImage: {
+                                  isSrcSetEnabled : true,
+                                  source:primaryFullImageURL, 
+                                  errorSrc:'/file/general/No Product Image.png', 
+                                  errorAlt:'No Image Found'}"/>             
+                        <span class="brand">
+                            <p data-bind="text:brand" class="hide"></p>
+                            <p data-bind="text:productDisplayName"></p>
+                            <p>
+                                <span>Item</span>
+                                <span data-bind="text:x_itemNumber"></span>
+                            </p>   
+                            <p>
+                                <span data-bind="currency: {price:listPrice, currencyObj: $parents[2].cart().currency}"></span>
+                            </p>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-1  col-sm-1 qty">
+                    <span data-bind="text:quantity"></span>    
+                </div>
+                <div class="col-md-2 col-sm-1  listPrice">
+                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[2].cart().currency}"></span>
+                </div>
+                <div class="col-md-1 col-sm-2   listPrice">
+                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[2].cart().currency}"></span>
+                </div>
+            </div>
+             <div class="col-xs-12 col-sm-12 visible-xs visible-sm row-padd ">
+                <div class="col-md-1 col-sm-1 hide">
+                    <label class="squarebox">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class=" col-sm-12 col-xs-12  pad0">
+                    <div class="details">
+                         <img data-bind="ccResizeImage: {
+                                  isSrcSetEnabled : true,
+                                  source:primaryFullImageURL, 
+                                  errorSrc:'/file/general/No Product Image.png', 
+                                  errorAlt:'No Image Found'}"/>             
+                        <span class="brand">
+                            <p data-bind="text:brand" class="hide"></p>
+                            <p data-bind="text:productDisplayName"></p>
+                            <p>
+                                <span>Item</span>
+                                <span data-bind="text:x_itemNumber"></span>
+                            </p>   
+                            <p>
+                                <span data-bind="currency: {price:listPrice, currencyObj: $parents[2].cart().currency}"></span>
+                            </p>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-xs-4  qty">
+                    <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                    <span data-bind="text:quantity"></span>    
+                </div>
+                <div class="col-sm-4 col-xs-4  listPrice">
+                     <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[2].cart().currency}"></span>
+                </div>
+                <div class="col-sm-4 col-xs-4   listPrice">
+                    <p data-bind="widgetLocaleText:'subtotalTitleText'"></p>
+                    <span data-bind="currency: {price:listPrice, currencyObj: $parents[2].cart().currency}"></span>
+                </div>
+            </div>   
+            <!-- /ko -->
+            <!-- /ko -->
+        </div>
+        <div class="row">
+            <div class="visible-xs col-xs-12 order-Summary">
+                <!-- ko with:orderSummary -->
+                            <p data-bind="widgetLocaleText:'orderSummaryTitleText'"></p>
+                            <p>Subtotal:<span  data-bind="currency: {price:subTotal, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Freight:<span data-bind="currency: {price:shipping, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Tax:<span  data-bind="currency: {price:tax, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Order Total:<span  data-bind="currency: {price:total, currencyObj: $parents[1].cart().currency}"></span></p>
+                <!-- /ko -->
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-12 orderStatus-StaticContent">
+                <p><i>•</i>All orders are viewable in the Order Status section regardless of how placed.</p>
+                <p><i>•</i>To ensure you receive your items as quickly as possible, orders for in-stock items are
+                    immediately sent to our distribution center for shipping.
+                    Please check Order Status Actions column to see if cancellation is possible.</p>
+                <p><i>•</i>Orders placed for in-stock items before 3pm Eastern
+                    Time will ship the same day. Orders placed after 3pm Eastern Time will ship the following business
+                    day.</p>
+            </div>
+            <div class="col-md-3 col-sm-4 hidden-xs order-Summary">
+                <!-- ko with:orderSummary -->
+                            <p data-bind="widgetLocaleText:'orderSummaryTitleText'"></p>    
+                            <p>Subtotal:<span  data-bind="currency: {price:subTotal, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Freight:<span data-bind="currency: {price:shipping, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Tax:<span  data-bind="currency: {price:tax, currencyObj: $parents[1].cart().currency}"></span></p>
+                            <p>Order Total:<span  data-bind="currency: {price:total, currencyObj: $parents[1].cart().currency}"></span></p>
+                <!-- /ko -->
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- Modal -->
+        <div class="modal fade" id="cancelModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title" data-bind="widgetLocaleText:'cancellationReasonTitle'"></h4>
+                    </div>
+                    <div class="modal-body">
+                        <select id="Reasons"
+                            data-bind="options:$parent.optionValues,
+                                                  value:$parent.cancellationOptions,
+                                                  optionsCaption: 'Cancellation reason', 
+                                                  event: {change : function(data,event){  $parent.updateCancellationReason(data,event)  }}"></select>
+                        <!-- ko if:$parent.cancellationReason()== "Other" -->
+                        <textarea rows="4" cols="62" maxlength="250"
+                            data-bind="validatableValue:$parent.cancellationNotes" id="resetField"></textarea>
+                        <p data-bind="validationMessage:$parent.cancellationNotes" role="alert" class="text-danger">
+                        </p>
+                        <!-- /ko -->
+                    </div>
+                    <div class="modal-footer">
+                        <button id="submitCancel" type="button" class="btn btn-default"    
+                            data-bind="event:{click: function(data,event){$parent.submitButton()}}">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                            data-bind="widgetLocaleText:'cancelLinkText'"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

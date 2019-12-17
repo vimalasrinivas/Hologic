@@ -1,0 +1,16 @@
+{
+  "resources": {
+    "wasText": "Was",
+    "salePriceText": "Sale price",
+    "onSaleText": "Sale",
+    "previousImageText": "Previous Images",
+    "calculatePriceText": "Calculating Price",
+    "priceUnavailable": "Price Unavailable",
+    "quickViewText": "ADD TO CART",
+    "numRecsHelpText": "The maximum number of recommendations to display.",
+    "listPriceText": "List price",
+    "nextImageText": "Next Images",
+    "recommendationsTitleText": "RECENTLY VIEWED",
+    "numRecsLabel": "Number of Recommendations"
+  }
+}

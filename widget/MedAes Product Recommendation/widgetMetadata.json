@@ -1,0 +1,20 @@
+{
+  "imports": [
+    "product"
+  ],
+  "translations": [
+    {
+      "name": "MedAes Product Recommendation",
+      "language": "en"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "config": {
+    "numRecs": "12",
+    "restriction": "Unrestricted",
+    "strategy": "Blended"
+  }
+}

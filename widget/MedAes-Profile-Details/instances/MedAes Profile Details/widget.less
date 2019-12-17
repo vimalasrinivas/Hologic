@@ -1,0 +1,144 @@
+#WIDGET_ID-WIDGET_INSTANCE_ID {
+/* -------------------------------------------------- */
+/*	Secondary Navigation Widget */
+/* -------------------------------------------------- */	
+#secondaryVerticalTabs{
+ padding-top: 9px;  
+ background-color: #FFFFFF;  
+ 	height: 241px;	
+ 	width: 183px;
+ 	@media screen and (max-width:1199px) and (min-width:992px){            
+ 	    width:150px;     
+ 	}
+ 	@media screen and (max-width:991px) and (min-width:768px){
+ 	    width: unset;            
+ 	}
+}
+.dashboard{
+    margin: 0px;
+    padding: 0px 15px;
+    background: #f6f6f6;
+}
+.active{
+         color: #d87900 !important;           
+    
+	}     
+.pad0{
+    padding:0px;  
+}
+.left-Navigation{           
+  padding: 15px 0px; 
+}
+
+#MedAes-Profile-Details{
+    @media (min-width:600px) and (max-width:768px){
+        margin-left: 14px;  
+    }  
+    
+    background-color: #FFFFFF;  
+	.nav li{    
+	a{  
+    	color:@medAesSecondaryTextColor;
+        font-family:"FlamaBook" ;  
+        font-size: 14px;
+        letter-spacing: 0.54px;
+        line-height: 16px;
+	}
+	
+	a:hover,a:focus{           
+	 color:@medAesPrimaryColor;
+	 background-color:transparent;
+	}
+	}
+	.nav li.listBackgroundColor{
+       border: 0 !important;
+       background-color: #195d8e !important;
+       color: #ffffff !important;    
+    }
+	.nav li:last-child {
+    
+    }    
+    .btn-navbar{
+      float: left;
+    }
+    .navbar-toggle{   
+      background-color: black;
+    }
+    .icon-bar{
+      background-color: white;
+    }      
+}
+#MedAes-Profile-Details_agent{    
+	.nav li{
+		border-top: 1px solid #195d8e;
+	}
+	.nav li.active a{
+		border: 0;
+		background-color: #ffffff !important;
+		color: #027BC7 !important;
+	}	
+	.nav li.listBackgroundColor{
+       border: 0 !important;
+       background-color: #195d8e !important;
+       color: #ffffff !important;    
+    }   
+    .btn-navbar{
+      float: left;
+    }
+    .navbar-toggle{
+      background-color: black;
+    }
+    .icon-bar{
+      background-color: white;
+    }
+    .nav li.active {
+	  border-bottom: 3px solid #027BC7 !important;
+	} 
+	.nav-tabs {
+	  border-bottom: 0px;
+	  > li > a {
+	    border: 0px;
+	  } 
+	}
+    .navListStyle {
+      border-bottom: 3px solid #FFFFFF;
+      padding: .1rem;
+      border-top: 0px !important;
+    }     
+}
+    .accountDropdown{  
+        border-radius: 2px;
+        box-shadow: none;
+        font-size: 13px;
+        font-family: FlamaBook;
+        border-right: none;
+        border: 1px solid #eee;   
+     @media screen and (max-width:767px){
+        margin-top: 15px;
+     }   
+        button{
+            font-size: 15px;
+            font-family: FlamaBook;      
+            text-transform: uppercase;       
+            padding: 10px;
+            outline:none;     
+            width: 100%;     
+            text-align: left;
+            background-color: #fff;
+        }
+        
+        .dropdown-menu{  
+            width: 100%;  
+        }
+        li{    
+            padding:0px 5px;     
+        }
+    }
+}
+
+
+@media(min-width:992px){         
+   .container{
+    padding-left: 0px;  
+}   
+}

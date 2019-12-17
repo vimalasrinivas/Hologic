@@ -1,0 +1,17 @@
+{
+  "resources": {
+    "headerOrderTotal": "Order Total",
+    "ordersPendingApprovalText": "Orders Pending Approval",
+    "NoItemDisplayMessage": "No Items to display.",
+    "searchOrderId": "Search for Order ID",
+    "notApproverMessage": "User doesn't have enough permissions to see orders placed for this organization",
+    "headerOrderID": "Order ID",
+    "show": "Show",
+    "approvalReason": "Approval Reason",
+    "itemsPerPageText": "items per page",
+    "tableFooter": "__start__-__end__ of __total__ items",
+    "headerSubmittedBy": "Submitted By",
+    "myAccount": "My Account",
+    "headerOrderDate": "Order Date"
+  }
+}

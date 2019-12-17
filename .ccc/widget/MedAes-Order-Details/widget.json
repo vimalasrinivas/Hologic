@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAes-Order-Details",
+  "version": 1,
+  "displayName": "MedAes-Order-Details",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAes-Order-Details",
+  "source": 101,
+  "javascript": "MedAes-Order-Details"
+}

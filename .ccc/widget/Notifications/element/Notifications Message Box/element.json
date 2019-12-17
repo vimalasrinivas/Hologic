@@ -1,0 +1,8 @@
+{
+  "tag": "notifications-message-box",
+  "source": 100,
+  "type": "fragment",
+  "title": "Notifications Message Box",
+  "widgetType": "notifications",
+  "version": 2
+}

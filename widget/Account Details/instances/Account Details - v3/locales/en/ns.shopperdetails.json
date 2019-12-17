@@ -1,0 +1,23 @@
+{
+  "resources": {
+    "updateCancelModalMessage": "You have unsaved changes. Do you want to save them ?",
+    "updateCancelModalClose": "Discard",
+    "myAccountText": "My Account",
+    "phoneNumberInvalid": "Invalid entry. Please enter a valid telephone number.",
+    "updateCancelModalSave": "Save",
+    "updateSuccessMsg": "Update successfully saved.",
+    "preferredLocaleNotInSupportedLocalesError": " Your language preference is no longer supported and has reverted to the default setting. Please check your settings and update as required.",
+    "userDetailsHeader": "To change your name , click in the appropriate fields.",
+    "emailPreferences": "Email Preferences",
+    "myProfileText": "My Profile",
+    "wishListSettingsText": "Wish List Settings",
+    "marketingMailsText": "I want to get email updates.",
+    "emailMarketingMailsRequired": "Email Marketing field is mandatory.",
+    "personalizationConsentText": "Show me relevant site content and promotions whilst browsing.",
+    "updateFailedMsg": "Your changes failed to save.",
+    "updateErrorMsg": "Please ensure you have completed all mandatory fields and corrected any invalid entries.",
+    "updateCacelModalTitle": "Unsaved Changes",
+    "localeText": "Preferred language:",
+    "userDetailsText": "Account Details"
+  }
+}

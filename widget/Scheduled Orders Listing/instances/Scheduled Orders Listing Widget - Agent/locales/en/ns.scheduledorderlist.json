@@ -1,0 +1,26 @@
+{
+  "resources": {
+    "editOrder": "Edit",
+    "NoItemDisplayMessage": "No Items to display.",
+    "scheduledOrderStatus": "Status",
+    "scheduledOrderName": "Name",
+    "scheduledOrderDetails": "Order Details",
+    "copyToCart": "Copy Order",
+    "frequency": "Frequency",
+    "lastScheduledRun": "Last Order",
+    "scheduledOrderId": "ID",
+    "orderDetails": "Details",
+    "Active": "Active",
+    "createdDate": "Date Created",
+    "placeOrderModalMessage": "Your shopping cart contains other products. If you proceed, the products in this selected order will be merged with those in your cart.",
+    "deleteSuccessMsg": "Successfully deleted",
+    "backToMyAccount": "<< Back to My Account",
+    "action": "Action",
+    "buttonOk": "Ok",
+    "scheduledOrderListText": "Scheduled Orders",
+    "deleteOrder": "Delete",
+    "myAccount": "My Account",
+    "Suspended": "Suspended",
+    "nextShipDate": "Next Order"
+  }
+}

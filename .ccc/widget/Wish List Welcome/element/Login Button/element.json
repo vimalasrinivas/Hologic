@@ -1,0 +1,8 @@
+{
+  "tag": "login-button",
+  "source": 100,
+  "type": "subFragment",
+  "title": "Login Button",
+  "widgetType": "spaceWelcomeWidget",
+  "version": 1
+}

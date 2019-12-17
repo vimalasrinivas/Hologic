@@ -1,0 +1,407 @@
+<div class="row" id="MedAes-invoice-Details">
+    <div class="container">
+        <!-- ko if : displayInvoiceDetailsData()-->
+        <!-- ko with:displayInvoiceDetailsData() -->
+        <div class="row invoice-Details">
+            <h3 data-bind="widgetLocaleText:'invoiceDetailsTitleText'"></h3>
+        </div>
+        <div class="row invoice-Status">
+            <span data-bind="widgetLocaleText:'invoiceIdText'"></span>
+            <span data-bind="text:$data.invoiceNumber"></span>
+            <span data-bind="widgetLocaleText:'invoiceDateText'"></span>
+            <span data-bind="text:$data.dueDate"></span>
+            <!-- ko if : referencePO -->
+             <span > | </span>
+            <!-- /ko -->
+          <span data-bind="widgetLocaleText:'refID/POText'"></span>
+          <span data-bind="text:referencePO"></span>
+           <!-- <span data-bind="widgetLocaleText:'docText'"></span>
+            <span data-bind="text:$data.orderId"></span>   -->
+
+            <button class="payNow hidden-sm hidden-xs"
+                data-bind='event: { click : function(data,event) { $parent.invoiceDetailsPayment(data,event) }},widgetLocaleText:"paynowButtonText",enable: $parent.disablePayButton(),css: { "disablePayBtn": !$parent.disablePayButton() }' ></button>
+            <a data-bind='event: { click : function(data,event) { $parent.reprintInvoices(data,event) }},widgetLocaleText:"printButtonText"'
+                class="print hidden-sm hidden-xs"></a>
+            <a href="/" data-bind="widgetLocaleText:'viewOrderDetailsText',event: { click : function(data,event) { $parent.redirectOrderDetailPage(orderId)}}"
+                class="viewinvoiceDetails hidden-sm hidden-xs redirectInorder"></a>
+        </div>
+        <div class="row invoice-Status visible-xs visible-sm">
+            <a data-bind="widgetLocaleText:'viewOrderDetailsText',ccLink:{route:'/OrderDetailsPage'}" href="/"        
+                class="viewinvoiceDetails"></a>
+            <a data-bind='event: { click : function(data,event) { $parent.reprintInvoices(data,event) }},widgetLocaleText:"printButtonText"'    
+                class="print"></a>
+            <button class="payNow"
+                data-bind='event: { click : function(data,event) {  $parent.invoiceDetailsPayment(data,event) }},widgetLocaleText:"paynowButtonText"'></button>
+        </div>
+        <div class="row">
+            <!-- ko if: $data.hasOwnProperty('billToAddress') -->   
+           
+            <div class="col-md-4 col-sm-4 col-xs-12 shipping-Address">
+                <div class="border">
+
+                    <h3 data-bind="widgetLocaleText:'billToSectionText'"></h3>
+
+                    <p data-bind="text:billToAddress.address1"></p>
+                    <p data-bind="text:billToAddress.address2"></p>
+                    <p>
+                        <span data-bind="text:billToAddress.city"></span>,
+                        <span data-bind="text:billToAddress.state"></span>
+                    </p>
+                    <p data-bind="text:billToAddress.postalCode"></p>
+                    <p data-bind="text:billToAddress.country"></p>
+
+
+                </div>
+            </div>
+             <!-- /ko -->           
+              <!-- ko if: $data.hasOwnProperty('shipToAddress') -->    
+            <div class="col-md-4 col-sm-4  col-xs-12 payment-Details">
+                <div class="border">
+
+                    <h3 data-bind="widgetLocaleText:'shipToCustomerSectionText'"></h3>
+                    <p data-bind="text:shipToAddress.address1"></p>
+                    <p data-bind="text:shipToAddress.address2"></p>
+                    <p>
+                        <span data-bind="text:shipToAddress.city"></span>,
+                        <span data-bind="text:shipToAddress.state"></span>
+                    </p>
+                    <p data-bind="text:shipToAddress.postalCode"></p>
+                    <p data-bind="text:shipToAddress.country"></p>
+                    <p class="phone-No" data-bind="text:shipToAddress.phoneNumber"></p>
+
+                </div>
+            </div>
+            <!-- /ko -->
+            <div class="col-md-4 col-sm-4 col-xs-12 shipping-Method">
+                <div class="border">
+                    <h3 data-bind="widgetLocaleText:'otherDetailsSectionText'"></h3>
+                    <p data-bind="widgetLocaleText:'salesOrderText'"></p>
+                    <span data-bind="text:$data.orderId"></span><br>   
+                    <p data-bind="widgetLocaleText:'dueDateText'"></p>
+                    <span data-bind="text:$data.dueDate"></span><br>
+                    <p data-bind="widgetLocaleText:'openBalanceText'"></p>
+                    <span data-bind="text:$data.balanceDue"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row invoice-Line-Details">
+                <p data-bind="widgetLocaleText:'invoiceLineDetailsText'"></p>
+            </div>
+            <div class="row cartSummary">
+                <!-- ko if:hasOwnProperty('orderItems') --> 
+                <!-- ko foreach : orderItems -->
+                <div class="row row-padd visible-xs visible-sm">
+                    <div class="col-xs-12 pad0 ">
+                        <div class="details">
+                          
+                             <!-- ko if:$data.hasOwnProperty('productId')-->
+                                <!-- ko if : $data.productId==null || $data.productId=="" -->
+                                 <img data-bind="ccResizeImage: {    
+                                    	isSrcSetEnabled : true,
+                                    	errorSrc:'/file/general/No Product Image.png',       
+                                    	errorAlt:'No Image Found'}">
+                                <!-- /ko -->
+                              <!-- /ko -->
+                              
+                            <!-- ko if:$data.hasOwnProperty('primaryFullImageURL')-->
+                                <img data-bind="ccResizeImage: {    
+                                	isSrcSetEnabled : true,
+                                	source:primaryFullImageURL,
+                                	alt:'primaryFullImageURL',   
+                                	 title:'primaryFullImageURL',  
+                                	errorSrc:'/file/general/No Product Image.png',       
+                                	errorAlt:'No Image Found'}">
+                            <!-- /ko -->  
+                             
+                            <span class="brand">
+                            <!-- ko if:$data.hasOwnProperty('brand')-->    
+                                <p  data-bind="text:brand"></p> 
+                            <!-- /ko -->    
+                                <p data-bind="text:productDisplayName"></p>   
+                                <p>
+                                     <!-- ko if:$data.hasOwnProperty('productId')-->
+                                    <span>Item</span>  
+                                    <span data-bind="text:productId"></span>
+                                    <!-- /ko -->  
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 pad0 ">
+                        <div class="col-xs-4 qty">
+                            <!--<p data-bind = "widgetLocaleText:'quantityTitleText'"></p>     -->
+                            <span data-bind="text:quantity"></span>
+                        </div>
+                        <div class="col-xs-4  listPrice">
+                            <!--<p data-bind = "widgetLocaleText:'priceTitleText'"></p>  -->
+                            <span data-bind="currency:{price:listPrice,currencyObj:$parents[1].cart().currency}"></span>
+                        </div>
+                        <div class="col-xs-4   listPrice">
+                            <!--<p data-bind = "widgetLocaleText:'subtotalTitleText'"></p>-->
+                            <span data-bind="currency:{price:subTotal,currencyObj:$parents[1].cart().currency}"></span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /ko -->
+                 <!-- /ko -->    
+                <div class="col-md-12 hidden-xs hidden-sm row-padd ">
+                    <div class="col-md-6  pad0">
+                        <p data-bind="widgetLocaleText:'productTitleText'" class="productDetails"></p>
+                    </div>
+                    <div class="col-md-2   listPrice">
+                        <p data-bind="widgetLocaleText:'priceTitleText'"></p>
+                    </div>
+                    <div class="col-md-3   qty">
+                        <p data-bind="widgetLocaleText:'quantityTitleText'"></p>
+                    </div>
+                    <div class="col-md-1   listPrice">
+                        <p data-bind="widgetLocaleText:'subtotalTitleText'"></p>
+                    </div>
+                </div>
+                   <!-- ko if:hasOwnProperty('orderItems') -->    
+                <!-- ko foreach : orderItems -->
+                <div class="col-md-12 hidden-xs  hidden-sm row-padd ">
+                    <div class="col-md-6   pad0">
+                        <div class="details">
+                        
+                         <!-- ko if:$data.hasOwnProperty('productId')-->
+                            <!-- ko if : $data.productId==null || $data.productId=="" -->
+                             <img data-bind="ccResizeImage: {    
+                                	isSrcSetEnabled : true,
+                                	errorSrc:'/file/general/No Product Image.png',       
+                                	errorAlt:'No Image Found'}">
+                            <!-- /ko -->
+                      <!-- /ko -->
+                         <!-- ko if:$data.hasOwnProperty('primaryFullImageURL')-->    
+                        <img data-bind="ccResizeImage: {
+                	isSrcSetEnabled : true,
+                	source:primaryFullImageURL,
+                	alt:'primaryFullImageURL',   
+                	 title:'primaryFullImageURL',  
+                	errorSrc:'/file/general/No Product Image.png',       
+                	errorAlt:'No Image Found'}">
+                        <!-- /ko -->    
+                            <span class="brand">
+                            <!-- ko if:$data.hasOwnProperty('brand')-->    
+                                <p  data-bind="text:brand"></p> 
+                            <!-- /ko -->    
+                                <p data-bind="text:productDisplayName"></p>
+                                <p>
+                                    <span>Item</span>
+                                    <span data-bind="text:productId"></span>
+                                </p>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-2   listPrice">
+                        <span data-bind="currency:{price:listPrice,currencyObj:$parents[1].cart().currency}"></span>
+                    </div>
+                    <div class="col-md-3   qty">
+                        <span data-bind="text:quantity"></span>
+                    </div>
+                    <div class="col-md-1   listPrice">
+                        <span data-bind="currency:{price:subTotal,currencyObj:$parents[1].cart().currency}"></span>
+                    </div>
+                </div>
+                <!-- /ko --> 
+                <!-- /ko -->      
+            </div>
+        </div>
+          <!-- ko if:hasOwnProperty('orderSummary') -->     
+        <div class="row summary">
+            <div class="visible-xs col-xs-12 invoice-Summary">
+                <p data-bind="widgetLocaleText:'invoiceSummaryTitleText'"></p>
+                <p>Subtotal:<span
+                        data-bind="currency:{price:orderSummary.subTotal,currencyObj:$parent.cart().currency}"></span>
+                </p>
+                <p>Freight:<span
+                        data-bind="currency:{price:orderSummary.shipping,currencyObj:$parent.cart().currency}"></span>
+                </p>
+                <p>Tax:<span data-bind="currency:{price:orderSummary.tax,currencyObj:$parent.cart().currency}"></span>
+                </p>
+                <p>Invoice Total:<span
+                        data-bind="currency:{price:orderSummary.total,currencyObj:$parent.cart().currency}"></span></p>
+            </div>
+            <div class=" col-sm-3 hidden-xs invoice-Summary">
+                <p data-bind="widgetLocaleText:'invoiceSummaryTitleText'"></p>
+                <p>Subtotal:<span
+                        data-bind="currency:{price:orderSummary.subTotal,currencyObj:$parent.cart().currency}"></span>
+                </p>
+                <p>Freight:<span
+                        data-bind="currency:{price:orderSummary.shipping,currencyObj:$parent.cart().currency}"></span>
+                </p>
+                <p>Tax:<span data-bind="currency:{price:orderSummary.tax,currencyObj:$parent.cart().currency}"></span>
+                </p>
+                <p>Invoice Total:<span
+                        data-bind="currency:{price:orderSummary.total,currencyObj:$parent.cart().currency}"></span></p>
+            </div>
+        </div>
+         <!-- /ko -->
+        <!-- /ko -->
+        <!-- /ko -->
+    </div>
+
+
+    <div class="modal fade" id="invoicePaymentModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog invoice-payment-dailog ">
+            <div class="modal-content payment-content">
+                <div class="modal-header card-header">
+                    <div class="row  invoice-title">
+                        <div class="col-xs-12 ">
+                            <div class="invoice-title" data-bind="widgetLocaleText:'invoicePaymentsText'"></div>
+                            <button type="button" class="invoice-close close" aria-label="Close"
+                                data-bind="click:function(data,event){closeModal()}"><span
+                                    aria-hidden="true">&times;</span></button>
+                        </div>
+
+                    </div>
+                    <div class='row invoice-amount-wrapper'>
+                        <div class='col-xs-12 invoice-total-amount'>
+                            <span data-bind="widgetLocaleText:'totalAmountText'"></span> 
+                            <span data-bind="currency:{price:invoiceTotal(),currencyObj:cart().currency}">$289,000.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body card-body">
+                    <fieldset id="card-form">
+                        <!-- Select dropdown-->
+
+                        <div class="form-group col-xs-12 pad0">
+                            <label class='card-label' for="CC-checkoutCustomerDetails-credit-card"
+                                data-bind="widgetLocaleText:'creditCardText'"></label>
+                            <select class=' medAesInputBox  form-control card-control mb10' name='existingCreditCard'
+                                id='existingCreditCard'
+                                data-bind='event:{ change: function(data,event){ updateCard(data,event); }},value:isDefaultCardValue()'>
+                                <option value='' data-bind="widgetLocaleText:'selectCard'"></option>
+                                <!-- ko if:isStoredCardsLoaded() -->
+                                <!-- ko foreach :getExternalCardData() -->
+                                <option data-bind='value: id,text:maskedCardNumber'> </option>
+                                <!-- /ko -->
+                                <!--/ko -->
+                                <option value='addNewCard' data-bind="widgetLocaleText:'addNewCardText'"></option>
+                            </select>
+                            <div class=" col-xs-12 card-error">
+                                <span class="text-danger" data-bind="validationMessage: isDefaultCardValue"
+                                    role="alert"></span>
+                            </div>
+                        </div>
+                        <!-- ko if:displayNewCardSection() -->
+                        <iframe id="addcardFrame" class="add-card-frame" height="375" width="500"></iframe>
+                        <div class="checkbox makeDefaultCardCheckBox">
+                            <input type="checkbox" name="makeDefaultCard" id="orgDefaultShippingAddress"
+                                data-bind="checked: saveNewCard" title="makeDefaultCard">
+                            <label for="orgDefaultShippingAddress" data-bind="widgetLocaleText:'saveCard'"></label>
+                        </div>
+                        <!--<iframe id="addcardFrame"></iframe>-->
+                        <!--<div class="form-group col-xs-12">   
+
+                            <label class="card-label" for="CC-cardType">Card Type:</label>
+                            <div class="control">
+                                <select aria-required="true" class="form-control medAesInputBox col-md-12 card-control mb10" name="CC-cardType" id="cc-card-type" data-bind=" optionsValue: 'cardValue',
+											 options: cardTypeList, optionsText: 'name',value:cardType,
+											 validatableTarget: cardType, validationElement: cardType">
+                                </select>
+                                <div class="col-xs-12 card-error">
+                                    <span class="text-danger " id="card-type-error" data-bind="validationMessage: cardType" role="alert"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-xs-12">
+
+                            <label class="card-label" for="CC-cardNumber">Card Number: </label>
+                            <input id="cc-card-number" name="CC-cardNumber" type="text" class="form-control input-md medAesInputBox card-control mb10" data-bind="validatableValue: cardNumber" maxlength="20">
+                            <div class="xs-md-12 card-error">
+                                <span class="text-danger" data-bind="validationMessage: cardNumber" role="alert"></span>
+                            </div>
+
+                        </div>
+                        <div class="form-group  col-xs-12">
+                            <label class="card-label" for="CC-cardName">Name on Card:</label>
+                            <input id="cc-card-name" name="CC-cardName" type="text" class="form-control input-md medAesInputBox card-control mb10" data-bind="validatableValue: nameOnCard">
+                            <div class="col-xs-12 card-error">
+                                <span class="text-danger" data-bind="validationMessage: nameOnCard" role="alert"></span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group col-xs-12">
+                            <div class="col-xs-3 nopad">
+                                <label class="card-label" id="CC-endMonth" for="CC-endMonth">Expiry Date:</label>
+                                <span class="text-danger visible-xs" id="CC-phone-endMonth-error" data-bind="validationMessage: expiryMonth" role="alert"></span>
+                                <div class="control">
+                                    <input id="cc-end-month" name="CC-endMonth" type="text" class="form-control input-md card-control medAesInputBox mb10" data-bind="validatableValue: expiryMonth" maxlength="2">
+                                </div>
+                               </div>
+                            <div class="col-xs-3 nopad">
+                                <label class="card-label end-year" id="CC-endyear" for="CC-endyear">Expiry Date:</label>
+                                <span class="text-danger visible-xs" id="CC-phone-endYear-error" data-bind="validationMessage: expiryYear" role="alert"></span>
+                                <div class="control">
+                                    <input id="cc-end-year" name="CC-endYear" type="text" class="form-control input-md card-control medAesInputBox mb10" data-bind="validatableValue: expiryYear" maxlength="4">
+                                </div>
+                                
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="card-label" id="CC-newCardCvv" for="CC-newCardCvv">CVV:</label>
+                                <span class="text-danger visible-xs" id="CC-phone-endYear-error" data-bind="validationMessage: newCardCvv" role="alert"></span>
+                                <div class="control">
+                                    <input id="cc-newCardCvv" name="CC-newCardCvv" type="text" class="form-control input-md card-control medAesInputBox  mb10" data-bind="validatableValue: newCardCvv" maxlength="4">
+                                </div>
+                                
+                            </div>
+                         
+                              <div class="s col-xs-12 card-error">
+                                    <span class="text-danger" data-bind="validationMessage: expiryMonth" role="alert"></span></div>
+                            
+                            <div class=" col-xs-12 card-error">
+                                    <span class="text-danger" data-bind="validationMessage: expiryYear" role="alert"></span>
+                                </div>
+                            
+                        </div>
+                        <div class="form-group col-xs-12">
+
+                            <label class="card-label" for="CC-bill-to">Bill to :</label>
+                            <select class='ship-to-address  form-control medAesInputBox card-control mb10' name='billToAddress' id='billToAddress' data-bind='value: isDefaultBillingAddress,validatableValue :isDefaultBillingAddress , options:getExternalBillingAddress(), optionsText: function(item) {
+                           return item.address1 +"," + item.address2 + "," + item.city +"," + item.state +"," + item.postalCode +"," + item.country 
+                           }, optionsValue: function(item) {
+                           return  item.address1 +"," + item.address2 + "," + item.city +"," + item.state  + ","+item.postalCode +"," + item.country 
+                           }'>
+                            </select>
+
+                        </div>-->
+                        <!-- /ko-->
+                        <div class="col-xs-3 " id='existingCardCVV'>
+                            <label class="card-label" id="CC-existingCardCvv" for="CC-existingCardCvv"
+                                data-bind="widgetLocaleText:'CVV'"></label>
+                            <div class="control">
+                                <input id="cc-existingCardCvv" name="CC-existingCardCvv" type="text"
+                                    class="form-control input-md card-control medAesInputBox  mb10"
+                                    data-bind="validatableValue: existingCardCvv" maxlength="4">
+                            </div>
+
+                        </div>
+                        <div class=" col-xs-12 card-error">
+                            <span class="text-danger" data-bind="validationMessage: existingCardCvv"
+                                role="alert"></span>
+                        </div>
+                        <div class="form-group paybtn-wrapper col-xs-12 col-sm-12">
+
+                            <button class="col-sm-4 col-xs-12 medAesBtnPrimary submit-invoice-btn"
+                                id="submit-invoice-payment"
+                                data-bind='event: {click : function(data,event) { makeInvoicePayment() } } , widgetLocaleText:"submitPayment"'>
+                            </button>
+
+                            <button class="col-sm-4 col-xs-12 medAesBtnPrimary submit-invoice-btn" id="cancel-payment"  
+                                data-bind="click:function(data,event){closeModal()},widgetLocaleText:'cancelBtn'">
+                            </button>
+
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

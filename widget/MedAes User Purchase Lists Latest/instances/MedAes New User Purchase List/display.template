@@ -1,0 +1,132 @@
+<div id="CC-purchaseLists" class='container'>   
+    <div id="CC-backToPurchaseList" class="col-sm-5">   
+        <a id="CC-backToPurchaseList-link" href="/" data-bind="click: user().validatePrivilagePageRequest.bind(user()), ccNavigation: 'prevent', ccLink: 'purchaselists'" class="btnLink">&lt; Back </a>
+      </div>
+<div class='col-sm-12  col-xs-12 title-wrapper nopad'>
+   <div class='col-sm-8 col-xs-12 nopad'>    
+   
+        <div class='favorites-title'><span class='heading' data-bind="text : (purchaseListViewModel().purchaseListName.length > 30 ? purchaseListViewModel().purchaseListName.substring(0, 29) + '..' : purchaseListViewModel().purchaseListName), attr : {title : purchaseListViewModel().purchaseListName.length > 30 ? purchaseListViewModel().purchaseListName : null, id: 'purchase-list-info-name'+$data.id}"></span>
+        <span class='heading'>(</span><span class='heading' data-bind="text :getCurrentProductData().length"></span><span class='heading'>)</span></div>
+   </div>
+   <div class='col-sm-4 col-xs-12 button_wrapper nopad'>
+       <!-- ko if :getCurrentProductData().length>0 -->
+      <button class="medAesBtnPrimary itemsRemove col-xs-6" data-bind='event:{click: function() { displayDeletePurchaseListModal() }},  widgetLocaleText: "removeAll"'></button> 
+      <button class="medAesBtnPrimary itemsRemove col-xs-6" data-bind='event:{click: function() { addToCart() }},  widgetLocaleText: "addAllItemsToCart"' ></button>
+      <!-- /ko -->
+   </div>
+     <!--/ko-->
+</div>
+
+   <div class='row purchaseList-items'> 
+      <!-- ko if : (purchaseListViewModel().items().length > 0 ) -->  
+    <!-- ko foreach : displayPagination() -->  
+        <div class="purchaseLists col-sm-12  col-xs-12" id="border">  
+             <div class="col-sm-2 col-xs-4 ">  
+               <!--ko if : $data.primaryFullImageURL()=='/img/no-image.jpg' -->
+                     <a href="/" data-bind='ccLink: {route: $data.route() }' class="image-Size">  
+                          <img class="img-responsive" data-bind='ccResizeImage: {  
+                                   source: "/file/general/No Product Image.png",
+                                   
+                                   alt: displayName, 
+                                   title:displayName}' >
+                         </a>
+                <!--/ko-->
+                 <!--ko if : $data.primaryFullImageURL()!='/img/no-image.jpg' -->
+                     <a href="/" data-bind='ccLink: {route: $data.route() }' class="image-Size">
+                         <img  data-bind='ccResizeImage: {
+                                   source: primaryThumbImageURL,  
+                                   
+                                   alt: displayName, 
+                                   title:displayName}'    class="img-responsive" >
+                         </a>
+                <!--/ko-->
+                
+             </div>
+             <div class="col-sm-6 col-xs-8 cartItemDetails">  
+                 <!--data-bind="text:$data.brand" -->    
+                <!--<div class="productype " data-bind="text:$data.brand" ></div>-->
+                <div class="productdisplayName "><a href="/" data-bind='ccLink: {route: $data.route() },text:$data.displayName'></a></div> 
+                <div class="listprice ">
+                 <!-- ko if : $parent.showSalePrice() -->
+                <span  data-bind="currency: {price: $data.salePrice() , currencyObj: $parent.cart().currency}" ></span>   
+                 <!-- /ko  -->
+                 <!-- ko ifnot : $parent.showSalePrice() -->
+                <span data-bind="currency: {price: $data.listPrice() , currencyObj: $parent.cart().currency}"  ></span>
+                 <!-- /ko  -->
+                </div>
+             </div>
+             <div class="col-sm-4 col-xs-8 remove-item-wrapper">
+                  <a class='btnLink removeItem' data-bind='event:{click: function(data,event){ $parent.removeItem(data ,event) }}, widgetLocaleText: "removeCart" '></a>
+                  <a  class='btnLink moveToCart visible-xs visible-sm' data-bind='event:{click: function(data,event){ $parent.addItemToCart(data,event)}}, widgetLocaleText: "addToCartText" '></a>
+                <!-- Quick View -->
+                   <div data-bind="setContextVariable: {name:'product', value: $data}" class="quickViewElement">
+                    <!-- ko with: $parent  -->
+                        <div data-bind="element: 'product-quickview', attr: { id: 'product-quickview-grid-' + $parent.id() },onRender: $parents[1].setAddButtonText()"></div>      
+                    <!-- /ko -->
+                   </div>
+                <!-- Quick View -->
+             </div>
+            
+          </div>
+           <!--/ko-->
+           
+            <div class="row pagiNation hide">
+                <a href="/" class="prev" data-bind="event:{ click: function(data, event){previous()}}" rel="prev"><span><i class="fa fa-angle-left"></i></span></a>   
+                <!-- ko foreach: new Array(koTotalPages()) -->    
+                    <a href="/" data-bind="css: {active: $index() === $parent.koCurrentPage() },disableClick: ($parent.koCurrentPage() === $index()), click: function(data, event) {$parent.getPageData($index()) }, text: $index()+1"></a>
+                <!-- /ko -->
+                <a href="/" class="next" data-bind="event:{ click: function(data, event){next()}} " rel="next"><span><i class="fa fa-angle-right"></i></span></a>
+            </div>
+    <!--/ko-->  
+    </div>
+ 
+  
+</div>
+
+<!--<div class=' purchaseList-items'> -->
+      <!-- ko if : (purchaseListViewModel().items().length > 0 ) -->  
+    <!-- ko foreach : purchaseListViewModel().items() -->  
+        <!--<div class="purchaseLists col-sm-12  col-xs-12">
+             <div class="col-sm-3">  
+                <a data-bind='ccLink: {route: $data.route}'><img data-bind="attr:{src:$data.thumbnailUrl}" class="img-responsive" ></a>
+             </div>
+             <div class="col-sm-5 cartItemDetails">
+                
+                <div class="productype " data-bind="text:$data.brandName" ></div>
+                <div class="productdisplayName "><a data-bind='ccLink: {route: $data.route},text:$data.displayName'></a></div>
+                <div class="listprice "><span>$</span><span  data-bind="text:$data.listPrice"></span></div>
+             </div>
+             <div class="col-sm-4 remove-item-wrapper">
+                  <a class='btnLink removeItem' data-bind='event:{click: function(data,event){ $parent.removeItem(data ,event) }}, widgetLocaleText: "removeCart" '></a>
+                  <a  class='btnLink moveToCart' data-bind='event:{click: function(data,event){ $parent.addItemToCart(data,event)}}, widgetLocaleText: "addToCartText" '></a>
+             </div>
+            
+          </div>-->
+           <!--/ko-->
+    <!--/ko-->  
+   <!-- </div>-->
+ <div class="modal fade" id="CC-deletePurchaseList-modal" tabindex="-1" role="alert">
+ <div class="modal-dialog" id="CC-deletePurchaseList-modal-dialog">
+    <div class="modal-content" id="CC-deletePurchaseListModalContent">   
+      <div class="modal-header" id="CC-deletePurchaseList-modal-header">
+        <button type="button" class="close" data-dismiss="modal" id="CC-deletePurchaseList-modal-headerClose" aria-hidden="true">&times;</button>
+      </div>
+      <!--<hr class="hr-without-margin">-->
+      
+    
+              <div class="modal-body" id="CC-deletePurchaseList-modal-modalBody">
+               <div>Are you sure you would want to delete the list "<span class='deleteListName' data-bind="text : (purchaseListViewModel().purchaseListName.length > 30 ? purchaseListViewModel().purchaseListName.substring(0, 29) + '..' : purchaseListViewModel().purchaseListName), attr : {title : purchaseListViewModel().purchaseListName.length > 30 ? purchaseListViewModel().purchaseListName : null, id: 'purchase-list-info-name'+$data.id}"></span>"?</div>
+              </div>      
+             
+      
+      <div class="modal-footer" id="CC-deletePurchaseList-modal-footer">
+        <button class="medAesBtnPrimary decideBtn" id="CC-deletePurchaseList-modal-submit" data-bind='event:{click: function() { handleDeleteSelectedPurchaseList() }}'>
+          <span id="CC-deletePurchaseList-modal-yes" >Yes</span>
+        </button>
+        <button class="medAesBtnPrimary cancelBtn decideBtn" data-dismiss="modal"  id="CC-deletePurchaseList-modal-cancel" >
+          <span id="CC-deletePurchaseList-modal-no">No</span>
+        </button>
+    </div>
+    </div>
+  </div>
+</div>

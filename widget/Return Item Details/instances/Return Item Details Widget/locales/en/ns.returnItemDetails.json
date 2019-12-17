@@ -1,0 +1,10 @@
+{
+  "resources": {
+    "requestOn": "Requested On:",
+    "returnReasonText": "Return Reason",
+    "returnRequest": "Return Request:",
+    "quantityText": "Quantity",
+    "statusText": "Status",
+    "itemText": "Item"
+  }
+}

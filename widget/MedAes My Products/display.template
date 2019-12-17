@@ -1,0 +1,12 @@
+<div class= "shop-now-container" data-bind="onRender: addCustomClass">
+    <div class="row">
+        <!-- ko foreach : catalogBuckets() -->
+        <div class="col-sm-4 category-row">
+            <div class="imgplaceHolder">
+                <img src="https://via.placeholder.com/350x250" class="img-responsive">      
+            </div>
+            <a data-bind="click:function(data,event){$parent.redirectToCategory($data)},text:$data.name" class="category-text"></a>   
+        </div>
+        <!-- /ko -->
+    </div>
+</div>

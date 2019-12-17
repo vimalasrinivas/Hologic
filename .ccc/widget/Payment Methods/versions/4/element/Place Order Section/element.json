@@ -1,0 +1,8 @@
+{
+  "tag": "splitpayment-placeorder",
+  "source": 100,
+  "type": "fragment",
+  "title": "Place Order Section",
+  "widgetType": "splitPayments",
+  "version": 4
+}

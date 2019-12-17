@@ -1,0 +1,255 @@
+<div id="accountWalletWidget" class="container-fluid">
+  <div class="row add-wallet">
+    <div class="col-sm-4 col-xs-12 pad0" id="walletHeader">
+      <div id="organization-wallet-title" class="organization-wallet-title" data-bind="widgetLocaleText: 'walletText'">
+      </div>
+    </div>
+    <div class="col-sm-4 col-xs-12 pull-right pad-right">
+      <button class="medAesBtnPrimary add-card pull-right" id="organization-wallet-add1" data-toggle="modal"
+        data-target="#addCardIframe" data-bind="click:function(data,event){displayAddCardModal()}">   
+        <span data-bind="widgetLocaleText: 'addCardBtnText'"></span>
+      </button>
+    </div>
+  </div>
+  <table class="table wallet-row" id="table-wallet">
+    <thead>
+      <tr>
+        <th class="wallet-th"><span data-bind="widgetLocaleText: 'cardText'"></span></th>
+        <th class="wallet-th"></th>
+        <th class="wallet-th"></th>
+        <th class="wallet-th"></th>
+      </tr>
+    </thead>
+    <tbody>      
+      <!-- ko foreach : walletData().storeCards-->
+      <tr>
+        <td class="wallet-td card-num"><span data-bind="text:$data.maskedCardNumber"></span></td>   
+        <!-- ko if: $data.isDefault -->
+        <td class="wallet-td card-num">
+          <span><i class="zmdi zmdi-check-circle default-icon"></i></span>
+          <span data-bind="widgetLocaleText: 'defaultText'"></span>
+        </td>
+        <!-- /ko -->
+        <!-- ko ifnot: $data.isDefault -->
+        <td class="wallet-td">
+          <a class="wallet-link" data-bind="click:function(data,event){$parent.makeCardDefault($data)}"><span
+              data-bind="widgetLocaleText: 'makeDefault'"></span></a>
+        </td>
+        <!-- /ko -->
+        <td class="wallet-td">
+          <a  class="wallet-link" data-bind="click:function(data,event){$parent.updateCardModal($data)}">       
+            <span data-bind="widgetLocaleText: 'editCard'"></span>
+          </a>
+        </td>
+        <td class="wallet-td">
+          <a  class="wallet-link" data-bind="click:function(data,event){$parent.showDeleteCardPop($data)}"><span   
+              data-bind="widgetLocaleText: 'deleteCard'"></span></a>  
+        </td>
+      </tr>
+      <!-- /ko -->
+    </tbody>
+  </table>
+  <!-- Add new Credit Card Modal starts -->
+  <div class="modal fade" id="addCardModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog ">
+      <div class="modal-content card-content">
+        <div class="modal-header card-header">
+          <div class="row">
+            <!-- ko ifnot: isUpdateCard() -->
+            <div class="col-sm-11 col-xs-10">   
+              <div class="card-title" data-bind="widgetLocaleText: 'addCardText'"></div>
+            </div>
+            <!-- /ko -->
+            <!-- ko if: isUpdateCard() -->
+            <div class="col-sm-11 col-xs-10">
+              <div class="card-title" data-bind="widgetLocaleText: 'updateCardText'"></div>
+            </div>
+            <!-- /ko -->
+            <div class="col-sm-1 col-xs-2">
+              <button type="button" class="card-close close" aria-label="Close" data-dismiss="modal"           
+                data-bind="click:function(data,event){closeModal()}"><span aria-hidden="true">&times;</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body card-body">
+          <!-- ko if: serviceError() !== '' -->
+          <span data-bind="text: serviceError" class="text-danger"></span>   
+          <!-- /ko -->
+          <fieldset id="card-form">
+            <!-- Select dropdown-->
+            <div class="form-group">
+              <div class="col-md-12">
+                <label class="card-label" for="CC-cardType" data-bind="widgetLocaleText:'cardTypeText'"></label>
+                <div class="control">
+                  <select aria-required="true" class="form-control medAesInputBox col-md-12 card-control"
+                    name="CC-cardType" id="cc-card-type"
+                    data-bind="attr: {title: $data.translate('cardTypeText'),'disabled' : isUpdateCard}, optionsValue: 'cardValue',
+											 options: cardTypeList, optionsText: 'name',value:cardType,
+											 validatableTarget: cardType, validationElement: cardType, optionsCaption: $data.translate('cardSelectText')">
+                  </select>
+                  <div class="col-md-12 card-error">
+                    <span class="text-danger hidden-xs" id="card-type-error" data-bind="validationMessage: cardType"
+                      role="alert"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <label class="card-label" for="cc-card-name" data-bind="widgetLocaleText:'nameOnCardText'"></label>
+                <input id="cc-card-name" name="CC-cardName" type="text" class="form-control input-md card-control"
+                  data-bind="validatableValue: nameOnCard">
+                <div class="col-md-12 card-error">
+                  <span class="text-danger" data-bind="validationMessage: nameOnCard" role="alert"></span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <label class="card-label" for="cc-card-number" data-bind="widgetLocaleText:'cardNumberText'"></label>
+                <!-- ko ifnot: isUpdateCard() -->
+                <input id="cc-card-number" name="CC-cardNumber" type="text" class="form-control input-md card-control"
+                  data-bind="validatableValue: cardNumber" maxlength="20">
+                <div class="col-md-12 card-error">
+                  <span class="text-danger" data-bind="validationMessage: cardNumber" role="alert"></span>
+                </div>
+                <!-- /ko -->
+                <!-- ko if: isUpdateCard() -->
+                <input id="cc-card-number" name="CC-cardNumber" type="text" class="form-control input-md card-control"
+                  data-bind="value: maskedCardNumber" disabled>
+                <!-- /ko -->
+
+              </div>
+            </div>
+            <!-- end month and year -->
+            <div class="form-group">
+              <div class="col-sm-6">
+                <label class="card-label" id="cc-end-month" for="cc-end-month"
+                  data-bind="widgetLocaleText: 'endMonthLabel'"></label>
+                <span class="text-danger visible-xs" id="CC-phone-endMonth-error"
+                  data-bind="validationMessage: expiryMonth" role="alert"></span>
+                <div class="control">
+                  <input id="cc-end-month" name="CC-endMonth" type="text" class="form-control input-md card-control"
+                    data-bind="validatableValue: expiryMonth" maxlength="2">
+                </div>
+                <div class="hidden-xs col-sm-12 card-error">
+                  <span class="text-danger" data-bind="validationMessage: expiryMonth" role="alert"></span></div>
+              </div>
+              <div class="col-sm-6">
+                <label class="card-label" id="CC-endYear-label" for="cc-end-year"
+                  data-bind="widgetLocaleText: 'endYearLabel'"></label>
+                <span class="text-danger visible-xs" id="CC-phone-endYear-error"
+                  data-bind="validationMessage: expiryYear" role="alert"></span>
+                <div class="control">
+                  <input id="cc-end-year" name="CC-endYear" type="text" class="form-control input-md card-control"
+                    data-bind="validatableValue: expiryYear" maxlength="4">
+                </div>
+                <div class="hidden-xs col-sm-12 card-error">
+                  <span class="text-danger" data-bind="validationMessage: expiryYear" role="alert"></span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <div class="checkboxs">
+                <label class="contains" for="orgDefaultShippingAddress">   
+                  <input type="checkbox" name="defaultCard" id="orgDefaultShippingAddress"
+                    data-bind="checked: isDefaultCard, attr: {title: $data.translate('selectDefaultCardTitle')}">
+                    <span class="checkmarks"></span>
+                    </label> 
+                  <label for="orgDefaultShippingAddress"
+                    data-bind="attr: {title: $data.translate('selectDefaultCardTitle')}, widgetLocaleText:'selectDefaultCardTitle'"></label>
+                </div>
+              </div>
+            </div>
+            <div id="add-card-control">
+              <!-- ko ifnot: isUpdateCard() -->
+              <button class="cc-button-primary col-sm-4 col-xs-12 medAesBtnPrimary create-btn" id="add-new-card"
+                data-bind="click:function(data,event){addNewCard()}">
+                <span data-bind="widgetLocaleText: 'addCardBtnText'"></span>
+              </button>
+              <!-- /ko -->
+              <!-- ko if: isUpdateCard() -->   
+              <button class=" col-sm-4 col-xs-12 medAesBtnPrimary updateCardBtn" id="update-card"         
+                data-bind="click:function(data,event){updateCard()}">
+                <span data-bind="widgetLocaleText: 'updateCardBtnText'"></span>   
+              </button>
+              <!-- /ko -->
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Add new Credit Card Modal ends -->
+  <!-- Add new Credit Card Modal starts -->
+  <div class="modal fade" id="addCardIframe" tabindex="-1" role="dialog">
+    <div class="modal-dialog ">
+      <div class="modal-content card-content">
+        <div class="modal-header card-header">
+          <div class="row">  
+            <!-- ko ifnot: isUpdateCard() -->
+            <div class="col-sm-11 col-xs-10">  
+              <div class="card-title" data-bind="widgetLocaleText: 'addCardText'"></div>
+            </div>
+            <!-- /ko -->
+            <!-- ko if: isUpdateCard() -->
+            <div class="col-sm-11 col-xs-10">   
+              <div class="card-title" data-bind="widgetLocaleText: 'updateCardText'"></div>
+            </div>
+            <!-- /ko -->
+            <div class="col-sm-1 col-xs-2">
+              <button type="button" class="card-close close" aria-label="Close" data-dismiss="modal"             
+                data-bind="click:function(data,event){closeModal()}"><span aria-hidden="true">&times;</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="modal-body card-body">
+          <!-- ko if: serviceError() !== '' -->
+          <span data-bind="text: serviceError" class="text-danger"></span>
+          <!-- /ko -->
+          <iframe id="addcardFrame" height="400" width="500"></iframe>
+          
+          
+          <div class="form-group">
+                    <div class="col-md-12">
+                        <div class="checkbox makeDefaultCheckBox">
+                        <label class="contain" for="isDefaultCard">    
+                          <input type="checkbox" name="agrement" value="agreement" id="isDefaultCard" data-bind='checked:isDefaultCard'>       
+                          <span class="checkmark"></span>
+                        </label>  
+                          <label for="isDefaultCard" class="default">Make this default Card</label>         
+                    </div>
+                </div>
+            </div>
+             
+           <button class="col-sm-4 col-xs-12 medAesBtnPrimary create-btn" id="add-new-card"
+                data-bind="click:function(data,event){addNewCardFromFrame()}">
+                <span data-bind="widgetLocaleText: 'addCardBtnText'"></span>
+              </button>  
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+    
+     <div class="modal fade" id="CC-deleteCard-modal" tabindex="-1" role="alert">
+     <div class="modal-dialog" id="CC-deleteCard-modal-dialog">
+        <div class="modal-content" id="CC-deletePurchaseListModalContent">   
+          <div class="modal-header" id="CC-deleteCard-modal-header">
+            <button type="button" class="close" data-dismiss="modal" id="CC-deleteCard-modal-headerClose" aria-hidden="true">&times;</button>
+          </div>
+    	  <div class="modal-body" id="CC-deleteCard-modal-modalBody">
+                   <div>Are you sure you would want to delete the card?</div>
+                  </div>   
+          <div class="modal-footer" id="CC-deleteCard-modal-footer">
+            <button class="medAesBtnPrimary decideBtn" id="CC-deleteCard-modal-submit" data-bind="click:function(data,event){deleteCard($data)}">
+              <span id="CC-deleteCard-modal-yes" >Yes</span>
+            </button>    
+            <button class="medAesBtnPrimary cancelBtn decideBtn" data-dismiss="modal"  id="CC-deleteCard-modal-cancel" >
+              <span id="CC-deleteCard-modal-no">No</span>
+            </button>
+        </div>
+        </div>
+      </div>
+</div>

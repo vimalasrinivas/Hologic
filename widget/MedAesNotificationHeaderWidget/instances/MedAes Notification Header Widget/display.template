@@ -1,0 +1,5 @@
+<div class="row">
+    <div class="container">
+        <a data-bind="ccLink:'home'"><img data-bind="attr:{src: site().extensionSiteSettings.externalSiteSettings.siteLogoUrl}" alt="logo Image" class="img-responsive LogoImage"></a>  
+    </div>
+</div>  

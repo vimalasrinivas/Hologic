@@ -1,0 +1,20 @@
+<div class="row shopNowSection ">
+    <div class= "container nopad" >
+        <div class="row marg0 bucket-wrapper">
+        <h2 class="ShopNowHeading">Products</h2>
+        <!-- ko foreach : catalogBuckets() -->
+        <div class="col-sm-4 bg-clr bucket-Container">
+            <div class="category-row">     
+                <img data-bind="ccResizeImage:{
+                	isSrcSetEnabled : true,
+                	source:$data.imgUrl,  
+                	alt: 'category' ,   
+                	errorSrc:'/file/general/No Product Image.png', 
+                	errorAlt:'No Image Found'},click:function(data,event){$parent.redirectToCategory($data)}"  class="img-responsive imgplaceHolder">          
+               <a href="/" data-bind="click:function(data,event){$parent.redirectToCategory($data)},text:$data.name" class="category-text"></a>       
+            </div>
+        </div>
+        <!-- /ko -->
+        </div>            
+    </div>
+</div>

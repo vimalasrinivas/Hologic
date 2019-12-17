@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesCheckoutStepperWidget",
+  "version": 1,
+  "displayName": "MedAes Checkout Stepper Widget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "medAesCheckoutStepper",
+  "source": 101,
+  "javascript": "medAesCheckoutStepper"
+}

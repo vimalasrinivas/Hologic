@@ -1,0 +1,26 @@
+{
+  "availableToAllWidgets": false,
+  "children": [],
+  "configOptions": [],
+  "inline": true,
+  "supportedWidgetType": [
+    "megaMenu",
+    "MedAesheaderWidget",
+    "footer",
+    "categoryNavigation",
+    "headerWidget"
+  ],
+  "tag": "MedAesB2BcontactLoginElement",
+  "translations": [
+    {
+      "description": "Add the Contact Login element so that users with managed accounts can log in but can't register.",
+      "language": "en",
+      "title": "MedAes B2B contact Login Element"
+    },
+    {
+      "description": "Add the Contact Login element so that users with managed accounts can log in but can't register.",
+      "language": "en_GB",
+      "title": "MedAes B2B contact Login Element"
+    }
+  ]
+}

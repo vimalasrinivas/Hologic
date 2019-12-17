@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAes-Profile-Details",
+  "version": 1,
+  "displayName": "MedAes-Profile-Details",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAes-Profile-Details",
+  "source": 101,
+  "javascript": "MedAes-Profile-Details"
+}

@@ -1,0 +1,8 @@
+{
+  "tag": "product-quantity",
+  "source": 100,
+  "type": "fragment",
+  "title": "Product Quantity",
+  "widgetType": "productDetails",
+  "version": 14
+}

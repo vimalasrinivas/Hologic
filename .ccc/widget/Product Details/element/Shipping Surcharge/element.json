@@ -1,0 +1,8 @@
+{
+  "tag": "product-shipping-surcharge",
+  "source": 100,
+  "type": "fragment",
+  "title": "Shipping Surcharge",
+  "widgetType": "productDetails",
+  "version": 14
+}

@@ -1,0 +1,100 @@
+#WIDGET_ID-WIDGET_INSTANCE_ID {
+#MedAes_FAQ_Page_Widget{   
+      background-color:@medAesBackGroundColor;  
+}  
+.MedAes-FAQ-Row{                                                 
+     padding: 0px 0px 50px 0px;
+     width: 782px; 
+     margin:auto;
+    @media screen and (min-width:768px ) {      
+        width: 735px;
+    }
+    @media screen and (max-width:425px ) {      
+        width: 320px;
+    }
+    @media screen and (min-width:426px ) and (max-width:767px) {                   
+        width: 425px;
+    } 
+}        
+.frequently-asked-ques {   
+    margin: 0px;
+    padding-bottom: 15px;
+    h3{
+      	color:@medAesSecondaryTextColor;
+    	font-family: Flama;
+    	font-size: 24px;
+    	font-weight: bold;
+    	letter-spacing: 0.3px;
+    	line-height: 28px;  
+    	text-align: center;
+    }
+
+}
+.panel-title > a:before {
+    /*float: right !important;
+    font-family: FontAwesome;
+      content:"\f056";
+    padding-right: 5px;
+    padding-top: 4px;
+    right: 0;*/
+   
+}
+.panel-title > a.collapsed:before {          
+    /*float: right !important;
+  
+    content:"\f055";*/
+}
+.panel-title > a .expand-collapse-icon {
+    font-style: normal;
+    position: relative;
+    float: right;
+    top: 5px;
+}
+.panel-title > a .expand-collapse-icon:before {
+    content:'\f270';
+}
+.panel-title > a.collapsed .expand-collapse-icon:before {
+     content:"\f275";
+}
+.panel-default > .panel-heading {
+    background: transparent;
+}
+.panel-group .panel-heading + .panel-collapse .panel-body {
+    border:0px;
+}
+.panel-default{
+    box-shadow: none;
+    border-radius: 0px;
+    background-color: #FFFFFF;
+    margin-top: 10px;
+    border: 0px;    
+}
+
+.panel-heading{
+    padding: 22px 15px;
+    @media screen and (max-width: 767px) {
+        padding: 22px 12px;
+    }
+a {
+	color:@medAesSecondaryTextColor;
+	font-family: Flama;
+	font-size: 14px;
+	letter-spacing: 0.17px;
+	line-height: 17px;
+}
+ a:hover, a:focus{
+    outline: 0px;
+    text-decoration: none;
+ }
+}
+.panel-body{  
+    padding: 0px 15px 15px;    
+    p{    
+        color:@medAesSecondaryTextColor;
+    	font-family: Flama;
+    	font-size: 14px;
+    	letter-spacing: 0.17px;
+    	line-height: 17px;
+    }
+}
+}

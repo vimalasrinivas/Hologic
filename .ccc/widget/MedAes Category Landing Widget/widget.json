@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesCategoryLandingWidget",
+  "version": 1,
+  "displayName": "MedAes Category Landing Widget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "categoryWidget",
+  "source": 101,
+  "javascript": "categoryWidget"
+}

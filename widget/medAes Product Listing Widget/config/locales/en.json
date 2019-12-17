@@ -1,0 +1,28 @@
+{
+  "resources": {
+    "shouldUseViewModelCachingHelpText": "Check to enable caching to reduce the data required from the server on subsequent visits to categories that a shopper has already viewed.",
+    "productLabel": "Product",
+    "showListViewOptionHelpText": "Display 'list view' as an option on product pages.",
+    "showResultsPerPageOptionLabel": "Select products per page",
+    "shouldUseScrollableCollectionHelpText": "Enable automatic scrolling on lists of products. This removes the need to use pagination controls when scrolling through additional pages.",
+    "productsPerPageRequiredHelpText": "Enter the set number of products to display per page.",
+    "viewModelCacheLimitHelpText": "Enter the maximum number of browsed categories to cache. This applies only if the list type is 'product'.",
+    "searchLabel": "Search",
+    "blockSizeRequiredHelpText": "Enter the number of products to load per request. The block size setting applies to product listings through category navigation only and not to search results.",
+    "listTypeHelpText": "Select whether the widget instance is a product listing or search results list type.",
+    "productsPerPageRequiredLabel": "Set products per page",
+    "shouldUseStyleBasedHelpText": "Enable style base listing. This ensures each of the product variants are listed separately.",
+    "shouldUseScrollableCollectionTextLabel": "Use infinite scrolling on lists",
+    "showListViewOptionLabel": "Enable list view option",
+    "productListingFieldsRequiredHelpText": "Enter a list of fields to be included in the response, separated by commas.",
+    "webApplicationConfigTitle": "Web Application Configuration",
+    "blockSizeRequiredLabel": "Block Size",
+    "shouldUseStyleBasedTextLabel": "Use style based listing",
+    "shouldUseViewModelCachingTextLabel": "Use Caching",
+    "listTypeTextLabel": "List Type",
+    "productListingFieldsRequiredLabel": "Fields",
+    "viewModelCacheLimitTextLabel": "Number of Categories to Cache",
+    "showResultsPerPageOptionHelpText": "Enable the number of products displayed on a page to be selected from a list. For example, 12, 24, 48, All.",
+    "displayOptionsTitle": "Display Options"
+  }
+}

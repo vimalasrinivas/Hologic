@@ -1,0 +1,8 @@
+{
+  "tag": "product-out-of-stock",
+  "source": 100,
+  "type": "container",
+  "title": "Out Of Stock",
+  "widgetType": "productDetails",
+  "version": 14
+}

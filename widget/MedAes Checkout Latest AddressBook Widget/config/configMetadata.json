@@ -1,0 +1,13 @@
+{
+  "widgetDescriptorName": "checkoutAddressBook",
+  "properties": [
+    {
+      "defaultValue": true,
+      "name": "includeBillingDetails",
+      "id": "includeBillingDetails",
+      "type": "booleanType",
+      "helpTextResourceId": "includeBillingHelpText",
+      "labelResourceId": "includeBillingTextLabel"
+    }
+  ]
+}

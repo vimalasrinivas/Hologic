@@ -1,0 +1,19 @@
+{
+  "imports": [
+    "confirmation",
+    "shippingCountries"
+  ],
+  "translations": [
+    {
+      "name": "MedAes-Order-Confirmation",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "pageTypes": [
+    "confirmation"
+  ],
+  "config": {}
+}

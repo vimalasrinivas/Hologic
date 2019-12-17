@@ -1,0 +1,9 @@
+{
+  "widgetType": "MedAes_FAQ_Page_Widget",
+  "version": 1,
+  "displayName": "MedAes_FAQ_Page_Widget",
+  "elementized": false,
+  "global": false,
+  "source": 101,
+  "javascript": "MedAes_FAQ_Page_Widget"
+}

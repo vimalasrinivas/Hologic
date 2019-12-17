@@ -1,0 +1,471 @@
+/* -------------------------------------------------- */
+/*	Purchase List
+/* -------------------------------------------------- */	
+#CC-purchaseLists{
+
+  #purchase-list-info-name{
+    text-decoration: underline;
+  }
+  
+  #purchase-list-info-item-count{
+    text-align: -webkit-center;
+  }
+  
+  #purchase-list-info-item-count-header{
+    text-align: -webkit-center;
+  }
+  
+  #purchase-list-info-last-modified-header{
+   text-align: right;
+  }
+  
+  #purchase-list-info-modified-date{
+   text-align: left;
+  }
+  
+  #CC-purchaseList-title{
+    margin-top: 2px !important;
+    width: 100% !important;
+   
+    color: inherit !important;
+    font-family: inherit !important;
+    font-size: 1.75rem !important;
+    font-style: inherit !important;
+    font-weight: bold !important;
+    line-height: 150% !important;
+    text-align: inherit !important;
+    text-decoration: inherit !important; 
+  }
+  hr {
+    margin : 0;
+  }
+  
+  #createPurchaseList-Link{
+    margin-bottom: 20px;
+    text-align: right;
+    .createPurchaseListLinkButton {
+      font-size: 1rem;
+      background-color: #E9ECEE;
+      color: #444444;
+      padding: .5rem .8rem;
+      border-radius: .2rem;
+      border: 1px solid #C4CED7;
+      text-align: center;
+    }
+    .createPurchaseListLinkButton:hover {
+      color: #027BC7;
+      border: 1px solid #027BC7;
+    }
+    .createPurchaseListLinkButton:active {
+      color: #027BC7;
+      border: 1px solid #027BC7;
+    }
+  }
+  
+  #purchaseLists-info {
+    margin-bottom: 12px;
+    th {
+      font-weight: 600;
+      border-bottom: 2px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      text-align: left;
+      background:#FFF !important;
+    }
+    td {
+      border-top: 0;
+      border-bottom: 1px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      vertical-align: top;
+      background: #FFF !important;
+    }
+  }
+  
+  #purchaseLists-info-phone {
+    margin-bottom: 12px;
+    th {
+      font-weight: 600;
+      border-bottom: 2px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      text-align: left;
+      background:#FFF !important;
+    }
+    td {
+      border-top: 0;
+      border-bottom: 1px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      vertical-align: top;
+      background: #FFF !important;
+    }
+  }
+  .noBottomBorder {
+    border-bottom: 0px !important;
+  }
+
+ }
+
+ #CC-createPurchaseLists{
+
+ #CC-createPurchaseList-title{
+    margin-top: 2px !important;
+    width: 100% !important;
+   
+    color: inherit !important;
+    font-family: inherit !important;
+    font-size: 1.75rem !important;
+    font-style: inherit !important;
+    font-weight: bold !important;
+    line-height: 150% !important;
+    text-align: inherit !important;
+    text-decoration: inherit !important; 
+  }
+ #CC-purchaseListName{
+    width: auto;
+ }
+ 
+ #purchaseListDropDown {
+   width: 80%;
+ }
+ 
+ #CC-purchaseList-create-cancel-control {
+    margin-top: 160px;
+    margin-right: 0px;
+    padding-left: 20px;
+  }
+  .right-inner-addon {
+		position: relative;
+	}
+  .right-inner-addon input {
+		padding-right: 30px;
+	}
+  .right-inner-addon i {
+		position: absolute;
+		right: 0px;
+		padding: 10px 12px;
+		pointer-events: none;
+	}
+  #search-row {
+    margin-bottom: 30px;
+    width: 418px;
+  }
+  
+  #CC-purchaseList-cancel {
+   margin: 5px 5px 5px 5px;
+  }
+  #CC-purchaseList-create {
+   margin: 5px 5px 5px 5px;
+  }
+  #purchaseLists-items-info {
+    margin-bottom: 12px;
+    th {
+      font-weight: 600;
+      border-bottom: 2px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      text-align: left;
+      background:#FFF !important;
+    }
+    td {
+      border-bottom: 1px solid #D6DFE6;
+      border-collapse: collapse;
+      vertical-align: top;
+      background: #FFF !important;
+      padding: 8px;
+      line-height: 1.42857143;
+      border-top: 1px solid #ddd;
+    }
+  }
+  #purchaseLists-items-info-phone {
+    margin-bottom: 12px;
+    th {
+      font-weight: 600;
+      border-bottom: 2px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      text-align: left;
+      background:#FFF !important;
+    }
+    td {
+      border-top: 0;
+      border-bottom: 1px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      vertical-align: top;
+      background: #FFF !important;
+    }
+  }
+  #row-item{
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+    padding-bottom: 7px;
+ }
+  
+  #variant-details{
+    font-size: x-small;
+  }
+  
+  #product-name-edit-list{
+    color: black;
+  }
+  #delete-item-icon{
+    margin-left: 48px;
+    margin-top: -36px;
+  }
+  #delete-item-icon-md{
+    margin-left: 48px;
+    margin-top: -36px;
+  }
+  #input-qty {
+
+ }
+  #delete-item-icon-phone{
+    margin-left: 48px;
+    margin-top: -30px;
+    float: right;
+  }
+  
+  #input-qty-phone {
+      width: 45px;
+      margin-bottom: 10px;
+      height: 30px;
+      margin-left: 176px;
+ }
+}
+
+ #CC-editPurchaseList{
+
+ #CC-editPurchaseListName{
+    width: 45%;
+ }
+ 
+ #last-modified-date-phone{
+    margin-top: -20px;
+    margin-bottom: 20px;
+ }
+ 
+ #input-qty {
+      width: 45px;
+      margin-bottom: 10px;
+      height: 30px;
+ }
+ 
+ #input-qty-phone {
+      width: 45px;
+      margin-bottom: 10px;
+      height: 30px;
+      margin-left: 105px;
+ }
+     
+ #search-row {
+    margin-bottom: 30px;
+    width: 750px;
+  }
+  
+  .right-inner-addon {
+		position: relative;
+	}
+  .right-inner-addon input {
+		padding-right: 30px;
+	}
+  .right-inner-addon i {
+		position: absolute;
+		right: 0px;
+		padding: 10px 12px;
+		pointer-events: none;
+  }
+  
+#purchaseListDropDown {
+  width: 80%;
+}
+	
+ #CC-editPurchaseList-title{
+    padding-bottom: 0.5rem;
+    margin-top: 2px !important;
+    width: 100% !important;
+   
+    color: inherit !important;
+    font-family: inherit !important;
+    font-size: 1.75rem !important;
+    font-style: inherit !important;
+    font-weight: bold !important;
+    line-height: 150% !important;
+    text-align: inherit !important;
+    text-decoration: inherit !important; 
+ }
+
+#purchaseLists-items-info {
+    margin-bottom: 12px;
+    th {
+      font-weight: 600;
+      border-bottom: 2px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      text-align: left;
+      background:#FFF !important;
+    }
+    td {
+      border-top: 0;
+      border-bottom: 1px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      vertical-align: top;
+      background: #FFF !important;
+    }
+  }
+  
+  #purchaseLists-items-info-phone {
+    margin-bottom: 12px;
+    th {
+      font-weight: 600;
+      border-bottom: 2px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      text-align: left;
+      background:#FFF !important;
+    }
+    td {
+      border-top: 0;
+      border-bottom: 1px solid #D6DFE6;
+      border-collapse: collapse;
+      padding: .6rem 0;
+      vertical-align: top;
+      background: #FFF !important;
+    }
+  }
+  
+  #delete-item-icon{
+    margin-left: 48px;
+    margin-top: -36px;
+  }
+  
+  #delete-item-icon-phone{
+    margin-left: 48px;
+    margin-top: -30px;
+    float: right;
+  }
+  
+  #CC-editPurchaseList-save {
+   margin-top: 5px;
+   margin-right: 5px;
+   margin-bottom: 5px;
+   margin-left: 5px;
+  }
+  
+  #CC-editPurchaseList-cancel {
+   margin: 5px 5px 5px 5px;
+  }
+  
+  #CC-editPurchaseList-delete {
+   margin: 5px 5px 5px 5px;
+  }
+  
+  #CC-editPurchaseList-create-cancel-delete-control{
+    margin-top: 80px;
+    margin-right: 0px;
+    padding-left: 20px;
+  }
+  
+  #add-to-cart-button{
+    margin: 5px;
+    margin-top: 80px;
+    margin-left: 0px;
+  }
+  
+ #row-item{
+    border-bottom: 1px solid #eee;
+    padding-top: 10px;
+    padding-bottom: 7px;
+ }
+  
+  #variant-details{
+    font-size: x-small;
+  }
+  
+  #product-name-edit-list{
+    color: black;
+  }
+  
+}
+.cc-purchaseList-modal-heading {
+    background-color: white;
+    border-bottom: 0px;
+    border-radius: 6px 6px 0px 0px;
+    padding: 9px 15px 9px 15px;
+    margin-bottom: 20px;
+  }
+  .cc-purchaseList-confirm-icon {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 30px;
+    background: transparent url(/img/icons-32x32/icon-alert-alt-32x32.png) no-repeat 0 0;
+  }
+  .cc-purchaseList-body-modal {
+    max-height: 400px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  
+  .modal-dialog-width {
+    max-width: 600px;
+  }
+  
+  #CC-purchaseList-modal-headerText {
+    margin-left: 30px;
+    margin-top: -15px;
+  }
+  @media (min-width: 768px) {
+    #CC-purchaseList-modal-dialog {
+      width: 450px;
+    }
+  }
+  
+  .cc-purchaseList-modal-footer {
+    text-align: right;
+    background-color: white;
+    border-top: 0px;
+    border-radius: 0px 0px 6px 6px;
+  }
+  
+  .cc-purchaseList-modal-header-text{
+    font-size: large;
+    font-weight: bold;
+    padding-left: 1.5rem;
+   }
+   
+   #popupStack-popupAgentPurchaseList {
+     .modal-header {
+       padding: 9px 15px !important;
+       .close{
+         opacity: 0.3 !important;
+         margin-top: -2px !important;
+       }
+     }
+   }
+   .agent-listNameText {
+    margin: 1rem;
+    font-weight: 700;
+    font-size: medium; 
+   }
+   .purchaseList-margin-top {
+     margin-top: 0.5rem;
+   }
+   .purchaseList-input-margin-left {
+     margin-left: 1rem;
+   }
+   #cc-ApplicableToAll-checkbox-edit {
+    vertical-align: text-bottom;
+   }
+   .inputQty {
+    width: 45px;
+    margin-bottom: 10px;
+    height: 30px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+  .deleteIconStyle {
+   margin-left: 48px;
+   margin-top: -36px;
+  }

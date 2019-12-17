@@ -1,0 +1,162 @@
+<div id="MedAes_FAQ_Page_Widget" class="row">
+    <div class="row frequently-asked-ques">
+        <h3>Frequently Asked Questions</h3>
+    </div>
+   <div class="row MedAes-FAQ-Row">
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse1">How can I track an order? <i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
+		    <p>Once your order has been shipped, we will notify you via e-mail of the shipment status. This e-mail will also provide you with tracking information and the ability to access the status of your order from the convenience of your computer. You can also check your order status from the site – click on Order History in your account screen.  Here you will be able to track each shipment of your order.</p> 
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed">What forms of payment are accepted for online purchases?<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">
+			<p>Cynosure accepts the following major credit cards: VISA, MASTERCARD, and AMERICAN EXPRESS.</p> 
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed">When is my order shipped?<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>Orders placed during regular business hours (Monday through Friday, before 3 pm EST) are typically processed and shipped within 24-48 business hours. Once an order has processed, delivery time depends on the chosen shipping method. After your order has been processed and shipped you will receive a shipping confirmation that contains the tracking details.</p> 
+			<p>Delivery days can vary based on location.</p>  
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="collapsed">How can I check stock availability?<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse4" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>You can check stock availability on the product information pageon our website. We strive to maintain availability of all items listed in our catalog, however, it is possible that an item can be temporarily out of stock. </p> 
+			<p>If the item is unavailable, continue to place your order and itwill be shipped upon availability.</p>  
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse5" class="collapsed">What if I want to cancel my order?<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse5" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>All customers have the ability to cancel their order or a line item by going to the specific order in Open Orders on the My Account page. However, when we designed ourbusiness processes and systems, our goal was to save you time by quickly processing your order. If our team has already began to ship your items, you will not be able to make changes.</p> 
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse6" class="collapsed">Where is the part that I’m looking for?<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse6" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>Can’t find your part online? The part you’re looking for may have been obsoleted or replaced by a different model. Please email Customer Service at customerservice@cynosure.com with your inquiries. </p> 
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse7" class="collapsed">What is the return or exchange policy?<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse7" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>Cynosure will accept your return or exchange of consumables within 30 days of your purchase with prior authorization from a Cynosure Customer Service representative.  All returns require a Return Merchandise Authorization Number (RMA), which will be provided by your Customer Service Rep.</p> 
+			<p>Returns must be accompanied by the original packing slip, and received in new, unused and saleable condition.  Return shipping is to be paid for by the customer.</p>  
+			<p>Items returned without authorization will be disposed of without credit being issued. To obtain authorization call 1-800-866-2966 ext. 4293.</p>
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse8" class="collapsed">I received an item that I did not order.<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse8" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>Incorrectly shipped items must be claimed within 7 days of receiving your product in order to ensure proper credit. All orders are subject to a restocking fee. Pleasecontact Customer Service at 800.866.2966 ext. 4293 to begin the return process. </p> 
+			<p>Items returned without authorization will be disposed of without credit being issued.</p>  
+		</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse9" class="collapsed">Are there any items that cannot ship to my country because they are restricted?<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse9" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>If, for some reason, there are any items that cannot be exported from the U.S. or imported into your destination country selection, Cynosure Customer Service will notify before your order is shipped. </p> 
+		</div>
+      </div>
+    </div>   
+        <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse10" class="collapsed">What shipping methods do you offer? <i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse10" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>USA - Method: No Rush (4-6 Business Days), Premium (2-3 Business Days), Express (1-2 Business Days)</p>
+		    <p>International (including Canada) - Method: Standard (5-13 Business Days), Express (4-8 Business Days)</p> 
+			<p>*Business days are Monday - Friday, excluding US holidays.</p>  
+			<p>**Delivery times are estimates that Cynosure tries their hardest to meet. Occasionally there may be unexpected delays due to traffic, bad weather, delivery partner delays, etc. You will be able to track your packages progress on your home page. If you have any issues, please contact Cynosure Customer Service customerservice@cynosure.com. </p>
+		</div>
+      </div>
+    </div>   
+        <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse11" class="collapsed">Can I select different shipping methods for all the items in my cart?<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse11" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>All the items in your cart will be shipped to the listed shipping address using the same shipping method.</p> 
+		</div>
+      </div>
+    </div>
+            <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a  data-toggle="collapse" data-parent="#accordion" href="#collapse12" class="collapsed">What if my package is returned to shipper?<i class="zmdi expand-collapse-icon"></i></a>
+        </h4>
+      </div>
+      <div id="collapse12" class="panel-collapse collapse">
+        <div class="panel-body">
+		    <p>Occasionally packages are returned to us as undeliverable. When the carrier returns an undeliverable package to us, Customer Service will make an attempt to contact you. If the contact attempts are unsuccessful, we issue a refund(minus shipping costs). Weare unable to re-ship orders that are returned to us as undeliverable without speaking to the customer. If you would still like the items that were purchased please contact us by emailing Customer Service customerservice@cynosure.com.</p> 
+		</div>
+      </div>
+    </div>   
+
+  </div> 
+</div>  
+</div>   

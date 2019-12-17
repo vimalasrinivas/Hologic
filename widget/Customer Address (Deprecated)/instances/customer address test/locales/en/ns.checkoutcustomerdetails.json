@@ -1,0 +1,30 @@
+{
+  "resources": {
+    "countryRequired": "Country is mandatory. ",
+    "phoneNumberText": "Phone Number",
+    "firstNameText": "First Name",
+    "zipCodeText": "Zip/Postal Code",
+    "addressLine2Text": "Address Line 2",
+    "zipCodeInvalid": "Invalid entry. Please enter a valid zip/postal code.",
+    "countryText": "Country",
+    "cityRequired": "City is mandatory. ",
+    "addressLine1Text": "Address Line 1",
+    "phoneNumberInvalid": "Invalid entry. Please enter a valid telephone number.",
+    "stateRequired": "State is mandatory. ",
+    "checkoutCustomerDetailsText": "Checkout",
+    "lastNameText": "Last Name",
+    "lastNameRequired": "Last Name is mandatory. ",
+    "billingAddressText": "Billing Address",
+    "shippingAddressText": "Shipping Address",
+    "firstNameRequired": "First Name is mandatory. ",
+    "useBillingAddressText": " Use this as my billing address",
+    "addressLine1Required": "Address Line 1 is mandatory. ",
+    "phoneNumberRequired": "Phone Number is mandatory. ",
+    "stateRegionText": "State/Region",
+    "invalidBillingAddressText": "Your shipping address cannot be used as the billing address. Please enter a billing address.",
+    "zipCodeRequired": "Zip/Postal Code is mandatory. ",
+    "stateText": "State",
+    "checkoutErrorMsg": "Please ensure you have completed all mandatory fields and corrected any invalid entries.",
+    "cityText": "City"
+  }
+}

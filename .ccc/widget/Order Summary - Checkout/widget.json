@@ -1,0 +1,6 @@
+{
+  "widgetType": "checkoutOrderSummary",
+  "version": 14,
+  "displayName": "Order Summary - Checkout",
+  "elementized": true
+}

@@ -1,0 +1,195 @@
+<div id="organizationAddressWidget" class="container-fluid">
+  <div id="organizationAddressHeader">
+   <div id="organization-addresses-title" class="organization-addresses-title" data-bind="widgetLocaleText: 'accountAddressesText'"> </div>
+  </div>
+  <div class="row add-addr">
+    <!-- <div class="col-sm-4">
+         <input id="CC-headerWidget-Search" type="text" class="form-control search-query searchBox" autocomplete="off" placeholder="Search">
+         <span class="search-icon" data-bind="widgetLocaleText :'searchButtonText'">Search</span>
+           <i class="zmdi zmdi-search"></i>
+    </div> --> 
+    <div class="col-sm-4 pull-right">
+       <button class="medAesBtnPrimary pull-right add-addr-btn" id="organization-address-add1" data-toggle="modal" data-target="#addAddressModal" data-bind="click: handleCreateOrEditOrganizationAddress.bind($data, true)">
+        <span data-bind="widgetLocaleText: 'newText'">ADD ADDRESS</span>
+  </button>
+    </div>
+  </div>
+  	<table class="table addr-row" id="table-new">
+	   <thead>
+        <tr>
+    	    <th class="addr-th"><span data-bind="widgetLocaleText: 'shipNameText'"></span></th>
+    	    <th class="addr-th"><span data-bind="widgetLocaleText: 'addressText'"></span></th>
+    	    <th class="addr-th"><span data-bind="widgetLocaleText: 'phoneText'"></span></th>
+    	    <th></th>
+	    </tr>
+    </thead>
+    <tbody>
+        <!-- ko foreach: accountAddress() -->
+	        <tr>
+	            <td class="addr-td"><span data-bind="text:$data.shipName()"></span></td>
+	            <td class="addr-td"><span data-bind="text:$data.shipAddr()"></span></td>
+	            <td class="addr-td"><span data-bind="text:$data.shipPhone()"></span></td>
+	            <!-- ko if:$data.isDefaultAddr -->
+	            <td class="addr-td">
+	                <span><i class="zmdi zmdi-check-circle default-icon"></i></span>
+	                <span data-bind="widgetLocaleText: 'defaultAddressesLabel'"></span>
+	           </td>
+	            <!-- /ko -->
+	             <!-- ko ifnot:$data.isDefaultAddr -->
+	             <td class="addr-no-default"><a data-bind="widgetLocaleText: 'makeDefault'"></a></td>
+	              <!-- /ko -->
+	        </tr>
+	        <!-- /ko -->
+    </tbody>
+	</table>
+   <!-- Add new Address Modal starts -->
+    <div class="modal fade" id="addAddressModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog cc-config-modal-dialog">
+        <div class="modal-content addr-content">
+          <div class="modal-header addr-header">
+              <div class="row">
+                  <div class="col-sm-10 col-xs-10">
+                      <div class="addr-title" data-bind="widgetLocaleText: 'addAddress'"></div>
+                  </div>
+                  <div class="col-sm-2 col-xs-2">
+                    <button type="button" class="addr-close close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-body addr-body">
+              <!-- ko if: addAddressError() !== '' -->
+              <span data-bind="text: addAddressError" class="text-danger"></span>
+              <!-- /ko -->
+              <span class="req-msg" data-bind="widgetLocaleText: 'fieldMandatory'"></span>
+              <form class="form-horizontal">
+                  <fieldset id="address-form">
+                        <!-- Text input-->
+                    <div class="form-group">
+                      <div class="col-md-6 col-xs-6 col-sm-6">
+                        <label class="addr-label" for="CC-addressFirstName" data-bind="widgetLocaleText:'firstNameText'"></label>  
+                         <input type="text" class="col-md-12 form-control medAesInputBox addr-control" name="addressFirstName" id="CC-addressFirstname" data-bind="validatableValue: firstName">
+                         <div class="col-md-12 addr-error">
+                            <span class="text-danger" data-bind="validationMessage: firstName" role="alert" style="display: none;"></span>
+                        </div>
+                      </div>
+                       <div class="col-md-6 col-xs-6 col-sm-6">
+                             <label class="addr-label" for="CC-addressLastName" data-bind="widgetLocaleText:'lastNameText'"></label>
+                             <input type="text" class="col-md-12 form-control medAesInputBox addr-control" name="addressLastName" id="CC-addressLastName" aria-required="true" data-bind="validatableValue: lastName">
+                             <div class="col-md-12 addr-error">
+                                <span class="text-danger" id="org-address-state-error" data-bind="validationMessage: lastName" role="alert" style="display: none;"></span>
+                            </div>    
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-12">
+                         <label class="addr-label" for="CC-addressLastName" data-bind="widgetLocaleText:'shipNameText'"></label>
+                        <input id="orgAddressType" type="text" class="form-control medAesInputBox addr-control input-md" data-bind="validatableValue: shipToName">
+                        <div class="col-md-12 addr-error">
+                            <span class="text-danger" data-bind="validationMessage: shipToName" role="alert"></span>
+                        </div>    
+                      </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <div class="col-md-12">
+                        <label class="addr-label" for="CC-address1" data-bind="widgetLocaleText:'address1Text'"></label>
+                        <input id="orgAddressAddress1" name="CC-address1" type="text" class="form-control input-md medAesInputBox addr-control" data-bind="validatableValue: address1">
+                        <div class="col-md-12 addr-error">
+                            <span class="text-danger" data-bind="validationMessage: address1" role="alert"></span>
+                        </div>
+                      </div>
+                    </div>
+                
+                    <!-- Text input-->
+                    <div class="form-group">
+                      <div class="col-md-12">
+                         <label class="addr-label" for="CC-address2" data-bind="widgetLocaleText:'address2Text'"></label>
+                        <input id="orgAddressAddress2" name="CC-address2" type="text" class="form-control input-md medAesInputBox addr-control" data-bind="validatableValue: address2">
+                        <div class="col-md-12 addr-error">
+                            <span class="text-danger" data-bind="validationMessage: address2" role="alert"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                         <div class="col-md-6 col-xs-6 col-sm-6">
+                             <label class="addr-label" for="CC-city" data-bind="widgetLocaleText:'cityText'"></label>
+                            <input id="orgAddressCity" name="CC-city" type="text" class="form-control input-md medAesInputBox addr-control" data-bind="validatableValue: city">
+                            <div class="col-md-12 addr-error">
+                                <span class="text-danger" data-bind="validationMessage: city" role="alert"></span>
+                            </div>
+                          </div>
+                          <div class="col-md-6 col-xs-6 col-sm-6">
+                            <label class="addr-label" for="CC-postalCode" data-bind="widgetLocaleText:'postalCodeText'"></label>
+                            <input id="orgAddressPostalCode" name="CC-postalCode" type="text" class="form-control medAesInputBox input-md addr-control" data-bind="validatableValue: postalCode">
+                            <div class="col-md-12 addr-error">
+                            <span class="text-danger" data-bind="validationMessage: postalCode" role="alert"></span>
+                          </div>
+                          </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-6">
+                             <label class="addr-label" for="CC-sCountry" data-bind="widgetLocaleText:'countryText'"></label>
+                            <span class="text-danger visible-xs" id="org-address-country-error-xs"
+                                  data-bind="validationMessage: country" role="alert"></span>
+                            <div class="control">
+                              <select aria-required="true" class="form-control medAesInputBox col-md-12 addr-control"
+                                      name="CC-sCountry" id="org-address-country"
+                                      data-bind="attr: {title: $data.translate('countryText')}, optionsValue: 'countryCode',
+                                                 options: countriesList(), optionsText: 'displayName', value: country, optionsCaption: $data.translate('countryText'),
+                                                 validatableTarget: country, validationElement: country">
+                              </select>
+                              <div class="col-md-12 addr-error">
+                                <span class="text-danger hidden-xs" id="org-address-country-error"
+                                  data-bind="validationMessage: country" role="alert"></span>
+                              </div>          
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="control">
+                                <label class="addr-label" for="CC-state" data-bind="widgetLocaleText:'stateText'"></label>
+                              <select aria-required="true" class="form-control medAesInputBox col-md-12 addr-control"
+                                      name="CC-state" id="org-address-state"
+                                      data-bind="enable: stateList().length, attr: {title: $data.translate('stateText')}, optionsValue: 'abbreviation',
+                                                 options: stateList(), optionsText: 'displayName', optionsCaption: $data.translate('stateText'),
+                                                 value: state,
+                                                 validatableTarget: state, validationElement: state">
+                              </select>
+                            </div>
+                            <div class="col-md-12 addr-error">
+                                <span class="text-danger" id="org-address-state-error" data-bind="validationMessage: state" role="alert"></span>
+                            </div>
+                        </div>    
+                    </div>    
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <label class="addr-label" for="CC-phone" data-bind="widgetLocaleText:'phoneNumberText'"></label>
+                            <input id="orgAddressPhoneNumber" name="CC-phone" type="text" class="form-control input-md addr-control medAesInputBox" data-bind="validatableValue: phoneNumber">
+                            <div class="col-md-12 addr-error">  
+                            <span class="text-danger" data-bind="validationMessage: phoneNumber" role="alert"></span>
+                          </div>
+                        </div>    
+                    </div>
+                    <div class="form-group">
+                      <div class="col-md-12">
+                        <div class="checkbox">
+                          <input type="checkbox" name="defaultShippingAddress" id="orgDefaultShippingAddress" data-bind="checked: isDefaultShippingAddress, attr: {title: $data.translate('selectDefaultShippingAddressBtnTitle')}">
+                          <label for="orgDefaultShippingAddress" data-bind="attr: {title: $data.translate('selectDefaultShippingAddressBtnTitle')}, widgetLocaleText:'selectDefaultShippingAddressBtnTitle'"></label>
+                        </div>
+                      </div>
+                    </div>	
+                  </fieldset>
+                  <div id="organization-address-save-cancel-control">
+                    <button class="cc-button-primary col-sm-4 col-xs-12 medAesBtnPrimary create-btn" id="organization-address-save-create-new" data-bind="click:function(data,event){addNewAddress()}">
+                      <span data-bind="widgetLocaleText: 'newText'"></span>
+                    </button>
+                    <button class="cc-button-secondary col-sm-4 col-xs-12 cancel-btn" id="organization-address-cancel" data-bind="click:function(data,event){handleCancelUpdateOrganizationAddress()}">
+                      <span data-bind="widgetLocaleText: 'buttonCancel'"></span>
+                    </button>  
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add new Address Modal ends -->
+</div>

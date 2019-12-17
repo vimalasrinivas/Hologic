@@ -1,0 +1,29 @@
+{
+  "imports": [
+    "order",
+    "payment",
+    "shippingCountriesPriceListGroup",
+    "shippingCountries",
+    "shippingmethods",
+    "billingCountries",
+    "defaultShippingCountry",
+    "defaultBillingCountry"
+  ],
+  "translations": [
+    {
+      "name": "MedAes Checkout Latest AddressBook Widget",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "defaultLayout": "MedAesCheckoutLatestAddressBookWidget_v1_lyt1",
+  "pageTypes": [
+    "checkout",
+    "agentCheckout"
+  ],
+  "config": {
+    "includeBillingDetails": false
+  }
+}

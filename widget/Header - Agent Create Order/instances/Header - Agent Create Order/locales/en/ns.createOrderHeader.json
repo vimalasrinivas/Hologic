@@ -1,0 +1,19 @@
+{
+  "resources": {
+    "plgText": "Price Group",
+    "additionalCustomFactorsText": "Additional Custom Factors",
+    "orderIdText": "Order Number",
+    "siteText": "Site",
+    "changePriceListGroupHeader": "Change Price List Group",
+    "createOrderText": "Create Order",
+    "changePriceListGroupWarningText": "Any price adjusted item will be updated according to the selected currency. Would you like to continue?",
+    "buttonYesText": "Yes",
+    "scheduleOrderText": "Schedule Order",
+    "requestQuoteText": "Request Quote",
+    "changePriceListGroupInformationText": "Any price adjusted item will be updated according to the selected currency.",
+    "priceListGroupCannotBeChangedText": "Price List Group can not be edited as cart contains externally priced items",
+    "accountText": "Account",
+    "pendingPaymentsText": "Pending Payment",
+    "buttonNoText": "No"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "medAesAccountWallet",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "defaultLayout": "medAesAccountWallet_v1_lyt1",
+  "pageTypes": [
+    "profile"
+  ],
+  "config": {}
+}

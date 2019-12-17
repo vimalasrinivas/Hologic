@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesheaderWidget",
+  "version": 1,
+  "displayName": "MedAesheaderWidget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAesheaderWidget",
+  "source": 101,
+  "javascript": "MedAesheaderWidget"
+}

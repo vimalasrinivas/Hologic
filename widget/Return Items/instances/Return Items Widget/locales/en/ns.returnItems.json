@@ -1,0 +1,24 @@
+{
+  "resources": {
+    "orderDateText": "Order Date:",
+    "cancel": "Cancel",
+    "backToMyAccountLink": "<< Back to My Account",
+    "returnItems": "Return Items",
+    "completePayment": "Complete Payment",
+    "submit": "Submit",
+    "selectText": "Enter the quantity and return reason against the items you want to return.",
+    "orderDetailsText": "Order Details",
+    "myOrders": "My Orders",
+    "fullName": "__firstName__ __lastName__",
+    "returnReasonText": "Return Reason",
+    "customerName": "Customer Name",
+    "orderNumberText": "Order Number:",
+    "orderStatusText": "Order Status:",
+    "selectedQuantityLabel": "__productName__ Selected Quantity",
+    "nonReturnable": "Non Returnable",
+    "customerEmail": "Customer Email",
+    "returnRequest": "Create Return Request For Order Number __orderId__",
+    "priceText": "Price",
+    "selectReasonText": "Select Reason"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "widgetType": "medAes_saved_cart_widget",
+  "version": 1,
+  "displayName": "medAes_saved_cart_widget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "medaessavecart",
+  "source": 101,
+  "javascript": "medaessavecart"
+}

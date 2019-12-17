@@ -1,0 +1,99 @@
+#WIDGET_ID-WIDGET_INSTANCE_ID {  
+    .pad0{   
+      padding:0px;  
+    }
+	.footer_Row {
+	    padding: 18px 0px;
+		background-color: #FFFFFF;
+		//box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.16);
+	@media screen and (max-width:767px){       
+	   padding: 18px 15px;
+	}	
+		.logo-Width{
+            width: 147px;
+            cursor:pointer;
+            @media screen and (max-width: 425px){    
+                padding-bottom: 15px;
+            }
+            @media screen and (min-width:768px){   
+                 margin-top: 6px;
+            }
+        }
+        @media screen and (max-width: 767px){               
+           .logo-pad0{
+               padding:0px;
+           }
+        }
+        @media screen and (min-width:768px){   
+           .logo-pad0{
+                padding-left: 0px;
+           } 
+        }
+        
+        .copyright-Wrap {
+            font-family: FlamaLight;
+			font-size: 14px;
+			letter-spacing: 0.35px;
+			color:@medAesTextColor;  
+			padding-left: 0px;  
+			text-align: right;
+			padding-right: 0px;
+			@media screen and (max-width: 767px){     
+			 padding:0px;     
+			 text-align: unset;
+			 line-height: 18px; 
+			    span:nth-child(2){
+			        display:block;
+			    }
+			}
+			@media screen and (min-width: 768px) and (max-width:1220px){            
+			   padding-right: 0px;
+			   text-align:center;
+			}
+		
+        }
+        .footer_links {
+            
+             @media screen and (max-width: 767px){
+                 padding:0px;
+             }
+            ul {
+				padding: 0px;
+				margin: 0px;
+				list-style-type: none;
+				li {
+				    @media screen and (min-width: 768px) {    
+				        display: inline-block;
+				        &:after{
+                    	    content:"|";
+                    	   
+                    	}
+                    	&:last-child:after{  
+                    	    content:"";
+                    	}
+                    	span{
+                    	    padding: 0px 3px 0px 3px;
+                    	}
+				    }
+				    a {
+				        font-size: 14px;
+				        color: @medAesTextColor;
+				    }
+				    @media screen and (max-width: 767px){
+                      padding-bottom: 15px;  
+                }
+				}
+            }
+            @media screen and (min-width: 768px) {
+                padding-right: 0;
+            }
+            @media screen and (min-width: 768px) and (max-width: 1199px) {
+                padding-left: 0;
+            }
+        }  
+       
+	}
+    
+
+}
+

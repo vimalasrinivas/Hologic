@@ -1,0 +1,26 @@
+{
+  "widgetDescriptorName": "MedAes-Content-Widget",
+  "properties": [
+    {
+      "name": "contentImage",
+      "id": "contentImage1",
+      "type": "mediaType",
+      "helpTextResourceId": "contentImageHelpText",
+      "labelResourceId": "contentImageTextLabel"
+    },
+    {
+      "name": "contentImageDescription1",
+      "id": "contentImageDescription1",
+      "type": "stringType",
+      "helpTextResourceId": "contentImageDescription1HelpText",
+      "labelResourceId": "contentImageDescription1TextLabel"
+    },
+    {
+      "name": "contentImageDescription2",
+      "id": "contentImageDescription2",
+      "type": "stringType",
+      "helpTextResourceId": "contentImageDescription2HelpText",
+      "labelResourceId": "contentImageDescription2TextLabel"
+    }
+  ]
+}

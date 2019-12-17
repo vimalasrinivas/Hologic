@@ -1,0 +1,8 @@
+{
+  "tag": "header-dropdown-minicart",
+  "source": 100,
+  "type": "fragment",
+  "title": "Cart Link",
+  "widgetType": "headerWidget",
+  "version": 11
+}

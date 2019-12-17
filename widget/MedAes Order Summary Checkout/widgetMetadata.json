@@ -1,0 +1,160 @@
+{
+  "imports": [
+    "order",
+    "payment",
+    "shippingmethods",
+    "paymentauthorization",
+    "shippingGroups"
+  ],
+  "translations": [
+    {
+      "name": "สรุปใบสั่ง - เช็คเอาต์",
+      "language": "th"
+    },
+    {
+      "name": "Resumo pedido - Finalizar Compra",
+      "language": "pt_BR"
+    },
+    {
+      "name": "订单摘要 - 结账",
+      "language": "zh_CN"
+    },
+    {
+      "name": "Про замовлення - оформлення",
+      "language": "uk"
+    },
+    {
+      "name": "Обща инф. за поръчка – финализ.",
+      "language": "bg"
+    },
+    {
+      "name": "Tellimuse kokkuv. – ostu vormistus",
+      "language": "et"
+    },
+    {
+      "name": "Pasūt. kopsav. - norēķināšanās",
+      "language": "lv"
+    },
+    {
+      "name": "Ordresammendrag - kasse",
+      "language": "no"
+    },
+    {
+      "name": "Užsakymo suvestinė – atsiskaitymas",
+      "language": "lt"
+    },
+    {
+      "name": "Sommaire de commande - Commander",
+      "language": "fr_CA"
+    },
+    {
+      "name": "Sumar comandă - Achiziţie",
+      "language": "ro"
+    },
+    {
+      "name": "オーダー要約 - 精算",
+      "language": "ja"
+    },
+    {
+      "name": "Potrditev naročila - Zaključek",
+      "language": "sl"
+    },
+    {
+      "name": "Сводка заказа - оформление покупки",
+      "language": "ru"
+    },
+    {
+      "name": "Sažetak narudžbe - kupnja",
+      "language": "hr"
+    },
+    {
+      "name": "Sipariş Özeti - Çıkış",
+      "language": "tr"
+    },
+    {
+      "name": "Podsumowanie zamówienia - kasa",
+      "language": "pl"
+    },
+    {
+      "name": "訂單摘要 - 結帳",
+      "language": "zh_TW"
+    },
+    {
+      "name": "주문 요약 - 체크아웃",
+      "language": "ko"
+    },
+    {
+      "name": "Shrnutí objednávky - pokladna",
+      "language": "cs"
+    },
+    {
+      "name": "Rendelés összes. - Vásárlás végl.",
+      "language": "hu"
+    },
+    {
+      "name": "Σύνοψη παραγγελιών - Ταμείο",
+      "language": "el"
+    },
+    {
+      "name": "Ordreopsummering - Udtjekning",
+      "language": "da"
+    },
+    {
+      "name": "MedAes Order Summary Checkout",
+      "language": "en"
+    },
+    {
+      "name": "Резиме наруџбине - завршетак",
+      "language": "sr"
+    },
+    {
+      "name": "Bestellübersicht - Checkout",
+      "language": "de"
+    },
+    {
+      "name": "Rezime narudžbine - završetak",
+      "language": "sr_Latn"
+    },
+    {
+      "name": "Resumen orden - Finalizar compra",
+      "language": "es"
+    },
+    {
+      "name": "Récap. commande - Validation",
+      "language": "fr"
+    },
+    {
+      "name": "Riepilogo ordine - Checkout",
+      "language": "it"
+    },
+    {
+      "name": "Order Summary - Checkout",
+      "language": "en_GB"
+    },
+    {
+      "name": "Orderoverzicht: kassa",
+      "language": "nl"
+    },
+    {
+      "name": "Orderöversikt - kassa",
+      "language": "sv"
+    },
+    {
+      "name": "Resumo Encomenda - Registo Saída",
+      "language": "pt"
+    },
+    {
+      "name": "Tilauksen yhteenveto - kassa",
+      "language": "fi"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "pageTypes": [
+    "checkout",
+    "agentCheckout",
+    "agentMultiShipCheckout"
+  ],
+  "config": {}
+}

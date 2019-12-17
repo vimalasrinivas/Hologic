@@ -1,0 +1,13 @@
+{
+  "widgetDescriptorName": "purchaseLists",
+  "properties": [
+    {
+      "defaultValue": true,
+      "name": "showAddByButton",
+      "id": "showAddByButton",
+      "type": "booleanType",
+      "helpTextResourceId": "showAddByButtonHelpText",
+      "labelResourceId": "showAddByButtonLabel"
+    }
+  ]
+}

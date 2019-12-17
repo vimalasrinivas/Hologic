@@ -1,0 +1,15 @@
+{
+  "resources": {
+    "headerOrderTotal": "Order Total",
+    "ordersPendingApprovalText": "Orders Pending Approval",
+    "NoItemDisplayMessage": "No Items to display.",
+    "searchOrderId": "Search for Order ID",
+    "tableFooter": "__start__-__end__ of __total__ items",
+    "headerOrderID": "Order ID",
+    "headerSubmittedBy": "Submitted By",
+    "show": "Show",
+    "myAccount": "My Account",
+    "itemsPerPageText": "items per page",
+    "headerOrderDate": "Order Date"
+  }
+}

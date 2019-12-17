@@ -1,0 +1,64 @@
+#MedAes_Footer_Widget_v1-wi200013 {
+	.footer_Row {
+	    padding:30px 0;
+		background-color: #FFFFFF;
+		box-shadow: 0 -1px 0 0 rgba(0, 0, 0, 0.16);
+		 @media screen and (max-width: 425px){
+                padding: 15px 0px;
+            }
+		.logo-Width{
+            width: 147px;
+            @media screen and (max-width: 425px){
+                padding-bottom: 15px;
+            }
+        }
+        .copyright-Wrap {
+            font-family: FlamaLight;
+			font-size: 14px;
+			letter-spacing: 0.35px;
+			color:@medAesTextColor;
+			@media screen and (min-width: 768px) {
+			    text-align: center;
+			}
+			@media screen and (min-width: 1200px) {
+			    padding-right: 0;
+                text-align: right;
+			}
+        }
+        .footer_links {
+            
+            ul {
+				padding: 0px;
+				margin: 0px;
+				list-style-type: none;
+				li {
+				    @media screen and (min-width: 768px) {
+				        display: inline-block;
+				        &:after{
+                    	    content:"|";
+                    	    padding: 6px 3px 6px 6px;
+                    	}
+                    	&:last-child:after{
+                    	    content:"";
+                    	}
+				    }
+				    a {
+				        font-size: 14px;
+				        color: @medAesTextColor;
+				    }
+				    @media screen and (max-width: 425px){
+                      padding-bottom: 15px;
+                }
+				}
+            }
+            @media screen and (min-width: 768px) {
+                padding-right: 0;
+            }
+            @media screen and (min-width: 768px) and (max-width: 1199px) {
+                padding-left: 0;
+            }
+        }
+	}
+    
+
+}

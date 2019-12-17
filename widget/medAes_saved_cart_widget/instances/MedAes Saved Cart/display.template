@@ -1,0 +1,286 @@
+<!-- ko if: showCartLength() == 0-->
+    <div class="cartNoItems">No items from saved cart</div>
+<!-- /ko -->
+
+<!-- ko if: display() && showCartLength() > 0 -->
+<!-- ko with: cart -->
+
+<div id="CC-multiCart" class="col-md-12 hidden-xs">
+    <div class="row">
+        <h4>Saved Carts
+    
+            <!-- ko if: $parent.displayPagination().length > 0 -->  
+            <span data-bind="text:'('+$parent.showCartLength()+')'"></span>
+                    <!--(<span data-bind="text:$parent.listOfIncompleteOrders().length"></span>)               -->
+            <!-- /ko -->           
+    
+        </h4>
+    </div>
+    <div id="CC-multicartorder-table-md-lg-sm" class="row savedOrdersStyle">
+        <section id="orders-info" class="col-md-12">
+
+            <table class="table table-hover table-responsive">
+                <thead>
+                    <tr>
+                        <th class="col-md-3 " scope="col">Cart Name</th> 
+                        <th class="col-md-3" scope="col">Items in Cart</th>
+                        <th class="col-md-3 " scope="col">Subtotal</th>
+                        <th class="col-md-3 " scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <!-- ko if: $parent.displayPagination().length > 0 -->
+                <tbody data-bind="foreach:$parent.displayPagination">
+                    <!-- ko if : $data[0].orderId != $data[0].cartName -->
+                    <tr>
+                        <td class="col-md-3" data-bind="text : $data[0].cartName" scope="row"></td>
+                        <td class="col-md-3" data-bind="text : $data[0].itemCount()" scope="row"></td>
+                        <td class="col-md-3" data-bind="currency: {price: $data[0].total,
+                            currencyObj: $data[0].priceListGroup.currency}" scope="row"></td>
+                        <td class="col-md-3">
+                            <button class=" SavedCartsBtnStyle" data-bind="click: function(data,event){$parents[1].viewCartDetails($data)}"><a>View Cart</a></button>    
+
+                            <button class=" SavedCartsBtnStyle" data-bind="click:$parents[1].deleteParticularIncompleteOrders.bind($parents[1],
+        $data[0].orderId, $data[0].cartName)">
+                                <a class="delete" data-bind="attr:
+        {title: 'Clicking this will delete this cart'}">Delete</a>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- /ko -->
+
+                </tbody>
+                <!-- /ko -->
+                <!-- ko if: $parent.listOfIncompleteOrders().length == 0 -->
+                <!-- <tbody>
+                    <tr>
+                        <td colspan="5">
+                            <span data-bind="widgetLocaleText:'noOrders'">
+                          </span></td>
+                    </tr>
+                </tbody> -->
+                <!-- /ko -->
+            </table>
+            <div class="row pagiNation hide">
+                <a class="prev" data-bind="event:{ click: function(data, event){previous()}}" rel="prev"><span><i class="fa fa-angle-left"></i></span></a>
+                <!-- ko foreach: new Array($parent.koTotalPages()) -->
+                <a href="/" data-bind="css: {active: $index() === $parents[1].koCurrentPage() },disableClick: ($parents[1].koCurrentPage() === $index()), click: function(data, event) {$parents[1].getPageData($index()) }, text: $index()+1"></a>
+                <!-- /ko -->
+                <a class="next" data-bind="event:{ click: function(data, event){next()}} " rel="next"><span><i class="fa fa-angle-right"></i></span></a>
+            </div>
+        </section>
+    </div>
+
+</div>
+<div class="visible-xs shippedOrders ">
+    <h4>Saved Carts 
+
+       <!-- ko if: $parent.displayPagination().length > 0 -->              
+       <span data-bind="text:$parent.showCartLength()"></span>
+                <!--(<span data-bind="text:$parent.listOfIncompleteOrders().length"></span>)               -->
+        <!-- /ko -->     
+
+        <i class="zmdi "></i></h4>
+    <div class="panel panel-default visible-xs">
+        <div class="panel-heading">
+            <h5 class="panel-title">   
+          <a data-toggle="collapse" class="nav-link-mobile" data-parent="#accordion" href="#shipped">
+             Saved Carts
+            <!-- ko if: $parent.displayPagination().length > 0 -->              
+                <!--(<span data-bind="text:$parent.listOfIncompleteOrders().length"></span>)               -->
+                <span data-bind="text:$parent.showCartLength()"></span>
+        <!-- /ko -->     
+
+              <i class="zmdi "></i>
+          </a>
+
+        </h5>
+        </div>
+        <div id="shipped" class="panel-collapse collapse in savedOrdersStyle" style="height: auto;">
+            <div class="panel-body">
+                <table class="table active" id="shippedOrders">
+                    <thead>
+                        <tr>
+                            <th class="col-md-3 col-xs-3" scope="col">Cart Name</th>
+                            <th class="col-md-3 col-xs-3" scope="col">Subtotal</th>
+                            <th class="col-md-3 col-xs-3" scope="col">Items in Cart</th>
+                            <th class="col-md-3 col-xs-3" scope="col">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <!-- ko if: $parent.displayPagination().length > 0 -->
+                    <tbody data-bind="foreach:$parent.displayPagination">
+                        <!-- ko if : $data[0].orderId != $data[0].cartName -->
+                        <tr>
+                            <td class="col-md-3" data-bind="text : $data[0].cartName" scope="row"></td>
+                            <td class="col-md-3" data-bind="currency: {price: $data[0].total,
+                      currencyObj: $data[0].priceListGroup.currency}" scope="row"></td>
+                            <td class="col-md-3" scope="col">
+                                <div class="sr-only"></div>
+                            </td>
+                            <td class="col-md-3">
+                                <button class=" SavedCartsBtnStyle"><a href="/" data-bind="event:{click: function(data,event){$parents[1].viewCartDetails($data)}}">View Cart</a></button>
+
+                                <button class=" SavedCartsBtnStyle" data-bind="click:$parents[1].deleteParticularIncompleteOrders.bind($parents[1],
+                      $data[0].orderId, $data[0].cartName)">
+                                    <a class="delete"  data-bind="attr:
+                      {title: 'Clicking this will delete this cart'}" title="Clicking this will delete this cart">Delete</a>
+                                </button>
+                            </td>
+                        </tr>
+                        <!-- /ko -->
+                        <!-- ko if : $data[0].orderId == $data[0].cartName -->
+                        <!-- <tr>
+                            <td colspan="5">
+                                <span data-bind="widgetLocaleText:'noOrders'">
+                          </span></td>
+                        </tr>-->
+                        <!-- /ko -->
+
+                    </tbody>
+                    <!-- /ko -->
+
+                    <!-- ko if: $parent.listOfIncompleteOrders().length == 0 -->
+                    <tbody>
+                        <tr>
+                            <td colspan="5">
+                                <!-- <span data-bind="widgetLocaleText:'noOrders'"> -->
+                              <!--  </span>-->
+                            </td>
+                        </tr>
+                    </tbody>
+                    <!-- /ko -->
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /ko -->
+<!-- /ko -->
+
+<!-- ko if: cartDetailsShow-->
+
+<!-- ko with: $data.viewCartDetailShow() -->
+
+
+<!-- ko if : $data.shoppingCart -->
+<h2 class="CartDetailsHeading " data-bind="text : cartName"></h2>
+<!-- /ko -->
+<!--merge into functionlaity-->
+
+<!-- ko with: $data.shoppingCart -->
+
+<!-- ko if : items.length  > 0 -->
+<button class="buyNowBtn pull-right" href="#" data-bind="click:$parents[1].mergeWithParticularIncompleteOrder.bind($parents[1],$parent.orderId)">
+    <span data-bind="widgetLocaleText: 'BUY NOW',attr:    
+        {title: 'Clicking this will merge the cart items into this order'}"></span>
+</button>
+<!-- /ko -->
+
+<!-- ko if : items.length  > 0 -->
+<!-- ko foreach: items -->
+<div class="row cartDetilsBox">
+    <div class="image col-xs-4 ">
+        <a>
+            <img data-bind="attr: {src: primaryThumbImageURL}" alt="product-Image" class="img-responsive productImg">
+        </a>
+    </div>  
+    <div class="pad0 col-xs-6 col-sm-3 col-md-4 col-lg-4">  
+        <div class="bold" data-bind="text:displayName"></div>
+        <div class="item-133D">Item-<span data-bind="text:productId"></span></div>
+        <div class="product-Currency">
+            <!--  <span data-bind="text:$parents[2].cart().currency.symbol"></span>-->
+            <span data-bind="currency: {price: externalPrice, currencyObj: $parents[2].cart().currency}"></span>
+        </div>
+
+        <div class="action-info ">
+            <span>
+                                        <a href="/" class="update-qty remove-item" data-bind="event:{click: function(data,event){$parents[2].removeItemFromSavedCart(data,event)}}">  
+                                    <span alt="handleRemoveFromCart">Remove</span>
+            </a>
+            </span>
+            <span>  
+                                        <!--<a href="#" class="update-qty" >Add to Favorites</a>-->    
+                                         <a href="/" class="update-qty"  data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled &amp;&amp; $data.isAddToPurchaseListDisabled()},click : function(event,data) { $parents[2].showPurChaseList($data) }" >Add to Favorites</a>
+                                    </span>
+        </div>
+
+    </div>
+    <div class="quantity col-sm-3 col-md-3 col-lg-3 col-xs-12">
+        <label class="label-hidden"></label>
+        <div class="qty-Text">Qty:</div>
+        <input type="text" id="updateBoxQty" name="qty2"  min="0" oninput="validity.valid||(value='');" class="Quantity-Box -qty form-control" data-bind="value:quantity" maxlength='3'/>  
+     
+        <div class=" col-xs-6 visible-xs  product-Currency1">     
+            <!--<span data-bind="text:$parents[2].cart().currency.symbol"></span>-->  
+            <span data-bind="currency: {price: price, currencyObj: $parents[2].cart().currency}"></span>         
+        </div>
+        <p>
+            <a  id="CC-saveCart-Update" class="update-qty" data-bind="widgetLocaleText : 'Update',       
+                                    click: function(data, event){ return $parents[2].updateQuantity($data, event, 'CC-shoppingCart-updateQuantity-' + $index(), $parent);}">
+            </a>
+        </p>
+        <div id="qtyInvalidMessage" class="text-danger"></div>
+    </div>
+    <div class="text-right col-sm-2 col-md-2 col-lg-2 hidden-xs  product-Currency">
+        <!-- <span data-bind="text:$parents[2].cart().currency.symbol"></span>-->
+        <span data-bind="currency: {price: price, currencyObj: $parents[2].cart().currency}"></span>
+    </div>
+</div>
+<!-- /ko -->
+<!-- /ko -->
+<!-- /ko -->
+
+<div class="row summarySection text-right">
+    <!-- ko with: $data.priceInfo -->
+
+    <div class="ordersummary ">
+        <h3 class="no-outline" data-bind="widgetLocaleText:'Order Summary'"></h3>
+        <div class="currency">
+            <span>Subtotal:</span>
+            <span class="ordersumprice pull-right" data-bind="currency: {price: subTotal, currencyObj: $parents[1].cart().currency}"></span>
+        </div>
+        <br>
+        <div class="currency">
+            <b><span >Estimated Order Total:</span>   
+              <span class="ordersumprice pull-right" data-bind="currency: {price:total, currencyObj: $parents[1].cart().currency}"></span></b>
+        </div>
+    </div>
+
+    <!-- /ko -->
+    <!-- ko with: $data.shoppingCart -->
+
+    <button class="buyNowBtn1 pull-right" href="#" data-bind="click:$parents[1].mergeWithParticularIncompleteOrder.bind($parents[1],$parent.orderId)">
+        <span data-bind="widgetLocaleText: 'BUY NOW',attr:    
+                    {title: 'Clicking this will merge the cart items into this order'}"></span>
+    </button>
+    <div class="taxCalculationMsg">*Freight and Tax are calculated in the next step.</div>
+    <!-- /ko -->
+
+</div>
+
+<!-- /ko -->
+<!-- /ko -->
+<div class="modal fade" id="CC-deleteSaveList-modal" tabindex="-1" role="alert">
+    <div class="modal-dialog" id="CC-deleteSaveList-modal-dialog">
+        <div class="modal-content" id="CC-deleteSaveListModalContent">
+            <div class="modal-header" id="CC-deleteSaveList-modal-header">
+                <button type="button" class="close" data-dismiss="modal" id="CC-deleteSaveList-modal-headerClose" aria-hidden="true">&times;</button>
+            </div>
+
+            <div class="modal-body" id="CC-deleteSaveList-modal-modalBody">
+                <div>Are you sure you would want to delete the saved cart "<span class='deleteListName' data-bind="text : (deleteCartName().length > 30 ? deleteCartName().substring(0, 29) + '..' : deleteCartName())"></span>"?</div>
+            </div>
+
+            <div class="modal-footer" id="CC-deleteSaveList-modal-footer">
+                <button class="medAesBtnPrimary decideBtn" id="CC-deleteSaveList-modal-submit" data-bind='event:{click: function() { handleDeleteSelectedSaveList() }}'>
+                    <span id="CC-deleteSaveList-modal-yes">Yes</span>
+                </button>
+                <button class="medAesBtnPrimary cancelBtn decideBtn" data-dismiss="modal" id="CC-deleteSaveList-modal-cancel">
+                    <span id="CC-deleteSaveList-modal-no">No</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

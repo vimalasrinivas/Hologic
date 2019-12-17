@@ -1,0 +1,6 @@
+{
+  "widgetType": "checkoutPaymentDetails",
+  "version": 11,
+  "displayName": "Payment Details (Deprecated)",
+  "elementized": false
+}

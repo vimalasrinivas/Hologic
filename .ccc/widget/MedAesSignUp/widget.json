@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesSignUp",
+  "version": 1,
+  "displayName": "MedAesSignUp",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAesSignUp",
+  "source": 101,
+  "javascript": "MedAesSignUp"
+}

@@ -1,0 +1,6 @@
+{
+  "resources": {
+    "showAddByButtonHelpText": "Check to show if Add by Product Name/Sku Buttons needs to be displayed",
+    "showAddByButtonLabel": "Show Add by Product Name/Sku Buttons"
+  }
+}

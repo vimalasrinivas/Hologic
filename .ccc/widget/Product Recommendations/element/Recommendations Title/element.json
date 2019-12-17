@@ -1,0 +1,8 @@
+{
+  "tag": "recommendations-title",
+  "source": 100,
+  "type": "fragment",
+  "title": "Recommendations Title",
+  "widgetType": "recommendations",
+  "version": 9
+}

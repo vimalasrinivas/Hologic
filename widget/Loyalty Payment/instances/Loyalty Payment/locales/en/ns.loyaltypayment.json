@@ -1,0 +1,9 @@
+{
+  "resources": {
+    "loyaltyInsufficientPointsError": "Your points balance does not cover the full amount of your order.",
+    "loyaltyLoginOrEnrolmentError": "You can pay for your order with points if you have joined the loyalty program, and are logged in.",
+    "payForItemsByPointsText": "Pay for Items with Points",
+    "payByPointsText": "Pay by Points",
+    "loyaltyPaymentValidationError": "Please ensure you have completed all mandatory fields and corrected any invalid entries."
+  }
+}

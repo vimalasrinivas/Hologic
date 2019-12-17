@@ -1,0 +1,29 @@
+{
+  "resources": {
+    "totalTableSubTotal": "Sub-Total:",
+    "buttonCheckout": "Checkout",
+    "cartTableSumary": "This table contains a list of items, currently in your shopping cart.",
+    "siteNavigationHeader": "Site Navigation",
+    "miniShoppingCartScrollUp": "Click to view previous set of products",
+    "cartColHeaderImage": "Image",
+    "shoppingCartHeader": "Shopping Cart Summary",
+    "cartDropDownText": "__count__ item - __currency____totalPrice__",
+    "buttonRemoveItem": "Remove",
+    "cartDropDownText_plural": "__count__ items - __currency____totalPrice__",
+    "captchMsg": "Please solve the catcha to continue",
+    "cartHeading": "Your Shopping Cart",
+    "totalTableSummary": "Shopping cart totals.",
+    "buttonEditCart": "Edit Cart",
+    "cartOperationsText": "Cart Operations",
+    "accountTooltipText": "Find your Cynosure account number on the top of any Cynosure issued document - Invoice, Shipping Notice, etc. ",
+    "miniShoppingCartTitle": "Mini Shopping Cart",
+    "skipToContent": "Skip to content",
+    "minicartText": "Mini Cart",
+    "cartColHeaderItemTotal": "Item Total",
+    "totalTableTotal": "Total:",
+    "cartColHeaderName": "Name",
+    "cartColHeaderQuantity": "Quantity",
+    "updateProfileLocaleModalText": "Save your language selection to your profile?",
+    "miniShoppingCartScrollDown": "Click to view next set of products"
+  }
+}

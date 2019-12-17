@@ -1,0 +1,86 @@
+<div class="row bg-color eventsCarouselWrapper" data-bind="visible:user().loggedIn() && eventsFeed()">
+  <div class="col-xs-12 hero-padding-adjuster" id="event_Widget">
+<div class="cc_crs-heroWidget hero-padding-override eventsCarouselStyle">
+<h2 class="eventsHeading">Events</h2>
+<h5 class="ViewAllProducts">
+  <a href="/" data-bind="attr: { href:site().extensionSiteSettings.externalSiteSettings.allEventslink}" target="_blank">View All</a>
+  </h5>
+<div id="myCarousel" class="carousel slide"  data-ride="carousel"  data-bind="attr:{id: 'this-carousel-id-'+$data.id()}">
+
+<div class="carousel-inner" role="listbox">
+  <div class="article-carousel article-carousel--cases">           
+      <!-- ko with: eventsFeed() --> 
+      <div class="event-carousel_slides container nopad" role="toolbar">  
+      <!-- ko if: items.length > 0 -->
+           <!-- ko foreach: items --> 
+      <div class="slick-slide">  
+          <div class="eventCarouselSlide">
+              <div class="eventWrapper">   
+                  <h5 data-bind="text:title"></h5>
+              <div> <a href="/" data-bind="attr: { href:url}" target="_blank">   
+                   <img src = " /file/general/logo-cynosure.svg" alt="logo-cynosure" class="img-responsive dummy-class">      
+           <!--     <img data-bind="ccResizeImage:{   -->
+    						 <!--    source:'/file/general/logo-cynosure.svg',-->
+    							<!-- alt: 'logo-cynosure',-->
+    							<!-- title:'logo-cynosure',-->
+    							<!-- errorSrc:'images/noImage.png',-->
+    							<!--errorAlt:'No Image Found'}" class="img-responsive dummy-class">-->
+                </a></div>
+                         
+                <div class="row">    
+               
+                    <div class="col-sm-2 col-xs-2"> 
+                       <a  href="/" data-bind="attr: { href:url}" target="_blank">  
+                       <div data-bind="html:$parents[1].getDateData($data)" class="Eventdate"></div>         
+                       </a>
+                    </div>   
+                    <div class="col-sm-10 col-xs-10">
+                          <a href="/" data-bind="attr: { href:url}" target="_blank">     
+                              <h4  data-bind="text:title"></h4>         
+                              <!--<h3>Guard and Grace, Denver, CO, USA</h3>-->                
+                                  <!-- ko with: location -->
+                              <h3><span data-bind="text: $data['extended-address']"></span>, <span data-bind="text:$data['street-address']"></span>, <span data-bind="text:locality"></span>, <span data-bind="text:state"></span></h3>          
+                              <!-- /ko -->         
+                          </a>   
+                          <div class="description" data-bind="text:description"></div>                
+                    </div>
+                </div>  
+              </div>
+          </div>
+      </div>  
+           <!-- /ko -->
+            <!-- /ko -->
+          </div>
+          <!-- ko if:items.length > 3-->
+          <div class="events-carousel__controls">       
+            <div class="arrows hidden-xs">  
+               <a  class="collection-carousel-control left left-icons  car-icon leftIcon" data-slide="prev" data-bind="click: function(data, event) {$parent.eventsLeftArrow()}" >
+                  <img data-bind="ccResizeImage:{   
+    						     source:'/file/general/icon1.png',
+    							 alt: 'left-arrow',
+    							 title:'left-arrow',
+    							 errorSrc:'/file/general/No Product Image.png',
+    							errorAlt:'No Image Found'}" class="left-Arrow">
+               </a>
+                 <a class="collection-carousel-control left right-icons car-icon" data-slide="next" data-bind="click: function(data, event) {$parent.eventsRightArrow()}">  
+                     <img data-bind="ccResizeImage:{   
+    						     source:'/file/general/icon2.png',
+    							 alt: 'left-arrow',  
+    							 title:'left-arrow',
+    							 errorSrc:'/file/general/No Product Image.png',  
+    							errorAlt:'No Image Found'}" class="left-Arrow">     
+                </a>
+                <!--  <button type="button" data-role="none" class="slick-prev slick-arrow" aria-label="Previous" role="button" >Previous</button>
+                    <button type="button" data-role="none" class="slick-next slick-arrow" aria-label="Previous" role="button" >Previous</button>-->   
+            
+            </div>   
+          </div>
+          <!-- /ko -->  
+      <!-- /ko -->                 
+  </div>
+</div>      
+</div>
+</div>
+</div>
+</div>
+

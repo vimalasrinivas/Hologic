@@ -1,0 +1,8 @@
+{
+  "tag": "welcome-login-account",
+  "source": 100,
+  "type": "fragment",
+  "title": "Login and Registration buttons",
+  "widgetType": "spaceWelcomeWidget",
+  "version": 1
+}

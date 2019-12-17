@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesProductDetailsWidget",
+  "version": 2,
+  "displayName": "MedAes Product details Widget",
+  "elementized": true,
+  "global": false,
+  "i18nresources": "medAesProductDetails",
+  "source": 101,
+  "javascript": "medAesProductDetails"
+}

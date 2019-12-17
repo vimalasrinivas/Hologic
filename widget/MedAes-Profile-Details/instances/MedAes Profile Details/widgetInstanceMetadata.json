@@ -1,0 +1,7 @@
+{
+  "configuration": {
+    "displayAndURL": "[{'0':'My Account','1':'/profile','2':'buyer'},{'0':'Order History','1':'/orderHistory','2':'buyer'},{'0':'Saved Carts','1':'/savedCart','2':'buyer'},{'0':'My Products','1':'/myProducts','2':'buyer'},{'0':'Registration Request','1':'/registrationRequest','2':'admin'}]",
+    "displayOptions": "vertical"
+  },
+  "displayName": "MedAes Profile Details"
+}

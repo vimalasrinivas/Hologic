@@ -1,0 +1,21 @@
+<div class="row MedAesContentWidget">    
+    <div class='container'>
+        <div class='row'>
+        <div class="col-md-6 col-sm-6 col-xs-12 contentImage">   
+             
+        
+         <img  class="img-responsive" align="middle" data-bind="ccResizeImage: {
+                	isSrcSetEnabled : true,
+                	source: '/file/general/HeroBanner.png' ,           
+                	alt: 'content Image',      
+                	errorSrc:'images/noImage.png',       
+                	errorAlt:'No Image Found'}">
+        </div>   
+        <div class="col-md-6 col-sm-6 col-xs-12  imageDescription">    
+            <p data-bind="text:contentImageDescription1"></p>
+            <p data-bind="text:contentImageDescription2"></p>
+            <a href="/"  data-bind="ccLink:'/home'">Learn More...</a>
+        </div>
+         </div>
+    </div>
+</div>  

@@ -1,0 +1,10 @@
+{
+  "resources": {
+    "requestQuoteHeader": "Request a Quote",
+    "requestQuoteSuccess": "Quote successfully requested",
+    "notesHistoryHeader": "Notes History",
+    "buttonRequestQuote": "Request Quote",
+    "requestQuoteError": "System error with request for quote, reject quote or accept quote",
+    "enterQuoteRequestText": "Enter quote request"
+  }
+}

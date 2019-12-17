@@ -1,0 +1,6 @@
+{
+  "widgetType": "cyberSourcePaymentAuthorization",
+  "version": 5,
+  "displayName": "CyberSource Payment Authorization",
+  "elementized": false
+}

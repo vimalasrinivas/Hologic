@@ -1,0 +1,21 @@
+{
+  "resources": {
+    "orderDateText": "Order Submitted Date:",
+    "backToMyAccountLink": "<< Back to My Account",
+    "itemsToBeReturnedText": "These Items have been dispatched and need to be returned",
+    "backOrderText": "Back Ordered ",
+    "orderTotalText": "Order Total:",
+    "cancelOrderDetailsText": "Order Details",
+    "myOrders": "My Orders",
+    "profileEmailText": "Customer Email:",
+    "cancelledItemsText": "Cancelled Items",
+    "itemsToBeCancelledText": "These Items will be cancelled",
+    "confirmButton": "Confirm",
+    "createRuturnReqText": "Create Return Request for Order Number ",
+    "cancelButton": "Cancel",
+    "profileNameText": "Customer Name:",
+    "returnItemsText": "Return Items",
+    "statusText": "Status",
+    "preOrderText": "Pre Ordered "
+  }
+}

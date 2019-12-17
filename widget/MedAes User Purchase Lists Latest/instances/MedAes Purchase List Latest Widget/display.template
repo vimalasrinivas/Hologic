@@ -1,0 +1,71 @@
+<div id="CC-purchaseLists" class='container' >  
+
+   
+<div class='col-sm-12  col-xs-12 title-wrapper nopad'>
+     <!-- ko if : displayNoRecords() -->
+    <span class='noItems' data-bind='widgetLocaleText:"numberOfItemsInPurchaseList"'></span>
+    <a class='continueShopLink' href="/" data-bind='widgetLocaleText: "ShoppingLink",ccLink: "shopNow"'> </a>
+     <!--/ko-->
+      <!-- ko if : (purchaseListGrid().length > 0 ) -->
+      <section id="purchaseLists-info" class="col-md-12">
+        <div id="CC-purchaseList-table-md-lg-sm" class="row hidden-xs">   
+           <table class="table col-md-12">
+             <thead>
+               <tr>
+                 <th id="purchase-list-info-list-name-header" class="col-md-4" scope="col" data-bind="widgetLocaleText : 'nameOfPurchaseList'"></th>
+                 <th id="purchase-list-info-last-modified-header" class="col-md-4" scope="col" data-bind="widgetLocaleText : 'lastModifiedDate'"></th>
+               </tr>
+             </thead>
+             <tbody data-bind="foreach: purchaseListGrid">
+               <tr data-bind="foreach: $data">
+                 <td class="col-md-4" scope="row">
+                     <a href="#" id="purchase-list-info-name" data-bind="click: $parents[1].clickPurchaseListDetails.bind($parents[1])" style=" text-decoration: underline ;">
+                       <span data-bind="text : (name.length > 30 ? name.substring(0, 29) + '..' : name)" scope="row"></span>
+                     </a>
+                     <section >
+                      <span class="items" data-bind="widgetLocaleText : 'numberOfItemsInPurchaseListPhone'"></span>
+                      <span class="items" data-bind="text :items.length"></span>
+                     </section>
+                 </td>
+                 <td id="purchase-list-info-modified-date" class="col-md-4" data-bind="ccDate:{date:lastModifiedDate}" scope="row"></td>
+                </tr>
+             </tbody>
+           </table>
+         </div>
+       </section>
+       <section id="purchaseLists-info-phone" class="col-md-12">
+        <div id="CC-purchaseList-table-xs" class="row visible-xs">
+           <table class="table">
+             <thead>
+              <tr>
+                 <th id="purchase-list-info-list-name-header" class="col-md-8" scope="col" data-bind="widgetLocaleText : 'nameOfPurchaseList'"></th>
+              </tr>
+             </thead>
+             <tbody data-bind="foreach: purchaseListGrid">
+               <tr data-bind="foreach: $data">
+                 <td>
+                   <a href="#" id="purchase-list-info-name" data-bind="click: $parents[1].clickPurchaseListDetails.bind($parents[1])" style=" text-decoration: underline ;">
+                       <span data-bind="text : (name.length > 30 ? name.substring(0, 29) + '..' : name)" scope="row"></span>
+                    </a>
+                    <section>
+                      <span class="items" data-bind="widgetLocaleText : 'numberOfItemsInPurchaseListPhone'"></span>
+                      <span class="items" data-bind="text :items.length"></span>
+                    </section>
+                    <section>
+                      <span class="items" data-bind="widgetLocaleText : 'lastModifiedDatePhone'"></span>
+                      <span class="items" data-bind="ccDate:{date:lastModifiedDate}"></span>
+                   </section>
+                  </td>
+               </tr>
+             </tbody>
+             
+           </table>
+       </div>
+       </section>
+     <!--/ko-->
+</div>
+ 
+</div>
+
+
+ 

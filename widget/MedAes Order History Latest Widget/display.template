@@ -1,0 +1,393 @@
+<div class='order-hisotry'>
+    <h4 class='order-history-title' data-bind="widgetLocaleText: 'title'"></h4>
+    <!--ko if : isDesktop -->
+    <ul class="nav nav-tabs hidden-xs" id="myTab" role="tablist">
+        <li class="nav-item active">
+            <a class="nav-link " id="home-tab" data-toggle="tab" href="#tab-table1" role="tab" aria-controls="home" aria-selected="true" data-bind="widgetLocaleText: 'tabLinks1'"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tab-table2" role="tab" aria-controls="profile" aria-selected="false" data-bind="widgetLocaleText: 'tabLinks2'"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#tab-table3" role="tab" aria-controls="contact" aria-selected="false" data-bind="widgetLocaleText: 'tabLinks3'"></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#tab-table4" role="tab" aria-controls="contact" aria-selected="false" data-bind="widgetLocaleText: 'tabLinks4'"></a>
+        </li>
+    </ul>
+    <div class=" shippedOrders hidden-xs bg-color">
+        <div class="tab-content">
+            
+            <div class="tab-pane active" id="tab-table1" >
+                <div class='sorting-records'>
+                    <select  data-bind='event: {change : function(){ SpippedOrdersSorting(event) }}'>
+                      <option value='currentMonth'>This Month</option>
+                      <option value="twoMonths">2 Months</option>
+                      <option value="sixMonths">6 months</option>
+                      <option value="OneYear">1 year </option>
+                      <option value="twoYear">2 year</option>
+                    </select>
+                    </div>
+                <div data-bind="template: { name: templateAbsoluteUrl('/templates/shipped.template') , templateUrl: ''}"></div>
+            </div>
+            <div class="tab-pane " id="tab-table2" >
+                <div class='sorting-records'>
+                    <select  data-bind='event: {change : function(){ openOrderSorting(event) }}'>
+                      <option value='currentMonth'>This Month</option>
+                      <option value="twoMonths">2 Months</option>
+                      <option value="sixMonths">6 months</option>
+                      <option value="OneYear">1 year </option>
+                      <option value="twoYear">2 year</option>
+                    </select>
+                    </div>
+                <div data-bind="template: { name: templateAbsoluteUrl('/templates/open.template') , templateUrl: ''}"> </div>
+            </div>
+            <div class="tab-pane " id="tab-table3">
+                <div class="row">
+
+                    <div class="col-sm-12 text-right">
+                        <button type="button" class="btn btn-default downloadcsvBtn">Download CSV</button>
+                        <button type="button" class="btn btn-default paySelectBtn" data-bind='event: { click :function(){ paySelectedInvoices() }}'>Pay Selected Invoices</button>
+                    </div>
+                </div>
+
+                <table class="table active" id='openInvoicesOrders'>
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" name='chooseMultipleInvoice' id='sellectAllInvoices'> </th>
+                            <th>Invoice #</th>
+                            <th>Bill to customer</th>
+                            <th>Order #</th>
+                            <th>Ref ID/PO #</th>
+                            <th>Invoice Date</th>
+                            <!-- <th>Sold To</th> -->
+                            <th>Due Date</th>
+                            <th>Days Past Due</th>
+                            <th>Open Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ko foreach: getInvoicesOrders() -->
+                        <tr>
+                            <td>
+                                <input type="checkbox" data-bind="attr:{'name': 'payInvoices'},value: invoiceId">
+                            </td>
+                            <td>
+                                <a data-bind="text:invoiceId, event:{click : function() { $parent.redirectToInvoiceDetails($data.invoiceId) } }" ></a>
+                            </td>
+                            <td>
+                                <a data-bind="text:accountNumber" class="ReferencePO">379156</a>
+                            </td>
+                            <td data-bind="text:orderId"></td>
+                            <td data-bind="text:referencePO"></td>
+
+                            <td data-bind="text:invoiceDate"></td>
+
+                            <td data-bind="text:dueDate"></td>
+
+                            <td data-bind="text:pastDueDays"></td>
+                            <td>
+                                <span data-bind="text: $parent.cart().currency.symbol"></span>
+                                <span data-bind="text:openBlance"></span>
+                            </td>
+
+                        </tr>
+                        <!-- /ko -->
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="tab-pane " id="tab-table4" >
+                 <div class='sorting-records'>
+                    <select  data-bind='event: {change : function(){ cancelOrderSorting(event) }}'>
+                      <option value='currentMonth'>This Month</option>
+                      <option value="twoMonths">2 Months</option>
+                      <option value="sixMonths">6 months</option>
+                      <option value="OneYear">1 year </option>
+                      <option value="twoYear">2 year</option>
+                    </select>
+                    </div>
+                    <div data-bind="template: { name: templateAbsoluteUrl('/templates/cancellation.template') , templateUrl: ''}"></div>
+            </div>
+        </div>
+    </div>
+    <!--/ko-->
+    <!--ko if : isMobile -->
+    <div class="panel-group shippedOrders hidden-sm visible-xs" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+          <a data-toggle="collapse" class='nav-link-mobile' data-parent="#accordion" href="#shipped"  >
+             <span  data-bind="widgetLocaleText: 'tabLinks1'"></span> <i class="zmdi "></i>
+          </a>
+
+        </h5>
+            </div>
+            <div id="shipped" class="panel-collapse collapse in">
+                <div class="panel-body">
+                        <select  data-bind='event: {change : function(){ SpippedOrdersSorting(event) }}'>
+                               <option value='currentMonth'>This Month</option>
+                              <option value="twoMonths">2 Months</option>
+                              <option value="sixMonths">6 months</option>
+                              <option value="OneYear">1 year </option>
+                              <option value="twoYear">2 year</option>
+                      </select>
+                    </div>
+                    <div class='orderTable' data-bind="template: { name: templateAbsoluteUrl('/templates/shipped.template') , templateUrl: ''}"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+          <a data-toggle="collapse" class='nav-link-mobile' data-parent="#accordion" href="#open"  >
+                <span  data-bind="widgetLocaleText: 'tabLinks2'"></span> <i class="zmdi "></i>
+          </a>
+        </h5>
+            </div>
+            <div id="open" class="panel-collapse collapse">
+                <div class="panel-body">
+                      <select  data-bind='event: {change : function(){ openOrderSorting(event) }}'>
+                      <option value='currentMonth'>This Month</option>
+                      <option value="twoMonths">2 Months</option>
+                      <option value="sixMonths">6 months</option>
+                      <option value="OneYear">1 year </option>
+                      <option value="twoYear">2 year</option>
+                    </select>
+                    <div class='orderTable' data-bind="template: { name: templateAbsoluteUrl('/templates/open.template') , templateUrl: ''}"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">
+          <a data-toggle="collapse" class='nav-link-mobile' data-parent="#accordion" href="#openInvoices"  >
+                <span  data-bind="widgetLocaleText: 'tabLinks3'"></span> <i class="zmdi "></i>
+          </a>
+        </h5>
+            </div>
+            <div id="openInvoices" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <!--<div class='orderTable'  data-bind="template: { name: templateAbsoluteUrl('/templates/open.template') , templateUrl: ''}" > </div>-->
+
+                    <div class="row">
+                        <div class="col-sm-6 col-xs-12">
+                            <div id="OpenInvoicesOrders_filter" class="dataTables_filter">
+                                <label>Search:
+                                    <input type="search" class="" placeholder="Invoice #" aria-controls="opeInvoiceOrders">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-12 text-right">
+                            <button type="button" class="btn btn-default downloadcsvBtn">Download CSV</button>
+                            <button type="button" class="btn btn-default paySelectBtn">Pay Selected Invoices</button>
+                        </div>
+                    </div>
+                     <table class="table active" id='openInvoicesOrders'>
+                    <thead>
+                        <tr>
+                            <th>
+                                <input type="checkbox" name='chooseMultipleInvoice' id='sellectAllInvoices'> </th>
+                            <th>Invoice #</th>
+                            <th>Bill to customer</th>
+                            <th>Order #</th>
+                            <th>Ref ID/PO #</th>
+                            <th>Invoice Date</th>
+                            <!-- <th>Sold To</th> -->
+                            <th>Due Date</th>
+                            <th>Days Past Due</th>
+                            <th>Open Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ko foreach: getInvoicesOrders() -->
+                        <tr>
+                            <td>
+                                <input type="checkbox" data-bind="attr:{'name': 'payInvoices'},value: invoiceId">
+                            </td>
+                            <td>
+                                <a data-bind="text:invoiceId, event:{click : function() { $parent.redirectToInvoiceDetails($data.invoiceId) } }" ></a>
+                            </td>
+                            <td>
+                                <a data-bind="text:accountNumber" class="ReferencePO">379156</a>
+                            </td>
+                            <td data-bind="text:orderId"></td>
+                            <td data-bind="text:referencePO"></td>
+
+                            <td data-bind="text:invoiceDate"></td>
+
+                            <td data-bind="text:dueDate"></td>
+
+                            <td data-bind="text:pastDueDays"></td>
+                            <td>
+                                <span data-bind="text: $parent.cart().currency.symbol"></span>
+                                <span data-bind="text:openBlance"></span>
+                            </td>
+
+                        </tr>
+                        <!-- /ko -->
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h5 class="panel-title">  
+          <a data-toggle="collapse" class='nav-link-mobile' data-parent="#accordion" href="#cancellation">     
+               <span  data-bind="widgetLocaleText: 'tabLinks4'" ></span> <i class="zmdi "></i>
+          </a>
+        </h5>
+            </div>
+            <div id="cancellation" class="panel-collapse collapse">
+                <div class="panel-body">
+                      <select  data-bind='event: {change : function(){ cancelOrderSorting(event) }}'>
+                      <option value='currentMonth'>This Month</option>
+                      <option value="twoMonths">2 Months</option>
+                      <option value="sixMonths">6 months</option>
+                      <option value="OneYear">1 year </option>
+                      <option value="twoYear">2 year</option>
+                    </select>
+                    <div class='orderTable' data-bind="template: { name: templateAbsoluteUrl('/templates/cancellation.template') , templateUrl: ''}"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ko-->
+
+    <div class="modal fade" id="invoicePaymentModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog invoice-payment-dailog ">
+            <div class="modal-content payment-content">
+                <div class="modal-header card-header">
+                    <div class="row  invoice-title">
+                        <div class="col-xs-12 ">
+                            <div class="invoice-title">Invoice Payments</div>
+                            <button type="button" class="invoice-close close" aria-label="Close" data-bind="click:function(data,event){closeModal()}"><span aria-hidden="true">&times;</span></button>
+                        </div>
+
+                    </div>
+                    <div class='row invoice-amount-wrapper'>
+                        <div class='col-xs-12 invoice-total-amount'>Total Amount : $<span data-bind="text:invoiceTotal()"></span></div>
+                    </div>
+                </div>
+                <div class="modal-body card-body">
+                    <fieldset id="card-form">
+                        <!-- Select dropdown-->
+   
+                        <div class="form-group col-xs-12">
+                            <label class='card-label' for="CC-checkoutCustomerDetails-credit-card"> Credit Card:</label>
+                            <select class=' medAesInputBox  form-control card-control mb10' name='existingCreditCard' id='existingCreditCard' data-bind='event:{ change: function(data,event){ updateCard(data,event); }},value:isDefaultCardValue()'>
+                              <!-- ko if:isStoredCardsLoaded() -->
+                                <!-- ko foreach :getExternalCardData() -->
+                                <option data-bind='value: id,text:maskedCardNumber'> </option>
+                                <!-- /ko -->
+                                <option value='addNewCard'>Add New Card</option>
+                                <!-- /ko -->
+                            </select>
+                        </div>
+                        <!-- ko if:displayNewCardSection() -->
+                        <div class="form-group col-xs-12">
+
+                            <label class="card-label" for="CC-cardType">Card Type:</label>
+                            <div class="control">
+                                <select aria-required="true" class="form-control medAesInputBox col-md-12 card-control mb10" name="CC-cardType" id="cc-card-type" data-bind=" optionsValue: 'cardValue',
+											 options: cardTypeList, optionsText: 'name',value:cardType,
+											 validatableTarget: cardType, validationElement: cardType">
+                                </select>
+                                <div class="col-xs-12 card-error">
+                                    <span class="text-danger " id="card-type-error" data-bind="validationMessage: cardType" role="alert"></span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group col-xs-12">
+
+                            <label class="card-label" for="CC-cardNumber">Card Number: </label>
+                            <input id="cc-card-number" name="CC-cardNumber" type="text" class="form-control input-md medAesInputBox card-control mb10" data-bind="validatableValue: cardNumber" maxlength="20">
+                            <div class="xs-md-12 card-error">
+                                <span class="text-danger" data-bind="validationMessage: cardNumber" role="alert"></span>
+                            </div>
+
+                        </div>
+                        <div class="form-group  col-xs-12">
+                            <label class="card-label" for="CC-cardName">Name on Card:</label>
+                            <input id="cc-card-name" name="CC-cardName" type="text" class="form-control input-md medAesInputBox card-control mb10" data-bind="validatableValue: nameOnCard">
+                            <div class="col-xs-12 card-error">
+                                <span class="text-danger" data-bind="validationMessage: nameOnCard" role="alert"></span>
+                            </div>
+                        </div>
+
+                        <!-- end month and year -->
+                        <div class="form-group col-xs-12">
+                            <div class="col-xs-3 nopad">
+                                <label class="card-label" id="CC-endMonth" for="CC-endMonth">Expiry Date:</label>
+                                <span class="text-danger visible-xs" id="CC-phone-endMonth-error" data-bind="validationMessage: expiryMonth" role="alert"></span>
+                                <div class="control">
+                                    <input id="cc-end-month" name="CC-endMonth" type="text" class="form-control input-md card-control medAesInputBox mb10" data-bind="validatableValue: expiryMonth" maxlength="2">
+                                </div>
+                               </div>
+                            <div class="col-xs-3 nopad">
+                                <label class="card-label end-year" id="CC-endyear" for="CC-endyear">Expiry Date:</label>
+                                <span class="text-danger visible-xs" id="CC-phone-endYear-error" data-bind="validationMessage: expiryYear" role="alert"></span>
+                                <div class="control">
+                                    <input id="cc-end-year" name="CC-endYear" type="text" class="form-control input-md card-control medAesInputBox mb10" data-bind="validatableValue: expiryYear" maxlength="4">
+                                </div>
+                                
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="card-label" id="CC-newCardCvv" for="CC-newCardCvv">CVV:</label>
+                                <span class="text-danger visible-xs" id="CC-phone-endYear-error" data-bind="validationMessage: newCardCvv" role="alert"></span>
+                                <div class="control">
+                                    <input id="cc-newCardCvv" name="CC-newCardCvv" type="text" class="form-control input-md card-control medAesInputBox  mb10" data-bind="validatableValue: newCardCvv" maxlength="4">
+                                </div>
+                                
+                            </div>
+                         
+                              <div class="s col-xs-12 card-error">
+                                    <span class="text-danger" data-bind="validationMessage: expiryMonth" role="alert"></span></div>
+                            
+                            <div class=" col-xs-12 card-error">
+                                    <span class="text-danger" data-bind="validationMessage: expiryYear" role="alert"></span>
+                                </div>
+                            
+                        </div>
+                        <div class="form-group col-xs-12">
+
+                            <label class="card-label" for="CC-bill-to">Bill to :</label>
+                            <select class='ship-to-address  form-control medAesInputBox card-control mb10' name='billToAddress' id='billToAddress' data-bind='value: isDefaultBillingAddress,validatableValue :isDefaultBillingAddress , options:getExternalBillingAddress(), optionsText: function(item) {
+                           return item.address1 +"," + item.address2 + "," + item.city +"," + item.state +"," + item.postalCode +"," + item.country 
+                           }, optionsValue: function(item) {
+                           return  item.address1 +"," + item.address2 + "," + item.city +"," + item.state  + ","+item.postalCode +"," + item.country 
+                           }'>
+                            </select>
+
+                        </div>
+                        <!-- /ko-->
+                          <div class="col-xs-3 " id='existingCardCVV'>
+                            <label class="card-label" id="CC-existingCardCvv" for="CC-existingCardCvv">CVV:</label>
+                            <div class="control">
+                                <input id="cc-existingCardCvv" name="CC-existingCardCvv" type="text" class="form-control input-md card-control medAesInputBox  mb10" data-bind="validatableValue: existingCardCvv" maxlength="4">
+                            </div>
+                            <div class=" col-xs-12 card-error">
+                                <span class="text-danger" data-bind="validationMessage: existingCardCvv" role="alert"></span>
+                            </div>
+                        </div>
+                        <div class="form-group paybtn-wrapper col-xs-12 col-sm-12">
+
+                            <button class="cc-button-primary col-sm-4 col-xs-12 medAesBtnPrimary submit-invoice-btn" id="submit-invoice-payment" data-bind='event: {click : function(data,event) { makeInvoicePayment() } }'>
+                                Submit Payment
+                            </button>
+
+                            <button class="cc-button-primary col-sm-4 col-xs-12 medAesBtnPrimary submit-invoice-btn" id="cancel-payment"  data-bind="click:function(data,event){closeModal()}">
+                                Cancel
+                            </button>
+
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

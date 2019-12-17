@@ -1,0 +1,25 @@
+<div class="row continue-Shopping hidden-xs">       
+    <a href="/" data-bind = "widgetLocaleText:'continueShoppingText',ccLink:{route:'/shopNow'}"></a>      
+    <a href="/" data-bind = "widgetLocaleText:'myorderButtonText',ccLink:{route:'/orderhistory'}"></a>   
+</div>
+<div class="row order-Summary">    
+    <h3  data-bind = "widgetLocaleText:'orderSummaryText'"></h3>
+<!-- ko with:confirmation -->
+    <div>
+        <p data-bind = "widgetLocaleText:'subTotalText'"></p>
+        <span  data-bind="currency: {price: priceInfo.subTotal, currencyObj: $parent.cart().currency}" ></span>
+    </div>
+    <div>
+          <p data-bind = "widgetLocaleText:'freightText'"></p>             
+          <span data-bind="currency: {price:$parent.freight(), currencyObj: $parent.cart().currency}" ></span>
+    </div>
+    <div>
+      <p data-bind = "widgetLocaleText:'TaxText'"></p>
+      <span data-bind="currency: {price: priceInfo.tax , currencyObj: $parent.cart().currency}" ></span>
+    </div>
+    <div class="total">
+         <p data-bind = "widgetLocaleText:'estimatedOrderTotalText'" ></p>          
+         <span  data-bind="currency: {price: (priceInfo.total+$parent.freight()), currencyObj: $parent.cart().currency}"></span>                    
+    </div>     
+<!-- /ko -->    
+</div>  

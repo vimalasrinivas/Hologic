@@ -1,0 +1,62 @@
+<!-- ko if: $data.getDisplayImages().length > 0 -->
+  
+  <!-- If hero tag is set, display images in carousel -->
+  <!--  ko if: $data.tag() == "heroTag" -->
+    <div class=" cc_categoryContent">
+      <h3 class="label-hidden" data-bind="widgetLocaleText: 'categoryContentCarousel'"></h3>
+    
+      <div id="categoryContent-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+    
+        <!-- Indicators -->
+        <!--  ko if: $data.getDisplayImages().length > 1 -->
+          <ol class="carousel-indicators visible-lg visible-md" data-bind="foreach: $data.getDisplayImages()" role="presentation">
+            <!-- ko if: ($index() == 0) -->
+              <li data-target="#categoryContent-carousel" data-slide-to="0" class="active"></li>
+            <!-- /ko -->
+            <!-- ko ifnot: ($index() == 0) -->
+              <li data-target="#categoryContent-carousel" data-bind="attr:{'data-slide-to' : $index()}"></li>
+            <!-- /ko -->
+          </ol>
+        <!-- /ko -->
+        <!-- end of indicators -->
+    
+        <!-- Carousel image display -->
+        <div class="carousel-inner" data-bind="foreach: $data.getDisplayImages()">    
+          <!-- ko if: ($index() == 0) -->
+            <div class="item active">
+            <!-- class of active since it's the first item -->
+              <img data-bind="attr:{src: url, alt: metadata.altText? metadata.altText : $parent.category().displayName, title: metadata.titleText? metadata.titleText: $parent.category().displayName}"/>
+            </div>
+          <!-- /ko -->
+          <!-- ko ifnot: ($index() == 0) -->
+            <div class="item">
+              <img data-bind="attr:{src: url, alt: name, alt: metadata.altText, title: metadata.titleText}"/>
+            </div>
+          <!-- /ko -->        
+        </div>
+        <!-- End of Carousel image display -->
+                 
+        <!-- carousel controls -->
+        <!--  ko if: $data.getDisplayImages().length > 1 -->
+          <a class="left carousel-control visible-lg visible-md" data-slide="prev" href= "#categoryContent-carousel">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <div class="sr-only" data-bind="widgetLocaleText: 'previousBannerText'"></div>
+          </a>
+          <a class="right carousel-control visible-lg visible-md" data-slide="next" href= "#categoryContent-carousel">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <div class="sr-only" data-bind="widgetLocaleText: 'nextBannerText'"></div>
+          </a>
+        <!-- /ko -->
+        <!-- /carousel controls -->
+      
+      </div>
+    </div>
+  <!-- /ko -->
+
+  <!-- If non-hero tag is set, display images as tile -->
+  <!-- ko ifnot: $data.tag() == "heroTag" -->
+    <div class ="row" data-bind="foreach: $data.getDisplayImages()">
+      <img data-bind="attr:{src: url, alt: name}"/>
+    </div>
+  <!-- /ko -->
+<!-- /ko -->

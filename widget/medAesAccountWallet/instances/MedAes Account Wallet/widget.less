@@ -1,0 +1,570 @@
+#WIDGET_ID-WIDGET_INSTANCE_ID {   
+     .checkboxs {
+        padding: 0px;
+        margin: 0 0 30px;
+    label{
+        font-weight: 400 !important;
+        position: relative;
+        top: 9px;
+    }
+    }
+          /* The container */
+.contains {
+  position: relative;
+  padding-left: 29px;
+  margin-bottom: 17px;   
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.contains input {         
+  position: absolute;
+  display:none;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmarks {
+  position: absolute;
+  top:-4px;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #979797;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+}
+
+/* On mouse-over, add a grey background color */
+.contains:hover input ~ .checkmarks {
+ background-color: #FFFFFF;
+}
+
+/* When the checkbox is checked, add a blue background */
+.contains input:checked ~ .checkmarks {
+  background-color: #FFFFFF;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmarks:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.contains input:checked ~ .checkmarks:after {            
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.contains .checkmarks:after {    
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+    .modal-content{  
+       border-radius:0px !important; 
+    }
+    @media screen and (min-width:768px){
+    .modal-body {
+        padding: 20px 20px ;
+        width: 485px;
+    }
+    }
+    #CC-deleteCard-modal-modalBody {   
+        text-align: center; 
+    }
+    @media screen and (min-width:768px){
+    .modal-dialog{
+        width: 485px !important;
+    }
+    }
+    #add-card-control{
+        padding: 0 15px;
+    }
+    #card-form{
+        label{
+           	color:@medAesSecondaryTextColor;
+        	font-family:"Flama";
+        	font-size: 13px;
+        	letter-spacing: 0.27px;
+        	line-height: 16px; 
+        	margin-bottom:10px;
+        }
+        input{
+            height: 40px !important;
+        	border: 1px solid #D6D0D0;
+        	border-radius: 2px;
+        	background-color: #FFFFFF;
+        	margin-bottom: 13px;
+        	color:@medAesSecondaryTextColor;
+        	font-family: "FlamaBook";
+        	font-size: 14px;
+        	letter-spacing: 0.29px;
+        	line-height: 16px;
+        }
+        select{
+            height: 40px !important;
+        	border: 1px solid #D6D0D0;
+        	border-radius: 2px;
+        	background-color: #FFFFFF;
+        	margin-bottom: 13px;
+        	color:@medAesSecondaryTextColor;
+        	font-family: "FlamaBook";
+        	font-size: 14px;
+        	letter-spacing: 0.29px;
+        	line-height: 16px;    
+        }
+    }
+    .default{
+         color: #333333;
+        font-family: FlamaBook;
+        font-size: 15px;
+        letter-spacing: 0.27px;
+        line-height: 15px;
+        margin: 0px 0px 11px -7px;   
+    }    
+      .checkbox{
+      padding-left:0px !important;
+  }
+  /* The container */
+.contain {
+  position: relative;
+  padding-left: 29px;
+  margin-bottom: 17px;   
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.contain input {            
+  position: absolute;
+  display:none;
+  cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+    top: -11px;
+    left: -35px;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #979797;
+  border-radius: 2px;
+  background-color: #FFFFFF;
+}
+
+/* On mouse-over, add a grey background color */
+.contain:hover input ~ .checkmark {
+ background-color: #FFFFFF;
+}
+
+/* When the checkbox is checked, add a blue background */
+.contain input:checked ~ .checkmark {
+  background-color: #FFFFFF;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.contain input:checked ~ .checkmark:after {            
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.contain .checkmark:after {    
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+@media screen and (min-width:768px){        
+    #c-exmth{   
+       border-radius:2px !important; 
+       width: 93% !important;
+    }
+    #c-exyr{
+       border-radius:2px !important; 
+       width: 93% !important; 
+    }
+}
+@media screen and (min-width:768px){    
+    .modal-dialog{
+       width: 485px !important;
+       margin: auto; 
+       padding: 6% 0;
+    }
+}
+    #CC-deleteCard-modal-footer{   
+        text-align:center;
+    }
+    .decideBtn{
+            width: 25%;
+    }
+    .cancelBtn {
+        margin-left: 15px;
+    }
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #666666;
+      font-family: "Flama";
+      font-size: 13px;
+      letter-spacing: 0.5px;   
+      line-height: 15px;
+    }
+    
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #666666;
+      font-family: "Flama"; 
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      line-height: 15px;
+    }
+    
+    ::-ms-input-placeholder { /* Microsoft Edge */
+      color: #666666;
+      font-family: "Flama";    
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      line-height: 15px;
+    }     
+    
+    .odd{
+      .card-num{
+        width:32%;
+      }
+    } 
+    
+   
+    @media(min-width:768px){
+             .pad-right{        
+            padding-right: 0px;              
+        }
+    }
+    @media(max-width:767px){
+             .pad-right{        
+            padding: 0px;              
+        }
+    }
+    .dataTables_wrapper{
+        position:relative !important;  
+        
+        @media(max-width:767px){    
+            overflow-x: auto;        
+        }
+    } 
+    
+    
+     #organization-wallet-title {   
+        margin-top: 0px;     
+        font-size: x-large;
+        color: #333;
+        font-family: "Flama";
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: .3px;
+        line-height: 28px;
+    } 
+    .dataTables_filter::after {
+  display: inline-block;
+  font: normal normal normal 14px/1 'Material-Design-Iconic-Font';  
+  font-size: 30px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  color: rgba(50,50,50,0.25);
+  position: relative;
+  left: 16px;
+    top: 6px;
+   
+     @media screen and (max-width:767px){           
+         left: -15px;      
+     }
+  }
+.dataTables_filter::after{
+  content: '\f1c3';
+}    
+    .pad0{
+        padding:0px;       
+    }
+    iframe{        
+    	width: 100%;  
+        border: none;   
+        height: 470px;         
+    }
+    .card-close{
+        margin-top: -10px;
+        font-size: 42px;          
+        font-weight: normal; 
+    }   
+    .makeDefaultCheckBox{    
+        input {  
+            position: absolute;       
+            bottom: 100px;    
+            left: 30px;
+        }  
+        label{                
+            position: absolute;     
+            bottom: 90px;           
+            left: 35px;
+            
+        }
+        
+       
+    }
+    .modal-header{
+        color: #333;   
+        font-family: 'Flama';
+        font-size: 24px;
+        font-weight: bold;
+        letter-spacing: .3px;
+        line-height: 28px;       
+        text-align: center;
+        padding-top: 10px;
+        border: none;
+    }
+    .card-error{
+  padding: 0px;
+  span{
+    font-size: 13px;
+    font-family: 'Flama';
+  }
+    }    
+    .card-title{
+    color: #333;
+    font-family: 'Flama';
+    font-size: 24px;
+    font-weight: bold;    
+    letter-spacing: .3px;
+    line-height: 28px;
+    text-align: center;
+    padding-top: 10px;
+}
+    .create-btn{
+        bottom: 68px;    
+        &:hover {
+          background-color: @medAesPrimaryColor;
+      }  
+    }
+    .updateCardBtn{
+      &:hover {
+        background-color: @medAesPrimaryColor;
+    }  
+    }
+    @media (min-width:992px){            
+           margin:auto;    
+            .modal-content{   
+          //  width:50% !important;  
+            margin:auto;   
+        }
+    }
+    
+#accountWalletWidget {
+    padding: 0px;
+  card-content
+  #walletHeader{
+    button{
+      margin-top: -3em;
+      margin-right: 6.7em;
+    }
+  }
+ .add-wallet{    
+    margin: 12px 0px 20px 0;   
+@media screen and (min-width:768px) and (max-width:1023px){
+       margin: 0px 0px 20px 0;   
+}    
+ }
+ .wallet-td{
+    color: @medAesTableTextColor;
+    font-family: 'FlamaBook';	
+    font-size: 14px;
+    letter-spacing: 0.88px;	
+    line-height: 16px;
+    padding: 21px 15px;
+    @media screen and (max-width:767px){
+           padding: 10px;    
+    }   
+    }
+}
+}
+#addcardFrame { 
+    html {
+        width:0px;
+        height : 0px;
+    }
+}
+@media(max-width:991px){   
+    .container {
+     padding-left: 15px;                
+    }
+}
+
+.wallet-th{
+        	color: @medAesTableTextColor;
+        	font-family: "flama";     
+        	font-size: 14px;
+        	letter-spacing: 0.88px;	
+        	line-height: 17px;
+          padding: 21px 15px !important; 
+          border-bottom: 1px solid #ddd !important;   
+          
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {     
+            	    font-family: FlamaLight;
+            	}
+    }
+.wallet-row{
+  background: @medAesWhite;           
+}     
+.default-icon{
+  color: #13856E;
+  font-size: 16px;
+}
+.wallet-link{
+  color: @medAesPrimaryColor;
+  font-family: FlamaBook;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration:underline;         
+  cursor: pointer;
+}
+.wallet-link:hover,.wallet-link:active{    
+  color: @medAesPrimaryColor;  
+   text-decoration: underline;
+}
+.dataTables_length{
+  display: none;
+}
+.add-card{   
+  width:75%;
+  margin-top: 50px;
+  margin-right: 0px !important;
+ @media screen and (max-width:767px){
+   width:100%;   
+   margin-top: 25px;
+ } 
+}
+.paginate_button {
+  margin-right: 8px;
+  padding: 2px 8px;
+  font-family: 'FlamaBook';
+  font-size: 13px;
+  letter-spacing: 0.41px;
+  line-height: 15px;
+}
+.paging_numbers{
+  text-align:center;   
+  margin-bottom : 20px;
+}
+      
+.dataTables_filter{   
+  position: absolute;
+  top: -60px;             
+  display: inline;    
+  input{                  
+    border: 1px solid #EEEEEE;
+    border-radius: 2px;
+    background-color: @medAesWhite; 
+    height: 45px;
+     bottom: 4px;
+    position: relative;
+    padding: 8px 60px 10px 17px;
+    color: #666666;
+    box-shadow: none;
+    font-weight: 300;
+    font-family: FlamaBook;
+    font-size: 13px;
+    text-align: left;
+    letter-spacing: .5px;
+    line-height: 15px;
+    width:123%;
+    @media screen and (max-width:1021px){            
+         padding: 8px 0px;
+    } 
+    @media screen and (min-width:1024px) and (max-width:1330px){         
+             left: 0px;
+             padding: 8px 10px;    
+             width:135%;    
+    }
+    @media screen and (min-width:768px) and (max-width:1023px){               
+             left: 0px;
+             width: 135%;   
+             padding: 8px 10px;   
+    }
+    @media screen and (max-width:767px){         
+         padding: 6px 15px;
+         bottom: 0px;   
+         right: 20px;        
+    }
+}
+@media screen and (max-width:767px){
+    top: 11px;
+    right: 11px; 
+    text-align: right;
+}
+
+
+
+.card-content{   
+  width: 485px;
+  height: auto;
+  margin: auto;
+ @media screen and (min-width:425px) and (max-width:767px){   
+     width: 400px;  
+ } 
+ @media screen and (min-width:375px) and (max-width:424px){
+     width: 355px;  
+ } 
+ @media screen and (min-width:320px) and (max-width:374px){
+     width: 300px;  
+ } 
+}
+.card-error{
+  padding: 0px;
+  span{
+    font-size: 13px;
+    font-family: 'Flama';
+  }
+    .card-title{
+    color: #333;
+    font-family: 'Flama';
+    font-size: 24px;
+    font-weight: bold;    
+    letter-spacing: .3px;    
+    line-height: 28px;
+    text-align: center;
+    padding-top: 10px;
+}
+}
+.card-label{
+  color: #333;
+  font-family: 'Flama';
+  font-size: 13px;
+  letter-spacing: .27px;
+  line-height: 16px;
+}
+}

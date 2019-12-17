@@ -1,0 +1,13 @@
+{
+  "widgetDescriptorName": "MedAesContactRegistrationRequest",
+  "properties": [
+    {
+      "defaultValue": "10",
+      "name": "registrationRequestItemsPerPage",
+      "id": "registrationRequestItemsPerPage",
+      "type": "stringType",
+      "helpTextResourceId": "itemsPerPageDisplayHelpText",
+      "labelResourceId": "itemsPerPageDisplayLabel"
+    }
+  ]
+}

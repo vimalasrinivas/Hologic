@@ -1,0 +1,6 @@
+{
+  "resources": {
+    "noOfStoresToDisplay": "Enter the number of matching stores to display.",
+    "noOfStoresToDisplayHelpText": "Allows user to configure the number of pick up stores to display when user searches for a store."
+  }
+}

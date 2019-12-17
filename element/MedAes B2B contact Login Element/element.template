@@ -1,0 +1,84 @@
+<!-- ko if: initialized() && $data.elements.hasOwnProperty('MedAesB2BcontactLoginElement') -->
+  <div class="MedaesAccountLogin">
+    <!-- ko with: user --> 
+      <!-- ko if: readyToDisplay -->
+        <div id="CC-loginHeader-welcomeText" class="text-right cc-welcome dropdown btn-group col-md-8">
+            <div data-bind="visible: loggedInUserName() && (loggedIn() || isUserSessionExpired())">
+                 <i class="zmdi zmdi-account-circle"></i> 
+                <!-- <img class="img-responsive userIcon" src="file/general/user.png"> -->
+                <a class="btn dropdown-toggle account-UserNmae" data-toggle="dropdown" href="#">Hi, 
+                <span class="cc-header-firstName" data-bind="html: $parent['elements']['MedAesB2BcontactLoginElement'].getDisplayName(loggedInUserName(),17)"></span>
+        </span> <span><i class="zmdi zmdi-chevron-down"></i></span> </a> 
+            <ul class="dropdown-menu account-Details">  
+                        <!-- ko if: $parent['elements']['MedAesB2BcontactLoginElement'].showAccountTitle() --> 
+                          <label class="selectAccLabel">Select Account</label>
+                        <!-- /ko -->        
+                         <li class="preventDefault " >       
+                          <div id="CC-loginHeader-organizationPicker" class="selectAccount form-control"  data-bind="click: $parent['elements']['MedAesB2BcontactLoginElement'].toggleOrganizationsDropDown.bind($parent['elements']['MedAesB2BcontactLoginElement']), 
+                          attr: {id: 'CC-header-organization-link', href: '#'}">      
+                            <!--  ko if: (!$data.isUserLoggedOut() &&  $data.currentOrganization()) -->   
+                            <div id="headerOrganizationPicker">
+                          <div id="CC-organizationPicker-header" class="heading"  data-bind="css:{'isSecondaryOrg' : $parent['elements']['MedAesB2BcontactLoginElement'].secondaryOrganizations().length > 0 }">
+                            <span class="ellipsis" data-bind="text: $data.currentOrganization().name, attr: { title: $data.currentOrganization().name}"></span> <!---<span data-bind="text: $data.currentOrganization().external_account_id" class="ellipsis"></span> -->
+                            
+                          </div>
+      
+                          <div id="CC-organizationDropdown" class="content1" data-bind="visible: $parent['elements']['MedAesB2BcontactLoginElement'].organizationDropdownVisible()">
+                           <!-- <input id="CC-organization-search" data-bind="widgetLocaleText: {attr: 'placeholder', value: 'filterText'}, textInput: $parent['elements']['MedAesB2BcontactLoginElement'].organizationName">
+                           </input> -->
+                             <!-- ko if: $parent['elements']['MedAesB2BcontactLoginElement'].noMatchFound() -->
+                             <div class="paddingLeft">
+                                <span data-bind="widgetLocaleText: { attr: 'innerText', value: 'noMatchesFound' }"></span>
+                             </div> 
+                             <!-- /ko -->
+                             <!-- ko ifnot: $parent['elements']['MedAesB2BcontactLoginElement'].noMatchFound() -->
+                             <div id="CC-organizations-list" data-bind="foreach: $parent['elements']['MedAesB2BcontactLoginElement'].secondaryOrganizations, css:{'isSecondaryOrgAvail' : $parent['elements']['MedAesB2BcontactLoginElement'].secondaryOrganizations().length > 0 }">
+                             <div class="paddingBottom">
+                             <a data-bind="click: $parents[1]['elements']['MedAesB2BcontactLoginElement'].handleOrganizationChange.bind($data, $index()), 
+                             attr: {id: 'CC-header-organization-'+ $index(), href: '#'}">
+                                <span class="ellipsis" data-bind="text: $data.name, attr: { title: name}"></span>
+           
+                             </a>       
+                             </div>
+                             </div>
+                             <!-- /ko -->
+                            </div>  
+                                
+
+                           </div>
+                            <!-- /ko -->      
+                              </div>
+                         </li> 
+                         
+                         
+                 				<li> <a href="/" id="CC-loginHeader-myAccount" data-original-title="myAccount"
+                          data-bind="widgetLocaleText: { attr: 'innerText', value: 'myAccount' },
+                            click: validatePrivilagePageRequest, ccLink: 'profile'">
+                       </a></li>
+                 				<li><a href="/" data-bind="ccLink:{route:'/orderhistory'}">Order History</a></li> 
+                 				<li><a href="/" data-bind="ccLink: 'savedCart'">Saved Carts</a></li>
+                				<li><a id="CC-loginHeader-logout" data-original-title="logout"
+                          data-bind="widgetLocaleText: { attr: 'innerText', value: 'logoutLinkText' },
+                            click: $parent['elements']['MedAesB2BcontactLoginElement'].handleLogout.bind($parent)" href="#">
+                       </a></li>
+                      </ul>
+                    </div>
+
+          <div data-bind="visible: !(loggedInUserName() && (loggedIn() || isUserSessionExpired()))">
+            <a href="#CC-headermodalpane" id="CC-loginHeader-login" data-original-title="login"
+               data-bind="click: $parent['elements']['MedAesB2BcontactLoginElement'].clickLogin.bind($parent['elements']['MedAesB2BcontactLoginElement']),
+                 widgetLocaleText: { attr: 'innerText', value: 'loginLinkText' }" data-toggle="modal">
+            </a>
+
+            <!-- ko if: $data.hasOwnProperty('links') && $data.links().hasOwnProperty('wishlist') -->|<a id="CC-loginHeader-wishlist-anonymous" href="/" data-original-title="wishlist"
+                   data-bind="widgetLocaleText: { attr: 'innerText', value: 'wishlist' }, ccLink: 'wishlist'">
+                </a>
+            <!-- /ko -->
+          </div>
+        </div>
+           
+      <!-- /ko -->
+    <!-- /ko -->
+  </div>
+
+<!-- /ko -->

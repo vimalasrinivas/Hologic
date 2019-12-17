@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesBreadcrumbWidget",
+  "version": 1,
+  "displayName": "MedAes Breadcrumb Widget",
+  "elementized": true,
+  "global": false,
+  "i18nresources": "medAesBreadcrumbWidget",
+  "source": 101,
+  "javascript": "medAesBreadcrumbWidget"
+}

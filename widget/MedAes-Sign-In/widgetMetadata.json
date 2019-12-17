@@ -1,0 +1,16 @@
+{
+  "imports": [
+    "shippingCountries"
+  ],
+  "translations": [
+    {
+      "name": "MedAes-Sign-In",
+      "language": "en"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "config": {}
+}

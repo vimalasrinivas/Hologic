@@ -1,0 +1,195 @@
+<div id="CC-breadcrumb-details" data-oc-id="CC-breadcrumb-details" class='row'>
+    <!-- oc layout: panels -->
+    <div class="container nopad">                
+            <div class="oc-panel col-md-12 col-xs-12 pad0" data-oc-id="breadcrumb-panel-1">
+                <div class=" pad0" id="breadcrumbElement">
+                    <!--<div data-bind="foreach:breadcrumb" id="breadcrumbTrail">-->
+                    <!-- ko if:$index() > 0 -->
+                    <!--		<span data-bind="text: $parent.delimiter" class="delimiter"></span>		-->
+                    <!-- /ko -->  
+                    <!-- ko if:$data.hasOwnProperty('url') -->
+                    <!--		<a data-bind="text: label, ccLink: {url:url}"></a>-->
+                    <!-- /ko -->
+                    <!-- ko ifnot:$data.hasOwnProperty('url') -->
+                    <!--		<span data-bind="text: label"></span>      -->
+                    <!-- /ko -->
+                    <!--</div>	-->
+                    <ul id="breadcrumbTrail" class="list-inline">
+                        <li><a href="/" data-bind="ccLink:{route: '/home'}">Home </a></li>
+                        <span class="delimiter"> //</span>
+
+                        <!-- Start PLP Section -->
+                        <!-- ko if: $data.pageContext().page.name == 'category' -->
+                        <!-- ko with: category -->
+                        <li data-bind="text:displayName"></li>
+                        <!-- /ko -->
+                        <!-- /ko -->
+                        
+                        <!-- Start Product Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'product' -->
+                            <!-- ko foreach: breadCrumbPdpList -->
+                            <li><a  href="/" data-bind="text:xname,ccLink:{route: xurl}"> </a></li>
+                            <span class="delimiter"> //</span>
+                            <!-- /ko -->
+                            
+                            <!-- ko with: product -->
+                            <li data-bind="text:displayName "></li>
+                            <!-- /ko -->
+                        <!-- /ko -->
+                        
+                        
+                        <!-- ko ifnot: $data.pageContext().page.name == 'category' || $data.pageContext().page.name == 'product' || $data.pageContext().page.name == 'purchaselists' || $data.pageContext().page.name == 'profile' || $data.pageContext().page.name == 'cart' ||  $data.pageContext().page.name == 'shopNow' ||
+        				 $data.pageContext().page.name == 'terms-of-use-agreement' || $data.pageContext().page.name == 'FAQ' || $data.pageContext().page.name == 'privacy-policy' || $data.pageContext().page.name == 'california-supply-chain-act' || $data.pageContext().page.name == 'accountaddressbook' || $data.pageContext().page.name == 'wallet' 
+        				|| $data.pageContext().page.name == 'orderHistory' || $data.pageContext().page.name == 'OrderDetailsPage' || $data.pageContext().page.name == 'savedCart' || $data.pageContext().page.name == 'cancellations'-->
+                        <!-- ko with: category -->
+                        <li>
+                            <a  href="/" data-bind="ccLink:{route: route},text:displayName"></a>
+                        </li>
+                        <!-- /ko -->
+                        <!-- /ko -->
+
+                        <!-- END PLP SECTION -->
+
+                        
+
+                        <!-- Ends Product Section -->
+
+                        <!-- Start Cart Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'cart' -->
+
+                        <li data-bind="text:$data.pageContext().page.name"></li>
+
+                        <!-- /ko -->
+
+                        <!-- Ends Cart Section -->
+
+                        <!-- Start shopNow Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'purchaselists' -->
+
+                        <li>My Favorites</li>
+
+                        <!-- /ko -->
+
+                        <!-- Ends shopNow Section -->
+
+                        <!-- Start MyAccount Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'profile' -->
+                        <li>My Account</li>
+                        <!-- /ko -->  
+                        <!-- ko ifnot:$data.pageContext().page.name == 'profile' || $data.pageContext().page.name == 'category'||  $data.pageContext().page.name == 'newsSearch'   || $data.pageContext().page.name == 'product' || $data.pageContext().page.name == 'cart' || $data.pageContext().page.name == 'shopNow'
+        				|| $data.pageContext().page.name == 'terms-of-use-agreement' || $data.pageContext().page.name == 'FAQ' || $data.pageContext().page.name == 'privacy-policy' || $data.pageContext().page.name == 'california-supply-chain-act' || $data.pageContext().page.name == 'purchaselists'-->
+                        <li><a  href="/" data-bind="ccLink:{route: '/profile'}">My Account</a></li>
+                        <!-- /ko -->    
+                        <!-- Ends MyAccount Section -->
+
+                        <!-- Start shopNow Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'shopNow' -->
+
+                        <li>Shop Now</li>
+
+                        <!-- /ko -->
+
+                        <!-- Ends shopNow Section -->
+
+                        <!-- Start addressBook Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'accountaddressbook' -->
+                        <span class="delimiter"> //</span>
+                        <li>Address Book</li>
+
+                        <!-- /ko -->
+
+                        <!-- Ends addressBook Section -->
+
+                        <!-- Start "wallet" Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'wallet'  -->
+                        <span class="delimiter"> //</span>
+                        <li data-bind="text:$data.pageContext().page.name"></li>
+
+                        <!-- /ko -->
+
+                        <!-- Ends "wallet" Section -->
+
+                        <!-- Start orderHistory Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'orderHistory' -->
+                        <span class="delimiter">//</span>    
+                        <li>Order History</li>
+
+                        <!-- /ko -->
+
+                        <!-- Ends orderHistory Section -->
+
+                        <!-- Start OrderDetailsPage Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'OrderDetailsPage' -->
+                        <span class="delimiter"> //</span>
+                        <li><a  href="/" data-bind="ccLink:{route: '/orderHistory'}">Order History</a></li>   
+
+                        <!-- /ko -->
+
+                        <!-- Ends OrderDetailsPage Section -->
+
+                        <!-- Start savedCart Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'savedCart' -->
+                        <span class="delimiter"> //</span>
+                        <li>Saved Cart</li>
+
+                        <!-- /ko -->
+
+                        <!-- Ends savedCart Section -->
+                        
+                         <!-- Start newsearch result Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'newsSearch' -->
+                        <!--<span class="delimiter"> //</span>-->
+                        <li>News Search</li>
+
+                        <!-- /ko -->
+
+                        <!-- Ends newsearch result Section -->
+                        
+                        
+                         <!-- Start MyProducts Section -->
+                        <!-- ko if:$data.pageContext().page.name == "myProducts" -->    
+                        <span class="delimiter"> //</span>
+                        <li>My Products</li>           
+
+                        <!-- /ko -->
+       
+                        <!-- Ends myProducts Section -->
+
+                        <!-- Start cancellations Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'cancellations' -->
+                        <span class="delimiter"> //</span>
+                        <li data-bind="text:$data.pageContext().page.name"></li>
+
+                        <!-- /ko -->
+
+                        <!-- Ends cancellations Section -->
+
+                        <!-- Start Terms&condition Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'terms-of-use-agreement' -->
+                        <li>Terms and Conditions</li>
+                        <!-- /ko -->
+                        <!-- Ends Terms&condition Section -->
+
+                        <!-- Start Terms&condition Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'FAQ' -->
+
+                        <li>FAQs</li>
+
+                        <!-- /ko -->
+                        <!-- Ends Terms&condition Section -->
+
+                        <!-- Start Terms&condition Section -->
+                        <!-- ko if:$data.pageContext().page.name == 'privacy-policy' || $data.pageContext().page.name == 'california-supply-chain-act' -->
+
+                        <li data-bind="text:$data.pageContext().page.name"></li>
+
+                        <!-- /ko -->
+                        <!-- Ends Terms&condition Section -->
+
+                    </ul>
+
+                </div>
+            </div>
+    </div>
+    <!-- /oc -->
+</div>

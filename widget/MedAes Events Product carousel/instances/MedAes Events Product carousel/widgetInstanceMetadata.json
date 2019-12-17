@@ -1,0 +1,21 @@
+{
+  "configuration": {
+    "bannerImage2": {
+      "src": "/file/v7996438089748385/general/cynologo.png",
+      "mediaName": "/general/cynologo.png"
+    },
+    "bannerImage1": {
+      "src": "/file/v7996438089748385/general/cynologo.png",
+      "mediaName": "/general/cynologo.png"
+    },
+    "bannerImage4": {
+      "src": "/file/v7996438089748385/general/cynologo.png",
+      "mediaName": "/general/cynologo.png"
+    },
+    "bannerImage3": {
+      "src": "/file/v7996438089748385/general/cynologo.png",
+      "mediaName": "/general/cynologo.png"
+    }
+  },
+  "displayName": "MedAes Events Product carousel"
+}

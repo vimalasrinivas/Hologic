@@ -1,0 +1,18 @@
+{
+  "availableToAllWidgets": false,
+  "children": [],
+  "configOptions": [],
+  "inline": false,
+  "supportedWidgetType": [
+    "MedAesheaderWidget",
+    "headerWidget"
+  ],
+  "tag": "MedAesMinicartCustomElement",
+  "translations": [
+    {
+      "description": "Element for holding header dropdown minicart",
+      "language": "en",
+      "title": "MedAesMinicartCustomElement"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "tag": "splitpayment-invoice",
+  "source": 100,
+  "type": "fragment",
+  "title": "Invoice Section",
+  "widgetType": "splitPayments",
+  "version": 5
+}

@@ -1,0 +1,17 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "MedAes User Purchase Lists Latest",
+      "language": "en"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "defaultLayout": "MedAesUserPurchaseListLatestWidget_v1_lyt1",
+  "config": {
+    "showAddByButton": true
+  }
+}

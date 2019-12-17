@@ -1,0 +1,25 @@
+{
+  "resources": {
+    "returnMarkCompleteSucess": "Return request has been marked as complete",
+    "refundText": "Refund Total",
+    "rmaNumberText": "RMA Number",
+    "returnActionText": "Action",
+    "processExchangeOrderText": "Process Exchange Order",
+    "buttonClearText": "Clear",
+    "symbolAndAmountText": "__currencySymbol____amount__",
+    "linkActionRefundText": "Refund",
+    "returnStatusText": "Status",
+    "returnHistoryCaptionText": "Return History",
+    "pendingRefund": "Pending Refund",
+    "exchangeHistoryCaptionText": "Exchange History",
+    "returnRequestDateText": "Requested on",
+    "exchangeOrderText": "Exchange Order",
+    "linkActionReceiveText": "Receive",
+    "buttonCancelText": "Cancel",
+    "returnTotalQuantityText": "Total Qty.",
+    "mixedCurrencyAmountText": "__primaryCurrencySymbol__ __primaryCurrencyAmount__+__secondaryCurrencySymbol____secondaryCurrencyAmount__",
+    "returnRequestIdText": "Request Number",
+    "markComplete": "Mark complete",
+    "errorHeader": "Error. __result.message__ Return Code: __result.errorCode__ "
+  }
+}

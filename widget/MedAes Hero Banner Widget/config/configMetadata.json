@@ -1,0 +1,33 @@
+{
+  "widgetDescriptorName": "MedAesHeroBannerWidget",
+  "properties": [
+    {
+      "name": "firstBannerImage",
+      "id": "bannerImage1",
+      "type": "mediaType",
+      "helpTextResourceId": "firstBannerImageHelpText",
+      "labelResourceId": "firstBannerImageTextLabel"
+    },
+    {
+      "name": "secondBannerImage",
+      "id": "bannerImage2",
+      "type": "mediaType",
+      "helpTextResourceId": "secondBannerImageHelpText",
+      "labelResourceId": "secondBannerImageTextLabel"
+    },
+    {
+      "name": "ThirdBannerImage",
+      "id": "bannerImage3",
+      "type": "mediaType",
+      "helpTextResourceId": "ThirdBannerImageHelpText",
+      "labelResourceId": "ThirdBannerImageTextLabel"
+    },
+    {
+      "name": "fourthBannerImage",
+      "id": "bannerImage4",
+      "type": "mediaType",
+      "helpTextResourceId": "fourthBannerImageHelpText",
+      "labelResourceId": "fourthBannerImageTextLabel"
+    }
+  ]
+}

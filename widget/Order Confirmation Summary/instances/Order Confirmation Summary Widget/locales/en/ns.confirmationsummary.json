@@ -1,0 +1,20 @@
+{
+  "resources": {
+    "orderTotalText": "Order Total:",
+    "totalText": "Total: ",
+    "salesTaxText": "Sales Tax:",
+    "subTotalText": "Sub-Total:",
+    "shippingLabel": "Shipping",
+    "viewDetailsText": "View Details",
+    "orderDoesNotExist": "Order does not exist.",
+    "hideDetailsText": "Hide Details",
+    "continueShoppingText": "Continue Shopping",
+    "pickupInStoreText": "Pick-up in-store",
+    "orderSummaryText": "Order Summary",
+    "includingTaxText": "(including tax)",
+    "totalExcludingTaxText": "Total (excluding tax): ",
+    "delimiter": ":",
+    "excludingTaxAndShipping": "(excluding tax and shipping)",
+    "groupTotalText": "Group Total"
+  }
+}

@@ -1,0 +1,18 @@
+<div id="cc-categoryContent" class="templateRegion col-md-12" data-oc-id="cc-categoryContent">
+  
+  <!-- oc layout: panels -->
+  <div class="row">
+    <div id="cc-categoryContent-panel" class="oc-panel" data-oc-id="cc-categoryContent-panel">
+  
+      <!-- oc section: categoryContent-carousel -->
+        <div data-bind="element: 'categoryContent-carousel'"></div>
+      <!-- /oc -->
+  
+      <!-- oc section: categoryContent-longDescription -->
+        <div data-bind="element: 'categoryContent-longDescription'"></div>
+      <!-- /oc -->
+
+    </div>
+  </div>
+  <!-- /oc -->  
+</div>

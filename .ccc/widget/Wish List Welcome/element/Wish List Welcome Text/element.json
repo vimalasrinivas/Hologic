@@ -1,0 +1,8 @@
+{
+  "tag": "welcome-text",
+  "source": 100,
+  "type": "fragment",
+  "title": "Wish List Welcome Text",
+  "widgetType": "spaceWelcomeWidget",
+  "version": 1
+}

@@ -1,0 +1,15 @@
+{
+  "resources": {
+    "promoCodeAriaLabelText": "Enter Promo Code",
+    "couponDetailsError": "A problem has been found with your coupon details.",
+    "promoCodeRequired": "Coupon code cannot be empty",
+    "buttonApplyCodeText": "Apply Code",
+    "buttonApplyingCodeText": "Applying Code",
+    "promotionLabelText": "Add a promotion or loyalty code",
+    "promotionSummaryText": "Promotions Summary",
+    "promoCode": "Enter Promo Code",
+    "quoteWarningText": "Only shipping promotions allowed",
+    "removeLinkText": "remove",
+    "duplicateCoupon": "Code already applied."
+  }
+}

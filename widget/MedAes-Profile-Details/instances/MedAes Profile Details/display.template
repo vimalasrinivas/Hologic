@@ -1,0 +1,78 @@
+<div id="MedAes-Profile-Details" data-bind="onRender: $data.addCustomClass()">               
+	<!-- Desktop / tablet etc. viewport -->
+   <!-- ko ifnot: $data.isMobile() -->
+    <div class="col-md-12 left-Navigation">
+
+    <!--<h3 data-bind="widgetLocaleText: 'myAccountText'"></h3>-->
+    <!--  ko if:$data.displayOptions() === "horizontal" -->
+      <div id="secondaryHorizontalTabs" class="hidden-xs hidden-sm">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <ul class = "nav nav-tabs" data-bind="attr: { id: 'MedAes-Profile-Details-'+id()+'-tabs'}">
+            <!-- ko foreach:keyValuePair-->
+              <li role="presentation" data-toggle="tab" data-bind="css: {active: $data.route === $parent.currentTab()}, attr: { id: 'MedAes-Profile-Details-'+$parent.id()+'-tab-'+$index()}">
+                <a style="border-bottom: 3px solid #027BC7"  data-bind="css: {active: $data.route === $parent.currentTab()},ccLink: $data, widgetLocaleText : displayName"></a>
+              </li>
+           <!-- /ko -->
+          </ul>
+        </div>
+      </div>
+  <!--/ko -->
+  <!-- ko ifnot: $data.displayOptions() === "horizontal"  -->
+   <div id="secondaryVerticalTabs">
+      <ul class = "nav" data-bind="attr: { id: 'MedAes-Profile-Details-'+id()+'-tabs'}">
+
+        <!-- ko foreach: keyValuePair -->
+          <li data-toggle="tab" data-bind="css: {active: $data.route === $parent.currentTab()}, attr: { id: 'MedAes-Profile-Details-'+$parent.id()+'-tab-'+$index() }">
+           <a data-bind="css: {active: $data.route === $parent.currentTab()},ccLink: $data, widgetLocaleText : displayName">          
+            </a>
+          </li>
+        <!-- /ko -->
+      </ul>
+      </div>
+      <!-- /ko -->
+    </div>
+  <!-- /ko -->
+  <!-- End Desktop / tablet etc. viewport -->
+  
+  <!-- Mobile ViewPort -->
+   <!-- ko if: $data.isMobile() -->
+  <!--<nav class="navbar" role="navigation" id="cc-mobile-menubar">-->
+  <!--  <div class="mega-menu">-->
+  <!--    <div class="navbar-header">-->
+  <!--      <button type="button" class="navbar-toggle btn-navbar btn-inverse" data-toggle="collapse" data-target="#mobile-menu-MedAes-Profile-Details">-->
+  <!--        <span class="label-hidden" data-bind="widgetLocaleText: 'mobileNavBtnText'"></span>-->
+  <!--        <span class="icon-bar"></span>-->
+  <!--        <span class="icon-bar"></span>-->
+  <!--        <span class="icon-bar"></span>-->
+  <!--      </button>-->
+  <!--      <h4 data-bind="widgetLocaleText: 'myAccountText'"></h4>-->
+  <!--    </div>-->
+  <!--    <div class="collapse in" id="mobile-menu-MedAes-Profile-Details">-->
+  <!--      <ul class = "nav" data-bind="attr: { id: 'MedAes-Profile-Details-'+id()+'-tabs'}">-->
+  <!--       ko foreach: keyValuePair -->
+  <!--        <li data-toggle="tab" data-bind="css: {active: $data.route === $parent.currentTab()}, attr: { id: 'MedAes-Profile-Details-'+$parent.id()+'-tab-'+$index() }">-->
+  <!--         <a data-bind="ccLink: $data, widgetLocaleText : displayName"> -->
+  <!--          </a>-->
+  <!--        </li>-->
+  <!--       /ko -->
+  <!--      </ul>-->
+  <!--    </div>-->
+  <!--  </div>-->
+  <!--</nav>-->
+ <div class="row dashboard">
+    <div class="dropdown accountDropdown">       
+        <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">DashBoard</button>         
+                <ul class="dropdown-menu">       
+                 <li><a data-bind="ccLink:{route:'/profile'}" href="/">My Account</a></li>    
+                 <li><a data-bind="ccLink:{route:'/orderHistory'}" href="/">Order History</a></li>
+                 <li><a data-bind="ccLink:{route:'/savedCart'}" href="/">Saved Carts</a></li> 
+                 <li><a data-bind="ccLink:{route:'/accountaddressbook'}" href="/">Address Book</a></li>       
+                 <!--<li><a data-bind="ccLink:{route:'/wallet'}">Wallet</a></li> -->
+                 <li><a data-bind="ccLink:{route:'/myProducts'}" href="/">My Products</a></li>   
+                 <li><a data-bind="ccLink:{route:'/registrationRequest'}" href="/">Registration Request</a></li>     
+                </ul>
+   </div>
+</div>  
+   <!-- /ko -->        
+
+</div> 

@@ -1,0 +1,108 @@
+#WIDGET_ID-WIDGET_INSTANCE_ID {
+    .continue-shopping-wrapper{                 
+            padding: 17px 0 0 0;
+            @media screen and (max-width:767px){
+                text-align: center;
+                padding:0px;
+                margin-bottom: 25px;
+            }
+            .continue-shopping-link{     
+                color: @medAesPrimaryColor;
+                font-family: "FlamaBook";
+                font-size: 14px;
+                letter-spacing: 0.5px;
+                line-height: 16px;
+                text-align: center;
+                text-decoration: underline;
+            }
+    }
+    .checkoutTitleText{
+            text-align: center;
+            color:  @medAesSecondaryTextColor;
+            font-family: "Flama";
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            line-height: 28px;
+            margin: 18px 0px 22px;
+            font-size: 24px;
+        @media screen and (max-width:767px){
+            margin: 18px 0 7px;
+        }    
+    }
+    .showTickMark{
+        .displayText {
+            color: @medAesSecondaryTextColor !important;
+        }
+         
+    }
+    .checkout_step{
+        background-color: @medAesBackGroundColor;
+    }
+    .progressTracker-navigation{
+        padding: 0px;
+        list-style-type: none;
+        text-align: center;
+    }
+    .progressTracker-list{
+        display: inline-block !important;
+        padding: 10px 2px;
+        position: relative;
+    }
+    .progressTrackerClick{
+            color: #333;
+            font-family: "FlamaBook";
+            font-size: 16px;
+            letter-spacing: .62px;
+            line-height: 30px;
+            text-align: center;
+            height: 33px;
+            width: 33px;
+            display: inline-block;
+            text-decoration: none;
+            background: #fff;
+            cursor: default;
+        @media screen and (min-width:768px){
+            border-radius: 50%;
+            border: 1px solid #979797;
+        }    
+    }
+    
+    .displayText {
+            color: #A0A0A0;
+            font-family: "FlamaBook";
+            letter-spacing: 0.62px;
+            line-height: 18px;
+            text-align: center;
+            padding-left: 10px;
+    }
+    .active{
+        .displayText{
+                color: @medAesSecondaryTextColor !important;
+        }
+        @media screen and (min-width:768px){
+        .progressTrackerClick{
+                 border: 1px solid  @medAesPrimaryColor;
+        }
+        }
+    }
+    .stepStricker{
+             color: @medAesSecondaryTextColor ;
+             font-family: "FlamaBook";
+             letter-spacing: 0.62px;
+             line-height: 18px;
+             text-align: center;
+             padding-left: 10px;
+    }
+   @media screen and (min-width:768px){
+    .showTickMark{
+                    position: relative;
+                    width: 34px;
+                    height: 34px;
+                    background-image: url("/file/general/checkoutTickMark.PNG");
+                    z-index: 10000;
+                    text-indent: -9999px;
+                    border: 0px;
+                    cursor:pointer !important;
+         }
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "imports": [
+    "confirmation"
+  ],
+  "translations": [
+    {
+      "name": "MedAes-Order-Summary",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": true,
+  "pageTypes": [
+    "confirmation"
+  ],
+  "config": {}
+}

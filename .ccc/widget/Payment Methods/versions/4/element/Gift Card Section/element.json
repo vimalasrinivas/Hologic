@@ -1,0 +1,8 @@
+{
+  "tag": "splitpayment-giftcard",
+  "source": 100,
+  "type": "fragment",
+  "title": "Gift Card Section",
+  "widgetType": "splitPayments",
+  "version": 4
+}

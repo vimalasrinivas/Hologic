@@ -1,0 +1,158 @@
+{
+  "imports": [
+    "category",
+    "product",
+    "user"
+  ],
+  "translations": [
+    {
+      "name": "การแสดงเส้นทาง",
+      "language": "th"
+    },
+    {
+      "name": "Trilha de Navegação",
+      "language": "pt_BR"
+    },
+    {
+      "name": "痕迹",
+      "language": "zh_CN"
+    },
+    {
+      "name": "Навігаційний ланцюжок",
+      "language": "uk"
+    },
+    {
+      "name": "Трасиране",
+      "language": "bg"
+    },
+    {
+      "name": "Lingirida",
+      "language": "et"
+    },
+    {
+      "name": "Atpakaļceļš",
+      "language": "lv"
+    },
+    {
+      "name": "Søkebane",
+      "language": "no"
+    },
+    {
+      "name": "Naršymo kelias",
+      "language": "lt"
+    },
+    {
+      "name": "Chemin de navigation",
+      "language": "fr_CA"
+    },
+    {
+      "name": "Itinerar",
+      "language": "ro"
+    },
+    {
+      "name": "ブレッドクラム",
+      "language": "ja"
+    },
+    {
+      "name": "Sled",
+      "language": "sl"
+    },
+    {
+      "name": "Навигационная цепочка",
+      "language": "ru"
+    },
+    {
+      "name": "Trag",
+      "language": "hr"
+    },
+    {
+      "name": "Görsel Navigasyon Yardımı",
+      "language": "tr"
+    },
+    {
+      "name": "Ślad nawigacji",
+      "language": "pl"
+    },
+    {
+      "name": "來源路徑",
+      "language": "zh_TW"
+    },
+    {
+      "name": "이동 경로",
+      "language": "ko"
+    },
+    {
+      "name": "Navigační cesta",
+      "language": "cs"
+    },
+    {
+      "name": "Elérési útvonal",
+      "language": "hu"
+    },
+    {
+      "name": "Στοιχείο διαδρομής",
+      "language": "el"
+    },
+    {
+      "name": "Miniature",
+      "language": "da"
+    },
+    {
+      "name": "MedAes Breadcrumb Widget",
+      "language": "en"
+    },
+    {
+      "name": "Скраћена путања",
+      "language": "sr"
+    },
+    {
+      "name": "Navigationspfad",
+      "language": "de"
+    },
+    {
+      "name": "Skraćena putanja",
+      "language": "sr_Latn"
+    },
+    {
+      "name": "Ruta",
+      "language": "es"
+    },
+    {
+      "name": "Chemin de navigation",
+      "language": "fr"
+    },
+    {
+      "name": "Indicatore di percorso",
+      "language": "it"
+    },
+    {
+      "name": "Breadcrumb",
+      "language": "en_GB"
+    },
+    {
+      "name": "Broodkruimel",
+      "language": "nl"
+    },
+    {
+      "name": "Navigeringsspår",
+      "language": "sv"
+    },
+    {
+      "name": "Estrutura de Acesso",
+      "language": "pt"
+    },
+    {
+      "name": "Linkkipolku",
+      "language": "fi"
+    }
+  ],
+  "availableToAllPages": true,
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "defaultLayout": "MedAesBreadcrumbWidget_v1_lyt1",
+  "config": {
+    "catalogId": "cloudCatalog",
+    "rootCategoryId": "rootCategory"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "configuration": {
+    "timeoutMessageTypes": "info,success,warning,error",
+    "fixed": true,
+    "timeoutEnabled": true,
+    "timeout": "5"
+  },
+  "displayName": "MedAes Notifications Widget"
+}

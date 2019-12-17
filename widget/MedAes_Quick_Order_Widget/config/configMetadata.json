@@ -1,0 +1,32 @@
+{
+  "widgetDescriptorName": "MedAes_Quick_Order_Widget",
+  "properties": [
+    {
+      "defaultValue": "4",
+      "name": "noOfRowsToDisplay",
+      "id": "noOfRowsToDisplay",
+      "type": "stringType",
+      "helpTextResourceId": "quickOrderRowsToDisplayHelpText",
+      "labelResourceId": "quickOrderRowsToDisplayLabel",
+      "required": true
+    },
+    {
+      "defaultValue": "100",
+      "name": "maxQuantityOfItems",
+      "id": "maxQuantityOfItems",
+      "type": "stringType",
+      "helpTextResourceId": "maxQuantityOfItemsDisplayHelpText",
+      "labelResourceId": "maxQuantityOfItemsDisplayLabel",
+      "required": true
+    },
+    {
+      "defaultValue": "999",
+      "name": "maxNoOfItemsInCSV",
+      "id": "maxNoOfItemsInCSV",
+      "type": "stringType",
+      "helpTextResourceId": "maxNoOfItemsInCSVDisplayHelpText",
+      "labelResourceId": "maxNoOfItemsInCSVDisplayLabel",
+      "required": true
+    }
+  ]
+}

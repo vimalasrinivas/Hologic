@@ -1,0 +1,351 @@
+#WIDGET_ID-WIDGET_INSTANCE_ID {
+#cc_img__resize_wrapper{
+    width: 37%;
+    display: inline;
+}    
+  .pad0{
+    padding: 0px;   
+}    
+.marg0{
+@media screen and (max-width:767px){
+     margin:0px;   
+}    
+}    
+.quantity{
+    text-align: center;
+@media screen and (max-width:990px){
+   padding-left:0px; 
+}    
+@media screen and (max-width:1023px){               
+    text-align: left;    
+    padding-top: 15px;
+}
+@media(max-width:767px){
+    padding: 0px !important;    
+    
+    .quantityBox{
+        border-radius: 2px;
+        background-color: #fff;
+        padding: 11px 40px;
+        border: 1px solid #d6d0d0;      
+        /* text-align: center; */    
+        width: 25%;
+    }
+}
+     p{
+   	color: @medAesSecondaryTextColor ;
+	font-family: "FlamaBook";
+	font-size: 14px;
+	letter-spacing: 0.29px;
+	line-height: 16px;   
+	 margin-bottom: 15px;
+     }
+ } 
+ .listPrice{
+    text-align: center;
+    position: relative;
+    bottom: 5px;
+@media screen and (max-width:1023px){     
+    text-align: left;
+    padding-top: 15px;
+}    
+     span{
+    color: #292929;
+	font-family: "Flama";
+	font-size: 16px;
+	letter-spacing: 0.57px;
+	line-height: 19px;
+	font-weight:bold;            
+	  
+    	@media(max-width:767px){   
+    	    padding-top: 20px;     
+            float: right;     
+            color: #292929;
+            font-family: FlamaBook;   
+            font-size: 16px;
+            letter-spacing: .57px;
+            line-height: 18px;
+            text-align: center;
+            font-weight: bold;   
+    	}
+     }
+ }
+#MedAes-Order-Confirmation{
+    @media screen and (min-width:768px){
+      margin:0px;    
+    }
+.cardNumberEnding{
+      padding:15px 0px;  
+    span:last-child{
+        font-weight:bold;
+    }
+}
+// tooltip related css 
+           .tooltip {   
+          position: relative !important;
+            display: inline-block !important;
+            opacity: 1 !important;   
+            font-size: 16px !important;   
+            z-index: 100;   
+                 
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 597px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            top: -16px;
+            left: 25px;
+            font-family: "Flama";
+            font-size: 12px;
+        }
+        
+        .tooltip .tooltiptext::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 100%;
+          margin-top: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent #000 transparent transparent;
+        }
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+        }   
+     // tooltip related css  ends here 
+@media screen and (min-width:768px){       
+padding-bottom: 40px;
+}    
+}    
+   
+.phone-No{
+    padding: 8px 0px 12px 0px;
+}    
+.visa-CardNo{
+  padding-bottom: 13px;  
+}
+.order-Successful{ 
+@media screen and (max-width:767px){
+     margin:0px;
+    padding-left: 15px;
+  }    
+ h3{    
+    color: #292929;
+    font-family: "Flama";
+    font-size:30px;
+    letter-spacing: 1px;
+    line-height:30px;  
+    font-weight: 400;
+  @media screen and (min-width:768px) and (max-width:1023px){           
+      line-height: 28px; 
+  }  
+  @media screen and (max-width:767px){           
+       font-size: 28px;
+  } 
+ }
+}
+
+.confirmation-Email{   
+    padding-top: 12px;
+    padding-bottom: 25px;
+  @media screen and (max-width:767px){
+     padding: 12px 15px 25px ;  
+     margin:0px;
+  }
+     p{
+        color:@medAesSecondaryTextColor;
+    	font-family: "FlamaBook";
+    	font-size: 14px;
+    	letter-spacing: 0.54px;
+    	line-height: 20px;   
+     }
+         span{
+        color:@medAesSecondaryTextColor;
+    	font-family: "FlamaBook";
+    	font-size: 14px;
+    	letter-spacing: 0.54px;
+    	line-height: 20px; 
+     }
+}
+
+.shipping-Address{     
+  padding: 0px ;
+ @media screen and (min-width:768px){  
+  width: 46%;
+}
+  .border{
+    height: 223px;  
+    background-color: #FFFFFF;
+    padding:15px;
+  }
+  h3{    
+    color: #292929;
+    font-family: "Flama";
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 18px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    font-weight: 600;
+  }
+  p{     
+    color:@medAesSecondaryTextColor;
+	font-family: "FlamaBook";
+	font-size: 14px;
+	letter-spacing: 0.54px;
+	line-height: 20px;   
+    margin: 0px;
+  }
+  span{
+    color:@medAesSecondaryTextColor;
+	font-family: "FlamaBook";
+	font-size: 14px;
+	letter-spacing: 0.54px;
+	line-height: 20px;  
+  }
+}
+
+.payment-Details{                                               
+  padding: 0px 0px 0px 15px;
+@media screen and (min-width:768px){  
+  width: 48%;
+}
+  .border{
+    background-color: #FFFFFF;
+    padding:15px;
+    height: 223px;
+    .poNo{
+     padding-bottom:15px;
+    }
+  }
+  
+  @media screen and (min-width:320px) and (max-width:767px){                
+        margin-top: 15px; 
+        padding:0px;
+  }
+  h3{      
+    color: #292929;
+    font-family: "Flama";
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 18px;
+    margin-bottom:15px;
+    margin-top: 0px;
+    font-weight: 600;
+  }
+  p{            
+    color:@medAesSecondaryTextColor;
+	font-family: "FlamaBook";
+	font-size: 14px;
+	letter-spacing: 0.54px;
+	line-height: 20px;  
+    margin: 0px;
+  }
+  
+    span{   
+    color:@medAesSecondaryTextColor;
+	font-family: "FlamaBook";
+	font-size: 14px;
+	letter-spacing: 0.54px;
+	line-height: 20px;  
+  }  
+}
+.cartSummaryTitle{     
+    margin: 36px 0px 14px;
+    color: #292929;
+    font-family: "Flama";
+    font-size: 16px;
+    letter-spacing: 1px;
+    line-height: 18px;
+    font-weight: bold; 
+    @media screen and (max-width:767px){
+        padding: 0px 15px;
+    }
+}    
+.cartSummary{         
+    background-color: #FFFFFF;      
+    padding:15px;
+    border-bottom: 1px solid #eee;
+    width: 94%;
+   @media screen and (max-width:767px){
+     width: 100%;
+   }
+   
+  .productDescription{
+      padding: 0px;
+    @media screen and (max-width:990px){   
+         margin-bottom: 30px;
+   }  
+    img{
+    position: relative;
+    height: 147px;	
+    width: 168px;
+    display: inline-block; 
+    vertical-align: top;
+     @media screen and (max-width:767px){      
+        height: 110px; 
+        width: 110px;  
+   } 
+    }  
+    .details{   
+      display: inline-block;   
+     padding-left: 10px;
+    	 p:first-child{                     
+        color:@medAesSecondaryTextColor;
+    	font-family:"FlamaBook";
+    	font-size: 14px;
+    	letter-spacing: 0.29px;
+    	line-height: 16px;  
+    	text-transform: uppercase;
+    	margin-bottom: 2px;
+      }
+    p:nth-child(2){
+        color:@medAesSecondaryTextColor;
+    	font-family: "Flama";
+    	font-size: 16px;
+    	letter-spacing: 0.33px;
+    	line-height: 18px;
+    	width: 250px;
+    	word-break: break-word;
+    @media screen and (min-width:1024px) and (max-width:1220px){         	
+    	 width: 160px;
+    }
+    @media screen and (min-width:768px) and (max-width:1023px){	                 
+    	 width: 215px;
+    }
+    @media screen  and (min-width:425px) and (max-width:767px){
+         width: 240px
+    }
+      @media screen  and (min-width:375px) and (max-width:424px){      
+         width: 187px
+    }
+      @media screen  and (min-width:320px) and (max-width:374px){
+         width: 135px
+    }
+    } 
+    p:nth-child(3){
+        color: #4A4C50;
+    	font-family:"FlamaBook";
+    	font-size: 13px;
+    	letter-spacing: 0.27px;
+    	line-height: 15px;   
+    }
+    p:last-child{
+        color: #292929;
+    	font-family: "FlamaBook";
+    	font-size: 16px;
+    	letter-spacing: 0.57px;
+    	line-height: 18px;    
+    }
+  }  
+ 
+}       
+}
+}    

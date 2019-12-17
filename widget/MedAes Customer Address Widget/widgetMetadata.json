@@ -1,0 +1,20 @@
+{
+  "imports": [
+    "shippingCountries",
+    "billingCountries",
+    "order"
+  ],
+  "translations": [
+    {
+      "name": "MedAes Customer Address Widget",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "pageTypes": [
+    "checkout"
+  ],
+  "config": {}
+}

@@ -1,0 +1,10 @@
+{
+  "widgetType": "medaesshopnow",
+  "version": 1,
+  "displayName": "MedAes Shop Now",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "medaesshopnow",
+  "source": 101,
+  "javascript": "medaesshopnow"
+}

@@ -1,0 +1,8 @@
+{
+  "configuration": {
+    "maxNoOfItemsInCSV": "999",
+    "noOfRowsToDisplay": "5",
+    "maxQuantityOfItems": "999"
+  },
+  "displayName": "MedAes Quick Order Widget"
+}

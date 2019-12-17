@@ -1,0 +1,20 @@
+{
+  "resources": {
+    "strategyHelpText": "Products will be recommended based on the selected strategy",
+    "restrictionInCollectionLabel": "In Collection",
+    "collectionsHelpText": "Can be used to override the collection in context to restrict products to the specified collection.  You can enter a single Collection ID.",
+    "strategyBrowsedTogetherLabel": "Browsed Together",
+    "numRecsHelpText": "Number of products to retrieve",
+    "strategyPurchasedTogetherLabel": "Purchased Together",
+    "numRecsLabel": "Number of Products",
+    "restrictionLabel": "Restriction",
+    "restrictionInBrandLabel": "In Brand",
+    "restrictionUnrestrictedLabel": "Unrestricted",
+    "collectionsLabel": "Collections",
+    "strategyBlendedLabel": "Blended",
+    "strategyLabel": "Strategy",
+    "strategyMostRecentlyViewedLabel": "Most Recently Viewed",
+    "restrictionHelpText": "Only products that match the restriction will be recommended",
+    "strategyTopSellersLabel": "Top Sellers"
+  }
+}

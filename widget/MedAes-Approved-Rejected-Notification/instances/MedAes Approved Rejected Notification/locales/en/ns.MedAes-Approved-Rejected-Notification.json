@@ -1,0 +1,6 @@
+{
+  "resources": {
+    "rejectedNotificationText": "Add new  shipping address request rejected !",
+    "approveNotificationText": "New address shipping request approved !"
+  }
+}

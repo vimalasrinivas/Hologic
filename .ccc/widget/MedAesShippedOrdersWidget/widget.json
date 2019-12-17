@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesShippedOrdersWidget",
+  "version": 1,
+  "displayName": "MedAesShippedOrdersWidget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAesShippedOrdersWidget",
+  "source": 101,
+  "javascript": "MedAesShippedOrdersWidget"
+}

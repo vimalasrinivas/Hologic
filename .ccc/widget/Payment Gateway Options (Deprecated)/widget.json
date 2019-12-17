@@ -1,0 +1,6 @@
+{
+  "widgetType": "paymentGatewayOptions",
+  "version": 7,
+  "displayName": "Payment Gateway Options (Deprecated)",
+  "elementized": true
+}

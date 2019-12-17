@@ -1,0 +1,8 @@
+{
+  "tag": "product-add-to-space",
+  "source": 100,
+  "type": "fragment",
+  "title": "Add to Wish List Button",
+  "widgetType": "productDetails",
+  "version": 14
+}

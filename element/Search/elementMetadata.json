@@ -1,0 +1,14 @@
+{
+  "availableToAllWidgets": true,
+  "children": [],
+  "configOptions": [],
+  "inline": true,
+  "tag": "MedAesSearchElement",
+  "translations": [
+    {
+      "description": "Add the Search element.",
+      "language": "en",
+      "title": "Search"
+    }
+  ]
+}

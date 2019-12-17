@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesNotificationHeaderWidget",
+  "version": 1,
+  "displayName": "MedAesNotificationHeaderWidget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAesNotificationHeaderWidget",
+  "source": 101,
+  "javascript": "MedAesNotificationHeaderWidget"
+}

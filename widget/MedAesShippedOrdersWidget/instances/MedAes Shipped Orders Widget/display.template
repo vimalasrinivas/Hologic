@@ -1,0 +1,80 @@
+<div class="row bg-color" data-bind="visible:user().loggedIn()">
+      
+    <div class="container shippedOrders">
+        <h5>Shipped Orders</h5>  
+                  <table class="table hidden-xs">
+                    <thead >
+                      <tr>
+                        <th>Order #</th>
+                        <th>Ref ID/PO #</th>
+                        <th>Order Date</th>
+                        <th>Amount</th>
+                        <th>Address Line 1</th>
+                        <th>Ship Date</th>
+                        <th>Actions</th>   
+                      </tr> 
+                    </thead> 
+                    
+                    
+                    <tbody>
+                        <!--ko if: showShippedOrders().length >0-->
+                        <!-- ko foreach: showShippedOrders() -->  
+                      <tr class="hidden-xs">  
+                        <td ><a href="/" tabindex="0"  data-bind="text:orderNumber,event:{click: function(data,event){$parent.redirectOrderPage($data.oracleOrderId)}}"></a></td>              
+                        <td ><a href="/" tabindex="0" data-bind="text:referencePO,ccLink:{route:'/OrderDetailsPage'}" class="ReferencePO"></a></td>    
+                        <td data-bind="text:orderDate"></td>      
+                         <td data-bind="currency: {price: amount, currencyObj: $parent.cart().currency}"></td>                   
+                     
+                        <td data-bind="text:shipTo.address1"></td>   
+   
+                         <td data-bind="text:orderDate"></td>           
+                              
+                          <td>
+                              <!--ko if: shipments[0].trackingUrl != "" -->  
+                                <a href="/" tabindex="0" data-bind="attr: { href:shipments[0].trackingUrl}" target="_blank">Track</a>
+                              <!-- /ko -->
+                             
+                          </td>             
+                          
+                          <td class="pad"><a href="/"  tabindex="0" data-bind="event:{click : function(data,event) { $parent.mergeWithParticularIncompleteOrder(data.oracleOrderId) }}">Reorder</a></td>      
+                              <!--<td><a>Reorder</a></td>       -->
+                      </tr>    
+                      <!-- /ko -->    
+                      <!-- /ko -->      
+                    </tbody>  
+                    
+                  </table>  
+                   <!--ko if: showShippedOrders().length == 0-->  
+                               <div class="hidden-xs">No recent shipped orders</div>  
+                      <!-- /ko -->
+                       <table class="visible-xs">    
+                           <thead>  
+                        <tr>  
+                            <th>Reference Id</th>
+                            <th>Order #</th>
+                            <th>Actions</th>  
+                        </tr>
+                    </thead>  
+                           
+                        <tbody>
+                             <!--ko if: showShippedOrders().length >0-->  
+                            <!-- ko foreach: showShippedOrders() -->     
+                            <tr >
+                                  <td data-bind="text:referencePO,ccLink:{route:'/OrderDetailsPage'}"></td>      
+                                    <td><a tabindex="0" href="/"  data-bind="text:orderNumber,event:{click: function(data,event){$parent.redirectOrderPage($data.oracleOrderId)}}"></a></td>          
+                                    
+                                 <td class="pad"><a  tabindex="0" href="/" data-bind="event:{click : function(data,event) { $parent.mergeWithParticularIncompleteOrder(data.oracleOrderId) }}">Reorder</a></td>          
+                                      
+                            </tr>   
+                             <!-- /ko -->    
+                             <!-- /ko -->  
+                        </tbody>
+                        
+                       </table>    
+                          <!--ko if: showShippedOrders().length == 0-->  
+                               <div class="visible-xs">No recent shipped orders</div>  
+                      <!-- /ko -->
+            <h4><a href="/"  data-bind="ccLink:{route:'/orderhistory'}">View Order History</a></h4>         
+    </div>
+    
+</div>

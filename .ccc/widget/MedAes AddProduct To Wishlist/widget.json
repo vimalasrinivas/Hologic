@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesAddProductToWishlist",
+  "version": 1,
+  "displayName": "MedAes AddProduct To Wishlist",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "medAesAddProductToWishlist",
+  "source": 101,
+  "javascript": "medAesAddProductToWishlist"
+}

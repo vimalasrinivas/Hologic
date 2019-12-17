@@ -1,0 +1,8 @@
+{
+  "tag": "reviewOrder-shipping-address",
+  "source": 100,
+  "type": "fragment",
+  "title": "Shipping Address",
+  "widgetType": "reviewOrder",
+  "version": 3
+}

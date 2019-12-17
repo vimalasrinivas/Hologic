@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAes-Content-Widget",
+  "version": 1,
+  "displayName": "MedAes-Content-Widget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "MedAes-Content-Widget",
+  "source": 101,
+  "javascript": "MedAes-Content-Widget"
+}

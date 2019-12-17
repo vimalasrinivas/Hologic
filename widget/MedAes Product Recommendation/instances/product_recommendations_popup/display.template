@@ -1,0 +1,126 @@
+<div class="row productRecommendation"> 
+    
+<div id="cc-recs" data-oc-id="cc-recs" class="container nopad">
+<!-- ko if: recommendationsGroups() && (recommendationsGroups().length > 0) -->
+  <!-- oc layout: panels -->
+  <div id="cc-recs-panel" data-oc-id="cc-recs-panel">
+    <!-- oc section: recommendations-title --> 
+      <h3 data-bind="visible: recommendationsloaded()" class="text-center recommendHeading">
+		<span data-bind="widgetLocaleText:{value: 'recommendationsTitleText', attr:'innerText'}" role="alert" aria-atomic="true" aria-live="polite"></span>
+	  </h3>
+    <!-- /oc -->
+    <!-- oc section: recommendations-carousel -->
+      <div data-bind="visible: recommendationsloaded()" class='recommendation_wrapper'>    
+ 
+          <a class="collection-carousel-control left left-icons btn btn-success car-icon leftIcon" data-slide="prev" data-bind="widgetLocaleText:{value:'previousImageText',attr:'title'}, attr:{href: '#carousel-id-'+id()}" title="Previous Images" href="#carousel-id-wi300284">
+            <img class="left-Arrow " alt="left-arrow" src="/file/general/icon1.png">   
+          </a>
+
+  <div data-bind="carouselSwipe, event: {keyup: function(data, event) { $data.handleCarouselArrows('carousel-id-'+id(), data, event)} }, attr:{id: 'carousel-id-'+id()}" class="cc-recommendations-carousel-slide carousel slide" data-interval="false">
+    <div class="carousel-inner">
+      <!-- ko foreach: recommendationsGroups -->   
+        <div class="item row" data-bind="css: {'active': $index()==0}, foreach: $data">
+           
+          <div data-bind="css: $parents[1].spanClass(), with: ccProduct" class="cc-product-item">
+             <div class="prodcutWrapper">
+                   <!--ko if : $data.primaryFullImageURL()!='/img/no-image.jpg' -->
+                        <div class="cc-item-detail">  
+                        <a href="/" data-bind="attr : { id: 'cc-product-detail-'+id(), title: displayName }, recsetCCLink : $data.product">
+                               <span data-bind="text: displayName" class="sr-only"></span>
+                                        <img class="img-responsive center-block" data-bind="imageSource: {src: $data.primaryFullImageURL , imageType: 'small',
+                                                    errorSrc: '/file/general/No Product Image.png',         
+                                                    errorAlt: 'Missing Product Image'     
+                                                    }, attr: {id: 'cc-product-image-'+id(), alt: displayName}">   </a>  
+                        </div>
+                 <!--/ko-->
+              <!--ko if : $data.primaryFullImageURL()=='/img/no-image.jpg' -->
+					 <div class="cc-item-detail">  
+                        <a href="/" data-bind="attr : { id: 'cc-product-detail-'+id(), title: displayName }, recsetCCLink : $data.product">
+                               <span data-bind="text: displayName" class="sr-only"></span>
+                                        <img class="img-responsive center-block" data-bind="imageSource: {src: '/file/general/No Product Image.png' , imageType: 'small',
+                                                    errorSrc: '/file/general/No Product Image.png',         
+                                                    errorAlt: 'Missing Product Image'       
+                                                    }, attr: {id: 'cc-product-image-'+id(), alt: displayName}">   </a>  
+                        </div>
+                            
+                  <!--/ko-->
+            <div class="cc-item-title">
+              <a href="/" data-bind="attr : { id: 'cc-product-title-'+id()}, recsetCCLink : $data.product">
+                <p data-bind="text: displayName, attr: {id: 'cc-product-displayName-'+id()}" class="cc-text-overflow"></p>
+              </a>
+            </div>  
+            <div class="cc-item-text">
+                <span>Item </span><span data-bind="text: x_itemNumber, attr: {id: 'cc-product-displayName-'+id()}"></span>
+            </div>
+            <div class="cc-item-price">
+                 <!-- ko if: !$parents[2].priceCallCompleted() -->
+                    <span  class="cc-sale-price" data-bind="widgetLocaleText: 'calculatePriceText'"></span>
+                <!-- /ko -->
+              <!-- ko if: ($data.hasPriceRange) -->
+                <span data-bind="currency: {price: $data.minPrice, currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true},
+                  attr: {id: 'cc-product-range-price-min'+ id()}"></span> -
+                <span data-bind="currency: {price: $data.maxPrice, currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: '0.00', prependNull: true},
+                  attr: {id: 'cc-product-range-price-max'+ id()}"></span>
+                <!-- ko if: ($data.isOnSale) -->
+                  <span class="label label-danger" data-bind="widgetLocaleText:'onSaleText'"></span>
+                <!-- /ko -->
+              <!-- /ko -->
+              <!-- ko ifnot: ($data.hasPriceRange) -->
+                <!-- ko if: ($data.salePrice && $data.salePrice !== null && $parents[2].priceCallCompleted()) -->
+                  <label data-bind="attr: { for: 'cc-product-sale-price-'+ id()}, widgetLocaleText : {value:'salePriceText', attr:'aria-label'}"></label>
+                  <span class="cc-sale-price" data-bind="currency: {price: $data.salePrice(), currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: $parents[2].priceUnavailableText(), prependNull: false},
+                  attr: {id: 'cc-product-sale-price-'+ id()}"></span>
+                  <span class="label label-danger" data-bind="widgetLocaleText:'onSaleText'"></span>
+                <!-- /ko -->
+                <!-- ko if : (!$data.salePrice || $data.salePrice == null && $parents[2].priceCallCompleted()) -->
+                  <span data-bind="currency: {price: $data.listPrice(), currencyObj: $parents[2].site().selectedPriceListGroup().currency, nullReplace: $parents[2].priceUnavailableText(), prependNull: false},
+                   attr: {id: 'cc-product-list-price'+ id()}"></span>
+                <!-- /ko -->
+              <!-- /ko -->  
+            </div>
+            <div class="cc-item-action">
+                <!-- ko if : ($data.childSKUs().length) > 1 -->
+          <!--      <div class="cc-add-to-cart col-sm-12 col-xs-12 nopad ">-->
+          <!--      <div class="col-sm-9  col-xs-12  btn-add-to-cart  pad-left">      -->
+          <!--          <button class="medAesBtnPrimary" type="button" data-bind="click : function(event,data) { $parents[2].addToCart($data) }">CHOOSE OPTIONS </button>-->
+          <!--      </div>-->
+          <!--      <div class="col-sm-3 col-xs-12 purchaseList">-->
+          <!--          <i class="zmdi zmdi-favorite-outline btn-wishlist" ></i>-->
+          <!--      </div>-->
+          <!--</div>-->
+                <!-- /ko -->
+                <div class="cc-add-to-cart col-sm-12 col-xs-12 nopad">
+                <div class="col-sm-9  col-xs-12  btn-add-to-cart pad-left"> 
+                    <button class="medAesBtnPrimary visible-xs visible-sm" type="button" data-bind="click : function(event,data) { $parents[2].addToCart($data) },attr : {'disabled' : (!$parents[2].priceCallCompleted() || $parent.ccProduct.disableButton)}">ADD TO CART </button>
+                    <!-- Quick View -->
+                  <div data-bind="setContextVariable: {name:'product', value: $data}" class="quickViewElement hidden-xs hidden-sm">
+                    <!-- ko with: $parents[2] -->
+                        <div data-bind="element: 'product-quickview', attr: { id: 'product-quickview-grid-' + $parent.id() }"></div>
+                    <!-- /ko -->
+                   </div>
+                <!-- Quick View -->
+                </div> 
+                <div class="col-sm-3 col-xs-12 purchaseList" data-bind="click : function(event,data) { $parents[2].addToFav($data) }">
+                    <i class="zmdi zmdi-favorite-outline btn-wishlist" ></i> 
+                </div>
+          </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      <!-- /ko -->
+    </div>
+  </div>
+     
+        <a class="collection-carousel-control left right-icons btn btn-success car-icon" data-slide="next" data-bind="widgetLocaleText:{value:'nextImageText',attr:'title'}, attr:{href: '#carousel-id-'+id()}" title="Next Images" href="#carousel-id-wi300284">
+            <img src="/file/general/icon2.png" class="left-Arrow" alt="left-arrow">     
+        </a>  
+  
+	  </div>
+    <!-- /oc -->
+  </div>
+  <!-- /oc -->
+<!-- /ko -->
+</div>
+<div class="col-sm-12 spacing-recs"></div>
+</div>

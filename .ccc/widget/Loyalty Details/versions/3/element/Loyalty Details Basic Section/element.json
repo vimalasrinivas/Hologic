@@ -1,0 +1,8 @@
+{
+  "tag": "loyalty-details-basic",
+  "source": 100,
+  "type": "fragment",
+  "title": "Loyalty Details Basic Section",
+  "widgetType": "loyaltyDetails",
+  "version": 3
+}

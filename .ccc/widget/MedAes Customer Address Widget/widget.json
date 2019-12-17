@@ -1,0 +1,10 @@
+{
+  "widgetType": "MedAesCustomerAddressBook",
+  "version": 1,
+  "displayName": "MedAes Customer Address Widget",
+  "elementized": false,
+  "global": false,
+  "i18nresources": "medaes-checkout-customer-details",
+  "source": 101,
+  "javascript": "medaes-checkout-customer-details"
+}

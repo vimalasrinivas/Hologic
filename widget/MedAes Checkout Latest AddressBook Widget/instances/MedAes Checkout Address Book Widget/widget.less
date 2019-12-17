@@ -1,0 +1,532 @@
+#WIDGET_ID-WIDGET_INSTANCE_ID {
+    .shipBillAddressSingle {
+        font-family: "FlamaBook";
+        font-size: 14px;
+        letter-spacing: .54px;
+        line-height: 20px;
+    }
+@media screen and (min-width:767px){   
+    .column-height{   
+        display: flex; 
+    }    
+    }
+    #c-cvv-error{
+        width: 210px;  
+        margin-top: 5px;
+    }
+    .checkout-reviewOrder{
+        margin: 0px;  
+    }
+   .marg-bottom{
+       margin-bottom:0px;
+   } 
+   .medAesInputBoxes{
+        width: 83px !important;   
+        border: 1px solid #d6d0d0;
+    border-radius: 2px;  
+    background-color: #fff;
+    box-shadow: 0 0 0 0 rgba(222,222,222,0.5);
+    height: 36px !important;
+   }
+   .payMent{
+     margin-bottom: 20px !important;    
+   }
+    /* The container */
+#CC-checkoutAddressBook-section{            
+     .text-danger{
+       font-size:14px; 
+       
+    }
+}
+   
+#contain {                 
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 0px;
+}
+.validationMessage{
+     display: none; 
+}
+/* Hide the browser's default radio button */
+#contain input {           
+  cursor: pointer;
+  display: none;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top:12px;
+  left: 0;
+  box-sizing: border-box;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #979797;
+  border-radius: 9px;
+  background-color: #FFFFFF;
+}
+
+/* On mouse-over, add a grey background color */
+#contain:hover input ~ .checkmark {
+  background-color: #FFFFFF;
+}
+
+/* When the radio button is checked, add a blue background */
+#contain input:checked ~ .checkmark {
+	background-color: #FFFFFF;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+#contain input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+#contain .checkmark:after {
+ 	top: 3px;
+	left: 3px;
+	width:10px;
+	height:10px;
+	border-radius: 50%;
+	background:#4A4C50;
+}
+ 
+    .checkbox label{
+        color: #333;
+        font-family: "FlamaBook";
+        font-size: 14px;
+        letter-spacing: .54px;
+        line-height: 16px;
+        padding-top: 2px;
+        position: absolute;
+    }
+    @media screen and (min-width:768px){          
+    iframe{     
+     width: 56.5% !important;
+    }
+    }
+    @media screen and (max-width:767px){  
+    iframe{     
+     width: 100% !important;
+    }
+   }
+   
+       .cardEnding{
+               padding: 15px 0px;
+            span:last-child{
+                font-weight: bold;
+            }   
+       }
+   
+   // tooltip related css 
+           .tooltip {   
+          position: relative !important;
+            display: inline-block !important;
+            opacity: 1 !important;   
+            font-size: 16px !important;   
+            z-index: 100;   
+                 
+        }
+        
+        .tooltip .tooltiptext  {   
+            visibility: hidden;
+            width: 430px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            top: -12px;
+            left: 25px;
+            font-family: "Flama";
+            font-size: 12px;
+        @media screen and (min-width:425px)  and (max-width:767px){                  
+           width: 245px;
+           top: -20px;             
+        }     
+        @media screen  and (min-width:320px) and (max-width:424px){       
+            width: 190px;
+            top: -25px;
+            left: 28px;     
+        } 
+         @media screen  and (min-width:768px) and (max-width:1330px){       
+            width:260px;
+            top: -18px;
+        } 
+        }
+        .cvvHelpText{
+            width: 450px !important;     
+            top: -18px!important;        
+            
+            @media screen and (min-width:425px)  and (max-width:767px){               
+               width: 328px !important;
+               top: -24px !important;
+               left:28px !important;             
+               
+            }     
+            @media screen  and (min-width:320px) and (max-width:424px){       
+                 width: 223px !important;        
+                 top: -35px !important;    
+                left: 28px !important;
+            } 
+             @media screen  and (min-width:768px) and (max-width:992px){           
+                width:350px !important;
+                top: -23px !important;             
+            } 
+        }
+        
+        .tooltip .tooltiptext::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 100%;
+          margin-top: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent #000 transparent transparent;
+        }
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+        }   
+     // tooltip related css  ends here 
+     
+     
+     .shippingPhoneNumber{
+             padding: 12px 0px;
+     }
+        
+   #cvv-error{
+          width: 290px;
+          display: inline-block;
+          margin: 10px 0px 0px; 
+   }
+    #CC-checkoutAddressBook-cvv::-webkit-inner-spin-button,   
+    #CC-checkoutAddressBook-cvv::-webkit-outer-spin-button { 
+      -webkit-appearance: none;      
+      margin: 0; 
+    }
+    .pad0{
+        padding:0px;
+    }
+    background: #F6F6F6;
+    .nopad{
+        padding:0px !important;
+    }
+    .add-card-frame{
+        border-width: 0;
+    }
+    .zmdi-help-outline{
+        font-size: 16px;
+        padding-left: 5px;
+        cursor: pointer;
+    }
+     #CC-checkoutAddressBook-section{
+    @media screen and (min-width:768px){          
+        margin: 15px 0px 140px;
+        width:96%;
+    }
+    }
+     .shipping-address-section,.billing-address-section{                    
+         background: #fff;
+         padding: 5px 20px 2px;
+     .heading{
+    color: #292929;
+    font-family: "Flama";
+    letter-spacing: 1px;
+    line-height: 18px;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 18px 0px;
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            	    font-family: FlamaLight;
+            	}     
+  }    
+      .text-danger {
+        color: #a94442;
+        display: block;
+    }
+       .ship-to-address {
+        border-radius: 2px !important;
+       }
+      .ship-to-address :after{
+                font: normal normal normal 14px/1 'Material-Design-Iconic-Font';
+                content: "\f2f9"; 
+                 vertical-align: middle; 
+                 float: right; 
+                 position: absolute; 
+                 top: 9px; 
+                 right: 31px; 
+                 font-size: 18px; 
+      }
+      .shipto{
+            color: #292929;
+            font-family: "Flama";
+            letter-spacing: 0.5px;
+            line-height: 17px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            
+            @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            	    font-family: FlamaLight;
+            	}
+      }
+      .shippingNotes{
+          color: #292929;
+          font-family: "Flama";
+          letter-spacing: 0.5px;
+          line-height: 17px;
+          font-size: 14px;
+          margin-bottom: 10px;
+          
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {           
+            	    font-family: FlamaLight;
+            	}    
+      }
+      #addtionalShippingNotes{
+        border: 1px solid #d6d0d0;
+        border-radius: 2px;
+        background-color: #fff;
+        box-shadow: 0 -1px 0 0 rgba(222,222,222,0.5);
+        resize: none;
+        height: 76px;
+      }
+      .shipping-options-name{
+          color: #333333;
+          font-family: "FlamaBook";	
+          font-size: 14px;
+          letter-spacing: 0.54px;	
+          line-height: 16px;
+      }
+      .shipping_wrapper{
+              margin-bottom: 4px !important;
+      }
+      .checkout-wrap{
+            margin-bottom: 10px !important;
+      }
+      .shippingMethodText{
+          color: #292929;
+          font-family: "Flama";	
+          font-size: 14px;	
+          letter-spacing: 0.5px;
+          line-height: 17px;
+          padding: 0px ;
+          
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            	    font-family: FlamaLight;
+            	}    
+      }
+       .payment-Title{
+            color: #292929;
+            font-family: "Flama";
+            letter-spacing: 1px;
+            line-height: 18px;
+            margin: 18px 0 22px;
+    }
+       .cardType{
+        color: #333333;
+        font-family: "FlamaBook";
+        font-size: 14px;	
+        letter-spacing: 0.54px;
+        line-height: 16px;
+        padding-left: 2px;
+    }
+       .payment-method{
+            color: #292929;
+            font-family: "Flama";
+            letter-spacing: 0.5px;
+            line-height: 17px;
+            font-size: 14px;
+            padding-bottom: 0px;
+            font-weight: 900;
+    }  
+    }
+	.shippingBlock {
+		background-color: #fff;
+		padding: 22px 38px;
+// 	@media screen and (min-width:768px){	
+// 		width: 47%;
+// 		height: 219px;
+// 	}
+	@media screen and (max-width:767px){
+	   margin-bottom: 15px; 
+	   	padding: 22px 30px;
+	}
+		.ShipHeading {
+			color: #292929;
+			font-family: "Flama";
+			font-size: 16px;
+			letter-spacing: 1px;
+			line-height: 18px;
+		}
+		.ShipDetails {   
+			color: #333333;
+			font-family: "FlamaBook";
+			font-size: 14px;
+			letter-spacing: 0.54px;
+			line-height: 20px;
+			padding-top:10px;
+		}
+	}
+	.billingBlock {   
+		background-color: #fff;
+		    padding: 22px 38px;
+		@media screen and (min-width:768px){     	
+	     margin-left: 15px;
+//          width: 46%;
+// 		 height: 219px;
+	    }
+	    @media screen and (max-width:767px){
+	   	padding: 22px 30px;
+	}
+		.billHeading {
+			color: #292929;
+			font-family: Flama;
+			font-size: 16px;
+			letter-spacing: 1px;
+			line-height: 18px;
+		}
+		.billDetails {           
+			color: #333333;
+			font-family:"FlamaBook";
+			font-size: 14px;
+			letter-spacing: 0.54px;
+			line-height: 20px;
+			padding-top: 10px;
+		}
+	}    
+	.cartSum {
+		margin-top: 35px;
+		margin-bottom: 50px;
+		padding: 0px;
+		@media screen and (max-width:767px){           
+		      margin-top: 25px;
+		      margin-bottom:0px;
+		}
+	}
+	.summaryText {     
+		color: #292929;
+		font-family: "Flama";
+		font-size: 16px;
+		letter-spacing: 1px;
+		line-height: 18px;
+		text-transform: uppercase;
+		margin-bottom: 15px;
+		display: block;
+		@media screen and (max-width:767px){   
+		     padding-left: 15px;
+		}
+	}
+	.cartEdit {
+		color: #D87900;
+		font-family: "Flama";
+		font-size: 13px;
+		letter-spacing: 0.46px;
+		line-height: 16px;
+		text-align: center;
+		text-decoration: underline;
+	}
+	.cartSummary {         
+	@media screen and (min-width:768px){    
+	    width: 100%;
+	}
+		background-color: #fff;
+		padding: 16px;
+		margin: 0px;
+		border-bottom: 1px solid #eee;
+		@media screen and (max-width:767px){   
+		        padding: 16px 16px 35px;
+		}
+		img{
+		    height: 147px;
+	        width: 168px;
+		}
+		.CartItem {
+		    padding-bottom: 22px;
+			color: #4A4C50;
+			font-family: "FlamaBook";
+			font-size: 13px;
+			letter-spacing: 0.27px;
+			line-height: 15px;  
+		
+		}
+		.cartCost {            
+			color: #292929;
+			font-family: FlamaBook;
+			font-size: 16px;
+			letter-spacing: 0.57px;
+			line-height: 18px;
+			text-align: center;
+            font-weight: bold;
+            @media screen and (max-width:767px){
+                padding-top: 20px;
+                float: right;
+            }
+		}
+		.cartCost1{
+		  	color: #292929;
+			font-family: "FlamaBook";
+			font-size: 16px;
+			letter-spacing: 0.57px;
+			line-height: 18px;  
+		}
+		.cartItemDetails {
+		    @media and (max-width:767px){
+		      padding: 0px;
+		    }
+			.productype {
+				color: #333333;
+				font-family: FlamaBook;
+				font-size: 14px;
+				letter-spacing: 0.29px;
+				line-height: 16px;
+			}
+			.productdisplayName {
+				color: #333333;
+				font-family: "Flama";
+				font-size: 16px;
+				letter-spacing: 0.33px;
+				line-height: 18px;
+				 word-break: break-word;   
+			}
+			.padBtm10 {
+				padding-bottom: 7px !important;
+			}
+		}
+	}
+   .textAlign{
+    @media screen and (max-width:767px){           
+       span{
+           border-radius: 2px;
+           background-color: #FFFFFF;
+           padding: 11px 35px;
+           border: 1px solid #D6D0D0;
+       }
+    }
+   } 
+   .qty{
+       	@media screen and (max-width:767px){       
+			    margin-top: 20px;
+			    padding-left: 0px;
+			}
+		@media screen and (min-width:768px){
+		    text-align: center;
+		}	
+   }
+
+}

@@ -1,0 +1,9 @@
+{
+  "resources": {
+    "shippingTitleText": "SHIPPING",
+    "orderConfirmationText": "Thank you for your order!",
+    "orderConfirmationMailText": "Your order is submitted successfully. You will receive an email with order confirmation. Your order #",
+    "cartSummaryTitleText": "CART SUMMARY",
+    "paymentTitleText": "PAYMENT"
+  }
+}

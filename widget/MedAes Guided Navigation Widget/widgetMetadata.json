@@ -1,0 +1,20 @@
+{
+  "imports": [],
+  "translations": [
+    {
+      "name": "MedAes Guided Navigation Widget",
+      "language": "en"
+    }
+  ],
+  "jsEditable": true,
+  "minWidth": 1,
+  "globalEnabled": false,
+  "pageTypes": [
+    "category",
+    "searchResults"
+  ],
+  "config": {
+    "maxDimensionCount": "10",
+    "maxRefinementCount": "10"
+  }
+}

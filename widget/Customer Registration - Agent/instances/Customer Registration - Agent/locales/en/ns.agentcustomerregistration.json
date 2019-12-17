@@ -1,0 +1,21 @@
+{
+  "resources": {
+    "emailIdText": "Email",
+    "customersText": "Customers",
+    "globalMarketingMailsTitleTextOn": "I want to turn on email updates from all sites.",
+    "customerUpdateSiteSpecifcPropertyFailureMsg": "Unable to update site specific properties.",
+    "lastNameText": "Last Name",
+    "firstNameInputText": "Enter First Name",
+    "marketingMailsText": "I want to get email updates.",
+    "firstNameText": "First Name",
+    "lastNameInputText": "Enter Last Name",
+    "buttonCancel": "Cancel",
+    "emailAddressInputText": "Enter Email Address",
+    "closeText": "Close",
+    "customerUpdateSiteSpecifcPropertySuccessMsg": "Successfully update site specific properties.",
+    "createCustomerSuccessHeader": "Customer Created.",
+    "linkCreateNewCustomerText": "Create New Customer",
+    "globalMarketingMailsTitleTextOff": "I want to turn off email updates from all sites.",
+    "buttonCreateAccount": "Create Account"
+  }
+}

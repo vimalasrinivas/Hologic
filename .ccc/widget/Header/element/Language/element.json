@@ -1,0 +1,8 @@
+{
+  "tag": "header-language-picker",
+  "source": 100,
+  "type": "fragment",
+  "title": "Language",
+  "widgetType": "headerWidget",
+  "version": 11
+}

@@ -1,0 +1,184 @@
+{
+  "availableToAllWidgets": true,
+  "children": [],
+  "configOptions": [],
+  "inline": true,
+  "tag": "MedAesHeaderLogoElement",
+  "translations": [
+    {
+      "description": "เพิ่มอีลิเมนต์โลโก้บริษัท",
+      "language": "th",
+      "title": "โลโก้บริษัท"
+    },
+    {
+      "description": "Adicione o elemento Logotipo da Empresa.",
+      "language": "pt_BR",
+      "title": "Logotipo da Empresa"
+    },
+    {
+      "description": "添加公司标识元素。",
+      "language": "zh_CN",
+      "title": "公司标识"
+    },
+    {
+      "description": "Додайте елемент логотипа компанії.",
+      "language": "uk",
+      "title": "Логотип компанії"
+    },
+    {
+      "description": "Добавяне на елемент фирмено име.",
+      "language": "bg",
+      "title": "Фирмено лого"
+    },
+    {
+      "description": "Saate lisada ettevõtte logo elemendi.",
+      "language": "et",
+      "title": "Ettevõtte logo"
+    },
+    {
+      "description": "Pievienot uzņēmuma logotipa elementu.",
+      "language": "lv",
+      "title": "Uzņēmuma logotips"
+    },
+    {
+      "description": "Legg til elementet for selskapslogo.",
+      "language": "no",
+      "title": "Selskapslogo"
+    },
+    {
+      "description": "Įtraukti įmonės logotipo elementą.",
+      "language": "lt",
+      "title": "Įmonės logotipas"
+    },
+    {
+      "description": "Ajouter l'élément correspondant au logo de la société.",
+      "language": "fr_CA",
+      "title": "Logo de la société"
+    },
+    {
+      "description": "Adăugaţi elementul Siglă companie.",
+      "language": "ro",
+      "title": "Siglă companie"
+    },
+    {
+      "description": "会社のロゴ要素を追加します。",
+      "language": "ja",
+      "title": "会社のロゴ"
+    },
+    {
+      "description": "Dodajte element Logotip podjetja.",
+      "language": "sl",
+      "title": "Logotip podjetja"
+    },
+    {
+      "description": "Добавление элемента логотипа компании.",
+      "language": "ru",
+      "title": "Логотип компании"
+    },
+    {
+      "description": "Dodajte element logotipa tvrtke.",
+      "language": "hr",
+      "title": "Logotip tvrtke"
+    },
+    {
+      "description": "Şirket Logosu öğesini ekleyin.",
+      "language": "tr",
+      "title": "Şirket Logosu"
+    },
+    {
+      "description": "Dodawanie elementu \"Logo firmy\".",
+      "language": "pl",
+      "title": "Logo firmy"
+    },
+    {
+      "description": "新增「公司標誌」要素。",
+      "language": "zh_TW",
+      "title": "公司標誌"
+    },
+    {
+      "description": "회사 로고 항목을 추가합니다.",
+      "language": "ko",
+      "title": "회사 로고"
+    },
+    {
+      "description": "Přidat prvek loga společnosti",
+      "language": "cs",
+      "title": "Logo společnosti"
+    },
+    {
+      "description": "Hozzáadja a Vállalati embléma elemet.",
+      "language": "hu",
+      "title": "Vállalati embléma"
+    },
+    {
+      "description": "Προσθήκη του στοιχείου λογότυπου εταιρείας.",
+      "language": "el",
+      "title": "Λογότυπο εταιρείας"
+    },
+    {
+      "description": "Tilføj elementet Firmalogo.",
+      "language": "da",
+      "title": "Firmalogo"
+    },
+    {
+      "description": "Add the Company Logo element.",
+      "language": "en",
+      "title": "Company Logo"
+    },
+    {
+      "description": "Додајте елемент логотипа предузећа.",
+      "language": "sr",
+      "title": "Логотип предузећа"
+    },
+    {
+      "description": "Fügen Sie das Element \"Firmenlogo\" hinzu.",
+      "language": "de",
+      "title": "Firmenlogo"
+    },
+    {
+      "description": "Dodajte element logotipa preduzeća.",
+      "language": "sr_Latn",
+      "title": "Logotip preduzeća"
+    },
+    {
+      "description": "Agregar el elemento de logotipo de la compañía.",
+      "language": "es",
+      "title": "Logotipo de compañía"
+    },
+    {
+      "description": "Ajouter l'élément Logo de la société.",
+      "language": "fr",
+      "title": "Logo de la société"
+    },
+    {
+      "description": "Aggiunge l'elemento Logo società.",
+      "language": "it",
+      "title": "Logo società"
+    },
+    {
+      "description": "Add the Company Logo element.",
+      "language": "en_GB",
+      "title": "Company Logo"
+    },
+    {
+      "description": "Het element Bedrijfslogo toevoegen",
+      "language": "nl",
+      "title": "Bedrijfslogo"
+    },
+    {
+      "description": "Lägg till element för företagslogotyp.",
+      "language": "sv",
+      "title": "Företagslogotyp"
+    },
+    {
+      "description": "Acrescente o elemento do Logótipo da Empresa.",
+      "language": "pt",
+      "title": "Logótipo da Empresa"
+    },
+    {
+      "description": "Yrityksen logo -elementin lisäys.",
+      "language": "fi",
+      "title": "Yrityksen logo"
+    }
+  ]
+}

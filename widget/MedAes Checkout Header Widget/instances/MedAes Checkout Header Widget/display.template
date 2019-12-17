@@ -1,0 +1,18 @@
+<div class="row" id="checkoutCustomHeaderWidget">
+    <div class='container checkout-header' >
+        <div class="col-sm-9 col-xs-9 col-md-3 col-lg-3 pad0 ">                              
+           <a href="/" data-bind="ccLink: 'home'" >
+               <img data-bind="ccResizeImage:{   
+    						     source:site().extensionSiteSettings.externalSiteSettings.siteLogoUrl,
+    							 alt: 'logo-image',
+    							 title:'logo-image',
+    							 errorSrc:'/file/general/No Product Image.png',
+    							errorAlt:'No Image Found'}"  class="img-responsive logoImage">
+               </a>            
+        </div> 
+        <div class='col-lg-9 text-right'>  
+            <i class="zmdi zmdi-lock" ></i>
+            <span class='secure-checkout hidden-xs'>Secure Checkout</span>   
+        </div>
+    </div>
+</div>  

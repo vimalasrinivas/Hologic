@@ -1,0 +1,80 @@
+<div id="orderSummary" class="row">    
+  <div class="ordersummary clearfix">    
+      <h3 class="no-outline" data-bind="widgetLocaleText:'orderSummaryText'">Order Summary</h3>
+      
+     
+     <!-- Cart Total -->
+     <div id="CC-orderSummary-orderTotal" role="alert" aria-live="polite" aria-atomic="true" class="ordertotal clearfix">
+       <!-- ko if: (cart().isTaxIncluded && cart().showTaxSummary) -->
+         <!-- ko if: (cart().showSecondaryShippingData() || cart().showSecondaryTaxData()) -->
+           <div class="ordertotalextax row">
+             <div class="col-md-7 col-sm-12 col-xs-7">
+               <span data-bind="widgetLocaleText:'totalText'"></span><br>
+               <span data-bind="widgetLocaleText:'excludingTaxAndShipping'"></span>
+             </div>
+             <div class="col-md-5 col-sm-12 col-xs-5">
+               <span class="ordersumprice pull-right" data-bind="currency: {price: cart().taxExclusiveAmount(), currencyObj: $data.site().selectedPriceListGroup().currency}"></span>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-7 col-sm-12 col-xs-7 SubTotalText">
+               <div data-bind="widgetLocaleText:'orderTotalText'" ></div> 
+             </div>
+             <div class="col-md-5 col-sm-12 col-xs-5 ordersumprice">
+               <span class="pull-right" data-bind="currency: {price: cart().primaryCurrencyTotal(), currencyObj: $data.site().selectedPriceListGroup().currency}"></span><br>
+               <span class="pull-right" data-bind="currency: {price: cart().secondaryCurrencyTotal(), currencyObj: $data.cart().secondaryCurrency(), prependSymbol: '+'}"></span>
+             </div>
+           </div>
+         <!-- /ko -->
+
+         <!-- ko ifnot: (cart().showSecondaryShippingData() || cart().showSecondaryTaxData())  -->
+           <div class="ordertotalextax">
+             <span data-bind="widgetLocaleText:'totalExcludingTaxText'"></span>
+             <span class="ordersumprice pull-right" data-bind="currency: {price: cart().totalWithoutTax(), currencyObj: $data.site().selectedPriceListGroup().currency}"></span>
+           </div>
+           <div class="row">
+             <div class="col-md-7 col-sm-12 col-xs-7">
+               <div data-bind="widgetLocaleText:'orderTotalText'" class="SubTotalText"></div>
+               <div class="includingtaxtext" data-bind="widgetLocaleText:'includingTaxText'"></div>
+             </div>
+             <div class="col-md-5 col-sm-12 col-xs-5">
+               <div class="ordersumprice pull-right" data-bind="currency: {price: cart().total(), currencyObj: $data.site().selectedPriceListGroup().currency}"></div>
+             </div>
+           </div>
+         <!-- /ko -->
+       <!-- /ko -->
+       <!-- ko ifnot: (cart().isTaxIncluded && cart().showTaxSummary) -->
+         <!-- ko if: (cart().showSecondaryShippingData() || cart().showSecondaryTaxData()) -->
+           <div class="row">
+             <div class="col-md-7 col-sm-12 col-xs-7">
+               <span data-bind="widgetLocaleText:'orderTotalText'"></span>
+             </div>
+             <div class="col-md-5 col-sm-12 col-xs-5">
+               <span class="ordersumprice pull-right" data-bind="currency: {price: cart().primaryCurrencyTotal(), currencyObj: $data.site().selectedPriceListGroup().currency}"></span><br>
+               <span class="ordersumprice pull-right" data-bind="currency: {price: cart().secondaryCurrencyTotal(), currencyObj: $data.cart().secondaryCurrency(), prependSymbol: '+'}"></span>
+             </div>
+           </div>
+         <!-- /ko -->
+         <!-- ko ifnot: (cart().showSecondaryShippingData() || cart().showSecondaryTaxData()) -->
+           <span data-bind="widgetLocaleText:'orderTotalText'"></span>
+           <span class="ordersumprice pull-right" data-bind="currency: {price: cart().subTotal(), currencyObj: $data.site().selectedPriceListGroup().currency}"></span>
+         <!-- /ko -->
+       <!-- /ko -->
+     </div>
+  </div>
+  
+  <div id="CC-orderSummary-checkout" class="checkout row">
+    <a href="javascript://" data-bind="widgetLocaleText : {value:'checkoutText', attr:'aria-label'},click: handleValidateCart, disabled: {condition: cart().items().length == 0}, inTabFlow: cart().items().length != 0" class="cc-button-primary btn-checkout col-xs-12">
+      <span data-bind="widgetLocaleText:'checkoutText'"></span>
+    </a>
+    <h5 class="freightCalc">* Freight and Tax are calculated in Confirmation Step 3.</h5>    
+  </div>
+  <!-- ko if : $data.payment().gateways.paypalGateway.enabled -->
+  <div id="CC-orderSummary-paypalCheckout" class="checkout row">
+    <a data-bind="widgetLocaleText : {value:'checkoutWithPayPal', attr:'aria-label'},disabled: {condition: cart().items().length == 0 || order().paymentDetails().isPaypalDisabled, click: handlePaypalWebCheckout }, inTabFlow: cart().items().length != 0" id="CC-checkoutOrderSummary-checkoutWithPaypal"
+        class="col-xs-12" href="/">
+      <img class="img-responsive center-block" alt="checkoutWithPayPal" data-bind="attr: {src: paypalImageSrc}">   
+    </a>
+  </div>
+  <!-- /ko -->
+</div> 
