@@ -195,8 +195,9 @@ define(
         };
 
         widget.showModal = function () {
-          $("#CC-quickOrder-modal").modal('show');
-          widget.isModalVisible(true);
+          //$("#CC-quickOrder-modal").modal('show');
+          //widget.isModalVisible(true);
+          widget.navigateAway();
         };
 
         widget.navigateAway = function () {

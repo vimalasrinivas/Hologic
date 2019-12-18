@@ -550,7 +550,7 @@ define(
 
         // Handle server responses when data is missing or invalid
         $.Topic(pubsub.topicNames.ORDER_SUBMISSION_FAIL).subscribe(function (obj) {
-          $(".checkoutCloumnContainer").show();
+          $(".checkoutCloumnContainer,.checkout_step").show();
           if (this.errorCode == CCConstants.INVENTORY_CONFIGURABLE_ITEM_CHECK_ERROR) {
             if (this.errors instanceof Array) {
               var errorCodes = [];

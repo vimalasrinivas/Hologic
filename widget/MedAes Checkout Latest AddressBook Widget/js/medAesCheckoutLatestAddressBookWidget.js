@@ -501,8 +501,8 @@ define(
                 widget.additionalNotes('');
                 widget.getNewCardToken('');
                 widget.selectedCardId('');
-                widget.order().poNumber("");
                 widget.backToPaymentSection(false);
+                widget.order().poNumber("");
                 paymetricUtil.fetchFrameUrl(function(frameData) {
                     if (frameData.hasOwnProperty('iframeUrl')) {
                         widget.iframeData(frameData);
@@ -849,7 +849,13 @@ define(
                     $('.checkout-reviewOrder,.shipping-address-section').addClass('hide');
                     $('.progressTracker-navigation').find('li:nth-child(2)').find('.progressTrackerClick').removeClass('showTickMark');
                     $('#frieghtSection,#taxSection').addClass('hide');
-                    $('#eixistingCardCVV').removeClass('hide');
+                     if(!widget.selectPoPayment()){
+                        $('#eixistingCardCVV').removeClass('hide');
+                    }else {
+                       $('#eixistingCardCVV').addClass('hide');
+                       
+                    }
+                  
                      widget.backToPaymentSection(true);
                      widget.isCreditValidation(false);
                      widget.getExternalCardDetails();
@@ -905,8 +911,15 @@ define(
                         $('#confirmationButton').removeClass('hide');
                         $('#CC-checkoutAddressBook-poNumber').val('');
                         $('#CC-checkoutAddressBook-cvv').val('');
-                        $('#example-file').val('');
+                        $('#example-file').val('')
                         widget.addValidationRules();
+                        if(widget.isCreditValidation()){
+                              widget.createSpinner();
+                              widget.getExternalCardDetails();
+                              widget.isCreditValidation(false);
+                            $("#addNewCardSection").addClass('hide');  
+                            $("#eixistingCardCVV").removeClass('hide');   
+                        }
 
                     } else {
                         widget.validationModel.errors.showAllMessages();
@@ -944,13 +957,16 @@ define(
                                     cardDetails["paymentMethodType"] = 'card';
                                     cardDetails['type'] = 'card';
                                     widget.getNewCardToken(data.maskedCardNumber);
+                                    widget.appendCardNo(data.maskedCardNumber);
                                    // console.log(widget.getNewCardToken(),"....widget.getNewCardToken......");
                                     //cardDetails['cardCVV']=widget.newCardCvv();
-                                    if (widget.order().payments().length === 0) {
+                                  /*  if (widget.order().payments().length === 0) {
                                         widget.order().payments.push(cardDetails);
                                     } else {
                                         widget.order().payments()[0] = cardDetails;
-                                    }
+                                    }*/
+                                    widget.order().payments([]);
+                                    widget.order().payments.push(cardDetails);
                                     widget.showSteptwo();
                                     $('#addCardIframe').modal('hide');
                                      widget.selectedCardId(data.id);
@@ -1011,11 +1027,13 @@ define(
                                         cardDetails["paymentMethodType"] = 'card';
                                         cardDetails['type'] = 'card';
                                         cardDetails['cardCVV'] = widget.newCardCvv();
-                                        if (widget.order().payments().length === 0) {
+                                        widget.order().payments([]);
+                                        widget.order().payments.push(cardDetails);
+                                    /*    if (widget.order().payments().length === 0) {
                                             widget.order().payments.push(cardDetails);
                                         } else {
                                             widget.order().payments()[0] = cardDetails;
-                                        }
+                                        }*/
 
                                     }
                                     
@@ -1126,7 +1144,7 @@ define(
                             skuIds.push({
                                 "itemId": skuId,
                                 "quotingCatIds": quotingCatId
-                            })
+                            });
                         }
                     }
 
@@ -1139,12 +1157,12 @@ define(
                             "siteURL": widget.site().extensionSiteSettings.externalSiteSettings.siteUrl,
                             "siteName": widget.site().extensionSiteSettings.externalSiteSettings.siteName
                         }
-                    }
+                    };
 
                     var data = {
                         "enpointUrl": helper.apiEndPoint.pricing,
                         "postData": skuData
-                    }
+                    };
 
                     helper.postDataExternal(data, function(err, result) {
                         if (result.hasOwnProperty('pricingRecords')) {
@@ -1160,7 +1178,7 @@ define(
                                 }
                             }
                         } else if (err) {}
-                    })
+                    });
 
 
                 }
@@ -1275,6 +1293,7 @@ define(
                 widget.expiryYear.isModified(false);
                 widget.nameOnCard.isModified(false);
                 widget.newCardCvv.isModified(false);
+                widget.isDefaultStoredCardValue.isModified(false);
             },
 
             addValidationRules: function() {
@@ -1740,14 +1759,18 @@ define(
                         cardDetails['seqNum'] = '0';
                         cardDetails["useDefaultBillingAddress"] = false;
                         cardDetails['isDefaultAddressValid'] = false;
-                        if (widget.order().payments().length === 0) {
+                         widget.cardNumberShow(widget.getExternalCardData()[i].token);
+                        console.log("cardDetailShow", widget.cardNumberShow());
+                        widget.order().payments([]);
+                        widget.order().payments.push(cardDetails);
+                       /* if (widget.order().payments().length === 0) {
                             widget.order().payments.push(cardDetails); 
 
                             widget.cardNumberShow(widget.getExternalCardData()[i].token);
                             console.log("cardDetailShow", widget.cardNumberShow());
                         } else {
                             widget.order().payments()[0] = cardDetails;
-                        }
+                        }*/
                         widget.selectedCardId(widget.getExternalCardData()[i].id);
                         widget.updateDynamicProperties();
                     }
@@ -1777,11 +1800,13 @@ define(
                                     }else{
                                           widget.isDefaultStoredCardValue(result.storeCards[i].maskedCardNumber);
                                     }
-                                    widget.appendCardNo(widget.isDefaultStoredCardValue());
+                                   
                                     widget.getExternalCardData(result.storeCards);
                                     widget.isStoredCardsLoaded(true);
-                                    widget.isDefaultStoredCardValue.valueHasMutated();
+                                   
                                 }
+                                widget.appendCardNo(widget.isDefaultStoredCardValue());
+                                widget.isDefaultStoredCardValue.valueHasMutated();
                                 widget.getExternalCardData(result.storeCards);
                                 widget.isStoredCardsLoaded(true);
                             }
@@ -1852,6 +1877,7 @@ define(
                     });
                     
                     widget.isCreditCardOrPoOption(true);
+                     $('#uploadPoDocument').val("");
                 }
 
 
@@ -1958,6 +1984,12 @@ define(
                 console.log(e.files[0], '...data..');
                 widget.poDocument(e.files[0]);
                 widget.getEBSOrderNumber(e.files[0]);
+                var inp = document.getElementById('uploadPoDocument');
+                if (inp.files.length == 0) {
+                    widget.showUploadDocError(true);
+                } else {
+                    widget.showUploadDocError(false);
+                }
             },
             getEBSOrderNumber: function(file) {
                 var widget = this;

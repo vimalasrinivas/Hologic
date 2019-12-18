@@ -289,10 +289,9 @@
                     <!-- ko if: order().poNumber() === "" && order().payments() && order().payments().length > 0-->   
                     <div data-bind="text:order().payments()[0].nameOnCard"></div>
                     <!-- /ko -->
-                    <!-- ko if: order().poNumber() -->
-                    <div><span>PO Number: </span> <b data-bind="text:order().poNumber()"></b></div>
+                    <!-- ko if : order().poNumber() -->
+                   <!-- <div><span>PO Number: </span> <b data-bind="text:order().poNumber()"></b></div>-->
                     <!-- /ko -->
-
                                
                      
                     <!-- ko with:order().billingAddress() -->
@@ -313,8 +312,8 @@
                         </p> 
                         <!-- /ko -->            
                     <!-- /ko -->  
-                     <!-- ko if: order().poNumber() -->
-                      <span> Card ending xxxx</span>
+                      <!-- ko if: order().poNumber() -->
+                             <p class="poNo cardEnding"><span>PO Number: </span> <b data-bind="text:order().poNumber()"></b> </p> 
                      <!-- /ko -->
                 </div>
             </div>

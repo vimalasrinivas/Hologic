@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="416a5551-75b1-47c8-933e-5a670eac375f" name="Default Changelist" comment="" />
+    <list default="true" id="416a5551-75b1-47c8-933e-5a670eac375f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/element/Company Logo/element.template_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/element/Company Logo/element.template_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/element/Search/element.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/element/Search/element.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/global/customTypeAhead.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/global/customTypeAhead.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/widget/MedAes Checkout Latest AddressBook Widget/instances/MedAes Checkout Address Book Widget/display.template_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/widget/MedAes Checkout Latest AddressBook Widget/instances/MedAes Checkout Address Book Widget/display.template_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/widget/MedAes Checkout Latest AddressBook Widget/instances/MedAes Checkout Address Book Widget/elementInstancesMetadata.json_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/widget/MedAes Checkout Latest AddressBook Widget/instances/MedAes Checkout Address Book Widget/elementInstancesMetadata.json_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/widget/MedAes Checkout Latest AddressBook Widget/js/medAesCheckoutLatestAddressBookWidget.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/widget/MedAes Checkout Latest AddressBook Widget/js/medAesCheckoutLatestAddressBookWidget.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/widget/MedAes Order Summary Checkout/js/medaes-checkout-order-summary.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/widget/MedAes Order Summary Checkout/js/medaes-checkout-order-summary.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/widget/MedAes Purchase List Widget/js/medAesPurchaseList.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/widget/MedAes Purchase List Widget/js/medAesPurchaseList.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/widget/MedAes-Order-Confirmation/js/MedAes-Order-Confirmation.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/widget/MedAes-Order-Confirmation/js/MedAes-Order-Confirmation.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/widget/MedAes_Quick_Order_Widget/js/MedAes_Quick_Order_Widget.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/widget/MedAes_Quick_Order_Widget/js/MedAes_Quick_Order_Widget.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/widget/MedAesheaderWidget/instances/MedAes_Header_Widget/widget.less_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/widget/MedAesheaderWidget/instances/MedAes_Header_Widget/widget.less_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ccc/widget/MedAesheaderWidget/js/MedAesheaderWidget.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" beforeDir="false" afterPath="$PROJECT_DIR$/.ccc/widget/MedAesheaderWidget/js/MedAesheaderWidget.js_ccadmin-test-zcxa.oracleoutsourcing.com.etag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/element/Search/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/element/Search/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/customTypeAhead.js" beforeDir="false" afterPath="$PROJECT_DIR$/global/customTypeAhead.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widget/MedAes Checkout Latest AddressBook Widget/instances/MedAes Checkout Address Book Widget/display.template" beforeDir="false" afterPath="$PROJECT_DIR$/widget/MedAes Checkout Latest AddressBook Widget/instances/MedAes Checkout Address Book Widget/display.template" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widget/MedAes Checkout Latest AddressBook Widget/js/medAesCheckoutLatestAddressBookWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/widget/MedAes Checkout Latest AddressBook Widget/js/medAesCheckoutLatestAddressBookWidget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widget/MedAes_Quick_Order_Widget/js/MedAes_Quick_Order_Widget.js" beforeDir="false" afterPath="$PROJECT_DIR$/widget/MedAes_Quick_Order_Widget/js/MedAes_Quick_Order_Widget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widget/MedAesheaderWidget/instances/MedAes_Header_Widget/widget.less" beforeDir="false" afterPath="$PROJECT_DIR$/widget/MedAesheaderWidget/instances/MedAes_Header_Widget/widget.less" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1U5xVNvlonQAKJ31TTT60GgY3tH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -36,10 +62,22 @@
       <option name="presentableId" value="Default" />
       <updated>1574660279471</updated>
       <workItem from="1574660280905" duration="3119000" />
+      <workItem from="1576649883560" duration="319000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

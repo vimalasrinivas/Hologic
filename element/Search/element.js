@@ -52,8 +52,11 @@ define(
         $.Topic(pubsub.topicNames.SEARCH_TYPEAHEAD_CANCEL).publish([{ message: "success" }]);
 
         var trimmedText = $.trim(this.searchText());
+        console.log("trimmedText",trimmedText);
+        console.log("trimmedText nParam",this.nParam);
         if (trimmedText.length !== 0) {
             if(this.nParam !="0") {
+                trimmedText = trimmedText+'*';
               if (this.searchTypeText() === 'News') {
                 navigation.goTo('/newsSearch' + "?"
                   + "N=" + this.nParam + "&"
@@ -63,11 +66,13 @@ define(
                   + CCConstants.PARAMETERS_TYPE + "=" + CCConstants.PARAMETERS_SEARCH_QUERY
                   + '&' + this.nrParamNews);
               } else {
+                  var trimText = this.searchText().trim();
+                  trimText = trimText+'*';
                 // Send the search results and the related variables for the Endeca query on the URI
                     navigation.goTo("/searchresults" + "?"
                   + "N=" + this.nParam + "&"
                   + CCConstants.SEARCH_TERM_KEY + "="
-                  + encodeURIComponent(this.searchText().trim()) + "&"
+                  + encodeURIComponent(trimText) + "&"
                   + CCConstants.SEARCH_RANDOM_KEY + "=" + Math.floor(Math.random() * 1000) + "&"
                   + CCConstants.SEARCH_TYPE + "=" + CCConstants.SEARCH_TYPE_SIMPLE + "&"
                   + CCConstants.PARAMETERS_TYPE + "=" + CCConstants.PARAMETERS_SEARCH_QUERY
@@ -143,7 +148,7 @@ define(
           
           
           this.nrParam = 'Nr=AND(OR(' + bucketStr + '),product.x_searchType:products)';
-          this.nrParamNews = 'Nr=AND(OR(' + bucketStr + '),product.x_searchType:news)';
+          this.nrParamNews = 'Nr=product.x_searchType:news';
           this.nParam = NStr;
           storageApi.getInstance().setItem("nrParam", this.nrParam);
           storageApi.getInstance().setItem("nrParamNews", this.nrParamNews);
